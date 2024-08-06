@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="APS-1-no-problems-medication-allergies"/>
+  <meta>
+    <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"/>
+  </meta>
+  <identifier>
+    <system value="http://system-to-be-defined.com"/>
+    <value value="63fef90a-be11-4ddf-aece-d77da15c4f20"/>
+  </identifier>
+  <type value="document"/>
+  <timestamp value="2024-02-08T14:01:30+00:00"/>
+  <entry>
+    <fullUrl value="urn:uuid:212fdc76-ccc3-40bf-8cdd-82f2ef88bd7b"/>
+    <resource>
+      <Composition>
+        <id value="APS-1-no-problems-medication-allergies-composition"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-composition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Composition_APS-1-no-problems-medication-allergies-composition"> </a><p><b>Generated Narrative: Composition </b><a name="APS-1-no-problems-medication-allergies-composition"> </a><a name="hcAPS-1-no-problems-medication-allergies-composition"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceComposition &quot;APS-1-no-problems-medication-allergies-composition&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-composition.html">AT IPS Composition</a></p></div><p><b>status</b>: preliminary</p><p><b>type</b>: Patient summary Document <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#60591-5)</span></p><p><b>date</b>: 2024-02-08 14:01:30+0000</p><p><b>author</b>: See on this page: urn:uuid:75db30ee-7028-486c-929a-c5126837f472</p><p><b>title</b>: International Patient Summary</p></div>
+        </text>
+        <status value="preliminary"/>
+        <type>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="60591-5"/>
+            <display value="Patient summary Document"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <date value="2024-02-08T14:01:30+00:00"/>
+        <author>
+          <reference value="urn:uuid:75db30ee-7028-486c-929a-c5126837f472"/>
+        </author>
+        <title value="International Patient Summary"/>
+        <section>
+          <title value="Medication Summary"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="10160-0"/>
+              <display value="History of Medication use Narrative"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"/>
+          </entry>
+        </section>
+        <section>
+          <title value="Allergies and Intolerances"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48765-2"/>
+              <display value="Allergies and adverse reactions Document"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"/>
+          </entry>
+        </section>
+        <section>
+          <title value="Problem List"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="11450-4"/>
+              <display value="Problem list - Reported"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:72e85b9d-004d-4104-b166-86d129948bae"/>
+          </entry>
+        </section>
+      </Composition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+    <resource>
+      <Patient>
+        <id value="APS-1-no-problems-medication-allergies-patient"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-patient"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Patient_APS-1-no-problems-medication-allergies-patient"> </a><p><b>Generated Narrative: Patient </b><a name="APS-1-no-problems-medication-allergies-patient"> </a><a name="hcAPS-1-no-problems-medication-allergies-patient"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourcePatient &quot;APS-1-no-problems-medication-allergies-patient&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-patient.html">AT IPS Patient</a></p></div><p><b>identifier</b>: Social Security Number/1111241261</p><p><b>name</b>: Maria Johanna Musterfrau </p><p><b>telecom</b>: <a href="tel:+43.2682.40400">+43.2682.40400</a>, <a href="tel:+43.664.1234567">+43.664.1234567</a>, <a href="mailto:musterfrau@provider.at">musterfrau@provider.at</a></p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1961-12-24</p><p><b>address</b>: Musterstraße 13a Eisenstadt Burgenland 7000 AUT (home)</p><p><b>maritalStatus</b>: Married <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-v3-MaritalStatus.html">MaritalStatus</a>#M)</span></p></div>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="SS"/>
+              <display value="Social Security Number"/>
+            </coding>
+          </type>
+          <system value="urn:oid:1.2.40.0.10.1.4.3.1"/>
+          <value value="1111241261"/>
+          <assigner>
+            <display value="Dachverband der österreichischen Sozialversicherungsträger"/>
+          </assigner>
+        </identifier>
+        <name>
+          <family value="Musterfrau"/>
+          <given value="Maria"/>
+          <given value="Johanna"/>
+          <prefix value="Dr."/>
+        </name>
+        <telecom>
+          <system value="phone"/>
+          <value value="+43.2682.40400"/>
+          <use value="home"/>
+        </telecom>
+        <telecom>
+          <system value="phone"/>
+          <value value="+43.664.1234567"/>
+          <use value="mobile"/>
+        </telecom>
+        <telecom>
+          <system value="email"/>
+          <value value="musterfrau@provider.at"/>
+        </telecom>
+        <gender value="female"/>
+        <birthDate value="1961-12-24"/>
+        <address>
+          <use value="home"/>
+          <line value="Musterstraße 13a"/>
+          <city value="Eisenstadt"/>
+          <state value="Burgenland"/>
+          <postalCode value="7000"/>
+          <country value="AUT"/>
+        </address>
+        <maritalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"/>
+            <code value="M"/>
+            <display value="Married"/>
+          </coding>
+        </maritalStatus>
+      </Patient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:75db30ee-7028-486c-929a-c5126837f472"/>
+    <resource>
+      <Device>
+        <id value="APS-1-no-problems-medication-allergies-author"/>
+        <text>
+          <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This Device generates an IPS FHIR Document from in production used ELGA CDA</p></div>
+        </text>
+        <deviceName>
+          <name value="IPS Generator"/>
+          <type value="user-friendly-name"/>
+        </deviceName>
+      </Device>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:72e85b9d-004d-4104-b166-86d129948bae"/>
+    <resource>
+      <Condition>
+        <id value="APS-1-no-problems-medication-allergies-problem-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-1-no-problems-medication-allergies-problem-1"> </a><p><b>Generated Narrative: Condition </b><a name="APS-1-no-problems-medication-allergies-problem-1"> </a><a name="hcAPS-1-no-problems-medication-allergies-problem-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-1-no-problems-medication-allergies-problem-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Inactive <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#inactive)</span></p><p><b>code</b>: No known problems <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/uv/ips/STU1.1/CodeSystem-absent-unknown-uv-ips.html">Absent and Unknown Data - IPS</a>#no-known-problems)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="inactive"/>
+            <display value="Inactive"/>
+          </coding>
+        </clinicalStatus>
+        <code>
+          <coding>
+            <system value="http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips"/>
+            <code value="no-known-problems"/>
+            <display value="No known problems"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"/>
+    <resource>
+      <MedicationStatement>
+        <id value="APS-1-no-problems-medication-allergies-medication-summary-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-1-no-problems-medication-allergies-medication-summary-1"> </a><p><b>Generated Narrative: MedicationStatement </b><a name="APS-1-no-problems-medication-allergies-medication-summary-1"> </a><a name="hcAPS-1-no-problems-medication-allergies-medication-summary-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceMedicationStatement &quot;APS-1-no-problems-medication-allergies-medication-summary-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-medicationstatement.html">AT IPS MedicationStatement</a></p></div><p><b>status</b>: unknown</p><p><b>medication</b>: No known medications <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/uv/ips/STU1.1/CodeSystem-absent-unknown-uv-ips.html">Absent and Unknown Data - IPS</a>#no-known-medications)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 10:31:58+0200</p></div>
+        </text>
+        <status value="unknown"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips"/>
+            <code value="no-known-medications"/>
+            <display value="No known medications"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T10:31:58+02:00"/>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"/>
+    <resource>
+      <AllergyIntolerance>
+        <id value="APS-1-no-problems-medication-allergies-allergy-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-allergyintolerance"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="AllergyIntolerance_APS-1-no-problems-medication-allergies-allergy-1"> </a><p><b>Generated Narrative: AllergyIntolerance </b><a name="APS-1-no-problems-medication-allergies-allergy-1"> </a><a name="hcAPS-1-no-problems-medication-allergies-allergy-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceAllergyIntolerance &quot;APS-1-no-problems-medication-allergies-allergy-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-allergyintolerance.html">AT IPS AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Inactive <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>#inactive)</span></p><p><b>code</b>: No known allergies <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/uv/ips/STU1.1/CodeSystem-absent-unknown-uv-ips.html">Absent and Unknown Data - IPS</a>#no-known-allergies)</span></p><p><b>patient</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+            <code value="inactive"/>
+            <display value="Inactive"/>
+          </coding>
+        </clinicalStatus>
+        <code>
+          <coding>
+            <system value="http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips"/>
+            <code value="no-known-allergies"/>
+            <display value="No known allergies"/>
+          </coding>
+        </code>
+        <patient>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </patient>
+      </AllergyIntolerance>
+    </resource>
+  </entry>
+</Bundle>
