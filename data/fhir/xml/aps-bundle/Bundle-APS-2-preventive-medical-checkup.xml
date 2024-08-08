@@ -1,0 +1,2696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="APS-2-preventive-medical-checkup"/>
+  <meta>
+    <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"/>
+  </meta>
+  <identifier>
+    <system value="http://system-to-be-defined.com"/>
+    <value value="63fef90a-be11-4ddf-aece-d77da15c4f20"/>
+  </identifier>
+  <type value="document"/>
+  <timestamp value="2024-02-08T14:01:30+00:00"/>
+  <entry>
+    <fullUrl value="urn:uuid:212fdc76-ccc3-40bf-8cdd-82f2ef88bd7b"/>
+    <resource>
+      <Composition>
+        <id value="APS-2-preventive-medical-checkup-composition"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-composition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Composition_APS-2-preventive-medical-checkup-composition"> </a><p><b>Generated Narrative: Composition </b><a name="APS-2-preventive-medical-checkup-composition"> </a><a name="hcAPS-2-preventive-medical-checkup-composition"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceComposition &quot;APS-2-preventive-medical-checkup-composition&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-composition.html">AT IPS Composition</a></p></div><p><b>status</b>: final</p><p><b>type</b>: Patient summary Document <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#60591-5)</span></p><p><b>date</b>: 2024-02-08 14:01:30+0000</p><p><b>author</b>: See on this page: urn:uuid:75db30ee-7028-486c-929a-c5126837f472</p><p><b>title</b>: International Patient Summary - Preventive Medical Checkup</p></div>
+        </text>
+        <status value="final"/>
+        <type>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="60591-5"/>
+            <display value="Patient summary Document"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <date value="2024-02-08T14:01:30+00:00"/>
+        <author>
+          <reference value="urn:uuid:75db30ee-7028-486c-929a-c5126837f472"/>
+        </author>
+        <title value="International Patient Summary - Preventive Medical Checkup"/>
+        <section>
+          <title value="Problem List"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="11450-4"/>
+              <display value="Problem list - Reported"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:72e85b9d-004d-4104-b166-86d129948bae"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:82fa32f6-39d6-4fc9-9624-90a48fd3d3a5"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:194cac84-0ee2-40b4-8dda-1866318d234c"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:b62c11b1-c478-4d04-ae6f-5f73543f2bb1"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:8d3a18fb-3610-4bfb-9aa4-1169cc6dd2dd"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:c5d400b1-b58b-41ed-9776-cfcdaf48f2e6"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:32d90aaa-6577-4c5d-9771-d8f606ebf0b9"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:2040058f-9537-4b26-9367-5ca5ac0ddb58"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:b7b2a10d-7295-4fd1-ad21-81bca78dc45a"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:ebfb60a8-a753-459d-a796-a191a4dbd91d"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:3f3140b1-9478-4491-b7bf-10560f38da0e"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:e66d8ac1-a124-4e94-be22-969c9b117ce5"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:5ab717ff-c0a0-409e-83db-0fa6f8619f68"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:fa46fccb-5c24-4a40-a478-d6da4902ff33"/>
+          </entry>
+        </section>
+        <section>
+          <title value="Medication Summary"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="10160-0"/>
+              <display value="History of Medication use Narrative"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:98285578-0bb6-42b2-908c-5bcc5e3992e0"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:769a289d-a518-469a-8100-7943550e359f"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:9cb3b3df-7b15-4270-af39-5f2f819e692e"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:da89fd22-0d4f-4220-a625-b9ddf5eb330d"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:e526f7e5-2f76-484e-acde-d6f2365f0859"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:6d15d84f-2faf-4141-ac0c-fb9cf8496abe"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:ecf9728f-fa50-4b46-b8f7-7768174df72a"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:cf4b2e92-51e6-44de-9406-5406e66e9d45"/>
+          </entry>
+        </section>
+        <section>
+          <title value="Allergies and Intolerances"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48765-2"/>
+              <display value="Allergies and adverse reactions Document"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"/>
+          </entry>
+        </section>
+        <section>
+          <title value="History of Procedures"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="47519-4"/>
+              <display value="History of Procedures Document"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:8103f99c-64f0-4dd5-b92e-5c9680c91e47"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:8a825f17-1599-4928-b384-0ca4a62daba8"/>
+          </entry>
+        </section>
+        <section>
+          <title value="Diagnostic Results"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="30954-2"/>
+              <display value="Relevant diagnostic tests/laboratory data Narrative"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:96314fcd-3b0c-4032-8cac-6eb59579d90a"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:30c8a990-ea39-4dcb-9e1e-b9ac74afffc9"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:f29ac02d-762e-436e-b40c-667ab89e15f2"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:28a773ea-38c7-4c77-86c4-7764325756e7"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:4fe4b16a-14cb-4fd6-9da6-02c4b3797fdc"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:24ff8632-0ccd-4279-88b2-325fdd936ecb"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:8c11ad58-94ec-469c-ba4d-bfba9063067d"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:8c7f9e94-b834-474e-818c-bbd6c3ce3e17"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:e6e05f94-92be-4ae3-bf49-b0b7d4a62b35"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:33e09da2-5f43-4046-b2eb-cf190031826b"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:b675680e-9469-41b1-adc1-093904e3a1d2"/>
+          </entry>
+        </section>
+        <section>
+          <title value="Vital Signs"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="8716-3"/>
+              <display value="Vital signs"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:428259da-e0f7-4780-b1e3-c177515edd37"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:daf9c15d-14d4-429c-b658-6842fdff67d8"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:8248cc70-65a2-4d37-ae14-a3ef2abf8f32"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:4d3f7ac4-fd0a-49af-a56b-303a2dbe67d1"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:be35e603-6b99-4bb5-ad70-8499f6b55df1"/>
+          </entry>
+        </section>
+        <section>
+          <title value="Past History of Illness"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="11348-0"/>
+              <display value="History of Past illness Narrative"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:82301518-66ca-4b4c-821d-087adf643cc4"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:ce2589a2-a5e5-4520-808f-8118e2863a95"/>
+          </entry>
+        </section>
+        <section>
+          <title value="Social History"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="29762-2"/>
+              <display value="Social history Narrative"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+          <entry>
+            <reference value="urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"/>
+          </entry>
+          <entry>
+            <reference value="urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"/>
+          </entry>
+        </section>
+      </Composition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+    <resource>
+      <Patient>
+        <id value="APS-2-preventive-medical-checkup-patient"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-patient"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Patient_APS-2-preventive-medical-checkup-patient"> </a><p><b>Generated Narrative: Patient </b><a name="APS-2-preventive-medical-checkup-patient"> </a><a name="hcAPS-2-preventive-medical-checkup-patient"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourcePatient &quot;APS-2-preventive-medical-checkup-patient&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-patient.html">AT IPS Patient</a></p></div><p><b>identifier</b>: Social Security Number/0000121150</p><p><b>name</b>: Arnold Test </p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1950-11-12</p><p><b>address</b>: Am Schulweg 5 Hainfeld 3100 AUT (home)</p></div>
+        </text>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="SS"/>
+              <display value="Social Security Number"/>
+            </coding>
+          </type>
+          <system value="urn:oid:1.2.40.0.10.1.4.3.1"/>
+          <value value="0000121150"/>
+          <assigner>
+            <display value="Dachverband der österreichischen Sozialversicherungsträger"/>
+          </assigner>
+        </identifier>
+        <name>
+          <family value="Test"/>
+          <given value="Arnold"/>
+        </name>
+        <gender value="male"/>
+        <birthDate value="1950-11-12"/>
+        <address>
+          <use value="home"/>
+          <line value="Am Schulweg 5"/>
+          <city value="Hainfeld"/>
+          <postalCode value="3100"/>
+          <country value="AUT"/>
+        </address>
+      </Patient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:75db30ee-7028-486c-929a-c5126837f472"/>
+    <resource>
+      <Practitioner>
+        <id value="APS-2-preventive-medical-checkup-author"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-practitioner"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Practitioner_APS-2-preventive-medical-checkup-author"> </a><p><b>Generated Narrative: Practitioner </b><a name="APS-2-preventive-medical-checkup-author"> </a><a name="hcAPS-2-preventive-medical-checkup-author"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourcePractitioner &quot;APS-2-preventive-medical-checkup-author&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-practitioner.html">AT IPS Practitioner</a></p></div><p><b>identifier</b>: <a href="http://terminology.hl7.org/5.0.0/NamingSystem-uri.html" title="As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt 
+
+This oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: 
+
+Note that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.
+
+This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.3.4</p><p><b>name</b>: Hannes Hausarzt </p></div>
+        </text>
+        <identifier>
+          <system value="urn:ietf:rfc:3986"/>
+          <value value="urn:oid:1.2.40.0.10.99.1.2.3.4"/>
+          <assigner>
+            <display value="Bundesministerium für Gesundheit"/>
+          </assigner>
+        </identifier>
+        <name>
+          <family value="Hausarzt"/>
+          <given value="Hannes"/>
+          <prefix value="Dr"/>
+        </name>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:72e85b9d-004d-4104-b166-86d129948bae"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-1"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-1"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Chronic kidney disease stage 3B <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#700379002)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="700379002"/>
+            <display value="Chronic kidney disease stage 3B"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:82fa32f6-39d6-4fc9-9624-90a48fd3d3a5"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-2"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-2"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-2"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Long-term current use of anticoagulant <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#711150003)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="711150003"/>
+            <display value="Long-term current use of anticoagulant"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-3"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-3"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-3"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-3"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-3&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Diabetic on insulin and oral treatment <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#314194001)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="314194001"/>
+            <display value="Diabetic on insulin and oral treatment"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:194cac84-0ee2-40b4-8dda-1866318d234c"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-4"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-4"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-4"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-4"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-4&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Long-term current use of immunosuppressive drug <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#710159007)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="710159007"/>
+            <display value="Long-term current use of immunosuppressive drug"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-5"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-5"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-5"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-5"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-5&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Hypertensive disorder <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#38341003)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="38341003"/>
+            <display value="Hypertensive disorder"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:b62c11b1-c478-4d04-ae6f-5f73543f2bb1"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-6"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-6"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-6"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-6"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-6&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Carotid artery doppler normal <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#408570008)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="408570008"/>
+            <display value="Carotid artery doppler normal"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:8d3a18fb-3610-4bfb-9aa4-1169cc6dd2dd"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-7"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-7"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-7"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-7"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-7&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Coronary arteriography normal <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#168938005)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="168938005"/>
+            <display value="Coronary arteriography normal"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:c5d400b1-b58b-41ed-9776-cfcdaf48f2e6"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-8"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-8"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-8"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-8"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-8&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Long-term current use of bisphosphonates <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#328941000119101)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>onset</b>: 2020-06 --&gt; 2025-03</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="328941000119101"/>
+            <display value="Long-term current use of bisphosphonates"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <onsetPeriod>
+          <start value="2020-06"/>
+          <end value="2025-03"/>
+        </onsetPeriod>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:32d90aaa-6577-4c5d-9771-d8f606ebf0b9"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-9"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-9"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-9"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-9"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-9&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Permanent atrial fibrillation <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#440028005)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="440028005"/>
+            <display value="Permanent atrial fibrillation"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:2040058f-9537-4b26-9367-5ca5ac0ddb58"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-10"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-10"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-10"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-10"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-10&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Albuminuria grade A2 <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#735623008)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="735623008"/>
+            <display value="Albuminuria grade A2"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:b7b2a10d-7295-4fd1-ad21-81bca78dc45a"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-11"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-11"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-11"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-11"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-11&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Seronegative rheumatoid arthritis <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#239792003)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="239792003"/>
+            <display value="Seronegative rheumatoid arthritis"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:ebfb60a8-a753-459d-a796-a191a4dbd91d"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-12"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-12"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-12"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-12"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-12&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Hypercholesterolemia <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#13644009)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="13644009"/>
+            <display value="Hypercholesterolemia"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:3f3140b1-9478-4491-b7bf-10560f38da0e"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-13"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-13"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-13"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-13"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-13&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Family history of diabetes mellitus (situation) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#160303001)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="160303001"/>
+            <display value="Family history of diabetes mellitus (situation)"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-14"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-14"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-14"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-14"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-14&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Family history of cancer of colon <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#312824007)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="312824007"/>
+            <display value="Family history of cancer of colon"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:e66d8ac1-a124-4e94-be22-969c9b117ce5"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-15"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-15"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-15"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-15"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-15&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Family history: premature coronary heart disease <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#134439009)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="134439009"/>
+            <display value="Family history: premature coronary heart disease"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:5ab717ff-c0a0-409e-83db-0fa6f8619f68"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-16"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-16"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-16"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-16"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-16&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: FH: Hypercholesterolemia <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#160314003)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="160314003"/>
+            <display value="FH: Hypercholesterolemia"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:fa46fccb-5c24-4a40-a478-d6da4902ff33"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-problem-17"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-17"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-problem-17"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-17"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-problem-17&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Inactive <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#inactive)</span></p><p><b>verificationStatus</b>: Provisional <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#provisional)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Periodontal disease (disorder) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#2556008)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><h3>Stages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Assessment</b></td></tr><tr><td style="display: none">*</td><td>See on this page: urn:uuid:f235c566-01aa-457d-ab49-9e422df69863</td></tr></table></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="inactive"/>
+            <display value="Inactive"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="provisional"/>
+            <display value="Provisional"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="2556008"/>
+            <display value="Periodontal disease (disorder)"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <stage>
+          <assessment>
+            <reference value="urn:uuid:f235c566-01aa-457d-ab49-9e422df69863"/>
+          </assessment>
+        </stage>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:f235c566-01aa-457d-ab49-9e422df69863"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-problem-17-assessment-1"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-problem-17-assessment-1"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-problem-17-assessment-1"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-17-assessment-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-problem-17-assessment-1&quot; </p></div><p><b>status</b>: final</p><p><b>category</b>: Exam <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#exam)</span></p><p><b>code</b>: Evaluation of risk factors for periodontal disease <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#1237049003)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: High risk <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#723509005)</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="exam"/>
+            <display value="Exam"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="1237049003"/>
+            <display value="Evaluation of risk factors for periodontal disease"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="723509005"/>
+            <display value="High risk"/>
+          </coding>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"/>
+    <resource>
+      <MedicationStatement>
+        <id value="APS-2-preventive-medical-checkup-medication-summary-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-1"> </a><p><b>Generated Narrative: MedicationStatement </b><a name="APS-2-preventive-medical-checkup-medication-summary-1"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceMedicationStatement &quot;APS-2-preventive-medical-checkup-medication-summary-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-medicationstatement.html">AT IPS MedicationStatement</a></p></div><p><b>status</b>: active</p><p><b>medication</b>: EBETREXAT TBL 10MG <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (asp-liste#2443061)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><blockquote><p><b>dosage</b></p><p><b>sequence</b>: 1</p><p><b>timing</b>: , ?ngen-6?</p><p><b>route</b>: Oral use <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#26643006)</span></p><blockquote><p><b>doseAndRate</b></p></blockquote></blockquote></div>
+        </text>
+        <status value="active"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="2443061"/>
+            <display value="EBETREXAT TBL 10MG"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectivePeriod>
+          <start value="2024-02-08T10:31:58+02:00"/>
+        </effectivePeriod>
+        <dosage>
+          <sequence value="1"/>
+          <timing>
+            <repeat>
+              <dayOfWeek value="fri"/>
+              <when value="NIGHT"/>
+            </repeat>
+          </timing>
+          <route>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="26643006"/>
+              <display value="Oral use"/>
+            </coding>
+          </route>
+          <doseAndRate>
+            <doseQuantity>
+              <value value="2"/>
+              <unit value="Tablet"/>
+              <system value="https://standardterms.edqm.eu/"/>
+              <code value="15054000&quot;"/>
+            </doseQuantity>
+          </doseAndRate>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:98285578-0bb6-42b2-908c-5bcc5e3992e0"/>
+    <resource>
+      <MedicationStatement>
+        <id value="APS-2-preventive-medical-checkup-medication-summary-2"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-2"> </a><p><b>Generated Narrative: MedicationStatement </b><a name="APS-2-preventive-medical-checkup-medication-summary-2"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceMedicationStatement &quot;APS-2-preventive-medical-checkup-medication-summary-2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-medicationstatement.html">AT IPS MedicationStatement</a></p></div><p><b>status</b>: active</p><p><b>medication</b>: ELIQUIS FTBL 2,5MG <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (asp-liste#3779722)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:1-0-0-1</td></tr></table></div>
+        </text>
+        <status value="active"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="3779722"/>
+            <display value="ELIQUIS FTBL 2,5MG"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectivePeriod>
+          <start value="2024-02-08T10:31:58+02:00"/>
+        </effectivePeriod>
+        <dosage>
+          <text value="S:1-0-0-1"/>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:769a289d-a518-469a-8100-7943550e359f"/>
+    <resource>
+      <MedicationStatement>
+        <id value="APS-2-preventive-medical-checkup-medication-summary-3"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-3"> </a><p><b>Generated Narrative: MedicationStatement </b><a name="APS-2-preventive-medical-checkup-medication-summary-3"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-3"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceMedicationStatement &quot;APS-2-preventive-medical-checkup-medication-summary-3&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-medicationstatement.html">AT IPS MedicationStatement</a></p></div><p><b>status</b>: active</p><p><b>medication</b>: FORXIGA FTBL 10MG <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (asp-liste#3910895)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:1-0-0-0</td></tr></table></div>
+        </text>
+        <status value="active"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="3910895"/>
+            <display value="FORXIGA FTBL 10MG"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectivePeriod>
+          <start value="2024-02-08T10:31:58+02:00"/>
+        </effectivePeriod>
+        <dosage>
+          <text value="S:1-0-0-0"/>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:9cb3b3df-7b15-4270-af39-5f2f819e692e"/>
+    <resource>
+      <MedicationStatement>
+        <id value="APS-2-preventive-medical-checkup-medication-summary-4"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-4"> </a><p><b>Generated Narrative: MedicationStatement </b><a name="APS-2-preventive-medical-checkup-medication-summary-4"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-4"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceMedicationStatement &quot;APS-2-preventive-medical-checkup-medication-summary-4&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-medicationstatement.html">AT IPS MedicationStatement</a></p></div><p><b>status</b>: active</p><p><b>medication</b>: GEROFOL TBL 5MG <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (asp-liste#4476685)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:MO, MI</td></tr></table></div>
+        </text>
+        <status value="active"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="4476685"/>
+            <display value="GEROFOL TBL 5MG"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectivePeriod>
+          <start value="2024-02-08T10:31:58+02:00"/>
+        </effectivePeriod>
+        <dosage>
+          <text value="S:MO, MI"/>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:da89fd22-0d4f-4220-a625-b9ddf5eb330d"/>
+    <resource>
+      <MedicationStatement>
+        <id value="APS-2-preventive-medical-checkup-medication-summary-5"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-5"> </a><p><b>Generated Narrative: MedicationStatement </b><a name="APS-2-preventive-medical-checkup-medication-summary-5"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-5"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceMedicationStatement &quot;APS-2-preventive-medical-checkup-medication-summary-5&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-medicationstatement.html">AT IPS MedicationStatement</a></p></div><p><b>status</b>: active</p><p><b>medication</b>: IBANDRONSAEURE SAN FSPR 3MG <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (asp-liste#3780576)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:0,33/Monat, alle 3 Monate</td></tr></table></div>
+        </text>
+        <status value="active"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="3780576"/>
+            <display value="IBANDRONSAEURE SAN FSPR 3MG"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectivePeriod>
+          <start value="2024-02-08T10:31:58+02:00"/>
+        </effectivePeriod>
+        <dosage>
+          <text value="S:0,33/Monat, alle 3 Monate"/>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:e526f7e5-2f76-484e-acde-d6f2365f0859"/>
+    <resource>
+      <MedicationStatement>
+        <id value="APS-2-preventive-medical-checkup-medication-summary-6"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-6"> </a><p><b>Generated Narrative: MedicationStatement </b><a name="APS-2-preventive-medical-checkup-medication-summary-6"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-6"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceMedicationStatement &quot;APS-2-preventive-medical-checkup-medication-summary-6&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-medicationstatement.html">AT IPS MedicationStatement</a></p></div><p><b>status</b>: active</p><p><b>medication</b>: METFORMIN HEX FTBL  500MG <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (asp-liste#1294446)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:1-0-0-1</td></tr></table></div>
+        </text>
+        <status value="active"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="1294446"/>
+            <display value="METFORMIN HEX FTBL  500MG"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectivePeriod>
+          <start value="2024-02-08T10:31:58+02:00"/>
+        </effectivePeriod>
+        <dosage>
+          <text value="S:1-0-0-1"/>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:6d15d84f-2faf-4141-ac0c-fb9cf8496abe"/>
+    <resource>
+      <MedicationStatement>
+        <id value="APS-2-preventive-medical-checkup-medication-summary-7"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-7"> </a><p><b>Generated Narrative: MedicationStatement </b><a name="APS-2-preventive-medical-checkup-medication-summary-7"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-7"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceMedicationStatement &quot;APS-2-preventive-medical-checkup-medication-summary-7&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-medicationstatement.html">AT IPS MedicationStatement</a></p></div><p><b>status</b>: active</p><p><b>medication</b>: RAMIPRIL 1A TBL  5MG <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (asp-liste#2450888)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:1-0-0-0</td></tr></table></div>
+        </text>
+        <status value="active"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="2450888"/>
+            <display value="RAMIPRIL 1A TBL  5MG"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectivePeriod>
+          <start value="2024-02-08T10:31:58+02:00"/>
+        </effectivePeriod>
+        <dosage>
+          <text value="S:1-0-0-0"/>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:ecf9728f-fa50-4b46-b8f7-7768174df72a"/>
+    <resource>
+      <MedicationStatement>
+        <id value="APS-2-preventive-medical-checkup-medication-summary-8"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-8"> </a><p><b>Generated Narrative: MedicationStatement </b><a name="APS-2-preventive-medical-checkup-medication-summary-8"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-8"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceMedicationStatement &quot;APS-2-preventive-medical-checkup-medication-summary-8&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-medicationstatement.html">AT IPS MedicationStatement</a></p></div><p><b>status</b>: active</p><p><b>medication</b>: ROSUVASTATIN 1A FTBL 10MG <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (asp-liste#4466132)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p></div>
+        </text>
+        <status value="active"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="4466132"/>
+            <display value="ROSUVASTATIN 1A FTBL 10MG"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectivePeriod>
+          <start value="2024-02-08T10:31:58+02:00"/>
+        </effectivePeriod>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:cf4b2e92-51e6-44de-9406-5406e66e9d45"/>
+    <resource>
+      <MedicationStatement>
+        <id value="APS-2-preventive-medical-checkup-medication-summary-9"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-9"> </a><p><b>Generated Narrative: MedicationStatement </b><a name="APS-2-preventive-medical-checkup-medication-summary-9"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-9"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceMedicationStatement &quot;APS-2-preventive-medical-checkup-medication-summary-9&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-medicationstatement.html">AT IPS MedicationStatement</a></p></div><p><b>status</b>: active</p><p><b>medication</b>: SEMGLEE INJ 100E/ML FPEN 3ML <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (asp-liste#4477087)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:0-0-0-10</td></tr></table></div>
+        </text>
+        <status value="active"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="4477087"/>
+            <display value="SEMGLEE INJ 100E/ML FPEN 3ML"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectivePeriod>
+          <start value="2024-02-08T10:31:58+02:00"/>
+        </effectivePeriod>
+        <dosage>
+          <text value="S:0-0-0-10"/>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"/>
+    <resource>
+      <AllergyIntolerance>
+        <id value="APS-2-preventive-medical-checkup-allergy-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-allergyintolerance"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="AllergyIntolerance_APS-2-preventive-medical-checkup-allergy-1"> </a><p><b>Generated Narrative: AllergyIntolerance </b><a name="APS-2-preventive-medical-checkup-allergy-1"> </a><a name="hcAPS-2-preventive-medical-checkup-allergy-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceAllergyIntolerance &quot;APS-2-preventive-medical-checkup-allergy-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-allergyintolerance.html">AT IPS AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>code</b>: Penicillin <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#764146007)</span></p><p><b>patient</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </clinicalStatus>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="764146007"/>
+            <display value="Penicillin"/>
+          </coding>
+        </code>
+        <patient>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </patient>
+      </AllergyIntolerance>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a"/>
+    <resource>
+      <Procedure>
+        <id value="APS-2-preventive-medical-checkup-procedure-history-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-Procedure"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Procedure_APS-2-preventive-medical-checkup-procedure-history-1"> </a><p><b>Generated Narrative: Procedure </b><a name="APS-2-preventive-medical-checkup-procedure-history-1"> </a><a name="hcAPS-2-preventive-medical-checkup-procedure-history-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceProcedure &quot;APS-2-preventive-medical-checkup-procedure-history-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-Procedure.html">AT IPS Procedure</a></p></div><p><b>status</b>: completed</p><p><b>code</b>: Total replacement of left hip joint <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#770606008)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>performed</b>: 2010</p></div>
+        </text>
+        <status value="completed"/>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="770606008"/>
+            <display value="Total replacement of left hip joint"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <performedDateTime value="2010"/>
+      </Procedure>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:8103f99c-64f0-4dd5-b92e-5c9680c91e47"/>
+    <resource>
+      <Procedure>
+        <id value="APS-2-preventive-medical-checkup-procedure-history-2"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-Procedure"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Procedure_APS-2-preventive-medical-checkup-procedure-history-2"> </a><p><b>Generated Narrative: Procedure </b><a name="APS-2-preventive-medical-checkup-procedure-history-2"> </a><a name="hcAPS-2-preventive-medical-checkup-procedure-history-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceProcedure &quot;APS-2-preventive-medical-checkup-procedure-history-2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-Procedure.html">AT IPS Procedure</a></p></div><p><b>status</b>: completed</p><p><b>code</b>: Appendectomy <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#80146002)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>performed</b>: 1962</p></div>
+        </text>
+        <status value="completed"/>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="80146002"/>
+            <display value="Appendectomy"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <performedDateTime value="1962"/>
+      </Procedure>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:8a825f17-1599-4928-b384-0ca4a62daba8"/>
+    <resource>
+      <Procedure>
+        <id value="APS-2-preventive-medical-checkup-procedure-history-3"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-Procedure"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Procedure_APS-2-preventive-medical-checkup-procedure-history-3"> </a><p><b>Generated Narrative: Procedure </b><a name="APS-2-preventive-medical-checkup-procedure-history-3"> </a><a name="hcAPS-2-preventive-medical-checkup-procedure-history-3"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceProcedure &quot;APS-2-preventive-medical-checkup-procedure-history-3&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-Procedure.html">AT IPS Procedure</a></p></div><p><b>status</b>: completed</p><p><b>code</b>: History of colonoscopy <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#851000119109)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>performed</b>: 2014</p></div>
+        </text>
+        <status value="completed"/>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="851000119109"/>
+            <display value="History of colonoscopy"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <performedDateTime value="2014"/>
+      </Procedure>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-1"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-1"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: ABO and Rh group [Type] in Blood <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#882-1)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: Blood group A Rh(D) positive (finding) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#278149003)</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="882-1"/>
+            <display value="ABO and Rh group [Type] in Blood"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="278149003"/>
+            <display value="Blood group A Rh(D) positive (finding)"/>
+          </coding>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-2"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-2"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-2"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Klinische Chemie <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (elga-laborparameterergaenzung#500)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:56:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>hasMember</b>: </p><ul><li>See on this page: urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91</li><li>See on this page: urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a</li><li>See on this page: urn:uuid:96314fcd-3b0c-4032-8cac-6eb59579d90a</li><li>See on this page: urn:uuid:30c8a990-ea39-4dcb-9e1e-b9ac74afffc9</li><li>See on this page: urn:uuid:f29ac02d-762e-436e-b40c-667ab89e15f2</li><li>See on this page: urn:uuid:28a773ea-38c7-4c77-86c4-7764325756e7</li></ul></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung"/>
+            <code value="500"/>
+            <display value="Klinische Chemie"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:56:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <hasMember>
+          <reference value="urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91"/>
+        </hasMember>
+        <hasMember>
+          <reference value="urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a"/>
+        </hasMember>
+        <hasMember>
+          <reference value="urn:uuid:96314fcd-3b0c-4032-8cac-6eb59579d90a"/>
+        </hasMember>
+        <hasMember>
+          <reference value="urn:uuid:30c8a990-ea39-4dcb-9e1e-b9ac74afffc9"/>
+        </hasMember>
+        <hasMember>
+          <reference value="urn:uuid:f29ac02d-762e-436e-b40c-667ab89e15f2"/>
+        </hasMember>
+        <hasMember>
+          <reference value="urn:uuid:28a773ea-38c7-4c77-86c4-7764325756e7"/>
+        </hasMember>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-3"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-3"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-3"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-3"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-3&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Cholesterin <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#2093-3)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: 180 mg/dL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="2093-3"/>
+            <display value="Cholesterin"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueQuantity>
+          <value value="180"/>
+          <unit value="mg/dL"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="mg/dL"/>
+        </valueQuantity>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:96314fcd-3b0c-4032-8cac-6eb59579d90a"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-4"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-4"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-4"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-4"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-4&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: HDL-Cholesterin <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#2085-9)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: 45 mg/dL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="2085-9"/>
+            <display value="HDL-Cholesterin"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueQuantity>
+          <value value="45"/>
+          <unit value="mg/dL"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="mg/dL"/>
+        </valueQuantity>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:30c8a990-ea39-4dcb-9e1e-b9ac74afffc9"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-5"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-5"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-5"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-5"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-5&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Cholesterol.total/Cholesterol in HDL [Mass Ratio] in Serum or Plasma <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#9830-1)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: 4 {ratio}<span style="background: LightGoldenRodYellow"> (Details: UCUM  code{ratio} = '{ratio}')</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="9830-1"/>
+            <display value="Cholesterol.total/Cholesterol in HDL [Mass Ratio] in Serum or Plasma"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueQuantity>
+          <value value="4"/>
+          <unit value="{ratio}"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="{ratio}"/>
+        </valueQuantity>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:f29ac02d-762e-436e-b40c-667ab89e15f2"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-6"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-6"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-6"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-6"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-6&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Triglyceride <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#2571-8)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: 130 mg/dL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="2571-8"/>
+            <display value="Triglyceride"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueQuantity>
+          <value value="130"/>
+          <unit value="mg/dL"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="mg/dL"/>
+        </valueQuantity>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:28a773ea-38c7-4c77-86c4-7764325756e7"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-7"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-7"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-7"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-7"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-7&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Gamma-GT <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#2324-2)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: 54 U/L<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeU/L = 'U/L')</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="2324-2"/>
+            <display value="Gamma-GT"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueQuantity>
+          <value value="54"/>
+          <unit value="U/L"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="U/L"/>
+        </valueQuantity>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:4fe4b16a-14cb-4fd6-9da6-02c4b3797fdc"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-8"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-8"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-8"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-8"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-8&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Urindiagnostik <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (elga-laborparameterergaenzung#1400)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:56:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>hasMember</b>: </p><ul><li>See on this page: urn:uuid:24ff8632-0ccd-4279-88b2-325fdd936ecb</li><li>See on this page: urn:uuid:8c11ad58-94ec-469c-ba4d-bfba9063067d</li><li>See on this page: urn:uuid:8c7f9e94-b834-474e-818c-bbd6c3ce3e17</li><li>See on this page: urn:uuid:e6e05f94-92be-4ae3-bf49-b0b7d4a62b35</li><li>See on this page: urn:uuid:33e09da2-5f43-4046-b2eb-cf190031826b</li><li>See on this page: urn:uuid:b675680e-9469-41b1-adc1-093904e3a1d2</li></ul></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung"/>
+            <code value="1400"/>
+            <display value="Urindiagnostik"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:56:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <hasMember>
+          <reference value="urn:uuid:24ff8632-0ccd-4279-88b2-325fdd936ecb"/>
+        </hasMember>
+        <hasMember>
+          <reference value="urn:uuid:8c11ad58-94ec-469c-ba4d-bfba9063067d"/>
+        </hasMember>
+        <hasMember>
+          <reference value="urn:uuid:8c7f9e94-b834-474e-818c-bbd6c3ce3e17"/>
+        </hasMember>
+        <hasMember>
+          <reference value="urn:uuid:e6e05f94-92be-4ae3-bf49-b0b7d4a62b35"/>
+        </hasMember>
+        <hasMember>
+          <reference value="urn:uuid:33e09da2-5f43-4046-b2eb-cf190031826b"/>
+        </hasMember>
+        <hasMember>
+          <reference value="urn:uuid:b675680e-9469-41b1-adc1-093904e3a1d2"/>
+        </hasMember>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:24ff8632-0ccd-4279-88b2-325fdd936ecb"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-9"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-9"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-9"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-9"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-9&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Leukocytes [Presence] in Urine <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#33052-2)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: Not detected (qualifier value) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#260415000)</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="33052-2"/>
+            <display value="Leukocytes [Presence] in Urine"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="260415000"/>
+            <display value="Not detected (qualifier value)"/>
+          </coding>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:8c11ad58-94ec-469c-ba4d-bfba9063067d"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-10"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-10"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-10"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-10"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-10&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Protein [Presence] in Urine <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#2887-8)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: Not detected (qualifier value) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#260415000)</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="2887-8"/>
+            <display value="Protein [Presence] in Urine"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="260415000"/>
+            <display value="Not detected (qualifier value)"/>
+          </coding>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:8c7f9e94-b834-474e-818c-bbd6c3ce3e17"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-11"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-11"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-11"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-11"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-11&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Glucose [Presence] in Urine <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#2349-9)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: Not detected (qualifier value) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#260415000)</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="2349-9"/>
+            <display value="Glucose [Presence] in Urine"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="260415000"/>
+            <display value="Not detected (qualifier value)"/>
+          </coding>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:e6e05f94-92be-4ae3-bf49-b0b7d4a62b35"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-12"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-12"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-12"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-12"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-12&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Blood [Presence] in Urine by Visual <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#53963-5)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: Not detected (qualifier value) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#260415000)</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="53963-5"/>
+            <display value="Blood [Presence] in Urine by Visual"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="260415000"/>
+            <display value="Not detected (qualifier value)"/>
+          </coding>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:33e09da2-5f43-4046-b2eb-cf190031826b"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-13"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-13"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-13"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-13"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-13&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Nitrite [Presence] in Urine <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#32710-6)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: Not detected (qualifier value) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#260415000)</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="32710-6"/>
+            <display value="Nitrite [Presence] in Urine"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="260415000"/>
+            <display value="Not detected (qualifier value)"/>
+          </coding>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:b675680e-9469-41b1-adc1-093904e3a1d2"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-14"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-14"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-14"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-14"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-diagnostic-result-14&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationresultslaboratory.html">AT IPS Observation Results Laboratory</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Urobilinogen [Presence] in Urine <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#13658-0)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: See on this page: urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6</p><p><b>value</b>: Not detected (qualifier value) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#260415000)</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="13658-0"/>
+            <display value="Urobilinogen [Presence] in Urine"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T07:34:06+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="260415000"/>
+            <display value="Not detected (qualifier value)"/>
+          </coding>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+    <resource>
+      <Organization>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-result-performer-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-organization"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Organization_APS-2-preventive-medical-checkup-diagnostic-result-performer-1"> </a><p><b>Generated Narrative: Organization </b><a name="APS-2-preventive-medical-checkup-diagnostic-result-performer-1"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-performer-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceOrganization &quot;APS-2-preventive-medical-checkup-diagnostic-result-performer-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-organization.html">AT IPS Organization</a></p></div><p><b>identifier</b>: <a href="http://terminology.hl7.org/5.0.0/NamingSystem-uri.html" title="As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt 
+
+This oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: 
+
+Note that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.
+
+This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613</p><p><b>name</b>: Amadeus Spital - Labor</p><p><b>telecom</b>: <a href="tel:+43.1.3453446.0">+43.1.3453446.0</a>, fax: +43.1.3453446.4674, <a href="mailto:info@amadeusspital.at">info@amadeusspital.at</a>, <a href="https://www.amadeusspital.at">https://www.amadeusspital.at</a></p><p><b>address</b>: Währinger Gürtel 18-20 Wien 1090 AUT </p></div>
+        </text>
+        <identifier>
+          <system value="urn:ietf:rfc:3986"/>
+          <value value="urn:oid:1.2.40.0.34.99.4613"/>
+          <assigner>
+            <display value="Bundesministerium für Gesundheit"/>
+          </assigner>
+        </identifier>
+        <name value="Amadeus Spital - Labor"/>
+        <telecom>
+          <system value="phone"/>
+          <value value="+43.1.3453446.0"/>
+        </telecom>
+        <telecom>
+          <system value="fax"/>
+          <value value="+43.1.3453446.4674"/>
+        </telecom>
+        <telecom>
+          <system value="email"/>
+          <value value="info@amadeusspital.at"/>
+        </telecom>
+        <telecom>
+          <system value="url"/>
+          <value value="https://www.amadeusspital.at"/>
+        </telecom>
+        <address>
+          <line value="Währinger Gürtel 18-20"/>
+          <city value="Wien"/>
+          <postalCode value="1090"/>
+          <country value="AUT"/>
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-vital-sign-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-1"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-vital-sign-1"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-vital-sign-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationvitalsigns.html">AT IPS Observation Vital Signs</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Body height <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#8302-2)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: 173 cm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codecm = 'cm')</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="vital-signs"/>
+            <display value="Vital Signs"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="8302-2"/>
+            <display value="Body height"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <valueQuantity>
+          <value value="173"/>
+          <unit value="cm"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="cm"/>
+        </valueQuantity>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:428259da-e0f7-4780-b1e3-c177515edd37"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-vital-sign-2"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-2"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-vital-sign-2"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-vital-sign-2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationvitalsigns.html">AT IPS Observation Vital Signs</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Body weight <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#29463-7)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: 68 kg<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg = 'kg')</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="vital-signs"/>
+            <display value="Vital Signs"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="29463-7"/>
+            <display value="Body weight"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <valueQuantity>
+          <value value="68"/>
+          <unit value="kg"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="kg"/>
+        </valueQuantity>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:daf9c15d-14d4-429c-b658-6842fdff67d8"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-vital-sign-3"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-3"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-vital-sign-3"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-3"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-vital-sign-3&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationvitalsigns.html">AT IPS Observation Vital Signs</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Body mass index (BMI) [Ratio] <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#39156-5)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: 22.72 kg/m2<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg/m2 = 'kg/m2')</span></p><p><b>interpretation</b>: High <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-v3-ObservationInterpretation.html">ObservationInterpretation</a>#H)</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="vital-signs"/>
+            <display value="Vital Signs"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="39156-5"/>
+            <display value="Body mass index (BMI) [Ratio]"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <valueQuantity>
+          <value value="22.72"/>
+          <unit value="kg/m2"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="kg/m2"/>
+        </valueQuantity>
+        <interpretation>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+            <code value="H"/>
+            <display value="High"/>
+          </coding>
+        </interpretation>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:8248cc70-65a2-4d37-ae14-a3ef2abf8f32"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-vital-sign-4"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-4"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-vital-sign-4"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-4"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-vital-sign-4&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationvitalsigns.html">AT IPS Observation Vital Signs</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Blood pressure panel with all children optional <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#85354-9)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><blockquote><p><b>component</b></p><p><b>code</b>: Systolic blood pressure <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#8480-6)</span></p><p><b>value</b>: 130 mm[Hg]<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Diastolic blood pressure <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#8462-4)</span></p><p><b>value</b>: 80 mm[Hg]<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="vital-signs"/>
+            <display value="Vital Signs"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="85354-9"/>
+            <display value="Blood pressure panel with all children optional"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="8480-6"/>
+              <display value="Systolic blood pressure"/>
+            </coding>
+          </code>
+          <valueQuantity>
+            <value value="130"/>
+            <unit value="mm[Hg]"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="mm[Hg]"/>
+          </valueQuantity>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="8462-4"/>
+              <display value="Diastolic blood pressure"/>
+            </coding>
+          </code>
+          <valueQuantity>
+            <value value="80"/>
+            <unit value="mm[Hg]"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="mm[Hg]"/>
+          </valueQuantity>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:4d3f7ac4-fd0a-49af-a56b-303a2dbe67d1"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-vital-sign-5"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-5"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-vital-sign-5"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-5"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-vital-sign-5&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationvitalsigns.html">AT IPS Observation Vital Signs</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Heart rate <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#8867-4)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: 85 /min<span style="background: LightGoldenRodYellow"> (Details: UCUM  code/min = '/min')</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="vital-signs"/>
+            <display value="Vital Signs"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="8867-4"/>
+            <display value="Heart rate"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <valueQuantity>
+          <value value="85"/>
+          <unit value="/min"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="/min"/>
+        </valueQuantity>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:be35e603-6b99-4bb5-ad70-8499f6b55df1"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-vital-sign-6"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-6"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-vital-sign-6"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-6"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-vital-sign-6&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationvitalsigns.html">AT IPS Observation Vital Signs</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Waist circumference <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#276361009)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: &lt;102 cm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codecm = 'cm')</span></p></div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="vital-signs"/>
+            <display value="Vital Signs"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="276361009"/>
+            <display value="Waist circumference"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <valueQuantity>
+          <value value="102"/>
+          <comparator value="&lt;"/>
+          <unit value="cm"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="cm"/>
+        </valueQuantity>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:82301518-66ca-4b4c-821d-087adf643cc4"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-illness-history-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-illness-history-1"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-illness-history-1"> </a><a name="hcAPS-2-preventive-medical-checkup-illness-history-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-illness-history-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Resolved <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#resolved)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: History of measles <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#161419000)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="resolved"/>
+            <display value="Resolved"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="161419000"/>
+            <display value="History of measles"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:ce2589a2-a5e5-4520-808f-8118e2863a95"/>
+    <resource>
+      <Condition>
+        <id value="APS-2-preventive-medical-checkup-illness-history-2"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-illness-history-2"> </a><p><b>Generated Narrative: Condition </b><a name="APS-2-preventive-medical-checkup-illness-history-2"> </a><a name="hcAPS-2-preventive-medical-checkup-illness-history-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceCondition &quot;APS-2-preventive-medical-checkup-illness-history-2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-condition.html">AT IPS Condition</a></p></div><p><b>clinicalStatus</b>: Resolved <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#resolved)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: History of chickenpox (situation) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#161423008)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="resolved"/>
+            <display value="Resolved"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="161423008"/>
+            <display value="History of chickenpox (situation)"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Condition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-social-history-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationtobaccouse"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-social-history-1"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-social-history-1"> </a><a name="hcAPS-2-preventive-medical-checkup-social-history-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-social-history-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-ips-observationtobaccouse.html">AT IPS Observation Tobacco Use</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Tobacco smoking status <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#72166-2)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: Never smoker <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#LA18978-9)</span></p></div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="72166-2"/>
+            <display value="Tobacco smoking status"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="LA18978-9"/>
+            <display value="Never smoker"/>
+          </coding>
+        </valueCodeableConcept>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"/>
+    <resource>
+      <Observation>
+        <id value="APS-2-preventive-medical-checkup-social-history-2"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-social-history-2"> </a><p><b>Generated Narrative: Observation </b><a name="APS-2-preventive-medical-checkup-social-history-2"> </a><a name="hcAPS-2-preventive-medical-checkup-social-history-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">ResourceObservation &quot;APS-2-preventive-medical-checkup-social-history-2&quot; </p></div><p><b>status</b>: final</p><p><b>code</b>: Physical exercise <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#61686008)</span></p><p><b>subject</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: &gt;2.5 h<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeh = 'h')</span>/1 wk<span style="background: LightGoldenRodYellow"> (Details: UCUM  codewk = 'wk')</span></p></div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="61686008"/>
+            <display value="Physical exercise"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+        <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <valueRatio>
+          <numerator>
+            <value value="2.5"/>
+            <comparator value="&gt;"/>
+            <unit value="h"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="h"/>
+          </numerator>
+          <denominator>
+            <value value="1"/>
+            <unit value="wk"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="wk"/>
+          </denominator>
+        </valueRatio>
+      </Observation>
+    </resource>
+  </entry>
+</Bundle>
