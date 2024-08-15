@@ -2,16 +2,17 @@
 
 <!-- TOC -->
 * [VIPS - Visualizer International Patient Summary](#vips---visualizer-international-patient-summary)
-  * [Existing IPS Viewers](#existing-ips-viewers)
+  * [Getting Started](#getting-started)
   * [Conventions](#conventions)
     * [Branches](#branches)
     * [Pull Requests](#pull-requests)
     * [Coding](#coding)
+  * [Existing IPS Viewers](#existing-ips-viewers)
 <!-- TOC -->
 
-## Existing IPS Viewers
+## Getting Started
 
-[Go to md](docs/research/research-viewers.md)
+To start the application for development run `npm run dev` and open [http://localhost:3000](http://localhost:3000).
 
 ## Conventions
 
@@ -29,3 +30,7 @@ remaining branch afterward.
 
 ### Coding
 
+
+## Existing IPS Viewers
+
+[Open comparison](docs/research/research-viewers.md)
