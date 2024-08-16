@@ -7,6 +7,7 @@ This document contains an overview of existing Viewers for the International or 
 | [IPS Viewer.com](https://www.ipsviewer.com/)                      | ✅ [(link)](https://github.com/jddamore/IPSviewer) | Paste Resource ✅ <br> Upload File ❌ <br> Url to resource ❌ |        ❌     |    ❌      |
 | [PS Canadian Viewer](https://ps-ca-renderer.apibox.ca/index.html) |             ❌                                      |           Paste Resource ✅ <br> Upload File ❌ <br> Url to resource ❌                                |        ❌     |     ❌     |
 | [FHIR VHEWER](https://vhewer.com/render-paste)                    |                    ❌                               |         Paste Resource ✅ <br> Upload File ✅ <br> Url to resource ✅                                  |       ❌      |     ❌     |
+| [IPS Viewer Robin](https://gitlab.com/RobinBerger1/fhir-ips-visualization)| ✅ |  Paste Resource ❌ <br> Upload File ❌ <br> Url to resource ✅  |❌ | ❌ |
 
 
 
@@ -67,3 +68,21 @@ This IPS viewer was developed by some british guy named [Rik Smithies](https://u
 ### Screenshot
 ![Screenshot of the NProgram viewer from https://www.ipsviewer.com/](../images/ips-viewer-NProgram.png)
 
+
+## IPS Viewer Robin
+### General Info
+- Link to viewer: ❌ Need to start locally
+- Public repository ✅ Ask Robin for insight
+- Data Input
+  - Paste Resource ❌
+  - Upload File ❌
+  - Url to resource ✅
+- Search/Filter ❌
+- Diagrams ❌
+
+### Description
+This IPS viewer is the one Robin developed as part of his Bachelor thesis. The Website was developed using plain React (no framework such as next.js etc). Only certain sections are implemented, so the visualization is incomplete.
+
+### Screenshot
+![Screenshot of Composition Resource](../images/IPS-Viewer-SPA-ActiveProblems.png)
+![Screenshot of Section Active Problems](../images/IPS-Viewer-SPA.png)
