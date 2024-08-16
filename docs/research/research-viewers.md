@@ -7,7 +7,7 @@ This document contains an overview of existing Viewers for the International or 
 | [IPS Viewer.com](https://www.ipsviewer.com/)                      | ✅ [(link)](https://github.com/jddamore/IPSviewer) | Paste Resource ✅ <br> Upload File ❌ <br> Url to resource ❌ |        ❌     |    ❌      |
 | [PS Canadian Viewer](https://ps-ca-renderer.apibox.ca/index.html) |             ❌                                      |           Paste Resource ✅ <br> Upload File ❌ <br> Url to resource ❌                                |        ❌     |     ❌     |
 | [FHIR VHEWER](https://vhewer.com/render-paste)                    |                    ❌                               |         Paste Resource ✅ <br> Upload File ✅ <br> Url to resource ✅                                  |       ❌      |     ❌     |
-| [IPS Viewer Robin]([https://www.ipsviewer.com/](https://gitlab.com/RobinBerger1/fhir-ips-visualization))| ✅ |  Paste Resource ❌ <br> Upload File ❌ <br> Url to resource ✅  |❌ | ❌ |
+| [IPS Viewer Robin](https://gitlab.com/RobinBerger1/fhir-ips-visualization)| ✅ |  Paste Resource ❌ <br> Upload File ❌ <br> Url to resource ✅  |❌ | ❌ |
 
 
 
