@@ -1,0 +1,1218 @@
+{
+  "resourceType": "Bundle",
+  "type": "batch",
+  "entry": [ {
+    "fullUrl": "urn:uuid:3da9ec63-e371-3b2b-962c-cf3e6137a19c",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "3da9ec63-e371-3b2b-962c-cf3e6137a19c",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 299
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "3da9ec63-e371-3b2b-962c-cf3e6137a19c"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Unfallkrankenhaus Linz",
+      "address": [ {
+        "city": "Linz",
+        "state": "Oberösterreich",
+        "postalCode": "4020",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|3da9ec63-e371-3b2b-962c-cf3e6137a19c"
+    }
+  }, {
+    "fullUrl": "urn:uuid:0920d9df-0b3b-389e-b1a7-b4bc53dc08ca",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "0920d9df-0b3b-389e-b1a7-b4bc53dc08ca",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 190
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 906
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 173
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "0920d9df-0b3b-389e-b1a7-b4bc53dc08ca"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Unfallkrankenhaus Linz",
+      "address": [ {
+        "city": "Linz",
+        "state": "Oberösterreich",
+        "postalCode": "4020",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|0920d9df-0b3b-389e-b1a7-b4bc53dc08ca"
+    }
+  }, {
+    "fullUrl": "urn:uuid:ffa061a8-d123-3761-b2b7-297b300ceadd",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "ffa061a8-d123-3761-b2b7-297b300ceadd",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 36
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 205
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 38
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "ffa061a8-d123-3761-b2b7-297b300ceadd"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. Bernhard Kriechbaumer",
+      "address": [ {
+        "line": [ "Larnhauserweg 2" ],
+        "city": "Leonding",
+        "state": "Oberösterreich",
+        "postalCode": "4060",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|ffa061a8-d123-3761-b2b7-297b300ceadd"
+    }
+  }, {
+    "fullUrl": "urn:uuid:514387cc-8e0e-3b66-9010-43bb28f9f5f7",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "514387cc-8e0e-3b66-9010-43bb28f9f5f7",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 19
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 95
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 18
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "514387cc-8e0e-3b66-9010-43bb28f9f5f7"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. Wolfgang Wurdinger",
+      "address": [ {
+        "line": [ "Winkelstraße 6" ],
+        "city": "Leonding",
+        "state": "Oberösterreich",
+        "postalCode": "4060",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|514387cc-8e0e-3b66-9010-43bb28f9f5f7"
+    }
+  }, {
+    "fullUrl": "urn:uuid:bac54c92-0e34-3090-b619-2c80c9a9eb8e",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "bac54c92-0e34-3090-b619-2c80c9a9eb8e",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 33
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "bac54c92-0e34-3090-b619-2c80c9a9eb8e"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. Ernst Richter",
+      "address": [ {
+        "line": [ "Holzheimer Straße 104" ],
+        "city": "Leonding",
+        "state": "Oberösterreich",
+        "postalCode": "4060",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|bac54c92-0e34-3090-b619-2c80c9a9eb8e"
+    }
+  }, {
+    "fullUrl": "urn:uuid:fc7453f8-7934-366a-8ca5-b68b30423e34",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "fc7453f8-7934-366a-8ca5-b68b30423e34",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 147
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 725
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 134
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "fc7453f8-7934-366a-8ca5-b68b30423e34"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Labor Dr. Leisch",
+      "address": [ {
+        "line": [ "Waltherstraße 5" ],
+        "city": "Linz",
+        "state": "Oberösterreich",
+        "postalCode": "4020",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|fc7453f8-7934-366a-8ca5-b68b30423e34"
+    }
+  }, {
+    "fullUrl": "urn:uuid:bb488013-ca2c-3b51-a1e5-00f0fa6a68cd",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "bb488013-ca2c-3b51-a1e5-00f0fa6a68cd",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 145
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 640
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 118
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "bb488013-ca2c-3b51-a1e5-00f0fa6a68cd"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Ambulatorium Kurhaus",
+      "address": [ {
+        "city": "Bad Schallerbach",
+        "state": "Oberösterreich",
+        "postalCode": "4701",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|bb488013-ca2c-3b51-a1e5-00f0fa6a68cd"
+    }
+  }, {
+    "fullUrl": "urn:uuid:0ea0962e-fe6c-3992-b621-9995dea9b6ca",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "0ea0962e-fe6c-3992-b621-9995dea9b6ca",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 50
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 111
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 20
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "0ea0962e-fe6c-3992-b621-9995dea9b6ca"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. Helmut Nimmerfall",
+      "telecom": [ {
+        "system": "phone",
+        "value": "+43 7242 605600"
+      } ],
+      "address": [ {
+        "line": [ "Albrechtstraße 24a" ],
+        "city": "Wels",
+        "state": "Oberösterreich",
+        "postalCode": "4600",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|0ea0962e-fe6c-3992-b621-9995dea9b6ca"
+    }
+  }, {
+    "fullUrl": "urn:uuid:29069302-dbc3-3d1e-b45c-4e4b4ee8531f",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "29069302-dbc3-3d1e-b45c-4e4b4ee8531f",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 61
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 226
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 37
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "29069302-dbc3-3d1e-b45c-4e4b4ee8531f"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Krankenhaus der Elisabethinen",
+      "address": [ {
+        "line": [ "Fadingerstraße 1" ],
+        "city": "Linz",
+        "state": "Oberösterreich",
+        "postalCode": "4020",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|29069302-dbc3-3d1e-b45c-4e4b4ee8531f"
+    }
+  }, {
+    "fullUrl": "urn:uuid:76150700-3b9f-3db2-8809-025590acf5cc",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "76150700-3b9f-3db2-8809-025590acf5cc",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 33
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "76150700-3b9f-3db2-8809-025590acf5cc"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. Wolfgang Wurdinger",
+      "address": [ {
+        "line": [ "Winkelstraße 6" ],
+        "city": "Leonding",
+        "state": "Oberösterreich",
+        "postalCode": "4060",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|76150700-3b9f-3db2-8809-025590acf5cc"
+    }
+  }, {
+    "fullUrl": "urn:uuid:a629da51-11bb-3ef5-a59b-a35274102a33",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "a629da51-11bb-3ef5-a59b-a35274102a33",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 204
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "a629da51-11bb-3ef5-a59b-a35274102a33"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Ambulatorium Kurhaus",
+      "address": [ {
+        "city": "Bad Schallerbach",
+        "state": "Oberösterreich",
+        "postalCode": "4701",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|a629da51-11bb-3ef5-a59b-a35274102a33"
+    }
+  }, {
+    "fullUrl": "urn:uuid:0ba64fec-4b03-3a83-8832-9c7480ae0edc",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "0ba64fec-4b03-3a83-8832-9c7480ae0edc",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 21
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 117
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 23
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "0ba64fec-4b03-3a83-8832-9c7480ae0edc"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. Hubert Niedermayr",
+      "telecom": [ {
+        "system": "phone",
+        "value": "+4376828707"
+      } ],
+      "address": [ {
+        "line": [ "Weidenstraße 10" ],
+        "city": "Gampern",
+        "state": "Oberösterreich",
+        "postalCode": "4851",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|0ba64fec-4b03-3a83-8832-9c7480ae0edc"
+    }
+  }, {
+    "fullUrl": "urn:uuid:b3b7aa1b-5ad6-3e03-b229-560d85320c59",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "b3b7aa1b-5ad6-3e03-b229-560d85320c59",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 37
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "b3b7aa1b-5ad6-3e03-b229-560d85320c59"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. Hubert Niedermayr",
+      "telecom": [ {
+        "system": "phone",
+        "value": "+4376828707"
+      } ],
+      "address": [ {
+        "line": [ "Weidenstraße 10" ],
+        "city": "Gampern",
+        "state": "Oberösterreich",
+        "postalCode": "4851",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|b3b7aa1b-5ad6-3e03-b229-560d85320c59"
+    }
+  }, {
+    "fullUrl": "urn:uuid:b9e81054-0215-34a9-aa8e-6d52e68b626a",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "b9e81054-0215-34a9-aa8e-6d52e68b626a",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 33
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "b9e81054-0215-34a9-aa8e-6d52e68b626a"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. Helmut Nimmerfall",
+      "telecom": [ {
+        "system": "phone",
+        "value": "+43 7242 605600"
+      } ],
+      "address": [ {
+        "line": [ "Albrechtstraße 24a" ],
+        "city": "Wels",
+        "state": "Oberösterreich",
+        "postalCode": "4600",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|b9e81054-0215-34a9-aa8e-6d52e68b626a"
+    }
+  }, {
+    "fullUrl": "urn:uuid:ee8c1774-2812-38de-9cb8-0dba551b5e5b",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "ee8c1774-2812-38de-9cb8-0dba551b5e5b",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 261
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 795
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 136
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "ee8c1774-2812-38de-9cb8-0dba551b5e5b"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Gesundheitszentrum Linzerheim",
+      "address": [ {
+        "line": [ "Grieskirchner Straße 6" ],
+        "city": "Bad Schallerbach",
+        "state": "Oberösterreich",
+        "postalCode": "4701",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|ee8c1774-2812-38de-9cb8-0dba551b5e5b"
+    }
+  }, {
+    "fullUrl": "urn:uuid:c40e4a15-a831-3f5a-b050-48cba9c2fda2",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "c40e4a15-a831-3f5a-b050-48cba9c2fda2",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 66
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "c40e4a15-a831-3f5a-b050-48cba9c2fda2"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Krankenhaus der Elisabethinen",
+      "address": [ {
+        "line": [ "Fadingerstraße 1" ],
+        "city": "Linz",
+        "state": "Oberösterreich",
+        "postalCode": "4020",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|c40e4a15-a831-3f5a-b050-48cba9c2fda2"
+    }
+  }, {
+    "fullUrl": "urn:uuid:4948eacd-6ed3-3c8f-9237-8461a0b2936f",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "4948eacd-6ed3-3c8f-9237-8461a0b2936f",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 34
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "4948eacd-6ed3-3c8f-9237-8461a0b2936f"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Diakonissen-Krankenhaus Linz",
+      "address": [ {
+        "city": "Linz",
+        "state": "Oberösterreich",
+        "postalCode": "4020",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|4948eacd-6ed3-3c8f-9237-8461a0b2936f"
+    }
+  }, {
+    "fullUrl": "urn:uuid:19aa5c70-9b77-3a37-8669-2e978667d607",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "19aa5c70-9b77-3a37-8669-2e978667d607",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 66
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "19aa5c70-9b77-3a37-8669-2e978667d607"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. Bernhard Kriechbaumer",
+      "address": [ {
+        "line": [ "Larnhauserweg 2" ],
+        "city": "Leonding",
+        "state": "Oberösterreich",
+        "postalCode": "4060",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|19aa5c70-9b77-3a37-8669-2e978667d607"
+    }
+  }, {
+    "fullUrl": "urn:uuid:83c98177-c8af-3439-8b35-66d653480583",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "83c98177-c8af-3439-8b35-66d653480583",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 169
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "83c98177-c8af-3439-8b35-66d653480583"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Kepler Universitätsklinikum - Neuromed Campus",
+      "address": [ {
+        "line": [ "Wagner-Jauregg-Weg 15" ],
+        "city": "Linz",
+        "state": "Oberösterreich",
+        "postalCode": "4020",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|83c98177-c8af-3439-8b35-66d653480583"
+    }
+  }, {
+    "fullUrl": "urn:uuid:61f65fe4-4775-327f-bb66-93e3bdeb1df8",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "61f65fe4-4775-327f-bb66-93e3bdeb1df8",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 36
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "61f65fe4-4775-327f-bb66-93e3bdeb1df8"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. med. Stefan Rebhandl",
+      "telecom": [ {
+        "system": "phone",
+        "value": "07288/6504"
+      } ],
+      "address": [ {
+        "line": [ "Dorfplatz 2" ],
+        "city": "Klaffer am Hochficht",
+        "state": "Oberösterreich",
+        "postalCode": "4163",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|61f65fe4-4775-327f-bb66-93e3bdeb1df8"
+    }
+  }, {
+    "fullUrl": "urn:uuid:0eb64a7b-d1a5-3110-bc60-834b316bfc98",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "0eb64a7b-d1a5-3110-bc60-834b316bfc98",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 18
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 101
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 18
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "0eb64a7b-d1a5-3110-bc60-834b316bfc98"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. Ernst Richter",
+      "address": [ {
+        "line": [ "Holzheimer Straße 104" ],
+        "city": "Leonding",
+        "state": "Oberösterreich",
+        "postalCode": "4060",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|0eb64a7b-d1a5-3110-bc60-834b316bfc98"
+    }
+  }, {
+    "fullUrl": "urn:uuid:9ec11652-05ec-39ba-b37c-8bb6d1ebbe11",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "9ec11652-05ec-39ba-b37c-8bb6d1ebbe11",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 233
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "9ec11652-05ec-39ba-b37c-8bb6d1ebbe11"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Labor Dr. Leisch",
+      "address": [ {
+        "line": [ "Waltherstraße 5" ],
+        "city": "Linz",
+        "state": "Oberösterreich",
+        "postalCode": "4020",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|9ec11652-05ec-39ba-b37c-8bb6d1ebbe11"
+    }
+  }, {
+    "fullUrl": "urn:uuid:8aca4564-ad58-3999-a5d6-29832d74d324",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "8aca4564-ad58-3999-a5d6-29832d74d324",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 170
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 548
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 97
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "8aca4564-ad58-3999-a5d6-29832d74d324"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Kepler Universitätsklinikum - Neuromed Campus",
+      "address": [ {
+        "line": [ "Wagner-Jauregg-Weg 15" ],
+        "city": "Linz",
+        "state": "Oberösterreich",
+        "postalCode": "4020",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|8aca4564-ad58-3999-a5d6-29832d74d324"
+    }
+  }, {
+    "fullUrl": "urn:uuid:ecea1635-2795-368e-8ce4-0bba26a1d2bd",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "ecea1635-2795-368e-8ce4-0bba26a1d2bd",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 14
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 98
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 18
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "ecea1635-2795-368e-8ce4-0bba26a1d2bd"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Diakonissen-Krankenhaus Linz",
+      "address": [ {
+        "city": "Linz",
+        "state": "Oberösterreich",
+        "postalCode": "4020",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|ecea1635-2795-368e-8ce4-0bba26a1d2bd"
+    }
+  }, {
+    "fullUrl": "urn:uuid:4115b411-58d2-38c1-a474-99a1cb3250b1",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "4115b411-58d2-38c1-a474-99a1cb3250b1",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 236
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "4115b411-58d2-38c1-a474-99a1cb3250b1"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Gesundheitszentrum Linzerheim",
+      "address": [ {
+        "line": [ "Grieskirchner Straße 6" ],
+        "city": "Bad Schallerbach",
+        "state": "Oberösterreich",
+        "postalCode": "4701",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|4115b411-58d2-38c1-a474-99a1cb3250b1"
+    }
+  }, {
+    "fullUrl": "urn:uuid:21d73470-8564-3947-a799-3cb00444018b",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "21d73470-8564-3947-a799-3cb00444018b",
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 32
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 114
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 20
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "21d73470-8564-3947-a799-3cb00444018b"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "Dr. med. Stefan Rebhandl",
+      "telecom": [ {
+        "system": "phone",
+        "value": "07288/6504"
+      } ],
+      "address": [ {
+        "line": [ "Dorfplatz 2" ],
+        "city": "Klaffer am Hochficht",
+        "state": "Oberösterreich",
+        "postalCode": "4163",
+        "country": "AT"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|21d73470-8564-3947-a799-3cb00444018b"
+    }
+  }, {
+    "fullUrl": "urn:uuid:bb1ad573-19b8-9cd8-68fb-0e6f684df992",
+    "resource": {
+      "resourceType": "Location",
+      "id": "bb1ad573-19b8-9cd8-68fb-0e6f684df992",
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "bb1ad573-19b8-9cd8-68fb-0e6f684df992"
+      } ],
+      "status": "active",
+      "description": "Patient's Home",
+      "mode": "kind",
+      "physicalType": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+          "code": "ho",
+          "display": "House"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|bb1ad573-19b8-9cd8-68fb-0e6f684df992"
+    }
+  } ]
+}
