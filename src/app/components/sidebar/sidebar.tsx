@@ -1,11 +1,28 @@
 "use client";
 
-import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react";
-import { useContext, createContext, useState } from "react";
+import { ChevronLast, ChevronFirst } from "lucide-react";
+import { ReactNode, useContext, createContext, useState } from "react";
 
-const SidebarContext = createContext();
+// Define the types for the context and props
+interface SidebarContextProps {
+  expanded: boolean;
+}
 
-export default function Sidebar({ children }) {
+interface SidebarProps {
+  children: ReactNode;
+}
+
+interface SidebarItemProps {
+  icon: ReactNode;
+  text: string;
+  alert?: boolean;
+}
+
+const SidebarContext = createContext<SidebarContextProps | undefined>(
+  undefined
+);
+
+export default function Sidebar({ children }: SidebarProps) {
   const [expanded, setExpanded] = useState(true);
 
   return (
@@ -86,8 +103,14 @@ export default function Sidebar({ children }) {
   );
 }
 
-export function SidebarItem({ icon, text, alert }) {
-  const { expanded } = useContext(SidebarContext);
+export function SidebarItem({ icon, text, alert }: SidebarItemProps) {
+  const context = useContext(SidebarContext);
+
+  if (!context) {
+    throw new Error("SidebarItem must be used within a Sidebar");
+  }
+
+  const { expanded } = context;
 
   return (
     <li
