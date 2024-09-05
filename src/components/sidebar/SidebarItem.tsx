@@ -1,7 +1,7 @@
-"use client"
+'use client';
 
 import React, { useContext } from 'react';
-import { SidebarContext } from './Sidebar'; // Adjust the path as necessary
+import { SidebarContext } from './Sidebar';
 
 interface SidebarItemProps {
   icon: React.ReactNode;
@@ -13,21 +13,28 @@ export default function SidebarItem({ icon, text, alert }: SidebarItemProps) {
   const context = useContext(SidebarContext);
 
   if (!context) {
-    // Handle the case where context is undefined
-    console.error("SidebarContext is not provided");
+    console.error('SidebarContext is not provided');
     return null;
   }
 
-  console.log("SidebarContext value:", context);
+  console.log('SidebarContext value:', context);
 
   const { expanded } = context;
 
   return (
-    <li className={`relative flex items-center px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group bg-orange-100 text-slate-800 h-12`}>
+    <li
+      className={`relative flex items-center px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group bg-orange-100 text-slate-800 h-12`}
+    >
       <div className="flex-shrink-0 w-6 h-6">{icon}</div>
-      <span className={`overflow-hidden transition-all ${expanded ? 'ml-3' : 'w-0'}`}>{text}</span>
+      <span
+        className={`overflow-hidden transition-all ${expanded ? 'ml-3' : 'w-0'}`}
+      >
+        {text}
+      </span>
       {alert && (
-        <div className={`absolute right-2 w-2 h-2 rounded bg-red-400 ${expanded ? '' : 'top-2'}`} />
+        <div
+          className={`absolute right-2 w-2 h-2 rounded bg-red-400 ${expanded ? '' : 'top-2'}`}
+        />
       )}
       {!expanded && (
         <div

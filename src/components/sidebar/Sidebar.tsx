@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { createContext, useState, ReactNode } from "react";
-import SidebarHeader from "./SidebarHeader";
-import SidebarFooter from "./SidebarFooter";
+import React, { createContext, useState, ReactNode } from 'react';
+import SidebarHeader from './SidebarHeader';
+import SidebarFooter from './SidebarFooter';
 
 interface SidebarContextProps {
   expanded: boolean;
@@ -12,7 +12,9 @@ interface SidebarProps {
   children: ReactNode;
 }
 
-const SidebarContext = createContext<SidebarContextProps | undefined>(undefined);
+const SidebarContext = createContext<SidebarContextProps | undefined>(
+  undefined,
+);
 
 export default function Sidebar({ children }: SidebarProps) {
   const [expanded, setExpanded] = useState(true);
@@ -47,8 +49,8 @@ export default function Sidebar({ children }: SidebarProps) {
           {expanded && (
             <div className="px-4">
               <h2 className="text-xl font-bold">Sections</h2>
-            </div>)
-          }
+            </div>
+          )}
           <ul className="flex-1 px-3">{children}</ul>
         </SidebarContext.Provider>
         <SidebarFooter expanded={expanded} />
