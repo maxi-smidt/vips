@@ -8,7 +8,8 @@ export default function Footer() {
           <h4 className="font-semibold text-base text-gray-700">
             Created by:
             <span className="ml-2">
-              Anja Schwab, Alexandra Denk, Marco Sarkady, Maximilian Smidt, Robin Berger, Selina Adlberger
+              Anja Schwab, Alexandra Denk, Marco Sarkady, Maximilian Smidt,
+              Robin Berger, Selina Adlberger
             </span>
           </h4>
         </div>
@@ -26,9 +27,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="text-left text-sm text-gray-600">
-          License: MIT
-        </div>
+        <div className="text-left text-sm text-gray-600">License: MIT</div>
       </div>
     </footer>
   );

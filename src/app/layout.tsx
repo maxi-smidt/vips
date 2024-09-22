@@ -9,12 +9,15 @@ export const metadata = {
   title: 'VIPS',
   description: 'Visualizer for International Patient Summary',
 };
+// access .env api
+const API_URL = process.env.FHIR_API;
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+console.log(API_URL);
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -25,9 +28,7 @@ export default function RootLayout({
             <VipsSideBar />
 
             {/* Content area */}
-            <main className="flex-1 p-6 overflow-y-auto">
-              {children}
-            </main>
+            <main className="flex-1 p-6 overflow-y-auto">{children}</main>
           </div>
 
           {/* Footer */}
