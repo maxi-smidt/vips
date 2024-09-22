@@ -1,3 +1,5 @@
+import React from 'react';
+import Sidebar from '@/components/sidebar/Sidebar';
 import { IoPersonSharp } from 'react-icons/io5';
 import {
   MdCoronavirus,
@@ -6,15 +8,19 @@ import {
 } from 'react-icons/md';
 import { GiMedicalDrip } from 'react-icons/gi';
 import { PiClockCounterClockwiseBold } from 'react-icons/pi';
-import Sidebar from '@/components/sidebar/Sidebar';
-import React from 'react';
 import SidebarItem from '@/components/sidebar/SidebarItem';
 
 export default function VipsSideBar() {
   return (
     <Sidebar>
-      <SidebarItem icon={<IoPersonSharp size={25} />} text="Patients" />
-      <SidebarItem icon={<MdMedicationLiquid size={25} />} text="Medications" />
+      <SidebarItem 
+        icon={<IoPersonSharp size={25} />} 
+        text="Patients" 
+      />
+      <SidebarItem
+        icon={<MdMedicationLiquid size={25} />}
+        text="Medications"
+      />
       <SidebarItem
         icon={<GiMedicalDrip size={25} />}
         text="Allergies & Intolerances"

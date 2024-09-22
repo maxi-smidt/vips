@@ -1,12 +1,11 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
 import React from 'react';
+import { Inter } from 'next/font/google';
 import VipsSideBar from '@/app/components/VipsSideBar';
-
+import './globals.css';
+import Footer from '@/app/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'VIPS',
   description: 'Visualizer for International Patient Summary',
 };
@@ -19,9 +18,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex">
-          <VipsSideBar />
-          {children}
+        <div className="flex flex-col min-h-screen">
+          {/* Main content area */}
+          <div className="flex flex-1">
+            {/* Sidebar */}
+            <VipsSideBar />
+
+            {/* Content area */}
+            <main className="flex-1 p-6 overflow-y-auto">
+              {children}
+            </main>
+          </div>
+
+          {/* Footer */}
+          <Footer />
         </div>
       </body>
     </html>

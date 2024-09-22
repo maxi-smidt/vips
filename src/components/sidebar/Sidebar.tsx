@@ -2,7 +2,6 @@
 
 import React, { createContext, useState, ReactNode } from 'react';
 import SidebarHeader from './SidebarHeader';
-import SidebarFooter from './SidebarFooter';
 
 interface SidebarContextProps {
   expanded: boolean;
@@ -20,8 +19,8 @@ export default function Sidebar({ children }: SidebarProps) {
   const [expanded, setExpanded] = useState(true);
 
   return (
-    <aside className="h-screen">
-      <nav className="h-full flex flex-col bg-white border-r shadow-sm space-y-4">
+    <aside className="flex flex-col bg-white border-r shadow-sm space-y-4">
+      <nav className="h-full flex flex-col">
         <SidebarHeader expanded={expanded} setExpanded={setExpanded} />
         <SidebarContext.Provider value={{ expanded }}>
           {expanded && (
@@ -53,7 +52,6 @@ export default function Sidebar({ children }: SidebarProps) {
           )}
           <ul className="flex-1 px-3">{children}</ul>
         </SidebarContext.Provider>
-        <SidebarFooter expanded={expanded} />
       </nav>
     </aside>
   );
