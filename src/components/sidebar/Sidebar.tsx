@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useState, ReactNode } from 'react';
-import SidebarHeader from './SidebarHeader';
+import { ChevronLast, ChevronFirst } from 'lucide-react';
 
 interface SidebarContextProps {
   expanded: boolean;
@@ -11,17 +11,24 @@ interface SidebarProps {
   children: ReactNode;
 }
 
-const SidebarContext = createContext<SidebarContextProps | undefined>(
-  undefined,
-);
+const SidebarContext = createContext<SidebarContextProps | undefined>(undefined);
 
 export default function Sidebar({ children }: SidebarProps) {
   const [expanded, setExpanded] = useState(true);
 
   return (
-    <aside className="flex flex-col bg-white border-r shadow-sm space-y-4">
+    <aside className="flex flex-col bg-gray-200 border-r shadow-sm space-y-4">
       <nav className="h-full flex flex-col">
-        <SidebarHeader expanded={expanded} setExpanded={setExpanded} />
+        {/* Sidebar toggle button */}
+        <div className="p-4 flex items-center h-16">
+          <button
+            onClick={() => setExpanded((curr) => !curr)}
+            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100 ml-auto"
+          >
+            {expanded ? <ChevronFirst /> : <ChevronLast />}
+          </button>
+        </div>
+
         <SidebarContext.Provider value={{ expanded }}>
           {expanded && (
             <div className="px-4 pb-2">
