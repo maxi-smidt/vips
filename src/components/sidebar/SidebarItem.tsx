@@ -17,8 +17,6 @@ export default function SidebarItem({ icon, text, alert }: SidebarItemProps) {
     return null;
   }
 
-  console.log('SidebarContext value:', context);
-
   const { expanded } = context;
 
   return (
