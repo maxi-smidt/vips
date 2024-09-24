@@ -4,7 +4,7 @@ import './globals.css';
 import Header from '@/app/components/Header';
 import Main from '@/app/components/Main';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
   title: 'VIPS',
@@ -23,10 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="flex flex-col h-screen">
-          <div className="sticky top-0">
-            <Header />
-          </div>
-          <Main>{children}</Main>
+          <div className="sticky top-0">{<Header />}</div>
+          {<Main>{children}</Main>}
         </div>
       </body>
     </html>
