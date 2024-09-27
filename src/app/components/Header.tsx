@@ -1,10 +1,10 @@
 import React from 'react';
 import { IoIosSearch } from 'react-icons/io';
-import { FaRegFilePdf } from 'react-icons/fa';
+import { FaRegFilePdf } from 'react-icons/fa6';
 
 export default function Header() {
   return (
-    <header className="bg-gray-300 shadow">
+    <header className="bg-stone-100">
       <div className="p-4 flex items-center justify-between h-16">
         <div className="flex items-center">
           <img
@@ -16,34 +16,29 @@ export default function Header() {
             VIPS
           </span>
         </div>
-        <div className="flex items-center mr-32">
-          <button
-            type="submit"
-            className="mr-12 p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
-          >
-            {/* TODO: style pdf icon button */}
-            <FaRegFilePdf />
-            <span className="sr-only">Search</span>
-          </button>
-          <div className="relative w-64">
-            {' '}
-            {/* TODO: Adjust margin right for search bar */}
-            <input
-              type="text"
-              id="simple-search"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              placeholder="Search keywords..."
-              required
-            />
+        <div className="flex items-center mr-3 gap-3">
+          <div>
+            <div className="relative">
+              <input
+                type="search"
+                className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Search keywords..."
+                required
+              />
+              <button
+                type="submit"
+                className="absolute top-0 end-0 p-2 h-full text-white bg-slate-500 rounded-e-lg border border-slate-500 hover:bg-slate-600"
+              >
+                <IoIosSearch className="text-xl" />
+              </button>
+            </div>
           </div>
+
           <button
             type="submit"
-            className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+            className="p-2 text-slate-500 rounded-lg hover:bg-stone-200"
           >
-            {/* TODO: adjust search icon size */}
-            {/* TODO: integrate search icon to text file? */}
-            <IoIosSearch className="w-4 h-4" />
-            <span className="sr-only">Search</span>
+            <FaRegFilePdf className="text-3xl" />
           </button>
         </div>
       </div>

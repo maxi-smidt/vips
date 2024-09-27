@@ -1,5 +1,6 @@
 import React, { ReactNode, Dispatch } from 'react';
 import { ChevronLast, ChevronFirst } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
 interface SidebarProps {
   children: ReactNode;
@@ -12,17 +13,23 @@ export default function Sidebar({
   expanded,
   setExpanded,
 }: SidebarProps) {
+  const onExpandClick = () => {
+    const newState = !expanded;
+    setExpanded(newState);
+    localStorage.setItem('expanded', newState.toString());
+  };
+
   return (
     <>
       <aside
-        className={`fixed top-16 left-0 h-[calc(100vh-4rem)] bg-gray-200 border-r shadow-sm transition-all duration-300 ${
+        className={`fixed top-16 left-0 h-[calc(100vh-4rem)] bg-stone-50 border-r shadow-sm transition-all duration-300 ${
           expanded ? 'w-64' : 'w-20'
         }`}
       >
         <nav className="h-full flex flex-col">
           <div className="p-4 flex items-center h-16">
             <button
-              onClick={() => setExpanded((curr) => !curr)}
+              onClick={onExpandClick}
               className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100 ml-auto"
             >
               {expanded ? <ChevronFirst /> : <ChevronLast />}
@@ -58,7 +65,18 @@ export default function Sidebar({
             </div>
           )}
 
-          <ul className={`flex-1 px-3 space-y-1`}>{children}</ul>
+          <ul className={`px-3 space-y-1`}>{children}</ul>
+
+          {expanded && (
+            <div className="absolute bottom-2 left-2">
+              <a
+                className="flex items-center gap-1 text-sm hover:text-blue-700 hover:underline"
+                href="https://github.com/maxi-smidt/vips"
+              >
+                Find us on <FaGithub />
+              </a>
+            </div>
+          )}
         </nav>
       </aside>
     </>

@@ -13,19 +13,16 @@ export default function SidebarItem({
 }: SidebarItemProps) {
   return (
     <li
-      className={`relative flex items-center px-3 font-medium rounded-md cursor-pointer transition-colors group bg-orange-100 text-slate-800 h-12`}
+      className={`bg-slate-200 flex items-center px-3 font-medium rounded-lg group h-12 ${expanded ? 'justify-start' : 'justify-center'}`}
     >
-      <div className="flex-shrink-0 w-6 h-6">{icon}</div>
-      <span
-        className={`overflow-hidden transition-all ${expanded ? 'ml-3' : 'w-0'}`}
-      >
-        {text}
-      </span>
+      <div className="flex justify-center">{icon}</div>
+
+      {expanded && (
+        <span className="overflow-hidden transition-all ml-3">{text}</span>
+      )}
 
       {!expanded && (
-        <div
-          className={`rounded-md p-2 bg-orange-100 text-sm invisible group-hover:visible`}
-        >
+        <div className="absolute left-full rounded-lg ml-2 p-2 bg-slate-300 text-sm invisible group-hover:visible group-hover:delay-300 whitespace-nowrap">
           {text}
         </div>
       )}
