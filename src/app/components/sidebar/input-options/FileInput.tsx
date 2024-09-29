@@ -5,26 +5,29 @@ import { FileUpload, FileUploadSelectEvent } from 'primereact/fileupload';
 import { convertXML } from 'simple-xml-to-json';
 
 export default function FileInput() {
-  const onUpload = (event: FileUploadSelectEvent) => {
-    const file = new File([event.files[0]], event.files[0].name);
-    let fileContent;
-    // Create a FileReader instance
-    const reader = new FileReader();
-    reader.onload = function (event) {
-      if (event.target) {
-        fileContent = event.target.result;
-        console.log('fileContent: ', fileContent);
-        if (
-          (file.type === 'application/xml' || file.name.endsWith('.xml')) &&
-          typeof fileContent === 'string'
-        ) {
-          console.log('converted file content: ', convertXML(fileContent));
-          fileContent = convertXML(fileContent);
-        }
-      }
-    };
+  const handleFileLoad = (event: ProgressEvent<FileReader>, file: File) => {
+    let fileContent = event.target?.result;
 
-    // Read the file as text
+    console.log('unparsed fileContent: ', fileContent);
+
+    // Check if it's XML and convert
+    if (
+      file &&
+      (file.type === 'application/xml' || file.name.endsWith('.xml')) &&
+      typeof fileContent === 'string'
+    ) {
+      fileContent = convertXML(fileContent);
+      console.log('parsed file content: ', fileContent);
+    }
+  };
+
+  const onUpload = (event: FileUploadSelectEvent) => {
+    const file = event.files[0];
+
+    const reader = new FileReader();
+    reader.onload = (loadEvent) => handleFileLoad(loadEvent, file);
+
+    // Read the file as text and trigger onload event
     reader.readAsText(file);
   };
 
