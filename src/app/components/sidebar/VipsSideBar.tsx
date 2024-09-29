@@ -13,14 +13,20 @@ import SidebarItem from '@/app/components/sidebar/SidebarItem';
 export interface VipsSideBarProps {
   expanded: boolean;
   setExpanded: Dispatch<React.SetStateAction<boolean>>;
+  setJsonContent;
 }
 
 export default function VipsSideBar({
   expanded,
   setExpanded,
+  setJsonContent,
 }: VipsSideBarProps) {
   return (
-    <Sidebar expanded={expanded} setExpanded={setExpanded}>
+    <Sidebar
+      expanded={expanded}
+      setExpanded={setExpanded}
+      setJsonContent={setJsonContent}
+    >
       <SidebarItem
         icon={<IoPersonSharp size={25} />}
         text="Patients"

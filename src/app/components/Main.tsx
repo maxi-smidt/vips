@@ -5,7 +5,7 @@ import VipsSideBar from '@/app/components/sidebar/VipsSideBar';
 
 export default function Main({ children }: { children: React.ReactNode }) {
   const [expanded, setExpanded] = useState(true);
-
+  const [content, setJsonContent] = useState('');
   useEffect(() => {
     const storedExpanded = localStorage.getItem('expanded');
     if (storedExpanded !== null) {
@@ -15,7 +15,11 @@ export default function Main({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="flex flex-1">
-      <VipsSideBar expanded={expanded} setExpanded={setExpanded} />
+      <VipsSideBar
+        expanded={expanded}
+        setExpanded={setExpanded}
+        setJsonContent={setJsonContent}
+      />
 
       <main
         className={`flex-1 p-4 transition-all duration-300 ${
@@ -23,6 +27,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
         }`}
       >
         {children}
+        {<div>{console.log(content)}</div>}
       </main>
     </div>
   );

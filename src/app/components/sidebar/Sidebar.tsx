@@ -12,16 +12,17 @@ interface SidebarProps {
   children: ReactNode;
   expanded: boolean;
   setExpanded: Dispatch<React.SetStateAction<boolean>>;
+  setJsonContent;
 }
 
 export default function Sidebar({
   children,
   expanded,
   setExpanded,
+  setJsonContent,
 }: SidebarProps) {
   const options = ['File', 'API', 'Text'];
   const [selectedOption, setSelectedOption] = useState(options[0]);
-
   const onExpandClick = () => {
     const newState = !expanded;
     setExpanded(newState);
@@ -29,9 +30,9 @@ export default function Sidebar({
   };
 
   const componentMap = {
-    [options[0]]: <FileInput />,
-    [options[1]]: <ApiInput />,
-    [options[2]]: <TextInput />,
+    [options[0]]: <FileInput setJsonContent={setJsonContent} />,
+    [options[1]]: <ApiInput setJsonContent={setJsonContent} />,
+    [options[2]]: <TextInput setJsonContent={setJsonContent} />,
   };
 
   return (

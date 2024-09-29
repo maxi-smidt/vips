@@ -3,7 +3,7 @@
 import { FileUpload, FileUploadSelectEvent } from 'primereact/fileupload';
 import { convertXML } from 'simple-xml-to-json';
 
-export default function FileInput() {
+export default function FileInput({ setJsonContent }) {
   const onUpload = (event: FileUploadSelectEvent) => {
     const file = new File([event.files[0]], event.files[0].name);
     let fileContent;
@@ -19,7 +19,7 @@ export default function FileInput() {
         ) {
           fileContent = convertXML(fileContent);
           console.log('fileContent json: ', fileContent);
-          // TODO: fileContent is a json object, this must be passed up (as property)
+          setJsonContent(fileContent);
         }
       }
     };
