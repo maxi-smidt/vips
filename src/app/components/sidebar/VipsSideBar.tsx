@@ -9,23 +9,24 @@ import {
 import { GiMedicalDrip } from 'react-icons/gi';
 import { PiClockCounterClockwiseBold } from 'react-icons/pi';
 import SidebarItem from '@/app/components/sidebar/SidebarItem';
+import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
 
 export interface VipsSideBarProps {
   expanded: boolean;
   setExpanded: Dispatch<React.SetStateAction<boolean>>;
-  setJsonContent;
+  setContent: Dispatch<React.SetStateAction<Bundle>>;
 }
 
 export default function VipsSideBar({
   expanded,
   setExpanded,
-  setJsonContent,
+  setContent,
 }: VipsSideBarProps) {
   return (
     <Sidebar
       expanded={expanded}
       setExpanded={setExpanded}
-      setJsonContent={setJsonContent}
+      setJsonContent={setContent}
     >
       <SidebarItem
         icon={<IoPersonSharp size={25} />}

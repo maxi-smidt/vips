@@ -7,19 +7,20 @@ import { Dropdown } from 'primereact/dropdown';
 import TextInput from './input-options/TextInput';
 import ApiInput from './input-options/ApiInput';
 import FileInput from './input-options/FileInput';
+import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
 
 interface SidebarProps {
   children: ReactNode;
   expanded: boolean;
   setExpanded: Dispatch<React.SetStateAction<boolean>>;
-  setJsonContent;
+  setContent: Dispatch<React.SetStateAction<Bundle>>;
 }
 
 export default function Sidebar({
   children,
   expanded,
   setExpanded,
-  setJsonContent,
+  setContent,
 }: SidebarProps) {
   const options = ['File', 'API', 'Text'];
   const [selectedOption, setSelectedOption] = useState(options[0]);
@@ -30,9 +31,9 @@ export default function Sidebar({
   };
 
   const componentMap = {
-    [options[0]]: <FileInput setJsonContent={setJsonContent} />,
-    [options[1]]: <ApiInput setJsonContent={setJsonContent} />,
-    [options[2]]: <TextInput setJsonContent={setJsonContent} />,
+    [options[0]]: <FileInput setContent={setContent} />,
+    [options[1]]: <ApiInput setContent={setContent} />,
+    [options[2]]: <TextInput setContent={setContent} />,
   };
 
   return (

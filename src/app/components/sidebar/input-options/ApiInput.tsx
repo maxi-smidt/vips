@@ -1,27 +1,17 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { Dispatch, useState } from 'react';
+import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
 
-export default function ApiInput({ setJsonContent }) {
+interface ApiInputProps {
+  setContent: Dispatch<React.SetStateAction<Bundle>>;
+}
+
+export default function ApiInput({ setContent }: ApiInputProps) {
   const [identifier, setIdentifier] = useState('');
   const [system, setSystem] = useState('');
   // TODO: Where do we want to fetch data from the server? This should probably not happen every time the system or identifier changes, which would be on every sign that gets typed in
-  const dummyJson = {
-    patient: {
-      id: '12345',
-      name: 'John Doe',
-      birthDate: '1980-01-01',
-      conditions: ['Diabetes', 'Hypertension'],
-    },
-    encounter: {
-      id: 'enc-12345',
-      reason: 'Routine checkup',
-      date: '2024-09-29',
-    },
-  };
-  useEffect(() => {
-    setJsonContent(dummyJson);
-  }, [setJsonContent]);
+
   return (
     <>
       <input

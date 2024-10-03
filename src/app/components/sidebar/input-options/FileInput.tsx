@@ -2,8 +2,14 @@
 
 import { FileUpload, FileUploadSelectEvent } from 'primereact/fileupload';
 import { convertXML } from 'simple-xml-to-json';
+import React, { Dispatch } from 'react';
+import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
 
-export default function FileInput({ setJsonContent }) {
+interface FileInputProps {
+  setContent: Dispatch<React.SetStateAction<Bundle>>;
+}
+
+export default function FileInput({ setContent }: FileInputProps) {
   const onUpload = (event: FileUploadSelectEvent) => {
     const file = new File([event.files[0]], event.files[0].name);
     let fileContent;
@@ -19,7 +25,7 @@ export default function FileInput({ setJsonContent }) {
         ) {
           fileContent = convertXML(fileContent);
           console.log('fileContent json: ', fileContent);
-          setJsonContent(fileContent);
+          setContent(fileContent);
         }
       }
     };
