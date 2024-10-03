@@ -1,0 +1,40 @@
+<Organization xmlns="http://hl7.org/fhir">
+    <id value="11"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2024-08-27T13:00:41.258+00:00"/>
+        <source value="#KsdpZFr1gxZcDtRD"/>
+    </meta>
+    <extension url="http://synthetichealth.github.io/synthea/utilization-encounters-extension">
+        <valueInteger value="299"/>
+    </extension>
+    <extension url="http://synthetichealth.github.io/synthea/utilization-procedures-extension">
+        <valueInteger value="0"/>
+    </extension>
+    <extension url="http://synthetichealth.github.io/synthea/utilization-labs-extension">
+        <valueInteger value="0"/>
+    </extension>
+    <extension url="http://synthetichealth.github.io/synthea/utilization-prescriptions-extension">
+        <valueInteger value="0"/>
+    </extension>
+    <identifier>
+        <system value="https://github.com/synthetichealth/synthea"/>
+        <value value="3da9ec63-e371-3b2b-962c-cf3e6137a19c"/>
+    </identifier>
+    <active value="true"/>
+    <type>
+        <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/organization-type"/>
+            <code value="prov"/>
+            <display value="Healthcare Provider"/>
+        </coding>
+        <text value="Healthcare Provider"/>
+    </type>
+    <name value="Unfallkrankenhaus Linz"/>
+    <address>
+        <city value="Linz"/>
+        <state value="Oberösterreich"/>
+        <postalCode value="4020"/>
+        <country value="AT"/>
+    </address>
+</Organization>

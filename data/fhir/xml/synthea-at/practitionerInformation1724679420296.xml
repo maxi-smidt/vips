@@ -1,0 +1,33 @@
+<Practitioner xmlns="http://hl7.org/fhir">
+    <id value="38"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2024-08-27T13:00:47.022+00:00"/>
+        <source value="#g4GiMB7aFN33Ufk7"/>
+    </meta>
+    <extension url="http://synthetichealth.github.io/synthea/utilization-encounters-extension">
+        <valueInteger value="299"/>
+    </extension>
+    <identifier>
+        <system value="http://hl7.org/fhir/sid/us-npi"/>
+        <value value="9999997593"/>
+    </identifier>
+    <active value="true"/>
+    <name>
+        <family value="Wolf938"/>
+        <given value="Cornelia505"/>
+        <prefix value="Dr."/>
+    </name>
+    <telecom>
+        <system value="email"/>
+        <value value="Cornelia505.Wolf938@example.com"/>
+        <use value="work"/>
+    </telecom>
+    <address>
+        <city value="Linz"/>
+        <state value="Oberösterreich"/>
+        <postalCode value="4020"/>
+        <country value="AT"/>
+    </address>
+    <gender value="female"/>
+</Practitioner>
