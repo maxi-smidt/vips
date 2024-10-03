@@ -14,7 +14,7 @@ import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
 export interface VipsSideBarProps {
   expanded: boolean;
   setExpanded: Dispatch<React.SetStateAction<boolean>>;
-  setContent: Dispatch<React.SetStateAction<Bundle>>;
+  setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
 }
 
 export default function VipsSideBar({
@@ -26,11 +26,11 @@ export default function VipsSideBar({
     <Sidebar
       expanded={expanded}
       setExpanded={setExpanded}
-      setJsonContent={setContent}
+      setContent={setContent}
     >
       <SidebarItem
         icon={<IoPersonSharp size={25} />}
-        text="Patients"
+        text="Patient"
         expanded={expanded}
       />
       <SidebarItem

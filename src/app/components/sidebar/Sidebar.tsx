@@ -13,7 +13,7 @@ interface SidebarProps {
   children: ReactNode;
   expanded: boolean;
   setExpanded: Dispatch<React.SetStateAction<boolean>>;
-  setContent: Dispatch<React.SetStateAction<Bundle>>;
+  setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
 }
 
 export default function Sidebar({

@@ -6,7 +6,7 @@ import React, { Dispatch } from 'react';
 import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
 
 interface FileInputProps {
-  setContent: Dispatch<React.SetStateAction<Bundle>>;
+  setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
 }
 
 export default function FileInput({ setContent }: FileInputProps) {
@@ -18,14 +18,16 @@ export default function FileInput({ setContent }: FileInputProps) {
     reader.onload = function (event) {
       if (event.target) {
         fileContent = event.target.result;
-        console.log('fileContent: ', fileContent);
-        if (
-          (file.type === 'application/xml' || file.name.endsWith('.xml')) &&
+        console.log(file.name);
+        console.log(file.type);
+        if (file.name.endsWith('.xml') && typeof fileContent === 'string') {
+          fileContent = convertXML(fileContent);
+          setContent(fileContent);
+        } else if (
+          file.name.endsWith('.json') &&
           typeof fileContent === 'string'
         ) {
-          fileContent = convertXML(fileContent);
-          console.log('fileContent json: ', fileContent);
-          setContent(fileContent);
+          setContent(JSON.parse(fileContent));
         }
       }
     };

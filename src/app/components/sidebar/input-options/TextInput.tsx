@@ -5,7 +5,7 @@ import { convertXML } from 'simple-xml-to-json';
 import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
 
 interface TextInputProps {
-  setContent: Dispatch<React.SetStateAction<Bundle>>;
+  setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
 }
 
 export default function TextInput({ setContent }: TextInputProps) {
@@ -23,7 +23,6 @@ export default function TextInput({ setContent }: TextInputProps) {
         // If XML parsing fails, try parsing as JSON
         parsedContent = JSON.parse(input);
         setContent(parsedContent);
-        console.log('Parsed as JSON:', parsedContent);
       } catch (jsonError) {
         console.error('Parsing failed for both XML and JSON:', jsonError);
       }

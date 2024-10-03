@@ -4,7 +4,7 @@ import React, { Dispatch, useState } from 'react';
 import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
 
 interface ApiInputProps {
-  setContent: Dispatch<React.SetStateAction<Bundle>>;
+  setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
 }
 
 export default function ApiInput({ setContent }: ApiInputProps) {
