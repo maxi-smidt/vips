@@ -24,17 +24,38 @@
     "sourceType": "module"
   },
   "rules": {
-    "react/react-in-jsx-scope": "off",  // Next.js does not require importing React in JSX files
+    "react/react-in-jsx-scope": "off",
+    // Next.js does not require importing React in JSX files
+    "react/react-in-tsx-scope": "off",
+    "node/no-missing-import": "off", // Disable the node/no-missing-import rule
     "node/no-unsupported-features/es-syntax": [
       "error",
       {
-        "ignores": ["modules"]
+        "ignores": [
+          "modules"
+        ]
       }
     ],
-    "no-console": "warn",  // Warn on console.log for production cleanliness
-    "prettier/prettier": ["error", { "singleQuote": true, "semi": true }]  // Prettier-specific rules
+    "no-console": "warn",
+    // Warn on console.log for production cleanliness
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": true
+      }
+    ]
+    // Prettier-specific rules
   },
   "settings": {
+    "node": {
+      "tryExtensions": [
+        ".js",
+        ".jsx",
+        ".ts",
+        ".tsx"
+      ]
+    },
     "react": {
       "version": "detect"
     }
