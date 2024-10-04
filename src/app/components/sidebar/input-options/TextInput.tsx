@@ -2,7 +2,7 @@
 
 import React, { Dispatch, useState } from 'react';
 import { convertXML } from 'simple-xml-to-json';
-import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
 interface TextInputProps {
   setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;

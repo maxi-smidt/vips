@@ -1,12 +1,13 @@
 'use client';
 
 import React, { Dispatch, useState } from 'react';
-import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
 interface ApiInputProps {
   setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
 }
 
+// eslint-disable-next-line no-unused-vars
 export default function ApiInput({ setContent }: ApiInputProps) {
   const [identifier, setIdentifier] = useState('');
   const [system, setSystem] = useState('');
