@@ -44,9 +44,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
       />
 
       <main
-        className={`flex-1 p-4 transition-all duration-300 ${
-          expanded ? 'ml-64' : 'ml-16'
-        }`}
+        className={`flex-1 p-4 transition-all duration-300 ${expanded && 'ml-[175px]'}`}
       >
         {children}
       </main>
