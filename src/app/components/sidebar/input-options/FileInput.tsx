@@ -3,7 +3,7 @@
 import { FileUpload, FileUploadSelectEvent } from 'primereact/fileupload';
 import { convertXML } from 'simple-xml-to-json';
 import React, { Dispatch } from 'react';
-import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
 interface FileInputProps {
   setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;

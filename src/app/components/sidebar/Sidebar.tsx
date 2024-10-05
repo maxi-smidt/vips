@@ -7,7 +7,7 @@ import { Dropdown } from 'primereact/dropdown';
 import TextInput from './input-options/TextInput';
 import ApiInput from './input-options/ApiInput';
 import FileInput from './input-options/FileInput';
-import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
 interface SidebarProps {
   children: ReactNode;

@@ -1,16 +1,19 @@
 import React from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { FaRegFilePdf } from 'react-icons/fa6';
+import Image from 'next/image';
 
 export default function Header() {
   return (
     <header className="bg-stone-100">
       <div className="p-4 flex items-center justify-between h-16">
         <div className="flex items-center">
-          <img
-            src="https://hapifhir.io/hapi-fhir/images/logos/raccoon-forwards.png"
+          <Image
+            src="/raccoon-forwards.png"
             alt="HAPI FHIR Logo"
-            className="w-12 h-12"
+            className="h-12 w-12"
+            width={266}
+            height={293}
           />
           <span className="ml-4 text-2xl font-semibold text-gray-800">
             VIPS

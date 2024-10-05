@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import VipsSideBar from '@/app/components/sidebar/VipsSideBar';
-import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
-import { BundleUtils, ResourceUtils } from '@smile-cdr/fhirts';
-import { Patient } from '@smile-cdr/fhirts/src/FHIR-R4/classes/patient';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
+import { BundleUtils } from '@smile-cdr/fhirts';
+import { Patient } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/patient';
 
 export default function Main({ children }: { children: React.ReactNode }) {
   const [expanded, setExpanded] = useState(true);

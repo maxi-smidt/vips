@@ -9,7 +9,7 @@ import {
 import { GiMedicalDrip } from 'react-icons/gi';
 import { PiClockCounterClockwiseBold } from 'react-icons/pi';
 import SidebarItem from '@/app/components/sidebar/SidebarItem';
-import { Bundle } from '@smile-cdr/fhirts/src/FHIR-R4/classes/bundle';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
 export interface VipsSideBarProps {
   expanded: boolean;
