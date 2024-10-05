@@ -5,6 +5,7 @@ import VipsSideBar from '@/app/components/sidebar/VipsSideBar';
 import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 import { BundleUtils } from '@smile-cdr/fhirts';
 import { Patient } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/patient';
+import IPSViewer from './sections/IPSViewer';
 
 export default function Main({ children }: { children: React.ReactNode }) {
   const [expanded, setExpanded] = useState(true);
@@ -46,6 +47,11 @@ export default function Main({ children }: { children: React.ReactNode }) {
       <main
         className={`flex-1 p-4 transition-all duration-300 ${expanded && 'ml-[175px]'}`}
       >
+        {content ? (
+          <IPSViewer bundle={content} /> // Pass Bundle to IPSViewer
+        ) : (
+          <p>No content available</p>
+        )}
         {children}
       </main>
     </div>
