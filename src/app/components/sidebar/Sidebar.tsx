@@ -1,29 +1,22 @@
 'use client';
 
-import React, { useState, ReactNode, Dispatch } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { ChevronLast, ChevronFirst } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { Dropdown } from 'primereact/dropdown';
 import TextInput from './input-options/TextInput';
 import ApiInput from './input-options/ApiInput';
 import FileInput from './input-options/FileInput';
-import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
+import { useData } from '@/app/components/DataContext';
 
 interface SidebarProps {
   children: ReactNode;
-  expanded: boolean;
-  setExpanded: Dispatch<React.SetStateAction<boolean>>;
-  setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
 }
 
-export default function Sidebar({
-  children,
-  expanded,
-  setExpanded,
-  setContent,
-}: SidebarProps) {
+export default function Sidebar({ children }: SidebarProps) {
   const options = ['File', 'API', 'Text'];
   const [selectedOption, setSelectedOption] = useState(options[0]);
+  const { expanded, setExpanded } = useData();
   const onExpandClick = () => {
     const newState = !expanded;
     setExpanded(newState);
@@ -31,9 +24,9 @@ export default function Sidebar({
   };
 
   const componentMap = {
-    [options[0]]: <FileInput setContent={setContent} />,
-    [options[1]]: <ApiInput setContent={setContent} />,
-    [options[2]]: <TextInput setContent={setContent} />,
+    [options[0]]: <FileInput />,
+    [options[1]]: <ApiInput />,
+    [options[2]]: <TextInput />,
   };
 
   return (

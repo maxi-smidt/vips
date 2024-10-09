@@ -2,37 +2,32 @@
 
 import { FileUpload, FileUploadSelectEvent } from 'primereact/fileupload';
 import { convertXML } from 'simple-xml-to-json';
-import React, { Dispatch } from 'react';
-import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
+import React from 'react';
+import { useData } from '@/app/components/DataContext';
 
-interface FileInputProps {
-  setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
-}
+export default function FileInput() {
+  const { setBundle } = useData();
 
-export default function FileInput({ setContent }: FileInputProps) {
   const onUpload = (event: FileUploadSelectEvent) => {
     const file = new File([event.files[0]], event.files[0].name);
     let fileContent;
-    // Create a FileReader instance
     const reader = new FileReader();
     reader.onload = function (event) {
       if (event.target) {
         fileContent = event.target.result;
-        console.log(file.name);
-        console.log(file.type);
         if (file.name.endsWith('.xml') && typeof fileContent === 'string') {
           fileContent = convertXML(fileContent);
-          setContent(fileContent);
+          setBundle(fileContent);
         } else if (
           file.name.endsWith('.json') &&
           typeof fileContent === 'string'
         ) {
-          setContent(JSON.parse(fileContent));
+          setBundle(JSON.parse(fileContent));
         }
       }
     };
-    // Read the file as text and trigger onload method
-    reader.readAsText(file);
+
+    reader.readAsText(file); // reads the file and triggers onUpload method
   };
   return (
     <FileUpload

@@ -9,13 +9,16 @@
     "plugin:react/recommended",
     "plugin:node/recommended",
     "next/core-web-vitals",
-    "prettier"
+    "prettier",
+    "plugin:@typescript-eslint/recommended"
   ],
   "plugins": [
     "react",
     "node",
-    "prettier"
+    "prettier",
+    "@typescript-eslint"
   ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -25,8 +28,7 @@
   },
   "rules": {
     "react/react-in-jsx-scope": "off",
-    // Next.js does not require importing React in JSX files
-    "react/react-in-tsx-scope": "off",
+    "react/react-in-tsx-scope": "off", // Next.js does not require importing React in JSX files
     "node/no-missing-import": "off", // Disable the node/no-missing-import rule
     "node/no-unsupported-features/es-syntax": [
       "error",
@@ -44,8 +46,13 @@
         "singleQuote": true,
         "semi": true
       }
-    ]
-    // Prettier-specific rules
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }]
   },
   "settings": {
     "node": {
