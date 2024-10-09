@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 // access .env api
 // const API_URL = process.env.FHIR_API;
 
-// eslint-disable-next-line no-unused-vars
 export default function ApiInput() {
   const [identifier, setIdentifier] = useState('');
   const [system, setSystem] = useState('');
