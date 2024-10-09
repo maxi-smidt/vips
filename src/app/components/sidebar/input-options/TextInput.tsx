@@ -14,7 +14,7 @@ export default function TextInput() {
       // parsing XML
       parsedContent = convertXML(input);
       setBundle(parsedContent);
-    } catch (error) {
+    } catch (_) {
       try {
         // XML parsing failed -> try parsing as JSON
         parsedContent = JSON.parse(input);
