@@ -7,6 +7,9 @@ interface ApiInputProps {
   setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
 }
 
+// access .env api
+// const API_URL = process.env.FHIR_API;
+
 // eslint-disable-next-line no-unused-vars
 export default function ApiInput({ setContent }: ApiInputProps) {
   const [identifier, setIdentifier] = useState('');
