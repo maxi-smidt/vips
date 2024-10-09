@@ -1,54 +1,15 @@
+'use client';
+
+import IPSViewer from '@/app/components/sections/IPSViewer';
+import React from 'react';
+import { useData } from '@/app/components/DataContext';
+
 export default function Home() {
-  return (
-    <main className="flex-1 p-6 ml-16">
-      <h1 className="text-2xl">Welcome to the Page</h1>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-      <p>Your content goes here.</p>
-    </main>
-  );
+  const { bundle } = useData();
+
+  if (!bundle) {
+    return <p>No content available</p>; // TODO change to animation for example
+  }
+
+  return <IPSViewer bundle={bundle} />;
 }

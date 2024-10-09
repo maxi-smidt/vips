@@ -1,28 +1,24 @@
 'use client';
 
-import React, { Dispatch, useState } from 'react';
+import React, { useState } from 'react';
 import { convertXML } from 'simple-xml-to-json';
-import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
+import { useData } from '@/app/components/DataContext';
 
-interface TextInputProps {
-  setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
-}
-
-export default function TextInput({ setContent }: TextInputProps) {
+export default function TextInput() {
+  const { setBundle } = useData();
   const [input, setInput] = useState('');
 
   const handleParse = () => {
     let parsedContent;
     try {
-      // Try parsing as XML first
+      // parsing XML
       parsedContent = convertXML(input);
-      setContent(parsedContent);
+      setBundle(parsedContent);
     } catch (error) {
-      console.error('Parsing failed for XML:', error);
       try {
-        // If XML parsing fails, try parsing as JSON
+        // XML parsing failed -> try parsing as JSON
         parsedContent = JSON.parse(input);
-        setContent(parsedContent);
+        setBundle(parsedContent);
       } catch (jsonError) {
         console.error('Parsing failed for both XML and JSON:', jsonError);
       }

@@ -1,16 +1,14 @@
 import React from 'react';
+import { useData } from '@/app/components/DataContext';
 
 interface SidebarItemProps {
   icon: React.ReactNode;
   text: string;
-  expanded: boolean;
 }
 
-export default function SidebarItem({
-  icon,
-  text,
-  expanded,
-}: SidebarItemProps) {
+export default function SidebarItem({ icon, text }: SidebarItemProps) {
+  const { expanded } = useData();
+
   return (
     <li
       className={`bg-slate-200 flex items-center px-3 font-medium rounded-lg group h-12 ${expanded ? 'justify-start' : 'justify-center'}`}

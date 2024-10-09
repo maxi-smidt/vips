@@ -1,17 +1,12 @@
 'use client';
 
-import React, { Dispatch, useState } from 'react';
-import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
-
-interface ApiInputProps {
-  setContent: Dispatch<React.SetStateAction<Bundle | undefined>>;
-}
+import React, { useState } from 'react';
 
 // access .env api
 // const API_URL = process.env.FHIR_API;
 
 // eslint-disable-next-line no-unused-vars
-export default function ApiInput({ setContent }: ApiInputProps) {
+export default function ApiInput() {
   const [identifier, setIdentifier] = useState('');
   const [system, setSystem] = useState('');
   // TODO: Where do we want to fetch data from the server? This should probably not happen every time the system or identifier changes, which would be on every sign that gets typed in

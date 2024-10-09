@@ -1,13 +1,14 @@
-// PatientSection.tsx
 import React from 'react';
 import { Patient } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/patient';
-interface PatientSectionProps {
-  patient: Patient;
-}
+import { SectionProps } from '@/app/components/sections/types/SectionProps';
+import { ResourceType } from '@/app/components/sections/types/ResourceType';
+import { extractResource } from '@/app/utils/ResourceExtractor';
 
-const PatientSection: React.FC<PatientSectionProps> = ({ patient }) => {
+export default function PatientSection({ bundle }: SectionProps) {
+  const patient: Patient = extractResource(bundle, ResourceType.PATIENT);
+
   return (
-    <div>
+    <>
       <p>
         <strong>Name:</strong> {patient.name?.[0]?.family}
       </p>
@@ -17,8 +18,6 @@ const PatientSection: React.FC<PatientSectionProps> = ({ patient }) => {
       <p>
         <strong>Gender:</strong> {patient.gender}
       </p>
-    </div>
+    </>
   );
-};
-
-export default PatientSection;
+}
