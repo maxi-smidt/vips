@@ -7,7 +7,8 @@ import { Dropdown } from 'primereact/dropdown';
 import TextInput from './input-options/TextInput';
 import ApiInput from './input-options/ApiInput';
 import FileInput from './input-options/FileInput';
-import { useData } from '@/app/components/DataContext';
+import { useData } from '@/app/components/provider/DataProvider';
+import { Button } from 'primereact/button';
 
 interface SidebarProps {
   children: ReactNode;
@@ -37,12 +38,15 @@ export default function Sidebar({ children }: SidebarProps) {
     >
       <nav className="h-full flex flex-col">
         <div className="p-4 flex items-center h-16">
-          <button
+          <Button
+            className="p-1.5 ml-auto"
+            severity="secondary"
+            rounded
+            text
             onClick={onExpandClick}
-            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100 ml-auto"
           >
             {expanded ? <ChevronFirst /> : <ChevronLast />}
-          </button>
+          </Button>
         </div>
 
         {expanded && (
@@ -58,10 +62,9 @@ export default function Sidebar({ children }: SidebarProps) {
                 placeholder={'Select an option'}
               />
             </div>
-            <div className="my-2">{componentMap[selectedOption]}</div>
-            <button className="w-full py-2 bg-gray-200 hover:bg-gray-300 rounded">
-              Load IPS
-            </button>
+            <div className="flex flex-col gap-2 my-2">
+              {componentMap[selectedOption]}
+            </div>
           </div>
         )}
 

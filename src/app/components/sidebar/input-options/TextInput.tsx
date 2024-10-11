@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { convertXML } from 'simple-xml-to-json';
-import { useData } from '@/app/components/DataContext';
+import { useData } from '@/app/components/provider/DataProvider';
 
 export default function TextInput() {
+  // TODO needs a major refactoring
   const { setBundle } = useData();
   const [input, setInput] = useState('');
 
@@ -12,7 +12,7 @@ export default function TextInput() {
     let parsedContent;
     try {
       // parsing XML
-      parsedContent = convertXML(input);
+      // parsedContent = convertXML(input);
       setBundle(parsedContent);
     } catch (_) {
       try {

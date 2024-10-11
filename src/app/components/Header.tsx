@@ -2,6 +2,10 @@ import React from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { FaRegFilePdf } from 'react-icons/fa6';
 import Image from 'next/image';
+import { InputIcon } from 'primereact/inputicon';
+import { InputText } from 'primereact/inputtext';
+import { IconField } from 'primereact/iconfield';
+import { Button } from 'primereact/button';
 
 export default function Header() {
   return (
@@ -22,27 +26,18 @@ export default function Header() {
         <div className="flex items-center mr-3 gap-3">
           <div>
             <div className="relative">
-              <input
-                type="search"
-                className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Search keywords..."
-                required
-              />
-              <button
-                type="submit"
-                className="absolute top-0 end-0 p-2 h-full text-white bg-slate-500 rounded-e-lg border border-slate-500 hover:bg-slate-600"
-              >
-                <IoIosSearch className="text-xl" />
-              </button>
+              <IconField iconPosition="left">
+                <InputIcon>
+                  <IoIosSearch />
+                </InputIcon>
+                <InputText placeholder="Search" />
+              </IconField>
             </div>
           </div>
 
-          <button
-            type="submit"
-            className="p-2 text-slate-500 rounded-lg hover:bg-stone-200"
-          >
+          <Button className="p-1.5 ml-auto" severity="secondary" text>
             <FaRegFilePdf className="text-3xl" />
-          </button>
+          </Button>
         </div>
       </div>
     </header>
