@@ -1,9 +1,12 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
-import './globals.css';
 import Header from '@/app/components/Header';
 import Main from '@/app/components/Main';
-import DataProvider from '@/app/components/DataContext';
+import DataProvider from '@/app/components/provider/DataProvider';
+import { ToastProvider } from '@/app/components/provider/ToastProvider';
+import { PrimeReactProvider } from 'primereact/api';
+
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
@@ -20,12 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex flex-col h-screen">
-          <DataProvider>
-            <div className="fixed top-0 w-full shadow-md">{<Header />}</div>
-            <div className="mt-10">{<Main>{children}</Main>}</div>
-          </DataProvider>
-        </div>
+        <PrimeReactProvider>
+          <div className="flex flex-col h-screen">
+            <ToastProvider>
+              <DataProvider>
+                <div className="fixed top-0 w-full shadow-md">{<Header />}</div>
+                <div className="mt-10">{<Main>{children}</Main>}</div>
+              </DataProvider>
+            </ToastProvider>
+          </div>
+        </PrimeReactProvider>
       </body>
     </html>
   );

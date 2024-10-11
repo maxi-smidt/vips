@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import VipsSideBar from '@/app/components/sidebar/VipsSideBar';
-import { useData } from '@/app/components/DataContext';
+import { useData } from '@/app/components/provider/DataProvider';
 
 export default function Main({ children }: { children: React.ReactNode }) {
   const { expanded, setExpanded } = useData();

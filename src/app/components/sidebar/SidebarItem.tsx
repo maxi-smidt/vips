@@ -1,5 +1,5 @@
 import React from 'react';
-import { useData } from '@/app/components/DataContext';
+import { useData } from '@/app/components/provider/DataProvider';
 
 interface SidebarItemProps {
   icon: React.ReactNode;
