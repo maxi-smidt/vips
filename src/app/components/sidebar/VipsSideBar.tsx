@@ -31,6 +31,22 @@ export default function VipsSideBar() {
         icon={<MdFormatListBulleted size={25} />}
         text="Plan of Treatment"
       />
+      <SidebarItem
+        icon={<MdFormatListBulleted size={25} />}
+        text="Plan of Treatment"
+      />
+      <SidebarItem
+        icon={<MdFormatListBulleted size={25} />}
+        text="Plan of Treatment"
+      />
+      <SidebarItem
+        icon={<MdFormatListBulleted size={25} />}
+        text="Plan of Treatment"
+      />
+      <SidebarItem
+        icon={<MdFormatListBulleted size={25} />}
+        text="Plan of Treatment"
+      />
     </Sidebar>
   );
 }

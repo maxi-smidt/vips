@@ -36,7 +36,7 @@ export default function Sidebar({ children }: SidebarProps) {
         expanded ? 'w-64' : 'w-20'
       }`}
     >
-      <nav className="h-full flex flex-col">
+      <nav className="h-full flex flex-col overflow-y-auto">
         <div className="p-4 flex items-center h-16">
           <Button
             className="p-1.5 ml-auto"
@@ -77,7 +77,7 @@ export default function Sidebar({ children }: SidebarProps) {
         <ul className={`px-3 space-y-1`}>{children}</ul>
 
         {expanded && (
-          <div className="absolute bottom-2 left-2">
+          <div className="flex justify-center mb-1">
             <a
               className="flex items-center gap-1 text-sm hover:text-blue-700 hover:underline"
               href="https://github.com/maxi-smidt/vips"
