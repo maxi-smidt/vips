@@ -1,32 +1,37 @@
 'use client';
 
 import React, { useState } from 'react';
+import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext';
 
-// access .env api
+// access .env api -> or better expose variable in next config
 // const API_URL = process.env.FHIR_API;
+// TODO: Where do we want to fetch data from the server? This should probably not happen
+//  every time the system or identifier changes, which would be on every sign that gets typed in
 
 export default function ApiInput() {
-  const [identifier, setIdentifier] = useState('');
-  const [system, setSystem] = useState('');
-  // TODO: Where do we want to fetch data from the server? This should probably not happen every time the system or identifier changes, which would be on every sign that gets typed in
+  const [identifier, setIdentifier] = useState<string>('');
+  const [system, setSystem] = useState<string>('');
 
   return (
     <>
-      <input
+      <InputText
         value={system}
-        placeholder={'Enter system value ...'}
         onChange={(e) => setSystem(e.target.value)}
-        className={
-          'h-8 border-2 border-gray-500 rounded-md p-2 my-1 w-full resize-none'
-        }
+        placeholder="Enter system value ..."
       />
-      <input
+
+      <InputText
         value={identifier}
-        placeholder={'Enter identifier ...'}
         onChange={(e) => setIdentifier(e.target.value)}
-        className={
-          'h-8 border-2 border-gray-500 rounded-md p-2 my-1 w-full resize-none'
-        }
+        placeholder="Enter identifier ..."
+      />
+
+      <Button
+        label="Load IPS"
+        severity="secondary"
+        onClick={() => {}}
+        disabled={!identifier || !system}
       />
     </>
   );
