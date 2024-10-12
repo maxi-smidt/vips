@@ -1,8 +1,8 @@
 'use client';
 
-import IPSViewer from '@/app/components/sections/IPSViewer';
+import IPSViewer from '@/app/components/IPSViewer';
 import React from 'react';
-import { useData } from '@/app/components/provider/DataProvider';
+import { useData } from '@/app/hooks/useData';
 
 export default function Home() {
   const { bundle } = useData();

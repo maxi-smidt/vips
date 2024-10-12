@@ -2,10 +2,10 @@
 
 import { FileUpload, FileUploadSelectEvent } from 'primereact/fileupload';
 import React, { useRef, useState } from 'react';
-import { useData } from '@/app/components/provider/DataProvider';
 import { Fhir } from 'fhir';
-import { useToast } from '@/app/components/provider/ToastProvider';
 import { Button } from 'primereact/button';
+import { useData } from '@/app/hooks/useData';
+import { useToast } from '@/app/hooks/useToast';
 
 export default function FileInput() {
   const { setBundle } = useData();

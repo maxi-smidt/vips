@@ -6,7 +6,6 @@ import React, {
   ReactNode,
   Dispatch,
   SetStateAction,
-  useContext,
 } from 'react';
 import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
@@ -17,7 +16,7 @@ interface DataContextType {
   setExpanded: Dispatch<SetStateAction<boolean>>;
 }
 
-const DataContext = createContext<DataContextType>({
+export const DataContext = createContext<DataContextType>({
   bundle: undefined,
   setBundle: () => {},
   expanded: true,
@@ -34,11 +33,3 @@ export default function DataProvider({ children }: { children: ReactNode }) {
     </DataContext.Provider>
   );
 }
-
-export const useData = () => {
-  const context = useContext(DataContext);
-  if (!context) {
-    throw new Error('useData must be used within a DataProvider');
-  }
-  return context;
-};
