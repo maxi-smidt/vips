@@ -7,8 +7,8 @@ import { Dropdown } from 'primereact/dropdown';
 import TextInput from './input-options/TextInput';
 import ApiInput from './input-options/ApiInput';
 import FileInput from './input-options/FileInput';
-import { useData } from '@/app/components/provider/DataProvider';
 import { Button } from 'primereact/button';
+import { useData } from '@/app/hooks/useData';
 
 interface SidebarProps {
   children: ReactNode;

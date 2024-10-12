@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, ReactNode, useContext, useRef } from 'react';
+import { createContext, ReactNode, useRef } from 'react';
 import { Toast, ToastMessage } from 'primereact/toast';
 
 interface ToastContextType {
@@ -10,7 +10,7 @@ interface ToastContextType {
   showWarning: (message: string) => void;
 }
 
-const ToastContext = createContext<ToastContextType>({
+export const ToastContext = createContext<ToastContextType>({
   showError: () => {},
   showInfo: () => {},
   showSuccess: () => {},
@@ -47,12 +47,4 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       {children}
     </ToastContext.Provider>
   );
-}
-
-export function useToast() {
-  const context = useContext(ToastContext);
-  if (!context) {
-    throw new Error('useToast must be used within a ToastProvider');
-  }
-  return context;
 }

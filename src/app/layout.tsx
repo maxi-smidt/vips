@@ -2,8 +2,8 @@ import React from 'react';
 import { Inter } from 'next/font/google';
 import Header from '@/app/components/Header';
 import Main from '@/app/components/Main';
-import DataProvider from '@/app/components/provider/DataProvider';
-import { ToastProvider } from '@/app/components/provider/ToastProvider';
+import DataProvider from '@/app/provider/DataProvider';
+import { ToastProvider } from '@/app/provider/ToastProvider';
 import { PrimeReactProvider } from 'primereact/api';
 
 import './globals.css';

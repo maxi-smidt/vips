@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useData } from '@/app/components/provider/DataProvider';
+import { useData } from '@/app/hooks/useData';
 
 export default function TextInput() {
   // TODO needs a major refactoring

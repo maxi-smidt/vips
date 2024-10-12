@@ -1,0 +1,19 @@
+{
+  "Patient": [
+    {
+      "display": "Identifier",
+      "path": "Patient.identifier",
+      "type": "IdentifierRenderer"
+    },
+    {
+      "display": "Name",
+      "path": "Patient.name",
+      "type": "HumanNameRenderer"
+    },
+    {
+      "display": "Gender",
+      "path": "Patient.gender",
+      "type": "DefaultRenderer"
+    }
+  ]
+}
