@@ -1,14 +1,14 @@
 import { ConfigEntry } from '@/app/types/Config';
 import { RendererType } from '@/app/types/RendererType';
-import IdentifierRenderer from '@/app/components/renderer/IdentifierRenderer';
-import HumanNameRenderer from '@/app/components/renderer/HumanNameRenderer';
-import DefaultRenderer from '@/app/components/renderer/DefaultRenderer';
+import IdentifierRenderer from '@/app/components/renderer/patient/IdentifierRenderer';
+import HumanNameRenderer from '@/app/components/renderer/patient/HumanNameRenderer';
+import DefaultRenderer from '@/app/components/renderer/common/DefaultRenderer';
 import { ResourceUtils } from '@/app/components/renderer/ResourceUtils'; // TODO change back to fhir.ts (for more info go into the class)
-import CodeableConceptRenderer from '@/app/components/renderer/CodeableConceptRenderer';
-import AddressRenderer from '@/app/components/renderer/AddressRenderer';
+import CodeableConceptRenderer from '@/app/components/renderer/condition/CodeableConceptRenderer';
+import AddressRenderer from '@/app/components/renderer/patient/AddressRenderer';
 import CodingRenderer from '@/app/components/renderer/CodingRenderer';
-import ContactPointRenderer from '@/app/components/renderer/ContactPointRenderer';
-import HeaderRenderer from '@/app/components/renderer/HeaderRenderer';
+import ContactPointRenderer from '@/app/components/renderer/patient/ContactPointRenderer';
+import HeaderRenderer from '@/app/components/renderer/common/HeaderRenderer';
 
 const resourceUtils = new ResourceUtils();
 
