@@ -2,43 +2,57 @@
 
 import React, { useState } from 'react';
 import { useData } from '@/app/hooks/useData';
+import { InputTextarea } from 'primereact/inputtextarea';
+import { Button } from 'primereact/button';
+import { useToast } from '@/app/hooks/useToast';
+import { Fhir } from 'fhir';
+import { SelectButton } from 'primereact/selectbutton';
 
 export default function TextInput() {
-  // TODO needs a major refactoring
   const { setBundle } = useData();
-  const [input, setInput] = useState('');
+  const { showError } = useToast();
+  const options = ['JSON', 'XML'];
+  const [option, setOption] = useState(options[0]);
+  const [input, setInput] = useState<string>();
 
-  const handleParse = () => {
-    let parsedContent;
+  const loadText = () => {
     try {
-      // parsing XML
-      // parsedContent = convertXML(input);
-      setBundle(parsedContent);
-    } catch (_) {
-      try {
-        // XML parsing failed -> try parsing as JSON
-        parsedContent = JSON.parse(input);
-        setBundle(parsedContent);
-      } catch (jsonError) {
-        console.error('Parsing failed for both XML and JSON:', jsonError);
+      let textContent = input!;
+      if (option === 'XML') {
+        const fhir = new Fhir();
+        textContent = fhir.xmlToJson(input!);
       }
+      setBundle(JSON.parse(textContent));
+      setInput('');
+    } catch (_) {
+      showError('The text could not be parsed');
     }
   };
 
   return (
     <>
-      <textarea
-        value={input}
-        placeholder="Paste IPS data ..."
-        onChange={(e) => setInput(e.target.value)}
-        className="h-36 border-2 border-gray-500 rounded-md p-2 w-full resize-none"
+      <SelectButton
+        value={option}
+        onChange={(e) => setOption(e.value)}
+        options={options}
+        pt={{
+          root: { style: { width: '100%' } },
+          button: { style: { width: '50%' } },
+        }}
       />
-      <button
-        onClick={handleParse}
-        className="mt-4 p-2 bg-blue-500 text-white rounded-md"
-      >
-        Parse Content
-      </button>
+
+      <InputTextarea
+        value={input}
+        onChange={(event) => setInput(event.target.value)}
+        style={{ width: 'auto', resize: 'none' }}
+      />
+
+      <Button
+        label="Load Text"
+        severity="secondary"
+        onClick={loadText}
+        disabled={!input}
+      />
     </>
   );
 }
