@@ -8,7 +8,6 @@ import CodeableConceptRenderer from '@/app/components/renderer/condition/Codeabl
 import AddressRenderer from '@/app/components/renderer/patient/AddressRenderer';
 import CodingRenderer from '@/app/components/renderer/CodingRenderer';
 import ContactPointRenderer from '@/app/components/renderer/patient/ContactPointRenderer';
-import HeaderRenderer from '@/app/components/renderer/common/HeaderRenderer';
 
 const resourceUtils = new ResourceUtils();
 
@@ -43,8 +42,6 @@ export default function Renderer({ configEntry, resources }: RendererProps) {
         return <CodingRenderer value={value} configEntry={configEntry} />;
       case RendererType.CONTACT_POINT:
         return <ContactPointRenderer value={value} configEntry={configEntry} />;
-      case RendererType.HEADER:
-        return <HeaderRenderer value={value} configEntry={configEntry} />;
     }
   };
 

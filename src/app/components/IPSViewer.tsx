@@ -61,8 +61,8 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
   return (
     <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
       {Object.keys(config).map((key) => (
-        <AccordionTab key={key} header={key}>
-          {renderResource(config[key], key)}
+        <AccordionTab key={key} header={key} className={`target-${key}`}>
+          <div id={key}>{renderResource(config[key], key)}</div>
         </AccordionTab>
       ))}
     </Accordion>

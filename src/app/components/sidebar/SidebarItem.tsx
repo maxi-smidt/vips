@@ -15,7 +15,12 @@ export default function SidebarItem({
   const { expanded } = useData();
 
   const onClick = (sectionKey: string) => {
-    document.getElementById(sectionKey)?.scrollIntoView();
+    const element = document.getElementsByClassName(`target-${sectionKey}`)[0];
+    if (element) {
+      element.scrollIntoView();
+      const offset = 70;
+      window.scrollBy(0, -offset);
+    }
   };
 
   return (

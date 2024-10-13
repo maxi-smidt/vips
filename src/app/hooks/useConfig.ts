@@ -1,11 +1,22 @@
-import { DefaultConfigEN } from '@/app/config/default_config_en';
+'use client';
+
 import { Config } from '../types/Config';
+import { useEffect, useState } from 'react';
+import { DefaultConfigEN } from '@/app/config/default_config_en';
 
 export default function useConfig() {
-  const customConfig = localStorage.getItem('customConfig');
+  const [config, setConfig] = useState<Config>(DefaultConfigEN);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const customConfig = localStorage.getItem('customConfig');
+      if (customConfig) {
+        setConfig(JSON.parse(customConfig));
+      }
+    }
+  }, []);
+
   return {
-    config: customConfig
-      ? (JSON.parse(customConfig) as Config)
-      : DefaultConfigEN,
+    config,
   };
 }
