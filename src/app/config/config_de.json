@@ -1,136 +1,33 @@
 {
-  "Patient": [
-    {
-      "display": "Personal Information",
-      "path": "",
-      "type": "HeaderRenderer"
-    },
-    {
-      "display": "Identifier",
-      "path": "Patient.identifier",
-      "type": "IdentifierRenderer"
-    },
-    {
-      "display": "Name",
-      "path": "Patient.name",
-      "type": "HumanNameRenderer"
-    },
-    {
-      "display": "Gender",
-      "path": "Patient.gender",
-      "type": "DefaultRenderer"
-    },
-    {
-      "display": "Communication",
-      "path": "",
-      "type": "HeaderRenderer"
-    },
-    {
-      "display": "Telecom",
-      "path": "Patient.telecom",
-      "type": "ContactPointRenderer"
-    },
-    {
-      "display": "Address",
-      "path": "Patient.address",
-      "type": "AddressRenderer"
-    }
-  ],
-  "Condition": [
-    {
-      "display": "Clinical Status",
-      "path": "Condition.clinicalStatus",
-      "type": "CodeableConceptRenderer"
-    },
-    {
-      "display": "Verification Status",
-      "path": "Condition.verificationStatus",
-      "type": "CodeableConceptRenderer"
-    },
-    {
-      "display": "Category",
-      "path": "Condition.category",
-      "type": "CodeableConceptRenderer"
-    },
-    {
-      "display": "Severity",
-      "path": "Condition.severity",
-      "type": "CodeableConceptRenderer"
-    },
-    {
-      "display": "Code",
-      "path": "Condition.code",
-      "type": "CodeableConceptRenderer"
-    },
-    {
-      "display": "Body Site",
-      "path": "Condition.bodySite",
-      "type": "CodeableConceptRenderer"
-    },
-    {
-      "display": "Disease Onset Date",
-      "path": "Condition.onset.DateTime",
-      "type": "DefaultRenderer"
-    },
-    {
-      "display": "Disease Onset Age",
-      "path": "Condition.onset.age",
-      "type": "DefaultRenderer"
-    },
-    {
-      "display": "Disease Onset Period",
-      "path": "Condition.onset.period",
-      "type": "DefaultRenderer"
-    },
-	{
-      "display": "Disease Onset Range",
-      "path": "Condition.onset.range",
-      "type": "DefaultRenderer"
-	},
-    {
-      "display": "Disease abatement Date",
-      "path": "Condition.abatement.DateTime",
-      "type": "dateTimeRenderer"
-    },
-    {
-      "display": "Disease abatement Age",
-      "path": "Condition.abatement.age",
-      "type": "DefaultRenderer"
-    },
-    {
-      "display": "Disease abatement Period",
-      "path": "Condition.abatement.period",
-      "type": "DefaultRenderer"
-    },
-	{
-      "display": "Disease abatement Range",
-      "path": "Condition.abatement.range",
-      "type": "DefaultRenderer"
-	},
-    {
-      "display": "Recorded Date",
-      "path": "Condition.recordedDate",
-      "type": "DefaultRenderer"
-    },
-    {
-      "display": "Stage",
-      "path": "",
-      "type": "HeaderRenderer"
-    },
-    {
-      "display": "Stage Summary",
-      "path": "Condition.stage.summary",
-      "type": "DefaultRenderer"
-    },
-    {
-      "display": "Stage Type",
-      "path": "Condition.stage.type",
-      "type": "DefaultRenderer"
-    },
-    {
-      "display": "Evidence",
-      "path": "Condition.evidence",
-      "type": "DefaultRenderer"
-    }
-  ]
+  "Patient": {
+    "icon": "/icons/medications.svg",
+    "sections": [
+      {
+        "title": "Personal Information",
+        "renderers": [
+          {
+            "display": "Identifier",
+            "path": "Patient.identifier",
+            "renderer": "IdentifierRenderer"
+          },
+          {
+            "display": "Name",
+            "path": "Patient.name",
+            "renderer": "HumanNameRenderer"
+          },
+          {
+            "display": "Gender",
+            "path": "Patient.gender",
+            "renderer": "DefaultRenderer"
+          }
+        ]
+      }
+    ]
+  },
+  "Alerts": {
+    "icon": "/icons/alerts.svg"
+  },
+  "Immunizations": {
+    "icon": "/icons/immunizations.svg"
+  }
 }

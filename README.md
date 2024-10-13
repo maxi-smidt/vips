@@ -24,6 +24,10 @@ enable _Run eslint --fix on save_ in _Settings_->_Language & Frameworks_->_JavaS
 
 ## Conventions
 
+### Icon Library
+
+https://tabler.io/icons
+
 ### Branches
 
 Branches should be categorized (_feature_, _bug_, _research_) and end with the issue number.

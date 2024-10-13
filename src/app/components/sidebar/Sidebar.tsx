@@ -1,14 +1,13 @@
 'use client';
 
 import React, { useState, ReactNode } from 'react';
-import { ChevronLast, ChevronFirst } from 'lucide-react';
-import { FaGithub } from 'react-icons/fa';
 import { Dropdown } from 'primereact/dropdown';
 import TextInput from './input-options/TextInput';
 import ApiInput from './input-options/ApiInput';
 import FileInput from './input-options/FileInput';
 import { Button } from 'primereact/button';
 import { useData } from '@/app/hooks/useData';
+import Image from 'next/image';
 
 interface SidebarProps {
   children: ReactNode;
@@ -31,62 +30,79 @@ export default function Sidebar({ children }: SidebarProps) {
   };
 
   return (
-    <aside
-      className={`fixed top-16 left-0 h-[calc(100vh-4rem)] bg-stone-50 border-r shadow-lg transition-all duration-150 overflow-hidden ${
+    <div
+      className={`fixed top-16 left-0 h-[calc(100vh-4rem)] px-2 bg-stone-50 border-r shadow-lg transition-all duration-150 overflow-hidden overflow-y-auto ${
         expanded ? 'w-64' : 'w-20'
       }`}
     >
-      <nav className="h-full flex flex-col overflow-y-auto">
-        <div className="p-4 flex items-center h-16">
+      <nav className="h-full flex flex-col">
+        <div className={`flex items-center mb-1 ${!expanded && 'mt-2'}`}>
+          {expanded && <h2 className="text-xl font-bold">Load IPS</h2>}
           <Button
-            className="p-1.5 ml-auto"
+            className="ml-auto"
             severity="secondary"
             rounded
             text
             onClick={onExpandClick}
           >
-            {expanded ? <ChevronFirst /> : <ChevronLast />}
+            {expanded ? (
+              <Image
+                src="/icons/chevron_left.svg"
+                alt={'Chevron left'}
+                width={20}
+                height={20}
+              />
+            ) : (
+              <Image
+                src="/icons/chevron_right.svg"
+                alt={'Chevron right'}
+                width={20}
+                height={20}
+              />
+            )}
           </Button>
         </div>
 
         {expanded && (
-          <div className="px-4 pb-2">
-            <h2 className="text-xl font-bold">Load IPS</h2>
-            <div className="mt-2 mb-4">
-              <label className="block font-medium">Method:</label>
-              <Dropdown
-                className="w-full"
-                value={selectedOption}
-                onChange={(e) => setSelectedOption(e.value)}
-                options={options}
-                placeholder={'Select an option'}
-              />
-            </div>
-            <div className="flex flex-col gap-2 my-2">
+          <>
+            <Dropdown
+              className="w-full"
+              value={selectedOption}
+              onChange={(e) => setSelectedOption(e.value)}
+              options={options}
+              placeholder={'Select an option'}
+            />
+            <div className="flex flex-col gap-2 mt-2">
               {componentMap[selectedOption]}
             </div>
-          </div>
+          </>
         )}
 
-        {expanded && (
-          <div className="px-4">
-            <h2 className="text-xl font-bold">Sections</h2>
-          </div>
-        )}
+        {expanded && <h2 className="text-xl font-bold">Sections</h2>}
 
-        <ul className={`px-3 space-y-1`}>{children}</ul>
+        <div className="flex flex-col gap-1">
+          {Array.isArray(children)
+            ? children.map((child, index) => <div key={index}>{child}</div>)
+            : children}
+        </div>
 
         {expanded && (
-          <div className="flex justify-center mb-1">
+          <div className="flex justify-center mt-auto">
             <a
               className="flex items-center gap-1 text-sm hover:text-blue-700 hover:underline"
               href="https://github.com/maxi-smidt/vips"
             >
-              Find us on <FaGithub />
+              Find us on{' '}
+              <Image
+                src="/icons/github.svg"
+                alt={'GitHub Logo'}
+                width={15}
+                height={15}
+              />
             </a>
           </div>
         )}
       </nav>
-    </aside>
+    </div>
   );
 }

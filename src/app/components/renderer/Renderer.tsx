@@ -26,7 +26,7 @@ export default function Renderer({ configEntry, resources }: RendererProps) {
   }
 
   const getRenderer = (value: unknown) => {
-    switch (configEntry.type) {
+    switch (configEntry.renderer) {
       case RendererType.DEFAULT:
         return <DefaultRenderer value={value} configEntry={configEntry} />;
       case RendererType.HUMAN_NAME:

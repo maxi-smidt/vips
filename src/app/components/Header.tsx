@@ -1,6 +1,4 @@
 import React from 'react';
-import { IoIosSearch } from 'react-icons/io';
-import { FaRegFilePdf } from 'react-icons/fa6';
 import Image from 'next/image';
 import { InputIcon } from 'primereact/inputicon';
 import { InputText } from 'primereact/inputtext';
@@ -28,15 +26,25 @@ export default function Header() {
             <div className="relative">
               <IconField iconPosition="left">
                 <InputIcon>
-                  <IoIosSearch />
+                  <Image
+                    src="/icons/search.svg"
+                    alt="Search"
+                    width={20}
+                    height={20}
+                  />
                 </InputIcon>
                 <InputText placeholder="Search" />
               </IconField>
             </div>
           </div>
 
-          <Button className="p-1.5 ml-auto" severity="secondary" text>
-            <FaRegFilePdf className="text-3xl" />
+          <Button className="ml-auto" severity="secondary" text>
+            <Image
+              src="/icons/file_pdf.svg"
+              alt="Pdf export"
+              width={20}
+              height={20}
+            />
           </Button>
         </div>
       </div>

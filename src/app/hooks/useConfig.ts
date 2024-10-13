@@ -1,8 +1,11 @@
-import configData from '../config/config_de.json';
-import { Config } from '@/app/types/Config';
-
-const typedConfig: Config = configData as unknown as Config;
+import { DefaultConfigEN } from '@/app/config/default_config_en';
+import { Config } from '../types/Config';
 
 export default function useConfig() {
-  return { config: typedConfig };
+  const customConfig = localStorage.getItem('customConfig');
+  return {
+    config: customConfig
+      ? (JSON.parse(customConfig) as Config)
+      : DefaultConfigEN,
+  };
 }
