@@ -1,8 +1,22 @@
-import configData from '../config/config_de.json';
-import { Config } from '@/app/types/Config';
+'use client';
 
-const typedConfig: Config = configData as unknown as Config;
+import { Config } from '../types/Config';
+import { useEffect, useState } from 'react';
+import { DefaultConfigEN } from '@/app/config/default_config_en';
 
 export default function useConfig() {
-  return { config: typedConfig };
+  const [config, setConfig] = useState<Config>(DefaultConfigEN);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const customConfig = localStorage.getItem('customConfig');
+      if (customConfig) {
+        setConfig(JSON.parse(customConfig));
+      }
+    }
+  }, []);
+
+  return {
+    config,
+  };
 }

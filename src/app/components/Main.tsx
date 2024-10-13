@@ -16,7 +16,9 @@ export default function Main({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="flex flex-1">
-      <VipsSideBar />
+      <aside>
+        <VipsSideBar />
+      </aside>
 
       <main
         className={`flex-1 p-10 transition-all duration-300 ${expanded ? 'ml-[240px]' : 'ml-[64px]'}`}

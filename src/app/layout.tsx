@@ -27,7 +27,9 @@ export default function RootLayout({
           <div className="flex flex-col h-screen">
             <ToastProvider>
               <DataProvider>
-                <div className="fixed top-0 w-full shadow-md">{<Header />}</div>
+                <div className="fixed top-0 z-10 w-full shadow-md">
+                  {<Header />}
+                </div>
                 <div className="mt-10">{<Main>{children}</Main>}</div>
               </DataProvider>
             </ToastProvider>

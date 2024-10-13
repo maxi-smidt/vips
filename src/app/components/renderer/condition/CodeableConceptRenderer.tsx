@@ -13,9 +13,13 @@ export default function CodeableConceptRenderer({
       <strong>{configEntry.display}:</strong>
       {codeableConcept.coding?.map((coding, index) => (
         <p key={index}>
-          {coding.code && <span>Code: {coding.code} </span>}
+          {coding.code && coding.system && (
+            <span>
+              Code:{' '}
+              <a href={`${coding.system}/${coding.code}`}>{coding.code}</a>
+            </span>
+          )}
           {coding.display && <span> &quot;{coding.display}&quot; </span>}
-          {coding.system && <span>{coding.system} </span>}
         </p>
       ))}
     </div>
