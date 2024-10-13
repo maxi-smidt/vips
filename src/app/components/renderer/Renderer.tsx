@@ -1,9 +1,14 @@
 import { ConfigEntry } from '@/app/types/Config';
 import { RendererType } from '@/app/types/RendererType';
-import IdentifierRenderer from '@/app/components/renderer/IdentifierRenderer';
-import HumanNameRenderer from '@/app/components/renderer/HumanNameRenderer';
-import DefaultRenderer from '@/app/components/renderer/DefaultRenderer';
+import IdentifierRenderer from '@/app/components/renderer/patient/IdentifierRenderer';
+import HumanNameRenderer from '@/app/components/renderer/patient/HumanNameRenderer';
+import DefaultRenderer from '@/app/components/renderer/common/DefaultRenderer';
 import { ResourceUtils } from '@/app/components/renderer/ResourceUtils'; // TODO change back to fhir.ts (for more info go into the class)
+import CodeableConceptRenderer from '@/app/components/renderer/condition/CodeableConceptRenderer';
+import AddressRenderer from '@/app/components/renderer/patient/AddressRenderer';
+import CodingRenderer from '@/app/components/renderer/CodingRenderer';
+import ContactPointRenderer from '@/app/components/renderer/patient/ContactPointRenderer';
+import HeaderRenderer from '@/app/components/renderer/common/HeaderRenderer';
 
 const resourceUtils = new ResourceUtils();
 
@@ -28,6 +33,18 @@ export default function Renderer({ configEntry, resources }: RendererProps) {
         return <HumanNameRenderer value={value} configEntry={configEntry} />;
       case RendererType.IDENTIFIER:
         return <IdentifierRenderer value={value} configEntry={configEntry} />;
+      case RendererType.ADDRESS:
+        return <AddressRenderer value={value} configEntry={configEntry} />;
+      case RendererType.CODEABLE_CONCEPT:
+        return (
+          <CodeableConceptRenderer value={value} configEntry={configEntry} />
+        );
+      case RendererType.CODING:
+        return <CodingRenderer value={value} configEntry={configEntry} />;
+      case RendererType.CONTACT_POINT:
+        return <ContactPointRenderer value={value} configEntry={configEntry} />;
+      case RendererType.HEADER:
+        return <HeaderRenderer value={value} configEntry={configEntry} />;
     }
   };
 
