@@ -35,6 +35,7 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
   const renderSections = (
     sections: (ConfigEntry | ConfigSection)[],
     resources: unknown[],
+    depth: number = 1,
   ) => {
     const elements: React.JSX.Element[] = [];
     for (const value of sections) {
@@ -47,10 +48,14 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
           />,
         );
       } else if (isConfigSection(value)) {
+        const backgroundClass = `bg-gray-${100 * depth}`;
         elements.push(
-          <div key={value.title}>
+          <div
+            key={value.title}
+            className={`p-2 ${backgroundClass} rounded-xl`}
+          >
             <h2>{value.title}</h2>
-            {renderSections(value.renderers, resources)}
+            {renderSections(value.renderers, resources, depth + 1)}
           </div>,
         );
       }
@@ -61,7 +66,12 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
   return (
     <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
       {Object.keys(config).map((key) => (
-        <AccordionTab key={key} header={key} className={`target-${key}`}>
+        <AccordionTab
+          key={key}
+          header={key}
+          className={`target-${key}`}
+          pt={{ content: { className: 'p-0' } }}
+        >
           <div id={key}>{renderResource(config[key], key)}</div>
         </AccordionTab>
       ))}

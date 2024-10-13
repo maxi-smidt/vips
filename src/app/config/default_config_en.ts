@@ -46,79 +46,83 @@ export const DefaultConfigEN: Config = {
     icon: '/icons/allergies.svg',
     sections: [
       {
-        display: 'Clinical Status',
-        path: 'Condition.clinicalStatus',
-        renderer: RendererType.CODEABLE_CONCEPT,
-      },
-      {
-        display: 'Verification Status',
-        path: 'Condition.verificationStatus',
-        renderer: RendererType.CODEABLE_CONCEPT,
-      },
-      {
-        display: 'Category',
-        path: 'Condition.category',
-        renderer: RendererType.CODEABLE_CONCEPT,
-      },
-      {
-        display: 'Severity',
-        path: 'Condition.severity',
-        renderer: RendererType.CODEABLE_CONCEPT,
-      },
-      {
-        display: 'Code',
-        path: 'Condition.code',
-        renderer: RendererType.CODEABLE_CONCEPT,
-      },
-      {
-        display: 'Body Site',
-        path: 'Condition.bodySite',
-        renderer: RendererType.CODEABLE_CONCEPT,
-      },
-      {
-        display: 'Disease Onset Date',
-        path: 'Condition.onset.DateTime',
-        renderer: RendererType.DEFAULT,
-      },
-      {
-        display: 'Disease Onset Age',
-        path: 'Condition.onset.age',
-        renderer: RendererType.DEFAULT,
-      },
-      {
-        display: 'Disease Onset Period',
-        path: 'Condition.onset.period',
-        renderer: RendererType.DEFAULT,
-      },
-      {
-        display: 'Disease Onset Range',
-        path: 'Condition.onset.range',
-        renderer: RendererType.DEFAULT,
-      },
-      {
-        display: 'Disease abatement Date',
-        path: 'Condition.abatement.DateTime',
-        renderer: RendererType.DEFAULT, // TODO should be changed i gues
-      },
-      {
-        display: 'Disease abatement Age',
-        path: 'Condition.abatement.age',
-        renderer: RendererType.DEFAULT,
-      },
-      {
-        display: 'Disease abatement Period',
-        path: 'Condition.abatement.period',
-        renderer: RendererType.DEFAULT,
-      },
-      {
-        display: 'Disease abatement Range',
-        path: 'Condition.abatement.range',
-        renderer: RendererType.DEFAULT,
-      },
-      {
-        display: 'Recorded Date',
-        path: 'Condition.recordedDate',
-        renderer: RendererType.DEFAULT,
+        renderers: [
+          {
+            display: 'Clinical Status',
+            path: 'Condition.clinicalStatus',
+            renderer: RendererType.CODEABLE_CONCEPT,
+          },
+          {
+            display: 'Verification Status',
+            path: 'Condition.verificationStatus',
+            renderer: RendererType.CODEABLE_CONCEPT,
+          },
+          {
+            display: 'Category',
+            path: 'Condition.category',
+            renderer: RendererType.CODEABLE_CONCEPT,
+          },
+          {
+            display: 'Severity',
+            path: 'Condition.severity',
+            renderer: RendererType.CODEABLE_CONCEPT,
+          },
+          {
+            display: 'Code',
+            path: 'Condition.code',
+            renderer: RendererType.CODEABLE_CONCEPT,
+          },
+          {
+            display: 'Body Site',
+            path: 'Condition.bodySite',
+            renderer: RendererType.CODEABLE_CONCEPT,
+          },
+          {
+            display: 'Disease Onset Date',
+            path: 'Condition.onset.DateTime',
+            renderer: RendererType.DEFAULT,
+          },
+          {
+            display: 'Disease Onset Age',
+            path: 'Condition.onset.age',
+            renderer: RendererType.DEFAULT,
+          },
+          {
+            display: 'Disease Onset Period',
+            path: 'Condition.onset.period',
+            renderer: RendererType.DEFAULT,
+          },
+          {
+            display: 'Disease Onset Range',
+            path: 'Condition.onset.range',
+            renderer: RendererType.DEFAULT,
+          },
+          {
+            display: 'Disease abatement Date',
+            path: 'Condition.abatement.DateTime',
+            renderer: RendererType.DEFAULT, // TODO should be changed i gues
+          },
+          {
+            display: 'Disease abatement Age',
+            path: 'Condition.abatement.age',
+            renderer: RendererType.DEFAULT,
+          },
+          {
+            display: 'Disease abatement Period',
+            path: 'Condition.abatement.period',
+            renderer: RendererType.DEFAULT,
+          },
+          {
+            display: 'Disease abatement Range',
+            path: 'Condition.abatement.range',
+            renderer: RendererType.DEFAULT,
+          },
+          {
+            display: 'Recorded Date',
+            path: 'Condition.recordedDate',
+            renderer: RendererType.DEFAULT,
+          },
+        ],
       },
       {
         title: 'Stage',
