@@ -33,7 +33,12 @@ export default function SidebarItem({
       tooltip={expanded ? undefined : sectionKey}
       tooltipOptions={{ showDelay: 200 }}
       icon={(_) => (
-        <Image src={iconPath} width={20} height={20} alt={sectionKey} />
+        <Image
+          src={`${process.env.IMAGE_PATH}${iconPath}`}
+          width={20}
+          height={20}
+          alt={sectionKey}
+        />
       )}
     />
   );

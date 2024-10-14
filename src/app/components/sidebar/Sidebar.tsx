@@ -47,14 +47,14 @@ export default function Sidebar({ children }: SidebarProps) {
           >
             {expanded ? (
               <Image
-                src="/icons/chevron_left.svg"
+                src={`${process.env.IMAGE_PATH}/icons/chevron_left.svg`}
                 alt={'Chevron left'}
                 width={20}
                 height={20}
               />
             ) : (
               <Image
-                src="/icons/chevron_right.svg"
+                src={`${process.env.IMAGE_PATH}/icons/chevron_right.svg`}
                 alt={'Chevron right'}
                 width={20}
                 height={20}
@@ -94,7 +94,7 @@ export default function Sidebar({ children }: SidebarProps) {
             >
               Find us on{' '}
               <Image
-                src="/icons/github.svg"
+                src={`${process.env.IMAGE_PATH}/icons/github.svg`}
                 alt={'GitHub Logo'}
                 width={15}
                 height={15}
