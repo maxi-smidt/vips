@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dnd-kit/core": "^6.1.0",
     "@smile-cdr/fhirts": "2.2.6",
     "fhir": "^4.12.0",
     "next": "^14.2.14",
