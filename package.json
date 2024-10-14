@@ -12,6 +12,7 @@
     "@smile-cdr/fhirts": "2.2.6",
     "fhir": "^4.12.0",
     "next": "^14.2.14",
+    "primeicons": "^7.0.0",
     "primereact": "^10.8.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
