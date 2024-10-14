@@ -11,7 +11,7 @@ export default function Header() {
       <div className="p-4 flex items-center justify-between h-16">
         <div className="flex items-center">
           <Image
-            src="/raccoon-forwards.png"
+            src={`${process.env.IMAGE_PATH}/raccoon-forwards.png`}
             alt="HAPI FHIR Logo"
             className="h-12 w-12"
             width={266}
@@ -27,7 +27,7 @@ export default function Header() {
               <IconField iconPosition="left">
                 <InputIcon>
                   <Image
-                    src="/icons/search.svg"
+                    src={`${process.env.IMAGE_PATH}/icons/search.svg`}
                     alt="Search"
                     width={20}
                     height={20}
@@ -40,7 +40,7 @@ export default function Header() {
 
           <Button className="ml-auto" severity="secondary" text>
             <Image
-              src="/icons/file_pdf.svg"
+              src={`${process.env.IMAGE_PATH}/icons/file_pdf.svg`}
               alt="Pdf export"
               width={20}
               height={20}
