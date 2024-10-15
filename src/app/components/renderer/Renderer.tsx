@@ -3,11 +3,11 @@ import { RendererType } from '@/app/types/RendererType';
 import IdentifierRenderer from '@/app/components/renderer/patient/IdentifierRenderer';
 import HumanNameRenderer from '@/app/components/renderer/patient/HumanNameRenderer';
 import DefaultRenderer from '@/app/components/renderer/common/DefaultRenderer';
-import { ResourceUtils } from '@/app/components/renderer/ResourceUtils'; // TODO change back to fhir.ts (for more info go into the class)
 import CodeableConceptRenderer from '@/app/components/renderer/condition/CodeableConceptRenderer';
 import AddressRenderer from '@/app/components/renderer/patient/AddressRenderer';
 import CodingRenderer from '@/app/components/renderer/CodingRenderer';
 import ContactPointRenderer from '@/app/components/renderer/patient/ContactPointRenderer';
+import { ResourceUtils } from '@smile-cdr/fhirts';
 
 const resourceUtils = new ResourceUtils();
 
