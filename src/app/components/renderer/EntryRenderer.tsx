@@ -16,7 +16,10 @@ interface RendererProps {
   resources: unknown[];
 }
 
-export default function Renderer({ configEntry, resources }: RendererProps) {
+export default function EntryRenderer({
+  configEntry,
+  resources,
+}: RendererProps) {
   const values = [];
   for (const resource of resources) {
     values.push(
