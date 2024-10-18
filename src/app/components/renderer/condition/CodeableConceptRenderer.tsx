@@ -16,7 +16,9 @@ export default function CodeableConceptRenderer({
           {coding.code && coding.system && (
             <span>
               Code:{' '}
-              <a href={`${coding.system}/${coding.code}`}>{coding.code}</a>
+              <a href={`${coding.system}/${coding.code}`} target="_blank">
+                {coding.code}
+              </a>
             </span>
           )}
           {coding.display && <span> &quot;{coding.display}&quot; </span>}

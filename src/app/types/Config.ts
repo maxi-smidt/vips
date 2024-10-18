@@ -6,7 +6,7 @@ export interface Config {
 
 export interface ConfigResource {
   icon: string;
-  sections: ConfigSection[];
+  section: ConfigSection;
 }
 
 export interface ConfigSection {
