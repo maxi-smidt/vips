@@ -10,21 +10,21 @@ import SectionRenderer from '@/app/components/renderer/SectionRenderer';
 
 interface ComponentRendererProps {
   depth: number;
-  resources: unknown[];
+  resource: unknown;
   configComponent: ConfigEntry | ConfigSection;
 }
 
 export default function ComponentRenderer({
   configComponent,
   depth,
-  resources,
+  resource,
 }: ComponentRendererProps) {
   if (isConfigEntry(configComponent)) {
     return (
       <EntryRenderer
         key={configComponent.path}
         configEntry={configComponent}
-        resources={resources}
+        resource={resource}
       />
     );
   } else if (isConfigSection(configComponent)) {
@@ -33,7 +33,7 @@ export default function ComponentRenderer({
         key={configComponent.title}
         depth={depth}
         configSection={configComponent}
-        resources={resources}
+        resource={resource}
       />
     );
   }

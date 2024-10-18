@@ -7,7 +7,7 @@ import {
 } from 'primereact/accordion';
 import useConfig from '@/app/hooks/useConfig';
 import { extractResources } from '@/app/utils/ResourceExtractor';
-import SectionRenderer from '@/app/components/renderer/SectionRenderer';
+import RootSectionRenderer from '@/app/components/renderer/RootSectionRenderer';
 
 interface IPSViewerProps {
   bundle: Bundle;
@@ -29,13 +29,11 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
           className={`target-${key}`}
           pt={{ content: { className: 'p-0' } }}
         >
-          <div id={key} className="flex flex-col gap-2">
-            <SectionRenderer
-              configSection={config[key].section}
-              depth={0}
-              resources={extractResources(bundle, key)}
-            />
-          </div>
+          <RootSectionRenderer
+            resourceKey={key}
+            section={config[key].section}
+            resources={extractResources(bundle, key)}
+          />
         </AccordionTab>
       ))}
     </Accordion>

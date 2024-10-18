@@ -13,19 +13,17 @@ const resourceUtils = new ResourceUtils();
 
 interface RendererProps {
   configEntry: ConfigEntry;
-  resources: unknown[];
+  resource: unknown;
 }
 
 export default function EntryRenderer({
   configEntry,
-  resources,
+  resource,
 }: RendererProps) {
-  const values = [];
-  for (const resource of resources) {
-    values.push(
-      ...resourceUtils.getValuesAtResourcePath(resource, configEntry.path),
-    );
-  }
+  const values = resourceUtils.getValuesAtResourcePath(
+    resource,
+    configEntry.path,
+  );
 
   const getRenderer = (value: unknown) => {
     switch (configEntry.renderer) {

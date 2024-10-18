@@ -6,25 +6,25 @@ import { v4 as uuidv4 } from 'uuid';
 interface SectionRendererProps {
   configSection: ConfigSection;
   depth: number;
-  resources: unknown[];
+  resource: unknown;
 }
 
 export default function SectionRenderer({
   configSection,
   depth,
-  resources,
+  resource,
 }: SectionRendererProps) {
   return (
     <div
       key={configSection.title}
       className={`p-2 bg-gray-${100 * depth} rounded-xl ${depth == 0 && 'flex flex-col gap-2'}`}
     >
-      {configSection.title && <h2>{configSection.title}</h2>}
+      {configSection.title && <h4>{configSection.title}</h4>}
       {configSection.renderers.map((component) => (
         <ComponentRenderer
           key={uuidv4()}
           configComponent={component}
-          resources={resources}
+          resource={resource}
           depth={depth + 1}
         />
       ))}
