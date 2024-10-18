@@ -7,7 +7,7 @@ import CodeableConceptRenderer from '@/app/components/renderer/condition/Codeabl
 import AddressRenderer from '@/app/components/renderer/patient/AddressRenderer';
 import CodingRenderer from '@/app/components/renderer/CodingRenderer';
 import ContactPointRenderer from '@/app/components/renderer/patient/ContactPointRenderer';
-import { ResourceUtils } from '@/app/utils/ResourceUtils';
+import { ResourceUtils } from '@smile-cdr/fhirts';
 
 const resourceUtils = new ResourceUtils();
 
