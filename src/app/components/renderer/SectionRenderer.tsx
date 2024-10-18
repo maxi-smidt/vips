@@ -36,7 +36,11 @@ export default function SectionRenderer({
       className={`p-2 bg-gray-${100 * depth} rounded-xl ${depth == 0 && 'flex flex-col gap-2'}`}
     >
       {configSection.renderers.map((component) => {
-        if (isConfigSection(component)) {
+        if (
+          isConfigSection(component) ||
+          (isConfigEntry(component) && component.path.split('.')[0]) ===
+            resourceType
+        ) {
           return (
             <ComponentRenderer
               key={uuidv4()}
@@ -45,18 +49,6 @@ export default function SectionRenderer({
               depth={depth + 1}
             />
           );
-        } else if (isConfigEntry(component)) {
-          const pathResourceType = component.path.split('.')[0];
-          if (resourceType === pathResourceType) {
-            return (
-              <ComponentRenderer
-                key={uuidv4()}
-                configComponent={component}
-                resource={resource}
-                depth={depth + 1}
-              />
-            );
-          }
         }
         return null; // Return null if no conditions are met
       })}
