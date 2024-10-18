@@ -16,7 +16,7 @@ export default function RootSectionRenderer({
 }: RootSectionRendererProps) {
   const getTitle = (index: number) => {
     if (resources.length === 1) return undefined;
-    return `${resourceKey} ${index + 1}`;
+    return `${section.title} ${index + 1}`;
   };
 
   return (

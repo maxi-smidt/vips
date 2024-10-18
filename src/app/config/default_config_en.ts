@@ -4,7 +4,9 @@ import { RendererType } from '@/app/types/RendererType';
 export const DefaultConfigEN: Config = {
   Patient: {
     icon: '/icons/user.svg',
+    sectionDisplay: 'Patient',
     section: {
+      title: 'Patient',
       renderers: [
         {
           title: 'Personal Information',
@@ -45,8 +47,10 @@ export const DefaultConfigEN: Config = {
     },
   },
   Condition: {
-    icon: '/icons/allergies.svg',
+    icon: '/icons/problems.svg',
+    sectionDisplay: 'Problems',
     section: {
+      title: 'Problem',
       renderers: [
         {
           renderers: [
@@ -151,16 +155,27 @@ export const DefaultConfigEN: Config = {
     },
   },
   AllergyIntolerance: {
-    icon: '/icons/allergies',
+    icon: '/icons/allergies.svg',
+    sectionDisplay: 'Allergies and Intolerances',
     section: {
+      title: 'Allergy or Intolerance',
       renderers: [
         {
-          title: 'Allergies and Intolerances',
           renderers: [
             {
-              display: '',
-              path: '',
+              display: 'Clinical Status',
+              path: 'AllergyIntolerance.clinicalStatus',
               renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Verification Status',
+              path: 'AllergyIntolerance.verificationStatus',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'AllergyIntolerance.category',
+              renderer: RendererType.DEFAULT,
             },
           ],
         },

@@ -3,7 +3,7 @@ import { RendererType } from '@/app/types/RendererType';
 import IdentifierRenderer from '@/app/components/renderer/patient/IdentifierRenderer';
 import HumanNameRenderer from '@/app/components/renderer/patient/HumanNameRenderer';
 import DefaultRenderer from '@/app/components/renderer/common/DefaultRenderer';
-import CodeableConceptRenderer from '@/app/components/renderer/condition/CodeableConceptRenderer';
+import CodeableConceptRenderer from '@/app/components/renderer/common/CodeableConceptRenderer';
 import AddressRenderer from '@/app/components/renderer/patient/AddressRenderer';
 import CodingRenderer from '@/app/components/renderer/CodingRenderer';
 import ContactPointRenderer from '@/app/components/renderer/patient/ContactPointRenderer';
