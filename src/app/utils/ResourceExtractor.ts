@@ -24,6 +24,7 @@ export function extractResources<T>(
   }
   processRenderers(renderers);
 
+
   let collectedResources: T[] = [];
 
   resourceTypes.forEach((resourceType) => {

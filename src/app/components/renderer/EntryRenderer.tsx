@@ -24,6 +24,9 @@ export default function EntryRenderer({
     resource,
     configEntry.path,
   );
+  console.log(resource);
+  console.log(configEntry.path);
+  console.log(values);
 
   const getRenderer = (value: unknown) => {
     switch (configEntry.renderer) {

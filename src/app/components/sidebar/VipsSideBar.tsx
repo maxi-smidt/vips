@@ -9,7 +9,7 @@ export default function VipsSideBar() {
   const sections = Object.keys(config).map((sectionKey) => (
     <SidebarItem
       key={sectionKey}
-      sectionKey={config[sectionKey].section.title}
+      sectionKey={config[sectionKey].sectionDisplay}
       iconPath={`${config[sectionKey].icon}`}
     />
   ));

@@ -30,7 +30,6 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
           pt={{ content: { className: 'p-0' } }}
         >
           <RootSectionRenderer
-            resourceKey={key}
             section={config[key].section}
             resources={extractResources(bundle, config[key].section.renderers)}
           />

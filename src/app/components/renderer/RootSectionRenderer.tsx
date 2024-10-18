@@ -4,19 +4,18 @@ import { ConfigSection } from '@/app/types/Config';
 import { v4 as uuidv4 } from 'uuid';
 
 interface RootSectionRendererProps {
-  resourceKey: string;
   section: ConfigSection;
   resources: unknown[];
 }
 
 export default function RootSectionRenderer({
   section,
-  resourceKey,
   resources,
 }: RootSectionRendererProps) {
   const getTitle = (index: number) => {
     if (resources.length === 1) return undefined;
     return `${section.title} ${index + 1}`;
+
   };
 
   return (

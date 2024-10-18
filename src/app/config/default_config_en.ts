@@ -182,4 +182,32 @@ export const DefaultConfigEN: Config = {
       ],
     },
   },
+  Medication: {
+    icon: '/icons/medications.svg',
+    sectionDisplay: 'Medication Summary',
+    section: {
+      title: 'Medication(Statement/Request)',
+      renderers: [
+        {
+          renderers: [
+            {
+              display: 'Medication Id',
+              path: 'Medication.id',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Statement Status',
+              path: 'MedicationStatement.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Request Status',
+              path: 'MedicationRequest.status',
+              renderer: RendererType.DEFAULT,
+            },
+          ],
+        },
+      ],
+    },
+  },
 };
