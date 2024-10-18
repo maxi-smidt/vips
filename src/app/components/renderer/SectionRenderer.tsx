@@ -16,11 +16,11 @@ export default function SectionRenderer({
 }: SectionRendererProps) {
   return (
     <div
-      key={configSection.display}
+      key={configSection.title}
       className={`p-2 bg-gray-${100 * depth} rounded-xl ${depth == 0 && 'flex flex-col gap-2'}`}
     >
-      {configSection.display && <h4>{configSection.display}</h4>}
-      {configSection.components.map((component) => (
+      {configSection.title && <h2>{configSection.title}</h2>}
+      {configSection.renderers.map((component) => (
         <ComponentRenderer
           key={uuidv4()}
           configComponent={component}

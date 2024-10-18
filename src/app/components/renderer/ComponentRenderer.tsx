@@ -30,7 +30,7 @@ export default function ComponentRenderer({
   } else if (isConfigSection(configComponent)) {
     return (
       <SectionRenderer
-        key={configComponent.display}
+        key={configComponent.title}
         depth={depth}
         configSection={configComponent}
         resource={resource}
