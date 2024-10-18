@@ -5,10 +5,10 @@ export const DefaultConfigEN: Config = {
   Patient: {
     icon: '/icons/user.svg',
     section: {
-      components: [
+      renderers: [
         {
-          display: 'Personal Information',
-          components: [
+          title: 'Personal Information',
+          renderers: [
             {
               display: 'Identifier',
               path: 'Patient.identifier',
@@ -27,8 +27,8 @@ export const DefaultConfigEN: Config = {
           ],
         },
         {
-          display: 'Communication',
-          components: [
+          title: 'Communication',
+          renderers: [
             {
               display: 'Telecom',
               path: 'Patient.telecom',
@@ -47,9 +47,9 @@ export const DefaultConfigEN: Config = {
   Condition: {
     icon: '/icons/allergies.svg',
     section: {
-      components: [
+      renderers: [
         {
-          components: [
+          renderers: [
             {
               display: 'Clinical Status',
               path: 'Condition.clinicalStatus',
@@ -128,8 +128,8 @@ export const DefaultConfigEN: Config = {
           ],
         },
         {
-          display: 'Stage',
-          components: [
+          title: 'Stage',
+          renderers: [
             {
               display: 'Stage Summary',
               path: 'Condition.stage.summary',
