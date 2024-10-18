@@ -151,7 +151,20 @@ export const DefaultConfigEN: Config = {
     },
   },
   AllergyIntolerance: {
-    icon: '',
-    section: undefined
-  }
+    icon: '/icons/allergies',
+    section: {
+      renderers: [
+        {
+          title: 'Allergies and Intolerances',
+          renderers: [
+            {
+              display: '',
+              path: '',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+          ],
+        },
+      ],
+    },
+  },
 };
