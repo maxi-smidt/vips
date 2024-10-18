@@ -150,4 +150,8 @@ export const DefaultConfigEN: Config = {
       ],
     },
   },
+  AllergyIntolerance: {
+    icon: '',
+    section: undefined
+  }
 };
