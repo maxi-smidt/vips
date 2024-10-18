@@ -24,15 +24,15 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
     <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
       {Object.keys(config).map((key) => (
         <AccordionTab
-          key={key}
-          header={key}
+          key={config[key].sectionDisplay}
+          header={config[key].sectionDisplay}
           className={`target-${key}`}
           pt={{ content: { className: 'p-0' } }}
         >
           <RootSectionRenderer
             resourceKey={key}
             section={config[key].section}
-            resources={extractResources(bundle, key)}
+            resources={extractResources(bundle, config[key].section.renderers)}
           />
         </AccordionTab>
       ))}
