@@ -87,7 +87,7 @@ export default function Sidebar({ children }: SidebarProps) {
         </div>
 
         {expanded && (
-          <div className="flex justify-center mt-auto">
+          <div className="flex justify-center mt-auto mb-3">
             <a
               className="flex items-center gap-1 text-sm hover:text-blue-700 hover:underline"
               href="https://github.com/maxi-smidt/vips"

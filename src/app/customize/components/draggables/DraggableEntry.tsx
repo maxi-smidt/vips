@@ -7,7 +7,7 @@ interface DroppableEntryProps {
 }
 
 export default function DraggableEntry({ configEntry }: DroppableEntryProps) {
-  const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
+  const { attributes, listeners, setNodeRef } = useDraggable({
     id: `${configEntry.display}-${configEntry.path}-${configEntry.renderer}`,
     data: {
       entry: configEntry,
@@ -19,7 +19,7 @@ export default function DraggableEntry({ configEntry }: DroppableEntryProps) {
       ref={setNodeRef}
       {...listeners}
       {...attributes}
-      className={`bg-gray-200 px-3 py-1 rounded-2xl select-none transition-opacity duration-200 ${isDragging ? 'opacity-50' : 'opacity-100'}`}
+      className={`bg-gray-200 px-3 py-1 rounded-2xl select-none}`}
     >
       <p>Display: {configEntry.display}</p>
       <p>Path: {configEntry.path}</p>

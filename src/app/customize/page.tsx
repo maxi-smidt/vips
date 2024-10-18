@@ -1,10 +1,19 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ConfigEntry, ConfigSection, isConfigEntry } from '@/app/types/Config';
+import {
+  Config,
+  ConfigEntry,
+  ConfigSection,
+  isConfigEntry,
+} from '@/app/types/Config';
 import useConfig from '@/app/hooks/useConfig';
-import DraggableEntry from '@/app/customize/components/DraggableEntry';
+import DraggableEntry from '@/app/customize/components/draggables/DraggableEntry';
 import { DndContext, DragOverlay, DragStartEvent } from '@dnd-kit/core';
+import { RendererType } from '@/app/types/RendererType';
+import DraggableEntries from '@/app/customize/components/draggables/DraggableEntries';
+import Dropzone from '@/app/customize/components/dropzones/Dropzone';
+import CustomConfigProvider from '@/app/customize/provider/CustomConfigProvider';
 
 export default function Home() {
   const { defaultConfig, reload } = useConfig();
@@ -28,38 +37,30 @@ export default function Home() {
     };
     Object.keys(defaultConfig).forEach((key) => {
       const resource = defaultConfig[key];
-      resource.sections.forEach((section) => separateSection(section, key));
+      separateSection(resource.section, key);
     });
   };
 
   separateEntries();
 
   return (
-    <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-      <div className="flex h-screen">
-        <div className="w-2/3 overflow-y-scroll z-0"></div>
-        <div className="w-1/3 overflow-y-scroll z-0">
-          {Object.keys(separatedEntries).map((key) => (
-            <div key={key}>
-              <h5>{key}</h5>
-              <div className="flex flex-col gap-2">
-                {separatedEntries[key].map((entry) => (
-                  <DraggableEntry
-                    key={`${key}-${entry.display}-${entry.path}`}
-                    configEntry={entry}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
+    <CustomConfigProvider>
+      <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
+        <div className="flex h-screen">
+          <div className="w-2/3 overflow-y-scroll p-4">
+            <Dropzone />
+          </div>
+          <div className="w-1/3 overflow-y-scroll p-4">
+            <DraggableEntries separatedEntries={separatedEntries} />
+          </div>
         </div>
-      </div>
-      <DragOverlay>
-        {activeEntry ? (
-          <DraggableEntry key={'dragged'} configEntry={activeEntry} />
-        ) : null}
-      </DragOverlay>
-    </DndContext>
+        <DragOverlay>
+          {activeEntry ? (
+            <DraggableEntry key={'dragged'} configEntry={activeEntry} />
+          ) : null}
+        </DragOverlay>
+      </DndContext>
+    </CustomConfigProvider>
   );
 
   function handleDragStart(event: DragStartEvent) {
