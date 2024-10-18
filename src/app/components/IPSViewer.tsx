@@ -10,7 +10,6 @@ import Renderer from '@/app/components/renderer/Renderer';
 import { extractResources } from '@/app/utils/ResourceExtractor';
 import {
   ConfigEntry,
-  ConfigResource,
   ConfigSection,
   isConfigEntry,
   isConfigSection,
@@ -27,38 +26,33 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
     setActiveIndex(e.index);
   };
 
-  const renderResource = (resource: ConfigResource, key: string) => {
-    const resources = extractResources(bundle, key);
-    return renderSections(resource.sections, resources);
-  };
-
-  const renderSections = (
-    sections: (ConfigEntry | ConfigSection)[],
+  const renderSection = (
+    section: ConfigEntry | ConfigSection,
     resources: unknown[],
-    depth: number = 1,
+    depth: number = 0,
   ) => {
     const elements: React.JSX.Element[] = [];
-    for (const value of sections) {
-      if (isConfigEntry(value)) {
-        elements.push(
-          <Renderer
-            key={value.path}
-            configEntry={value}
-            resources={resources}
-          />,
-        );
-      } else if (isConfigSection(value)) {
-        const backgroundClass = `bg-gray-${100 * depth}`;
-        elements.push(
-          <div
-            key={value.title}
-            className={`p-2 ${backgroundClass} rounded-xl`}
-          >
-            <h2>{value.title}</h2>
-            {renderSections(value.renderers, resources, depth + 1)}
-          </div>,
-        );
-      }
+    if (isConfigEntry(section)) {
+      elements.push(
+        <Renderer
+          key={section.path}
+          configEntry={section}
+          resources={resources}
+        />,
+      );
+    } else if (isConfigSection(section)) {
+      const backgroundClass = `bg-gray-${100 * depth}`;
+      elements.push(
+        <div
+          key={section.title}
+          className={`p-2 ${backgroundClass} rounded-xl ${depth == 0 && 'flex flex-col gap-2'}`}
+        >
+          {section.title && <h2>{section.title}</h2>}
+          {section.renderers.map((component) =>
+            renderSection(component, resources, depth + 1),
+          )}
+        </div>,
+      );
     }
     return elements;
   };
@@ -72,7 +66,9 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
           className={`target-${key}`}
           pt={{ content: { className: 'p-0' } }}
         >
-          <div id={key}>{renderResource(config[key], key)}</div>
+          <div id={key} className="flex flex-col gap-2">
+            {renderSection(config[key].section, extractResources(bundle, key))}
+          </div>
         </AccordionTab>
       ))}
     </Accordion>
