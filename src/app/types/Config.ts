@@ -9,9 +9,11 @@ export interface ConfigResource {
   section: ConfigSection;
 }
 
+type ConfigComponent = ConfigSection | ConfigEntry;
+
 export interface ConfigSection {
-  title?: string;
-  renderers: (ConfigSection | ConfigEntry)[];
+  display?: string;
+  components: ConfigComponent[];
 }
 
 export interface ConfigEntry {
@@ -21,17 +23,17 @@ export interface ConfigEntry {
 }
 
 export function isConfigEntry(
-  entry: ConfigSection | ConfigEntry,
-): entry is ConfigEntry {
+  component: ConfigComponent,
+): component is ConfigEntry {
   return (
-    (entry as ConfigEntry).renderer !== undefined &&
-    (entry as ConfigEntry).path !== undefined &&
-    (entry as ConfigEntry).display !== undefined
+    (component as ConfigEntry).renderer !== undefined &&
+    (component as ConfigEntry).path !== undefined &&
+    (component as ConfigEntry).display !== undefined
   );
 }
 
 export function isConfigSection(
-  section: ConfigSection | ConfigEntry,
-): section is ConfigSection {
-  return !isConfigEntry(section);
+  component: ConfigComponent,
+): component is ConfigSection {
+  return !isConfigEntry(component);
 }
