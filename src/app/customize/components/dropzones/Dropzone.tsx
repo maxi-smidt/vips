@@ -11,7 +11,7 @@ export default function Dropzone() {
           <h4>{key}</h4>
           <DropzoneSection
             section={customConfig[key].section}
-            key={key}
+            resourceKey={key}
             path={[]}
           />
         </div>

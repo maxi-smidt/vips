@@ -5,15 +5,16 @@ import { ConfigSection, isConfigSection } from '@/app/types/Config';
 export default function useCustomConfig() {
   const { customConfig, setCustomConfig } = useContext(CustomConfigContext);
 
-  const deleteEntry = (resourceKey: string, path: number[]) => {
+  const deleteComponent = (resourceKey: string, path: number[]) => {
+    console.log(resourceKey, path);
     setCustomConfig((prevConfig) => {
       const newConfig = JSON.parse(JSON.stringify(prevConfig));
 
-      let current = newConfig[resourceKey].section.renderers;
+      let current = newConfig[resourceKey].section.components;
       for (let i = 0; i < path.length - 1; i++) {
         const index = path[i];
         if (Array.isArray(current) && current[index]) {
-          current = current[index].renderers;
+          current = current[index].components;
         }
       }
 
@@ -33,15 +34,15 @@ export default function useCustomConfig() {
       const newConfig = JSON.parse(JSON.stringify(prevConfig));
       let section: ConfigSection = newConfig[resourceKey].section;
       for (let i = 0; i < path.length; i++) {
-        const component = section.renderers[path[i]];
+        const component = section.components[path[i]];
         if (isConfigSection(component)) {
           section = component;
         }
       }
 
-      section.renderers.unshift({
-        title: sectionTitle,
-        renderers: [],
+      section.components.unshift({
+        display: sectionTitle,
+        components: [],
       });
       return newConfig;
     });
@@ -50,7 +51,7 @@ export default function useCustomConfig() {
   return {
     customConfig,
     setCustomConfig,
-    deleteEntry,
+    deleteComponent,
     insertSection,
   };
 }

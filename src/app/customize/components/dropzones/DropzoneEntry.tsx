@@ -7,16 +7,16 @@ import useCustomConfig from '@/app/customize/hooks/useCustomConfig';
 
 interface DropzoneEntryProps {
   configEntry: ConfigEntry;
-  key: string;
+  resourceKey: string;
   path: number[];
 }
 
 export default function DropzoneEntry({
   configEntry,
-  key,
+  resourceKey,
   path,
 }: DropzoneEntryProps) {
-  const { deleteEntry } = useCustomConfig();
+  const { deleteComponent } = useCustomConfig();
   const { attributes, listeners, setNodeRef } = useDraggable({
     id: uuidv4(),
     data: {
@@ -39,7 +39,7 @@ export default function DropzoneEntry({
           text
           severity="danger"
           aria-label="Cancel"
-          onClick={() => deleteEntry(key, path)}
+          onClick={() => deleteComponent(resourceKey, path)}
         />
       </div>
 

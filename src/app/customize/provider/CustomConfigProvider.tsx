@@ -27,7 +27,7 @@ export default function CustomConfigProvider({
     Patient: {
       icon: '',
       section: {
-        renderers: [
+        components: [
           {
             path: 'testPath1',
             display: 'testDisplay1',
@@ -40,7 +40,7 @@ export default function CustomConfigProvider({
           },
           {
             title: 'Section2',
-            renderers: [
+            components: [
               {
                 path: 'testPath3',
                 display: 'testDisplay3',
@@ -59,7 +59,7 @@ export default function CustomConfigProvider({
     Condition: {
       icon: '',
       section: {
-        renderers: [
+        components: [
           {
             path: 'testPath1',
             display: 'testDisplay1',

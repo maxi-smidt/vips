@@ -10,18 +10,18 @@ import useCustomConfig from '@/app/customize/hooks/useCustomConfig';
 
 interface DropzoneSectionProps {
   section: ConfigSection;
-  key: string;
+  resourceKey: string;
   path: number[];
 }
 
 export default function DropzoneSection({
   section,
-  key,
+  resourceKey,
   path,
 }: DropzoneSectionProps) {
   const [visible, setVisible] = useState(false);
   const [sectionTitle, setSectionTitle] = useState('');
-  const { insertSection, deleteEntry } = useCustomConfig();
+  const { insertSection, deleteComponent } = useCustomConfig();
 
   const setInvisible = () => {
     setVisible(false);
@@ -34,7 +34,7 @@ export default function DropzoneSection({
       icon="pi pi-check"
       disabled={!sectionTitle}
       onClick={() => {
-        insertSection(key, path, sectionTitle);
+        insertSection(resourceKey, path, sectionTitle);
         setInvisible();
       }}
       autoFocus
@@ -43,13 +43,13 @@ export default function DropzoneSection({
 
   return (
     <div
-      key={`section-${section.title}`}
+      key={`section-${section.display}`}
       className="grid grid-cols-[auto,1fr] grid-rows-[auto,1fr,auto]"
     >
       <div className="bg-blue-300 col-start-1 row-start-1 row-end-4 w-8 flex items-center justify-center rounded-l-lg"></div>
 
       <div className="bg-blue-300 col-start-2 row-start-1 h-8 flex items-center justify-center rounded-tr-lg">
-        <h4 className="text-white">{section.title}</h4>
+        <h4 className="text-white">{section.display}</h4>
         <div className="ms-auto">
           {path.length > 0 && (
             <Button
@@ -57,7 +57,7 @@ export default function DropzoneSection({
               rounded
               text
               severity="danger"
-              onClick={() => deleteEntry(key, path)}
+              onClick={() => deleteComponent(resourceKey, path)}
             />
           )}
           <Button
@@ -91,18 +91,18 @@ export default function DropzoneSection({
       <div className="col-start-2 row-start-2 flex gap-4 py-1">
         <div className="flex flex-col w-full gap-1 ml-1">
           <Droppable id={uuidv4()} path={[...path, 0]} />
-          {section.renderers.map((component, index) => (
-            <div key={`component-${section.title}-${index}`}>
+          {section.components.map((component, index) => (
+            <div key={`component-${section.display}-${index}`}>
               {isConfigEntry(component) ? (
                 <DropzoneEntry
                   configEntry={component}
-                  key={key}
+                  resourceKey={resourceKey}
                   path={[...path, index]}
                 />
               ) : (
                 <DropzoneSection
                   section={component}
-                  key={key}
+                  resourceKey={resourceKey}
                   path={[...path, index]}
                 />
               )}

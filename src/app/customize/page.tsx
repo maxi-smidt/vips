@@ -1,16 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import {
-  Config,
-  ConfigEntry,
-  ConfigSection,
-  isConfigEntry,
-} from '@/app/types/Config';
+import { ConfigEntry, ConfigSection, isConfigEntry } from '@/app/types/Config';
 import useConfig from '@/app/hooks/useConfig';
 import DraggableEntry from '@/app/customize/components/draggables/DraggableEntry';
 import { DndContext, DragOverlay, DragStartEvent } from '@dnd-kit/core';
-import { RendererType } from '@/app/types/RendererType';
 import DraggableEntries from '@/app/customize/components/draggables/DraggableEntries';
 import Dropzone from '@/app/customize/components/dropzones/Dropzone';
 import CustomConfigProvider from '@/app/customize/provider/CustomConfigProvider';
@@ -22,7 +16,7 @@ export default function Home() {
 
   const separateEntries = () => {
     const separateSection = (section: ConfigSection, key: string) => {
-      section.renderers.forEach((value) => {
+      section.components.forEach((value) => {
         if (isConfigEntry(value)) {
           if (!separatedEntries[key]) {
             separatedEntries[key] = [];
