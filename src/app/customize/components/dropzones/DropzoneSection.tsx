@@ -1,12 +1,12 @@
 import { ConfigSection, isConfigEntry } from '@/app/types/Config';
 import React, { useState } from 'react';
-import DropzoneEntry from '@/app/customize/components/dropzones/DropzoneEntry';
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import Droppable from '@/app/customize/components/dropzones/Droppable';
 import { v4 as uuidv4 } from 'uuid';
 import useCustomConfig from '@/app/customize/hooks/useCustomConfig';
+import DraggableEntry from '@/app/customize/components/draggables/DraggableEntry';
 
 interface DropzoneSectionProps {
   section: ConfigSection;
@@ -21,7 +21,7 @@ export default function DropzoneSection({
 }: DropzoneSectionProps) {
   const [visible, setVisible] = useState(false);
   const [sectionTitle, setSectionTitle] = useState('');
-  const { insertSection, deleteComponent } = useCustomConfig();
+  const { insertComponent, deleteComponent } = useCustomConfig();
 
   const setInvisible = () => {
     setVisible(false);
@@ -34,10 +34,12 @@ export default function DropzoneSection({
       icon="pi pi-check"
       disabled={!sectionTitle}
       onClick={() => {
-        insertSection(resourceKey, path, sectionTitle);
+        insertComponent(resourceKey, path, {
+          display: sectionTitle,
+          components: [],
+        });
         setInvisible();
       }}
-      autoFocus
     />
   );
 
@@ -90,14 +92,19 @@ export default function DropzoneSection({
 
       <div className="col-start-2 row-start-2 flex gap-4 py-1">
         <div className="flex flex-col w-full gap-1 ml-1">
-          <Droppable id={uuidv4()} path={[...path, 0]} />
+          <Droppable
+            id={uuidv4()}
+            path={[...path, 0]}
+            resourceKey={resourceKey}
+          />
           {section.components.map((component, index) => (
             <div key={`component-${section.display}-${index}`}>
               {isConfigEntry(component) ? (
-                <DropzoneEntry
+                <DraggableEntry
                   configEntry={component}
                   resourceKey={resourceKey}
                   path={[...path, index]}
+                  isDeletable={true}
                 />
               ) : (
                 <DropzoneSection
@@ -106,7 +113,11 @@ export default function DropzoneSection({
                   path={[...path, index]}
                 />
               )}
-              <Droppable id={uuidv4()} path={[...path, index + 1]} />
+              <Droppable
+                id={uuidv4()}
+                path={[...path, index + 1]}
+                resourceKey={resourceKey}
+              />
             </div>
           ))}
         </div>

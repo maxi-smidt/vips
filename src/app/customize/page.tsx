@@ -4,15 +4,26 @@ import React, { useState } from 'react';
 import { ConfigEntry, ConfigSection, isConfigEntry } from '@/app/types/Config';
 import useConfig from '@/app/hooks/useConfig';
 import DraggableEntry from '@/app/customize/components/draggables/DraggableEntry';
-import { DndContext, DragOverlay, DragStartEvent } from '@dnd-kit/core';
+import {
+  DndContext,
+  DragEndEvent,
+  DragOverlay,
+  DragStartEvent,
+} from '@dnd-kit/core';
 import DraggableEntries from '@/app/customize/components/draggables/DraggableEntries';
 import Dropzone from '@/app/customize/components/dropzones/Dropzone';
 import CustomConfigProvider from '@/app/customize/provider/CustomConfigProvider';
+import useCustomConfig from '@/app/customize/hooks/useCustomConfig';
 
 export default function Home() {
   const { defaultConfig, reload } = useConfig();
   const separatedEntries: { [resource: string]: ConfigEntry[] } = {};
-  const [activeEntry, setActiveEntry] = useState<ConfigEntry | null>(null);
+  const [activeEntry, setActiveEntry] = useState<{
+    entry: ConfigEntry;
+    path: number[];
+    resourceKey: string;
+  } | null>(null);
+  const { moveComponent } = useCustomConfig();
 
   const separateEntries = () => {
     const separateSection = (section: ConfigSection, key: string) => {
@@ -50,18 +61,41 @@ export default function Home() {
         </div>
         <DragOverlay>
           {activeEntry ? (
-            <DraggableEntry key={'dragged'} configEntry={activeEntry} />
+            <DraggableEntry
+              key={'dragged'}
+              configEntry={activeEntry.entry}
+              path={[]}
+              resourceKey={'blah'}
+            />
           ) : null}
         </DragOverlay>
       </DndContext>
     </CustomConfigProvider>
   );
 
-  function handleDragStart(event: DragStartEvent) {
-    setActiveEntry(event.active.data.current!.entry);
+  function handleDragStart({ active }: DragStartEvent) {
+    setActiveEntry(
+      active.data.current as {
+        entry: ConfigEntry;
+        path: number[];
+        resourceKey: string;
+      },
+    );
+    console.log(active.data.current);
   }
 
-  function handleDragEnd() {
+  function handleDragEnd({ over }: DragEndEvent) {
+    console.log('over:', over);
+
+    if (over && activeEntry) {
+      moveComponent(
+        activeEntry.resourceKey,
+        over.data.current!.resourceKey,
+        activeEntry.path,
+        over.data.current!.path,
+      );
+    }
+
     setActiveEntry(null);
   }
 }

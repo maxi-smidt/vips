@@ -9,7 +9,7 @@ export interface ConfigResource {
   section: ConfigSection;
 }
 
-type ConfigComponent = ConfigSection | ConfigEntry;
+export type ConfigComponent = ConfigSection | ConfigEntry;
 
 export interface ConfigSection {
   display?: string;

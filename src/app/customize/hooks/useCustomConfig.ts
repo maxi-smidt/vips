@@ -1,57 +1,93 @@
 import { useContext } from 'react';
 import { CustomConfigContext } from '@/app/customize/provider/CustomConfigProvider';
-import { ConfigSection, isConfigSection } from '@/app/types/Config';
+import {
+  ConfigSection,
+  ConfigComponent,
+  isConfigSection,
+  Config,
+} from '@/app/types/Config';
 
 export default function useCustomConfig() {
   const { customConfig, setCustomConfig } = useContext(CustomConfigContext);
 
   const deleteComponent = (resourceKey: string, path: number[]) => {
-    console.log(resourceKey, path);
-    setCustomConfig((prevConfig) => {
+    let deletedComponent: ConfigComponent;
+    console.log('cc', customConfig);
+
+    const updatedConfig = ((prevConfig: Config) => {
+      console.log(prevConfig);
+
       const newConfig = JSON.parse(JSON.stringify(prevConfig));
 
-      let current = newConfig[resourceKey].section.components;
+      let section: ConfigSection = newConfig[resourceKey].section;
+
       for (let i = 0; i < path.length - 1; i++) {
-        const index = path[i];
-        if (Array.isArray(current) && current[index]) {
-          current = current[index].components;
+        const component = section.components[path[i]];
+        if (!isConfigSection(component)) {
+          throw new Error('Invalid component detected');
         }
+        section = component;
       }
 
       const lastIndex = path[path.length - 1];
-      if (Array.isArray(current)) current.splice(lastIndex, 1);
+      deletedComponent = section.components[lastIndex];
+      console.log('deleted component inside 1', deletedComponent, Date.now());
+
+      section.components.splice(lastIndex, 1);
+
+      console.log('deleted component inside 2', deletedComponent, Date.now());
+      return newConfig;
+    })(customConfig);
+
+    setCustomConfig(updatedConfig);
+
+    console.log('deleted component outside ', deletedComponent, Date.now());
+
+    return deletedComponent;
+  };
+
+  const insertComponent = (
+    resourceKey: string,
+    path: number[],
+    component: ConfigComponent,
+  ) => {
+    setCustomConfig((prevConfig) => {
+      const newConfig = JSON.parse(JSON.stringify(prevConfig));
+      let section: ConfigSection = newConfig[resourceKey].section;
+
+      for (let i = 0; i < path.length; i++) {
+        const component = section.components[path[i]];
+        if (!isConfigSection(component)) {
+          throw new Error('Invalid component detected');
+        }
+        section = component;
+      }
+
+      section.components.unshift({
+        display: component.display,
+        components: [],
+      });
 
       return newConfig;
     });
   };
 
-  const insertSection = (
-    resourceKey: string,
-    path: number[],
-    sectionTitle: string,
+  const moveComponent = (
+    sourceResourceKey: string,
+    targetResourceKey: string,
+    sourcePath: number[],
+    targetPath: number[],
   ) => {
-    setCustomConfig((prevConfig) => {
-      const newConfig = JSON.parse(JSON.stringify(prevConfig));
-      let section: ConfigSection = newConfig[resourceKey].section;
-      for (let i = 0; i < path.length; i++) {
-        const component = section.components[path[i]];
-        if (isConfigSection(component)) {
-          section = component;
-        }
-      }
-
-      section.components.unshift({
-        display: sectionTitle,
-        components: [],
-      });
-      return newConfig;
-    });
+    const component = deleteComponent(sourceResourceKey, sourcePath);
+    console.log(component);
+    insertComponent(targetResourceKey, targetPath, component);
   };
 
   return {
     customConfig,
     setCustomConfig,
     deleteComponent,
-    insertSection,
+    insertComponent,
+    moveComponent,
   };
 }
