@@ -15,7 +15,7 @@ export default function RootSectionRenderer({
 }: RootSectionRendererProps) {
   const getTitle = (index: number) => {
     if (bundleEntries.length === 1) return undefined;
-    return `${section.title} ${index + 1}`;
+    return `${section.display} ${index + 1}`;
   };
 
   return (
@@ -23,7 +23,7 @@ export default function RootSectionRenderer({
       {bundleEntries.map((bundleEntry, index) => (
         <div key={uuidv4()} id={bundleEntry.fullUrl}>
           <SectionRenderer
-            configSection={{ ...section, title: getTitle(index) }}
+            configSection={{ ...section, display: getTitle(index) }}
             depth={0}
             resource={bundleEntry.resource!}
           />

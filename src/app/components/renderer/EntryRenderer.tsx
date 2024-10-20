@@ -1,15 +1,15 @@
 import { ConfigEntry } from '@/app/types/Config';
 import { RendererType } from '@/app/types/RendererType';
-import IdentifierRenderer from '@/app/components/renderer/patient/IdentifierRenderer';
-import HumanNameRenderer from '@/app/components/renderer/patient/HumanNameRenderer';
-import DefaultRenderer from '@/app/components/renderer/common/DefaultRenderer';
-import CodeableConceptRenderer from '@/app/components/renderer/common/CodeableConceptRenderer';
-import AddressRenderer from '@/app/components/renderer/patient/AddressRenderer';
-import CodingRenderer from '@/app/components/renderer/CodingRenderer';
-import ContactPointRenderer from '@/app/components/renderer/patient/ContactPointRenderer';
+import IdentifierRenderer from '@/app/components/renderer/fhir/IdentifierRenderer';
+import HumanNameRenderer from '@/app/components/renderer/fhir/HumanNameRenderer';
+import DefaultRenderer from '@/app/components/renderer/fhir/DefaultRenderer';
+import CodeableConceptRenderer from '@/app/components/renderer/fhir/CodeableConceptRenderer';
+import AddressRenderer from '@/app/components/renderer/fhir/AddressRenderer';
+import CodingRenderer from '@/app/components/renderer/fhir/CodingRenderer';
+import ContactPointRenderer from '@/app/components/renderer/fhir/ContactPointRenderer';
 import { useBundle } from '@/app/hooks/useBundle';
 import { ResourceUtils } from '@smile-cdr/fhirts';
-import LinkRenderer from '@/app/components/renderer/LinkRenderer';
+import LinkRenderer from '@/app/components/renderer/fhir/LinkRenderer';
 import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
 
 const resourceUtils = new ResourceUtils();

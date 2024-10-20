@@ -7,11 +7,11 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Patient',
     code: 'patient',
     section: {
-      title: 'Patient',
-      renderers: [
+      display: 'Patient',
+      components: [
         {
-          title: 'Personal Information',
-          renderers: [
+          display: 'Personal Information',
+          components: [
             {
               display: 'Identifier',
               path: 'Patient.identifier',
@@ -30,8 +30,8 @@ export const DefaultConfigEN: Config = {
           ],
         },
         {
-          title: 'Communication',
-          renderers: [
+          display: 'Communication',
+          components: [
             {
               display: 'Telecom',
               path: 'Patient.telecom',
@@ -52,10 +52,10 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Medication Summary',
     code: '10160-0',
     section: {
-      title: 'Medication(Statement/Request)',
-      renderers: [
+      display: 'Medication(Statement/Request)',
+      components: [
         {
-          renderers: [
+          components: [
             {
               display: 'Medication Id',
               path: 'Medication.id',
@@ -81,10 +81,10 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Allergies and Intolerances',
     code: '48765-2',
     section: {
-      title: 'Allergy or Intolerance',
-      renderers: [
+      display: 'Allergy or Intolerance',
+      components: [
         {
-          renderers: [
+          components: [
             {
               display: 'Clinical Status',
               path: 'AllergyIntolerance.clinicalStatus',
@@ -110,11 +110,11 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Problems',
     code: '11450-4',
     section: {
-      title: 'Problem',
-      renderers: [
+      display: 'Problem',
+      components: [
         {
-          title: 'General Information',
-          renderers: [
+          display: 'General Information',
+          components: [
             {
               display: 'Clinical Status',
               path: 'Condition.clinicalStatus',
@@ -196,8 +196,8 @@ export const DefaultConfigEN: Config = {
               renderer: RendererType.DEFAULT,
             },
             {
-              title: 'Stage',
-              renderers: [
+              display: 'Stage',
+              components: [
                 {
                   display: 'Stage Summary',
                   path: 'Condition.stage.summary',
@@ -230,13 +230,13 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Procedure History',
     code: '47519-4',
     section: {
-      title: 'Procedure',
-      renderers: [
+      display: 'Procedure',
+      components: [
         {
-          renderers: [
+          components: [
             {
-              title: 'Procedure Details',
-              renderers: [
+              display: 'Procedure Details',
+              components: [
                 {
                   display: 'Status',
                   path: 'Procedure.status',
@@ -309,11 +309,11 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Immunization History',
     code: '11369-6',
     section: {
-      title: 'Immunization',
-      renderers: [
+      display: 'Immunization',
+      components: [
         {
-          title: 'General Information',
-          renderers: [
+          display: 'General Information',
+          components: [
             {
               display: 'Status',
               path: 'Immunization.status',
@@ -412,8 +412,8 @@ export const DefaultConfigEN: Config = {
           ],
         },
         {
-          title: 'Education',
-          renderers: [
+          display: 'Education',
+          components: [
             {
               display: 'Document Type',
               path: 'Immunization.education.documentType',
@@ -437,8 +437,8 @@ export const DefaultConfigEN: Config = {
           ],
         },
         {
-          title: 'Applied protocol',
-          renderers: [
+          display: 'Applied protocol',
+          components: [
             {
               display: 'Series',
               path: 'Immunization.protocolApplied.series',
@@ -469,11 +469,11 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'History of Medical Devices',
     code: '46264-8',
     section: {
-      title: 'Medical Device Statement',
-      renderers: [
+      display: 'Medical Device Statement',
+      components: [
         {
-          title: 'General Information',
-          renderers: [
+          display: 'General Information',
+          components: [
             {
               display: 'Status',
               path: 'DeviceUseStatement.status',
@@ -514,10 +514,10 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Diagnostic tests and laboratory data',
     code: '30954-2',
     section: {
-      title: 'Diagnostic test or laboratory data',
-      renderers: [
+      display: 'Diagnostic test or laboratory data',
+      components: [
         {
-          renderers: [
+          components: [
             {
               display: 'Status',
               path: 'DiagnosticReport.status',
@@ -619,8 +619,8 @@ export const DefaultConfigEN: Config = {
               renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
-              title: 'Reference Range',
-              renderers: [
+              display: 'Reference Range',
+              components: [
                 {
                   display: 'Low Range',
                   path: 'Observation.referenceRange.low',

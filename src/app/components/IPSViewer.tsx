@@ -16,7 +16,6 @@ export default function IPSViewer() {
     setActiveIndex(e.index);
   };
   const allResourcesDict = extractResources();
-  console.log(allResourcesDict);
   return (
     <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
       {Object.keys(config).map((key) => (

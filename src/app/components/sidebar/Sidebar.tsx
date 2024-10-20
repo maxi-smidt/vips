@@ -6,8 +6,8 @@ import TextInput from './input-options/TextInput';
 import ApiInput from './input-options/ApiInput';
 import FileInput from './input-options/FileInput';
 import { Button } from 'primereact/button';
-import { useBundle } from '@/app/hooks/useBundle';
 import Image from 'next/image';
+import { useData } from '@/app/hooks/useData';
 
 interface SidebarProps {
   children: ReactNode;
@@ -16,7 +16,7 @@ interface SidebarProps {
 export default function Sidebar({ children }: SidebarProps) {
   const options = ['File', 'API', 'Text'];
   const [selectedOption, setSelectedOption] = useState(options[0]);
-  const { expanded, setExpanded } = useBundle();
+  const { expanded, setExpanded } = useData();
   const onExpandClick = () => {
     const newState = !expanded;
     setExpanded(newState);

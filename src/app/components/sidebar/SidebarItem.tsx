@@ -1,7 +1,7 @@
 import React from 'react';
-import { useBundle } from '@/app/hooks/useBundle';
 import Image from 'next/image';
 import { Button } from 'primereact/button';
+import { useData } from '@/app/hooks/useData';
 
 interface SidebarItemProps {
   sectionKey: string;
@@ -14,7 +14,7 @@ export default function SidebarItem({
   sectionKey,
   iconPath,
 }: SidebarItemProps) {
-  const { expanded } = useBundle();
+  const { expanded } = useData();
 
   const passTrough = expanded
     ? {
@@ -40,7 +40,7 @@ export default function SidebarItem({
       severity="secondary"
       outlined
       onClick={() => onClick(sectionKey)}
-      tooltip={sectionKey}
+      tooltip={sectionDisplay}
       tooltipOptions={{ showDelay: 200 }}
       pt={passTrough}
       icon={(_) => (
