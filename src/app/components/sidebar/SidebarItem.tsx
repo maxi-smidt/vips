@@ -30,8 +30,13 @@ export default function SidebarItem({
       severity="secondary"
       outlined
       onClick={() => onClick(sectionKey)}
-      tooltip={expanded ? undefined : sectionKey}
+      tooltip={sectionKey}
       tooltipOptions={{ showDelay: 200 }}
+      pt={{
+        label: {
+          className: 'text-left pl-2 truncate',
+        },
+      }}
       icon={(_) => (
         <Image
           src={`${process.env.IMAGE_PATH}${iconPath}`}
