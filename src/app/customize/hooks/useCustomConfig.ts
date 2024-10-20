@@ -9,18 +9,12 @@ import {
 
 export default function useCustomConfig() {
   const { customConfig, setCustomConfig } = useContext(CustomConfigContext);
-
   const deleteComponent = (resourceKey: string, path: number[]) => {
     let deletedComponent: ConfigComponent;
-    console.log('cc', customConfig);
 
     const updatedConfig = ((prevConfig: Config) => {
-      console.log(prevConfig);
-
       const newConfig = JSON.parse(JSON.stringify(prevConfig));
-
       let section: ConfigSection = newConfig[resourceKey].section;
-
       for (let i = 0; i < path.length - 1; i++) {
         const component = section.components[path[i]];
         if (!isConfigSection(component)) {
@@ -31,17 +25,13 @@ export default function useCustomConfig() {
 
       const lastIndex = path[path.length - 1];
       deletedComponent = section.components[lastIndex];
-      console.log('deleted component inside 1', deletedComponent, Date.now());
 
       section.components.splice(lastIndex, 1);
 
-      console.log('deleted component inside 2', deletedComponent, Date.now());
       return newConfig;
     })(customConfig);
 
     setCustomConfig(updatedConfig);
-
-    console.log('deleted component outside ', deletedComponent, Date.now());
 
     return deletedComponent;
   };
@@ -54,20 +44,20 @@ export default function useCustomConfig() {
     setCustomConfig((prevConfig) => {
       const newConfig = JSON.parse(JSON.stringify(prevConfig));
       let section: ConfigSection = newConfig[resourceKey].section;
-
-      for (let i = 0; i < path.length; i++) {
+      for (let i = 0; i < path.length - 1; i++) {
         const component = section.components[path[i]];
         if (!isConfigSection(component)) {
-          throw new Error('Invalid component detected');
+          if (i < path.length - 1)
+            // only the last element should be an entry
+            throw new Error('Invalid component detected');
+          break;
         }
-        section = component;
+        if (component) {
+          section = component;
+        }
       }
-
-      section.components.unshift({
-        display: component.display,
-        components: [],
-      });
-
+      const lastIndex = path[path.length - 1];
+      section.components.splice(lastIndex, 0, component);
       return newConfig;
     });
   };
@@ -78,9 +68,17 @@ export default function useCustomConfig() {
     sourcePath: number[],
     targetPath: number[],
   ) => {
-    const component = deleteComponent(sourceResourceKey, sourcePath);
-    console.log(component);
-    insertComponent(targetResourceKey, targetPath, component);
+    if (!isNeighbour(targetPath, sourcePath)) {
+      const component = deleteComponent(sourceResourceKey, sourcePath);
+      insertComponent(targetResourceKey, targetPath, component);
+    }
+  };
+
+  const isNeighbour = (firstPath: number[], secondPath: number[]) => {
+    if (firstPath.length !== secondPath.length) return false;
+    const firstIndex = firstPath[firstPath.length - 1];
+    const secondIndex = secondPath[secondPath.length - 1];
+    return firstIndex === secondIndex || secondIndex === firstIndex - 1;
   };
 
   return {
@@ -89,5 +87,6 @@ export default function useCustomConfig() {
     deleteComponent,
     insertComponent,
     moveComponent,
+    isNeighbour,
   };
 }

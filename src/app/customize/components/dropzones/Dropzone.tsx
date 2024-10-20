@@ -1,8 +1,13 @@
 import DropzoneSection from '@/app/customize/components/dropzones/DropzoneSection';
 import React from 'react';
 import useCustomConfig from '@/app/customize/hooks/useCustomConfig';
+import { DndComponent } from '@/app/customize/types/DndComponent';
 
-export default function Dropzone() {
+interface DropzoneProps {
+  activeComponent: DndComponent | null;
+}
+
+export default function Dropzone({ activeComponent }: DropzoneProps) {
   const { customConfig } = useCustomConfig();
   return (
     <div className="flex flex-col gap-3">
@@ -10,6 +15,7 @@ export default function Dropzone() {
         <div key={key}>
           <h4>{key}</h4>
           <DropzoneSection
+            activeComponent={activeComponent}
             section={customConfig[key].section}
             resourceKey={key}
             path={[]}

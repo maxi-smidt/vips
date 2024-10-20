@@ -1,3 +1,5 @@
+'use client';
+
 import { Config } from '@/app/types/Config';
 import React, {
   createContext,
@@ -39,7 +41,7 @@ export default function CustomConfigProvider({
             renderer: RendererType.DEFAULT,
           },
           {
-            title: 'Section2',
+            display: 'Section2',
             components: [
               {
                 path: 'testPath3',

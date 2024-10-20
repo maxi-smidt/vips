@@ -7,14 +7,17 @@ import Droppable from '@/app/customize/components/dropzones/Droppable';
 import { v4 as uuidv4 } from 'uuid';
 import useCustomConfig from '@/app/customize/hooks/useCustomConfig';
 import DraggableEntry from '@/app/customize/components/draggables/DraggableEntry';
+import { DndComponent } from '@/app/customize/types/DndComponent';
 
 interface DropzoneSectionProps {
+  activeComponent: DndComponent;
   section: ConfigSection;
   resourceKey: string;
   path: number[];
 }
 
 export default function DropzoneSection({
+  activeComponent,
   section,
   resourceKey,
   path,
@@ -96,6 +99,7 @@ export default function DropzoneSection({
             id={uuidv4()}
             path={[...path, 0]}
             resourceKey={resourceKey}
+            activeComponent={activeComponent}
           />
           {section.components.map((component, index) => (
             <div key={`component-${section.display}-${index}`}>
@@ -108,6 +112,7 @@ export default function DropzoneSection({
                 />
               ) : (
                 <DropzoneSection
+                  activeComponent={activeComponent}
                   section={component}
                   resourceKey={resourceKey}
                   path={[...path, index]}
@@ -116,6 +121,7 @@ export default function DropzoneSection({
               <Droppable
                 id={uuidv4()}
                 path={[...path, index + 1]}
+                activeComponent={activeComponent}
                 resourceKey={resourceKey}
               />
             </div>

@@ -12,17 +12,13 @@ import {
 } from '@dnd-kit/core';
 import DraggableEntries from '@/app/customize/components/draggables/DraggableEntries';
 import Dropzone from '@/app/customize/components/dropzones/Dropzone';
-import CustomConfigProvider from '@/app/customize/provider/CustomConfigProvider';
 import useCustomConfig from '@/app/customize/hooks/useCustomConfig';
+import { DndComponent } from '@/app/customize/types/DndComponent';
 
 export default function Home() {
   const { defaultConfig, reload } = useConfig();
   const separatedEntries: { [resource: string]: ConfigEntry[] } = {};
-  const [activeEntry, setActiveEntry] = useState<{
-    entry: ConfigEntry;
-    path: number[];
-    resourceKey: string;
-  } | null>(null);
+  const [activeEntry, setActiveEntry] = useState<DndComponent | null>(null);
   const { moveComponent } = useCustomConfig();
 
   const separateEntries = () => {
@@ -49,28 +45,27 @@ export default function Home() {
   separateEntries();
 
   return (
-    <CustomConfigProvider>
-      <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-        <div className="flex h-screen">
-          <div className="w-2/3 overflow-y-scroll p-4">
-            <Dropzone />
-          </div>
-          <div className="w-1/3 overflow-y-scroll p-4">
-            <DraggableEntries separatedEntries={separatedEntries} />
-          </div>
+    <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
+      <div className="flex h-screen">
+        <div className="w-2/3 overflow-y-scroll p-4">
+          <Dropzone activeComponent={activeEntry} />
         </div>
-        <DragOverlay>
-          {activeEntry ? (
-            <DraggableEntry
-              key={'dragged'}
-              configEntry={activeEntry.entry}
-              path={[]}
-              resourceKey={'blah'}
-            />
-          ) : null}
-        </DragOverlay>
-      </DndContext>
-    </CustomConfigProvider>
+        <div className="w-1/3 overflow-y-scroll p-4">
+          <DraggableEntries separatedEntries={separatedEntries} />
+        </div>
+      </div>
+      <DragOverlay>
+        {activeEntry ? (
+          <DraggableEntry
+            key={'dragged'}
+            configEntry={activeEntry.entry}
+            path={[]}
+            resourceKey={'blah'}
+            isDeletable={false}
+          />
+        ) : null}
+      </DragOverlay>
+    </DndContext>
   );
 
   function handleDragStart({ active }: DragStartEvent) {
@@ -81,12 +76,9 @@ export default function Home() {
         resourceKey: string;
       },
     );
-    console.log(active.data.current);
   }
 
   function handleDragEnd({ over }: DragEndEvent) {
-    console.log('over:', over);
-
     if (over && activeEntry) {
       moveComponent(
         activeEntry.resourceKey,
