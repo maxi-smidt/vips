@@ -4,11 +4,11 @@ import { FileUpload, FileUploadSelectEvent } from 'primereact/fileupload';
 import React, { useRef, useState } from 'react';
 import { Fhir } from 'fhir';
 import { Button } from 'primereact/button';
-import { useData } from '@/app/hooks/useData';
+import { useBundle } from '@/app/hooks/useBundle';
 import { useToast } from '@/app/hooks/useToast';
 
 export default function FileInput() {
-  const { setBundle } = useData();
+  const { setBundle } = useBundle();
   const { showError } = useToast();
   const fileUploadRef = useRef<FileUpload>(null);
   const [file, setFile] = useState<File | undefined>();

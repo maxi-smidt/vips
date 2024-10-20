@@ -1,18 +1,20 @@
 import React from 'react';
-import { useData } from '@/app/hooks/useData';
+import { useBundle } from '@/app/hooks/useBundle';
 import Image from 'next/image';
 import { Button } from 'primereact/button';
 
 interface SidebarItemProps {
   sectionKey: string;
   iconPath: string;
+  sectionDisplay: string;
 }
 
 export default function SidebarItem({
+  sectionDisplay,
   sectionKey,
   iconPath,
 }: SidebarItemProps) {
-  const { expanded } = useData();
+  const { expanded } = useBundle();
 
   const passTrough = expanded
     ? {
@@ -23,7 +25,7 @@ export default function SidebarItem({
     : {};
 
   const onClick = (sectionKey: string) => {
-    const element = document.getElementsByClassName(`target-${sectionKey}`)[0];
+    const element = document.getElementsByClassName(`${sectionKey}`)[0];
     if (element) {
       element.scrollIntoView();
       const offset = 70;
@@ -34,7 +36,7 @@ export default function SidebarItem({
   return (
     <Button
       className="w-full"
-      label={expanded ? sectionKey : undefined}
+      label={expanded ? sectionDisplay : undefined}
       severity="secondary"
       outlined
       onClick={() => onClick(sectionKey)}

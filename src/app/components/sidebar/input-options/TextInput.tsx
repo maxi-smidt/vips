@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useData } from '@/app/hooks/useData';
+import { useBundle } from '@/app/hooks/useBundle';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from 'primereact/button';
 import { useToast } from '@/app/hooks/useToast';
@@ -9,7 +9,7 @@ import { Fhir } from 'fhir';
 import { SelectButton } from 'primereact/selectbutton';
 
 export default function TextInput() {
-  const { setBundle } = useData();
+  const { setBundle } = useBundle();
   const { showError } = useToast();
   const options = ['JSON', 'XML'];
   const [option, setOption] = useState(options[0]);

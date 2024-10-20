@@ -121,6 +121,11 @@ export const DefaultConfigEN: Config = {
               renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
+              display: 'Patient',
+              path: 'Condition.subject.reference',
+              renderer: RendererType.LINK,
+            },
+            {
               display: 'Verification Status',
               path: 'Condition.verificationStatus',
               renderer: RendererType.CODEABLE_CONCEPT,
@@ -204,6 +209,11 @@ export const DefaultConfigEN: Config = {
                   renderer: RendererType.DEFAULT,
                 },
                 {
+                  display: 'Formal record of assessment',
+                  path: 'Condition.stage.assessment.reference',
+                  renderer: RendererType.LINK,
+                },
+                {
                   display: 'Evidence',
                   path: 'Condition.evidence',
                   renderer: RendererType.DEFAULT,
@@ -251,6 +261,11 @@ export const DefaultConfigEN: Config = {
                   display: 'Performed Date/Period',
                   path: 'Procedure.performed',
                   renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Performer',
+                  path: 'Procedure.performer.actor:Practitioner.name',
+                  renderer: RendererType.HUMAN_NAME,
                 },
                 {
                   display: 'Reason Code',
@@ -561,6 +576,16 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Date/Time this version was made available',
               path: 'Observation.issued',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Performer',
+              path: 'Observation.performer:Practitioner.name',
+              renderer: RendererType.HUMAN_NAME,
+            },
+            {
+              display: 'Performer',
+              path: 'Observation.performer:Organization.name',
               renderer: RendererType.DEFAULT,
             },
             {

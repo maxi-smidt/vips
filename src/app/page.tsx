@@ -3,14 +3,14 @@
 import IPSViewer from '@/app/components/IPSViewer';
 import EmptyPage from '@/app/components/EmptyPage';
 import React from 'react';
-import { useData } from '@/app/hooks/useData';
+import { useBundle } from '@/app/hooks/useBundle';
 
 export default function Home() {
-  const { bundle } = useData();
+  const { bundle } = useBundle();
 
   if (!bundle) {
     return <EmptyPage />; // TODO change to animation for example
   }
 
-  return <IPSViewer bundle={bundle} />;
+  return <IPSViewer />;
 }

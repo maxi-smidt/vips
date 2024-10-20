@@ -6,4 +6,5 @@ export enum RendererType {
   CODEABLE_CONCEPT = 'CodeableConceptRenderer',
   CODING = 'CodingRenderer',
   CONTACT_POINT = 'ContactPointRenderer',
+  LINK = 'LinkRenderer',
 }

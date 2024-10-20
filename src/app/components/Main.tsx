@@ -2,10 +2,10 @@
 
 import React, { useEffect } from 'react';
 import VipsSideBar from '@/app/components/sidebar/VipsSideBar';
-import { useData } from '@/app/hooks/useData';
+import { useBundle } from '@/app/hooks/useBundle';
 
 export default function Main({ children }: { children: React.ReactNode }) {
-  const { expanded, setExpanded } = useData();
+  const { expanded, setExpanded } = useBundle();
 
   useEffect(() => {
     const storedExpanded = localStorage.getItem('expanded');
