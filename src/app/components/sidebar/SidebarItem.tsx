@@ -14,6 +14,14 @@ export default function SidebarItem({
 }: SidebarItemProps) {
   const { expanded } = useData();
 
+  const passTrough = expanded
+    ? {
+        label: {
+          className: 'text-left pl-2 truncate',
+        },
+      }
+    : {};
+
   const onClick = (sectionKey: string) => {
     const element = document.getElementsByClassName(`target-${sectionKey}`)[0];
     if (element) {
@@ -32,11 +40,7 @@ export default function SidebarItem({
       onClick={() => onClick(sectionKey)}
       tooltip={sectionKey}
       tooltipOptions={{ showDelay: 200 }}
-      pt={{
-        label: {
-          className: 'text-left pl-2 truncate',
-        },
-      }}
+      pt={passTrough}
       icon={(_) => (
         <Image
           src={`${process.env.IMAGE_PATH}${iconPath}`}
