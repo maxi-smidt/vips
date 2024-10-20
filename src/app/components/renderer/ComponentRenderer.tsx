@@ -29,12 +29,18 @@ export default function ComponentRenderer({
     );
   } else if (isConfigSection(configComponent)) {
     return (
-      <SectionRenderer
-        key={configComponent.title}
-        depth={depth}
-        configSection={configComponent}
-        resource={resource}
-      />
+      <>
+        {configComponent.title && (
+          <h3 className="pl-2">{configComponent.title}</h3>
+        )}
+
+        <SectionRenderer
+          key={configComponent.title}
+          depth={depth}
+          configSection={configComponent}
+          resource={resource}
+        />
+      </>
     );
   }
   return null;

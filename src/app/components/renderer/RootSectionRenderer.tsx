@@ -2,10 +2,11 @@ import SectionRenderer from '@/app/components/renderer/SectionRenderer';
 import React from 'react';
 import { ConfigSection } from '@/app/types/Config';
 import { v4 as uuidv4 } from 'uuid';
+import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
 
 interface RootSectionRendererProps {
   section: ConfigSection;
-  resources: unknown[];
+  resources: Resource[];
 }
 
 export default function RootSectionRenderer({

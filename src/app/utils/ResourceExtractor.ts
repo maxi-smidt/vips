@@ -1,44 +1,70 @@
 import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
-import { BundleUtils } from '@smile-cdr/fhirts';
-import { ConfigEntry, ConfigSection } from '@/app/types/Config';
+import { BundleUtils, ResourceUtils } from '@smile-cdr/fhirts';
+import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
+import { CompositionSection } from '@smile-cdr/fhirts/src/FHIR-R4/classes/compositionSection';
+import { Reference } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/reference';
+import { BundleEntry } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundleEntry';
+import { Composition } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/composition';
 
 const bundleUtils = new BundleUtils();
+const resourceUtils = new ResourceUtils();
 
-export function extractResources<T>(
-  bundle: Bundle,
-  renderers: (ConfigSection | ConfigEntry)[],
-): T[] {
-  const resourceTypes = new Set<string>();
+const getResourceWithRufzeichen = (
+  bundleEntry: BundleEntry[],
+  reference: string,
+): Resource => {
+  return bundleEntry.find((x) => x['fullUrl'] === reference)!.resource!;
+};
 
-  function processRenderers(renderers: (ConfigSection | ConfigEntry)[]) {
-    renderers.forEach((renderer) => {
-      if ('renderer' in renderer) {
-        // It's a ConfigEntry, extract the resource type
-        const resourceType = renderer.path.split('.')[0];
-        resourceTypes.add(resourceType);
-      } else if ('renderers' in renderer) {
-        // It's a ConfigSection, recurse into its renderers
-        processRenderers(renderer.renderers);
+export function extractResources(bundle: Bundle): {
+  [p: string]: Resource[];
+} {
+  // Get the Composition resource from the bundle
+  const composition: Composition = bundleUtils.getResources(
+    bundle.entry!,
+    'Composition',
+  )[0].resource;
+
+  // Get all sections from the Composition
+  const allSections: CompositionSection[] =
+    resourceUtils.getValuesAtResourcePath(composition, 'Composition.section');
+
+  // Initialize a dictionary to map section codes to resources
+  const sectionResourceDict: { [key: string]: Resource[] } = {};
+
+  // Iterate through each section in the Composition
+  allSections.forEach((section: CompositionSection) => {
+    // Extract the section code (to identify the IPS section)
+    const sectionCode = section?.code?.coding?.at(0)?.code; // Assuming the first coding is used
+
+    // Get all resources (references) from the section
+    const allResourceReferences = section.entry;
+
+    // Initialize the section entry in the dictionary with an empty array
+    if (sectionCode && !sectionResourceDict[sectionCode]) {
+      sectionResourceDict[sectionCode] = [];
+    }
+
+    // Iterate through each entry in the section
+    allResourceReferences?.forEach((entry: Reference) => {
+      // Retrieve the resource using the reference
+      if (
+        entry.reference != null &&
+        bundle.entry != null &&
+        sectionCode != null
+      ) {
+        const resource: Resource = getResourceWithRufzeichen(
+          bundle.entry,
+          entry.reference,
+        );
+        sectionResourceDict[sectionCode].push(resource);
       }
     });
-  }
-  processRenderers(renderers);
-
-
-  let collectedResources: T[] = [];
-
-  resourceTypes.forEach((resourceType) => {
-    // For each resource type, get the resources from the bundle
-    const entries = bundleUtils.getResources(bundle.entry!, resourceType) as {
-      resource: T;
-    }[];
-
-    // Extract the resource from each entry and add to the collected resources
-    collectedResources = [
-      ...collectedResources,
-      ...entries.map((entry) => entry.resource),
-    ];
   });
+  sectionResourceDict['patient'] = [
+    getResourceWithRufzeichen(bundle.entry!, composition.subject!.reference!),
+  ];
 
-  return collectedResources;
+  // Return the section-resource dictionary
+  return sectionResourceDict;
 }

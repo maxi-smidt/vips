@@ -42,12 +42,14 @@ export default function SectionRenderer({
             resourceType
         ) {
           return (
-            <ComponentRenderer
-              key={uuidv4()}
-              configComponent={component}
-              resource={resource}
-              depth={depth + 1}
-            />
+            <>
+              <ComponentRenderer
+                key={uuidv4()}
+                configComponent={component}
+                resource={resource}
+                depth={depth + 1}
+              />
+            </>
           );
         }
         return null; // Return null if no conditions are met

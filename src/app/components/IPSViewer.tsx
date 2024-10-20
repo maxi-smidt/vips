@@ -8,6 +8,7 @@ import {
 import useConfig from '@/app/hooks/useConfig';
 import { extractResources } from '@/app/utils/ResourceExtractor';
 import RootSectionRenderer from '@/app/components/renderer/RootSectionRenderer';
+import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
 
 interface IPSViewerProps {
   bundle: Bundle;
@@ -19,6 +20,9 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
   const onTabChange = (e: AccordionTabChangeEvent) => {
     setActiveIndex(e.index);
   };
+  const [allResourcesDict] = useState<{
+    [p: string]: Resource[];
+  }>(extractResources(bundle));
 
   return (
     <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
@@ -29,10 +33,12 @@ export default function IPSViewer({ bundle }: IPSViewerProps) {
           className={`target-${key}`}
           pt={{ content: { className: 'p-0' } }}
         >
-          <RootSectionRenderer
-            section={config[key].section}
-            resources={extractResources(bundle, config[key].section.renderers)}
-          />
+          {allResourcesDict[config[key].code] && (
+            <RootSectionRenderer
+              section={config[key].section}
+              resources={allResourcesDict[config[key].code]}
+            />
+          )}
         </AccordionTab>
       ))}
     </Accordion>
