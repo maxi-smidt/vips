@@ -15,7 +15,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="flex flex-row overflow-hidden">
+    <div className="flex flex-1 flex-row overflow-hidden">
       <aside className="flex overflow-y-auto">
         <VipsSideBar />
       </aside>
