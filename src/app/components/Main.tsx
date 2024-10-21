@@ -15,12 +15,11 @@ export default function Main({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="flex flex-row" style={{ height: `calc(100vh - 80px)` }}>
+    <div className="flex flex-row flex-1 overflow-hidden">
       <aside className="flex h-full overflow-y-auto">
         <VipsSideBar />
       </aside>
-
-      <main className="flex-1 h-full overflow-y-auto">{children}</main>
+      <main className="flex-1 overflow-y-auto">{children}</main>
     </div>
   );
 }

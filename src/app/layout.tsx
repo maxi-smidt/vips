@@ -27,10 +27,8 @@ export default function RootLayout({
         <ToastProvider>
           <DataProvider>
             <BundleProvider>
-              <body
-                className={`${inter.className} m-0 h-screen overflow-hidden`}
-              >
-                <div className="flex flex-col h-full">
+              <body className={`${inter.className} m-0`}>
+                <div className="flex flex-col h-screen">
                   <Header />
                   <Main>{children}</Main>
                 </div>

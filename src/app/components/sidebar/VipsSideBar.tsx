@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Sidebar from '@/app/components/sidebar/Sidebar';
 import useConfig from '@/app/hooks/useConfig';
