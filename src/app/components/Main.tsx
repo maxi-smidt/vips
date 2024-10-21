@@ -5,7 +5,7 @@ import VipsSideBar from '@/app/components/sidebar/VipsSideBar';
 import { useData } from '@/app/hooks/useData';
 
 export default function Main({ children }: { children: React.ReactNode }) {
-  const { expanded, setExpanded } = useData();
+  const { setExpanded } = useData();
 
   useEffect(() => {
     const storedExpanded = localStorage.getItem('expanded');
@@ -15,14 +15,12 @@ export default function Main({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="flex flex-1">
-      <aside>
+    <div className="flex h-full w-full">
+      <aside className="flex h-full overflow-y-auto">
         <VipsSideBar />
       </aside>
 
-      <main
-        className={`flex-1 p-10 transition-all duration-300 ${expanded ? 'ml-[240px]' : 'ml-[64px]'}`}
-      >
+      <main className="flex-1 h-full overflow-y-auto transition-all duration-300">
         {children}
       </main>
     </div>

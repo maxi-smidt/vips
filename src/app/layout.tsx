@@ -23,16 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} m-0 overflow-hidden`}>
         <PrimeReactProvider>
           <div className="flex flex-col h-screen">
             <ToastProvider>
               <DataProvider>
                 <BundleProvider>
-                  <div className="fixed top-0 z-10 w-full shadow-md">
-                    {<Header />}
-                  </div>
-                  <div className="mt-10">{<Main>{children}</Main>}</div>
+                  <div className="sticky z-10 shadow-md">{<Header />}</div>
+                  {<Main>{children}</Main>}
                 </BundleProvider>
               </DataProvider>
             </ToastProvider>
