@@ -23,22 +23,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <PrimeReactProvider>
-          <div className="flex flex-col h-screen">
-            <ToastProvider>
-              <DataProvider>
-                <BundleProvider>
-                  <div className="fixed top-0 z-10 w-full shadow-md">
-                    {<Header />}
-                  </div>
-                  <div className="mt-10">{<Main>{children}</Main>}</div>
-                </BundleProvider>
-              </DataProvider>
-            </ToastProvider>
-          </div>
-        </PrimeReactProvider>
-      </body>
+      <PrimeReactProvider>
+        <ToastProvider>
+          <DataProvider>
+            <BundleProvider>
+              <body className={`${inter.className} m-0`}>
+                <div className="flex flex-col h-screen">
+                  <Header />
+                  <Main>{children}</Main>
+                </div>
+              </body>
+            </BundleProvider>
+          </DataProvider>
+        </ToastProvider>
+      </PrimeReactProvider>
     </html>
   );
 }

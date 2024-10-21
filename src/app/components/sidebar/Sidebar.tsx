@@ -31,11 +31,11 @@ export default function Sidebar({ children }: SidebarProps) {
 
   return (
     <div
-      className={`fixed top-16 left-0 h-[calc(100vh-4rem)] px-2 bg-stone-50 border-r shadow-lg transition-all duration-150 overflow-hidden overflow-y-auto ${
+      className={`px-2 bg-stone-50 transition-all duration-300 ${
         expanded ? 'w-64' : 'w-20'
       }`}
     >
-      <nav className="h-full flex flex-col">
+      <nav className="flex flex-col h-full">
         <div className={`flex items-center mb-1 ${!expanded && 'mt-2'}`}>
           {expanded && <h2 className="text-xl font-bold">Load IPS</h2>}
           <Button
@@ -89,7 +89,7 @@ export default function Sidebar({ children }: SidebarProps) {
         {expanded && (
           <div className="flex justify-center mt-auto">
             <a
-              className="flex items-center gap-1 text-sm hover:text-blue-700 hover:underline"
+              className="flex items-center gap-1 text-sm hover:text-blue-700 hover:underline my-2"
               href="https://github.com/maxi-smidt/vips"
             >
               Find us on{' '}
