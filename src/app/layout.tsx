@@ -23,20 +23,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} m-0 overflow-hidden`}>
-        <PrimeReactProvider>
-          <div className="flex flex-col h-screen">
-            <ToastProvider>
-              <DataProvider>
-                <BundleProvider>
-                  <div className="sticky z-10 shadow-md">{<Header />}</div>
-                  {<Main>{children}</Main>}
-                </BundleProvider>
-              </DataProvider>
-            </ToastProvider>
-          </div>
-        </PrimeReactProvider>
-      </body>
+      <PrimeReactProvider>
+        <ToastProvider>
+          <DataProvider>
+            <BundleProvider>
+              <body
+                className={`${inter.className} m-0 h-screen overflow-hidden`}
+              >
+                <div className="flex flex-col h-full">
+                  <Header />
+                  <Main>{children}</Main>
+                </div>
+              </body>
+            </BundleProvider>
+          </DataProvider>
+        </ToastProvider>
+      </PrimeReactProvider>
     </html>
   );
 }

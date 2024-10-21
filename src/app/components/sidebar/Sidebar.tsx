@@ -31,7 +31,7 @@ export default function Sidebar({ children }: SidebarProps) {
 
   return (
     <div
-      className={`px-2 bg-stone-50 border-r transition-all duration-150 ${
+      className={`px-2 bg-stone-50 transition-all duration-150 ${
         expanded ? 'w-64' : 'w-20'
       }`}
     >

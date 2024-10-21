@@ -7,7 +7,7 @@ import { Button } from 'primereact/button';
 
 export default function Header() {
   return (
-    <header className="bg-stone-100">
+    <header className="bg-stone-100 shadow-md z-10">
       <div className="p-4 flex items-center justify-between">
         <div className="flex items-center">
           <Image
