@@ -9,11 +9,15 @@ export default function ContactPointRenderer({
   const contactPoint = value as ContactPoint;
 
   return (
-    <p>
-      <strong>{configEntry.display}:</strong>{' '}
-      {contactPoint.system && <span>{contactPoint.system}: </span>}
+    <div>
+      <h4>{configEntry.display}:</h4>{' '}
+      {contactPoint.system && (
+        <span>
+          <strong>{contactPoint.system}:</strong>{' '}
+        </span>
+      )}
       {contactPoint.value && <span>{contactPoint.value}</span>}
       {contactPoint.use && <span> ({contactPoint.use})</span>}
-    </p>
+    </div>
   );
 }

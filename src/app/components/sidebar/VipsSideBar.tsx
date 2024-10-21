@@ -10,6 +10,7 @@ export default function VipsSideBar() {
     <SidebarItem
       key={sectionKey}
       sectionKey={sectionKey}
+      sectionDisplay={config[sectionKey].sectionDisplay}
       iconPath={`${config[sectionKey].icon}`}
     />
   ));

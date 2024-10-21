@@ -7,7 +7,7 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
 
   return (
     <div>
-      <h3>{configEntry.display}:</h3>
+      <h4>{configEntry.display}:</h4>
       {address.line && (
         <p>
           <strong>Address Line:</strong> {address.line.join(', ')}

@@ -1,39 +1,36 @@
 import React, { useState } from 'react';
-import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 import {
   Accordion,
   AccordionTab,
   AccordionTabChangeEvent,
 } from 'primereact/accordion';
 import useConfig from '@/app/hooks/useConfig';
-import { extractResources } from '@/app/utils/ResourceExtractor';
 import RootSectionRenderer from '@/app/components/renderer/RootSectionRenderer';
+import { useBundle } from '@/app/hooks/useBundle';
 
-interface IPSViewerProps {
-  bundle: Bundle;
-}
-
-export default function IPSViewer({ bundle }: IPSViewerProps) {
+export default function IPSViewer() {
   const [activeIndex, setActiveIndex] = useState<number | number[]>(0);
+  const { extractResources } = useBundle();
   const { config } = useConfig();
   const onTabChange = (e: AccordionTabChangeEvent) => {
     setActiveIndex(e.index);
   };
-
+  const allResourcesDict = extractResources();
   return (
     <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
       {Object.keys(config).map((key) => (
         <AccordionTab
-          key={key}
-          header={key}
-          className={`target-${key}`}
+          key={config[key].sectionDisplay}
+          header={config[key].sectionDisplay}
+          className={`${key}`}
           pt={{ content: { className: 'p-0' } }}
         >
-          <RootSectionRenderer
-            resourceKey={key}
-            section={config[key].section}
-            resources={extractResources(bundle, key)}
-          />
+          {allResourcesDict[config[key].code] && (
+            <RootSectionRenderer
+              section={config[key].section}
+              bundleEntries={allResourcesDict[config[key].code]}
+            />
+          )}
         </AccordionTab>
       ))}
     </Accordion>

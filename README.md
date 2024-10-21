@@ -6,6 +6,7 @@
     * [Run the app](#run-the-app)
     * [Linting](#linting-)
   * [Conventions](#conventions)
+    * [Icon Library](#icon-library)
     * [Branches](#branches)
     * [Pull Requests](#pull-requests)
     * [Coding](#coding)
