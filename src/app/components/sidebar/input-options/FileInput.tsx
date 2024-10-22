@@ -55,6 +55,7 @@ export default function FileInput() {
           style: { width: '100%' },
         }}
         style={{ width: '100%' }}
+        disabled={!!file}
       />
 
       <Button
