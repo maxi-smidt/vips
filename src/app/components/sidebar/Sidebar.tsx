@@ -37,7 +37,7 @@ export default function Sidebar({ children }: SidebarProps) {
     >
       <nav className="flex flex-col h-full">
         <div className={`flex items-center mb-1 ${!expanded && 'mt-2'}`}>
-          {expanded && <h2 className="text-xl font-bold">Load IPS</h2>}
+          {expanded && <h2 className="text-xl font-bold truncate">Load IPS</h2>}
           <Button
             className="ml-auto"
             severity="secondary"
