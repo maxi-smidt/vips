@@ -7,12 +7,14 @@ interface SidebarItemProps {
   sectionKey: string;
   iconPath: string;
   sectionDisplay: string;
+  numResources: number;
 }
 
 export default function SidebarItem({
   sectionDisplay,
   sectionKey,
   iconPath,
+  numResources,
 }: SidebarItemProps) {
   const { expanded } = useData();
 
@@ -36,7 +38,7 @@ export default function SidebarItem({
   return (
     <Button
       className="w-full"
-      label={expanded ? sectionDisplay : undefined}
+      label={expanded ? `${sectionDisplay} [${numResources}]` : undefined}
       severity="secondary"
       outlined
       onClick={() => onClick(sectionKey)}
