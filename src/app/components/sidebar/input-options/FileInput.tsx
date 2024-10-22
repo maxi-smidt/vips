@@ -14,55 +14,66 @@ export default function FileInput() {
   const [file, setFile] = useState<File | undefined>();
 
   const onUpload = (event: FileUploadSelectEvent) => {
-    setFile(new File([event.files[0]], event.files[0].name));
-  };
-
-  const onLoad = (event: ProgressEvent<FileReader>) => {
-    if (event.target) {
-      let fileContent = event.target.result;
-      if (typeof fileContent === 'string') {
-        if (file!.name.endsWith('.xml')) {
-          const fhir = new Fhir();
-          fileContent = fhir.xmlToJson(fileContent);
-        }
-        setBundle(JSON.parse(fileContent));
-      } else {
-        showError('Could not read file');
+    setFile(event.files[0]);
+    if (fileUploadRef.current) {
+      const input = fileUploadRef.current.getInput();
+      if (input) {
+        fileUploadRef.current.clear()
+        fileUploadRef.current.setUploadedFiles([event.files[0]]);
       }
-    }
   };
+};
 
   const loadUploadedFile = () => {
+    if (!file) return;
     const reader = new FileReader();
-    reader.onload = onLoad;
-    reader.readAsText(file!);
-    if (fileUploadRef.current) {
-      fileUploadRef.current.clear();
-    }
-    setFile(undefined);
+    reader.onload = (event: ProgressEvent<FileReader>) => {
+      if (event.target) {
+        let fileContent = event.target.result;
+        if (typeof fileContent === 'string') {
+          if (file.name.endsWith('.xml')) {
+            const fhir = new Fhir();
+            fileContent = fhir.xmlToJson(fileContent);
+          }
+          setBundle(JSON.parse(fileContent));
+        } else {
+          showError('Could not read file');
+        }
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  const headerTemplate = (options: any) => {
+    return (
+      <div className="flex align-items-center justify-content-between">
+        {options.chooseButton}
+        <Button
+          label="Load File"
+          severity="secondary"
+          onClick={loadUploadedFile}
+          disabled={!file}
+          className="p-button-outlined"
+        />
+      </div>
+    );
   };
 
   return (
     <>
       <FileUpload
         ref={fileUploadRef}
-        mode="basic"
+        mode="advanced"
         accept=".json, .xml"
         onSelect={onUpload}
+        headerTemplate={headerTemplate}
         chooseOptions={{
           label: 'Select file',
           className: 'p-button-outlined p-button-secondary',
-          style: { width: '100%' },
         }}
         style={{ width: '100%' }}
-        disabled={!!file}
-      />
-
-      <Button
-        label="Load File"
-        severity="secondary"
-        onClick={loadUploadedFile}
-        disabled={!file}
+        auto={false}
+        onRemove={() => setFile(undefined)}
       />
     </>
   );
