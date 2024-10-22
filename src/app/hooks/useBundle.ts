@@ -25,33 +25,38 @@ export const useBundle = () => {
   const getResourceMap = (): {
     [p: string]: BundleEntry[];
   } => {
-    const composition: Composition = bundleUtils.getResources(
-      bundle!.entry!,
-      'Composition',
-    )[0].resource;
-    const allSections: CompositionSection[] =
-      resourceUtils.getValuesAtResourcePath(composition, 'Composition.section');
-
     const sectionResourceDict: { [key: string]: BundleEntry[] } = {};
+    if (bundle?.entry) {
+      const composition: Composition = bundleUtils.getResources(
+        bundle!.entry!,
+        'Composition',
+      )[0].resource;
 
-    allSections.forEach((section: CompositionSection) => {
-      const sectionCode = section?.code?.coding?.at(0)?.code; // Assuming the first coding is used
-      const allResourceReferences = section.entry;
+      const allSections: CompositionSection[] =
+        resourceUtils.getValuesAtResourcePath(
+          composition,
+          'Composition.section',
+        );
 
-      if (sectionCode && !sectionResourceDict[sectionCode]) {
-        sectionResourceDict[sectionCode] = [];
-      }
+      allSections.forEach((section: CompositionSection) => {
+        const sectionCode = section?.code?.coding?.at(0)?.code; // Assuming the first coding is used
+        const allResourceReferences = section.entry;
 
-      allResourceReferences?.forEach((entry: Reference) => {
-        if (entry.reference && bundle!.entry && sectionCode) {
-          const resource = getBundleEntryByReference(entry.reference);
-          if (resource) sectionResourceDict[sectionCode].push(resource);
+        if (sectionCode && !sectionResourceDict[sectionCode]) {
+          sectionResourceDict[sectionCode] = [];
         }
+
+        allResourceReferences?.forEach((entry: Reference) => {
+          if (entry.reference && bundle?.entry && sectionCode) {
+            const resource = getBundleEntryByReference(entry.reference);
+            if (resource) sectionResourceDict[sectionCode].push(resource);
+          }
+        });
       });
-    });
-    sectionResourceDict['patient'] = [
-      getBundleEntryByReference(composition.subject!.reference!)!,
-    ];
+      sectionResourceDict['patient'] = [
+        getBundleEntryByReference(composition.subject!.reference!)!,
+      ];
+    }
     return sectionResourceDict;
   };
 
