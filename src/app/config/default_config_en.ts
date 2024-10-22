@@ -226,7 +226,7 @@ export const DefaultConfigEN: Config = {
     },
   },
   sectionProceduresHx: {
-    icon: '/icons/procedure.svg',
+    icon: '/icons/procedures.svg',
     sectionDisplay: 'Procedure History',
     code: '47519-4',
     section: {
@@ -305,7 +305,7 @@ export const DefaultConfigEN: Config = {
     },
   },
   sectionImmunizations: {
-    icon: '/icons/immunization.svg',
+    icon: '/icons/immunizations.svg',
     sectionDisplay: 'Immunization History',
     code: '11369-6',
     section: {
@@ -465,7 +465,7 @@ export const DefaultConfigEN: Config = {
     },
   },
   sectionMedicalDevices: {
-    icon: '/icons/medicalDevices.svg',
+    icon: '/icons/medical_devices.svg',
     sectionDisplay: 'History of Medical Devices',
     code: '46264-8',
     section: {

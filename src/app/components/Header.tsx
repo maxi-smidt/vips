@@ -11,8 +11,8 @@ export default function Header() {
       <div className="p-4 flex items-center justify-between">
         <div className="flex items-center">
           <Image
-            src={`${process.env.IMAGE_PATH}/raccoon-forwards.png`}
-            alt="HAPI FHIR Logo"
+            src={`${process.env.IMAGE_PATH}/logo.png`}
+            alt="VIPS Logo"
             className="h-12 w-12"
             width={266}
             height={293}
