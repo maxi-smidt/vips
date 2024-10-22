@@ -53,7 +53,6 @@ export default function FileInput() {
           severity="secondary"
           onClick={loadUploadedFile}
           disabled={!file}
-          className="p-button-outlined"
         />
       </div>
     );
