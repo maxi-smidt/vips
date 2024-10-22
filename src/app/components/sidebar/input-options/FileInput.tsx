@@ -46,13 +46,14 @@ export default function FileInput() {
 
   const headerTemplate = (options: any) => {
     return (
-      <div className="flex align-items-center justify-content-between">
+      <div >
         {options.chooseButton}
         <Button
           label="Load File"
           severity="secondary"
           onClick={loadUploadedFile}
           disabled={!file}
+          style={{ width: '100%' }}
         />
       </div>
     );
@@ -69,6 +70,7 @@ export default function FileInput() {
         chooseOptions={{
           label: 'Select file',
           className: 'p-button-outlined p-button-secondary',
+          style: { width: '100%' },
         }}
         style={{ width: '100%' }}
         auto={false}
