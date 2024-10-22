@@ -8,14 +8,14 @@ import { Button } from 'primereact/button';
 export default function Header() {
   return (
     <header className="bg-stone-100 shadow-md z-10">
-      <div className="p-4 flex items-center justify-between">
+      <div className="p-2 flex items-center justify-between">
         <div className="flex items-center">
           <Image
             src={`${process.env.IMAGE_PATH}/logo.png`}
             alt="VIPS Logo"
-            className="h-12 w-12"
-            width={266}
-            height={293}
+            className="pl-2 h-16 w-16 object-contain"
+            width={440}
+            height={440}
           />
           <span className="ml-4 text-2xl font-semibold text-gray-800">
             VIPS
