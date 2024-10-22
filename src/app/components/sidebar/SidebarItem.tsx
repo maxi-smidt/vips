@@ -38,13 +38,15 @@ export default function SidebarItem({
   return (
     <Button
       className="w-full"
-      label={expanded ? `${sectionDisplay} [${numResources}]` : undefined}
+      label={expanded ? `${sectionDisplay}` : undefined}
       severity="secondary"
       outlined
       onClick={() => onClick(sectionKey)}
       tooltip={sectionDisplay}
       tooltipOptions={{ showDelay: 200 }}
       pt={passTrough}
+      badge={`${numResources}`}
+      badgeClassName="p-badge-secondary"
       icon={(_) => (
         <Image
           src={`${process.env.IMAGE_PATH}${iconPath}`}

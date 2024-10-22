@@ -8,8 +8,7 @@ import { useBundle } from '@/app/hooks/useBundle';
 
 export default function VipsSideBar() {
   const { config } = useConfig();
-  const { extractResources } = useBundle();
-  const allResourcesDict = extractResources();
+  const { resourceMap } = useBundle();
 
   const sections = Object.keys(config).map((sectionKey) => (
     <SidebarItem
@@ -17,11 +16,7 @@ export default function VipsSideBar() {
       sectionKey={sectionKey}
       sectionDisplay={config[sectionKey].sectionDisplay}
       iconPath={`${config[sectionKey].icon}`}
-      numResources={
-        allResourcesDict[config[sectionKey].code]
-          ? allResourcesDict[config[sectionKey].code].length
-          : 0
-      }
+      numResources={resourceMap[config[sectionKey].code]?.length ?? 0}
     />
   ));
 

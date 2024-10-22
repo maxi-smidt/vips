@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
 import { Composition } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/composition';
 import { CompositionSection } from '@smile-cdr/fhirts/src/FHIR-R4/classes/compositionSection';
@@ -8,24 +8,23 @@ import { BundleEntry } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundleEntry'
 import { BundleContext } from '@/app/provider/BundleProvider';
 
 export const useBundle = () => {
-  const bundleUtils = new BundleUtils();
-  const resourceUtils = new ResourceUtils();
   const { bundle, setBundle } = useContext(BundleContext);
 
   const getResourceByReference = (reference: string): Resource | undefined => {
     return bundle?.entry?.find((x) => x['fullUrl'] === reference)?.resource;
   };
 
-  const getBundleEntryByReference = (
-    reference: string,
-  ): BundleEntry | undefined => {
-    return bundle?.entry?.find((x) => x['fullUrl'] === reference);
-  };
-
-  const getResourceMap = (): {
-    [p: string]: BundleEntry[];
-  } => {
+  const resourceMap = useMemo(() => {
+    const bundleUtils = new BundleUtils();
+    const resourceUtils = new ResourceUtils();
     const sectionResourceDict: { [key: string]: BundleEntry[] } = {};
+
+    const getBundleEntryByReference = (
+      reference: string,
+    ): BundleEntry | undefined => {
+      return bundle?.entry?.find((x) => x['fullUrl'] === reference);
+    };
+
     if (bundle?.entry) {
       const composition: Composition = bundleUtils.getResources(
         bundle!.entry!,
@@ -58,12 +57,12 @@ export const useBundle = () => {
       ];
     }
     return sectionResourceDict;
-  };
+  }, [bundle]);
 
   return {
     bundle,
     setBundle,
-    extractResources: getResourceMap,
+    resourceMap,
     getResourceByReference,
   };
 };
