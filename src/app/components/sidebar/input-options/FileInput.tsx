@@ -18,11 +18,11 @@ export default function FileInput() {
     if (fileUploadRef.current) {
       const input = fileUploadRef.current.getInput();
       if (input) {
-        fileUploadRef.current.clear()
+        fileUploadRef.current.clear();
         fileUploadRef.current.setUploadedFiles([event.files[0]]);
       }
+    }
   };
-};
 
   const loadUploadedFile = () => {
     if (!file) return;
@@ -46,15 +46,25 @@ export default function FileInput() {
 
   const headerTemplate = (options: any) => {
     return (
-      <div >
+      <div className="flex flex-col mb-2">
         {options.chooseButton}
         <Button
           label="Load File"
           severity="secondary"
           onClick={loadUploadedFile}
+          className="mt-2"
           disabled={!file}
-          style={{ width: '100%' }}
         />
+      </div>
+    );
+  };
+
+ const itemTemplate = (file: any) => {
+    return (
+      <div className="flex flex-col p-1 border-b border-gray-300">  {/* Reduced padding */}
+        <span className="font-bold text-sm">{file.name}</span>  {/* Smaller font size */}
+        <span className="text-gray-600 text-xs">{(file.size / 1024).toFixed(2)} KB</span>  {/* Smaller font size */}
+        <span className="text-blue-500 text-xs">{file.status}</span>  {/* Smaller font size */}
       </div>
     );
   };
@@ -67,12 +77,12 @@ export default function FileInput() {
         accept=".json, .xml"
         onSelect={onUpload}
         headerTemplate={headerTemplate}
+        itemTemplate={itemTemplate}
         chooseOptions={{
           label: 'Select file',
-          className: 'p-button-outlined p-button-secondary',
-          style: { width: '100%' },
+          className: 'p-button-outlined p-button-secondary w-full',
         }}
-        style={{ width: '100%' }}
+        className="w-full"
         auto={false}
         onRemove={() => setFile(undefined)}
       />
