@@ -1,6 +1,10 @@
 'use client';
 
-import { FileUpload, FileUploadSelectEvent } from 'primereact/fileupload';
+import {
+  FileUpload,
+  FileUploadHeaderTemplateOptions,
+  FileUploadSelectEvent,
+} from 'primereact/fileupload';
 import React, { useRef, useState } from 'react';
 import { Fhir } from 'fhir';
 import { Button } from 'primereact/button';
@@ -44,7 +48,7 @@ export default function FileInput() {
     reader.readAsText(file);
   };
 
-  const headerTemplate = (options: any) => {
+  const headerTemplate = (options: FileUploadHeaderTemplateOptions) => {
     return (
       <div className="flex flex-col mb-2">
         {options.chooseButton}
@@ -59,12 +63,15 @@ export default function FileInput() {
     );
   };
 
- const itemTemplate = (file: any) => {
+  const itemTemplate = (file: object) => {
+    const fileObj = file as { name: string; size: number }; // Cast to the structure you're expecting
+
     return (
-      <div className="flex flex-col p-1 border-b border-gray-300">  {/* Reduced padding */}
-        <span className="font-bold text-sm">{file.name}</span>  {/* Smaller font size */}
-        <span className="text-gray-600 text-xs">{(file.size / 1024).toFixed(2)} KB</span>  {/* Smaller font size */}
-        <span className="text-blue-500 text-xs">{file.status}</span>  {/* Smaller font size */}
+      <div className="flex flex-col p-1 border-b border-gray-300">
+        <span className="font-bold text-sm">{fileObj.name}</span>
+        <span className="text-gray-600 text-xs">
+          {(fileObj.size / 1024).toFixed(2)} KB
+        </span>
       </div>
     );
   };
