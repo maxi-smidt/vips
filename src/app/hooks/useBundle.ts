@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
 import { Composition } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/composition';
 import { CompositionSection } from '@smile-cdr/fhirts/src/FHIR-R4/classes/compositionSection';
@@ -8,57 +8,61 @@ import { BundleEntry } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundleEntry'
 import { BundleContext } from '@/app/provider/BundleProvider';
 
 export const useBundle = () => {
-  const bundleUtils = new BundleUtils();
-  const resourceUtils = new ResourceUtils();
   const { bundle, setBundle } = useContext(BundleContext);
 
   const getResourceByReference = (reference: string): Resource | undefined => {
     return bundle?.entry?.find((x) => x['fullUrl'] === reference)?.resource;
   };
 
-  const getBundleEntryByReference = (
-    reference: string,
-  ): BundleEntry | undefined => {
-    return bundle?.entry?.find((x) => x['fullUrl'] === reference);
-  };
-
-  const getResourceMap = (): {
-    [p: string]: BundleEntry[];
-  } => {
-    const composition: Composition = bundleUtils.getResources(
-      bundle!.entry!,
-      'Composition',
-    )[0].resource;
-    const allSections: CompositionSection[] =
-      resourceUtils.getValuesAtResourcePath(composition, 'Composition.section');
-
+  const resourceMap = useMemo(() => {
+    const bundleUtils = new BundleUtils();
+    const resourceUtils = new ResourceUtils();
     const sectionResourceDict: { [key: string]: BundleEntry[] } = {};
 
-    allSections.forEach((section: CompositionSection) => {
-      const sectionCode = section?.code?.coding?.at(0)?.code; // Assuming the first coding is used
-      const allResourceReferences = section.entry;
+    const getBundleEntryByReference = (
+      reference: string,
+    ): BundleEntry | undefined => {
+      return bundle?.entry?.find((x) => x['fullUrl'] === reference);
+    };
 
-      if (sectionCode && !sectionResourceDict[sectionCode]) {
-        sectionResourceDict[sectionCode] = [];
-      }
+    if (bundle?.entry) {
+      const composition: Composition = bundleUtils.getResources(
+        bundle!.entry!,
+        'Composition',
+      )[0].resource;
 
-      allResourceReferences?.forEach((entry: Reference) => {
-        if (entry.reference && bundle!.entry && sectionCode) {
-          const resource = getBundleEntryByReference(entry.reference);
-          if (resource) sectionResourceDict[sectionCode].push(resource);
+      const allSections: CompositionSection[] =
+        resourceUtils.getValuesAtResourcePath(
+          composition,
+          'Composition.section',
+        );
+
+      allSections.forEach((section: CompositionSection) => {
+        const sectionCode = section?.code?.coding?.at(0)?.code; // Assuming the first coding is used
+        const allResourceReferences = section.entry;
+
+        if (sectionCode && !sectionResourceDict[sectionCode]) {
+          sectionResourceDict[sectionCode] = [];
         }
+
+        allResourceReferences?.forEach((entry: Reference) => {
+          if (entry.reference && bundle?.entry && sectionCode) {
+            const resource = getBundleEntryByReference(entry.reference);
+            if (resource) sectionResourceDict[sectionCode].push(resource);
+          }
+        });
       });
-    });
-    sectionResourceDict['patient'] = [
-      getBundleEntryByReference(composition.subject!.reference!)!,
-    ];
+      sectionResourceDict['patient'] = [
+        getBundleEntryByReference(composition.subject!.reference!)!,
+      ];
+    }
     return sectionResourceDict;
-  };
+  }, [bundle]);
 
   return {
     bundle,
     setBundle,
-    extractResources: getResourceMap,
+    resourceMap,
     getResourceByReference,
   };
 };

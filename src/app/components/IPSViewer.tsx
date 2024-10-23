@@ -11,12 +11,12 @@ import EmptySectionRenderer from '@/app/components/renderer/EmptySectionRenderer
 
 export default function IPSViewer() {
   const [activeIndex, setActiveIndex] = useState<number | number[]>(0);
-  const { extractResources } = useBundle();
+  const { resourceMap } = useBundle();
   const { config } = useConfig();
   const onTabChange = (e: AccordionTabChangeEvent) => {
     setActiveIndex(e.index);
   };
-  const allResourcesDict = extractResources();
+
   return (
     <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
       {Object.keys(config).map((key) => (
@@ -26,10 +26,10 @@ export default function IPSViewer() {
           className={`${key}`}
           pt={{ content: { className: 'p-0' } }}
         >
-          {allResourcesDict[config[key].code]?.length > 0 ? (
+          {resourceMap[config[key].code]?.length > 0 ? (
             <RootSectionRenderer
               section={config[key].section}
-              bundleEntries={allResourcesDict[config[key].code]}
+              bundleEntries={resourceMap[config[key].code]}
             />
           ) : (
             <EmptySectionRenderer />
