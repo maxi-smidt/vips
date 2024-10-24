@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-// Define the table of contents item type
 interface TocItem {
   level: number;
   title: string;
@@ -18,7 +17,6 @@ const headingStyles = {
   h6: 'text-base font-normal mt-1 mb-1',
 };
 
-// Centralized border styling
 const separatorStyles = {
   borderTop: '2px solid gray',
   marginTop: '8px',
@@ -27,7 +25,7 @@ const separatorStyles = {
 
 const containerStyles = {
   border: '2px solid gray',
-  borderRadius: '16px', // Apply horizontal and vertical rounding
+  borderRadius: '16px',
   padding: '16px',
   margin: '16px',
 };
@@ -64,7 +62,6 @@ export default function EmptyPage() {
     fetchReadme();
   }, []);
 
-  // Function to handle scroll behavior
   const handleScrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -145,7 +142,6 @@ export default function EmptyPage() {
                 const { children, className } = props;
                 const match = /language-(\w+)/.exec(className || '');
 
-                // Check if this is block code (has a language class)
                 if (match) {
                   return (
                     <pre className="my-4 p-4 bg-gray-800 text-white rounded overflow-x-auto font-mono">
@@ -154,7 +150,6 @@ export default function EmptyPage() {
                   );
                 }
 
-                // Inline code (no language class)
                 return (
                   <code className="bg-gray-200 text-black font-mono p-1 rounded">
                     {children}
@@ -174,10 +169,9 @@ export default function EmptyPage() {
   );
 }
 
-// Function to generate IDs for headings (used for TOC)
 const getId = (children: React.ReactNode): string => {
   if (typeof children === 'string') {
     return children.toLowerCase().replace(/\s+/g, '-');
   }
-  return ''; // Return a default value if children is not a string
+  return '';
 };
