@@ -15,6 +15,7 @@ export default function FileInput() {
 
   const onUpload = (event: FileUploadSelectEvent) => {
     setFile(new File([event.files[0]], event.files[0].name));
+    fileUploadRef.current?.clear();
   };
 
   const onLoad = (event: ProgressEvent<FileReader>) => {
@@ -51,12 +52,18 @@ export default function FileInput() {
         onSelect={onUpload}
         chooseOptions={{
           label: 'Select file',
-          className: 'p-button-outlined p-button-secondary',
-          style: { width: '100%' },
+          className: 'p-button-outlined p-button-secondary w-full',
         }}
-        style={{ width: '100%' }}
-        disabled={!!file}
       />
+
+      {file && (
+        <Button
+          outlined
+          severity="secondary"
+          label={file.name}
+          disabled={true}
+        />
+      )}
 
       <Button
         label="Load File"
