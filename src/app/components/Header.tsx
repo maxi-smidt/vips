@@ -6,10 +6,29 @@ import { InputIcon } from 'primereact/inputicon';
 import { InputText } from 'primereact/inputtext';
 import { IconField } from 'primereact/iconfield';
 import { Button } from 'primereact/button';
+import { pdf } from '@react-pdf/renderer';
+import { useBundle } from '@/app/hooks/useBundle';
+import useConfig from '@/app/hooks/useConfig';
+import PdfRenderer from '@/app/components/pdfExport/PdfRenderer';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const { resourceMap } = useBundle();
+  const { config } = useConfig();
+
+  const handleDownload = async () => {
+    const blob = await pdf(
+      <PdfRenderer resourceMap={resourceMap} config={config} />,
+    ).toBlob();
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'ips-summary.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   const pathname = usePathname();
   const [actionbutton, setActionButton] = useState<React.JSX.Element | null>(
     null,
@@ -60,7 +79,14 @@ export default function Header() {
             </div>
           </div>
 
-          <Button className="ml-auto" severity="secondary" text>
+          <Button
+            className="ml-auto"
+            severity="secondary"
+            text
+            onClick={() => {
+              handleDownload();
+            }}
+          >
             <Image
               src={`${process.env.IMAGE_PATH}/icons/file_pdf.svg`}
               alt="Pdf export"

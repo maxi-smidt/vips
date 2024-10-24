@@ -3,12 +3,14 @@ import React from 'react';
 import ComponentRenderer from '@/app/components/renderer/ComponentRenderer';
 import { v4 as uuidv4 } from 'uuid';
 import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
+import { View, Text } from '@react-pdf/renderer';
 import { renderToString } from 'react-dom/server';
 
 interface SectionRendererProps {
   configSection: ConfigSection;
   depth: number;
   resource: Resource;
+  pdf?: boolean;
 }
 
 const isEmptyDiv = (component: React.JSX.Element) => {
@@ -21,6 +23,7 @@ export default function SectionRenderer({
   configSection,
   depth,
   resource,
+  pdf,
 }: SectionRendererProps) {
   const sections = configSection.components.map((component) => {
     return (
@@ -46,6 +49,39 @@ export default function SectionRenderer({
       </div>
     );
   }
+  if (pdf) {
+    return (
+      <View>
+        {configSection.display && <Text>{configSection.display}</Text>}
+        {configSection.components.map((component) => (
+          <ComponentRenderer
+            key={uuidv4()}
+            configComponent={component}
+            resource={resource}
+            depth={depth + 1}
+          />
+        ))}
+      </View>
+    );
+  }
+
+  return (
+    <div
+      key={configSection.display}
+      className={`p-2 bg-gray-${100 * depth} rounded-xl ${depth == 0 && 'flex flex-col gap-2'}`}
+    >
+      {configSection.display && <h3>{configSection.display}</h3>}
+      {configSection.components.map((component) => (
+        <ComponentRenderer
+          key={uuidv4()}
+          configComponent={component}
+          resource={resource}
+          depth={depth + 1}
+        />
+      ))}
+    </div>
+  );
+}
 
   return null;
 }
