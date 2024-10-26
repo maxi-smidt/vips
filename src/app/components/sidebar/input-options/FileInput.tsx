@@ -40,7 +40,6 @@ export default function FileInput() {
     if (fileUploadRef.current) {
       fileUploadRef.current.clear();
     }
-    setFile(undefined);
   };
 
   return (
