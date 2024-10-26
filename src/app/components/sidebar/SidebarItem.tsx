@@ -8,6 +8,7 @@ interface SidebarItemProps {
   iconPath: string;
   sectionDisplay: string;
   numResources: number;
+  index: number;
 }
 
 export default function SidebarItem({
@@ -15,8 +16,9 @@ export default function SidebarItem({
   sectionKey,
   iconPath,
   numResources,
+  index,
 }: SidebarItemProps) {
-  const { expanded } = useData();
+  const { expanded, setActiveIndex } = useData();
 
   const passTrough = expanded
     ? {
@@ -32,6 +34,7 @@ export default function SidebarItem({
       element.scrollIntoView();
       const offset = 70;
       window.scrollBy(0, -offset);
+      setActiveIndex(index);
     }
   };
 
