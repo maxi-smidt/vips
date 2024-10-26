@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   Accordion,
   AccordionTab,
   AccordionTabChangeEvent,
 } from 'primereact/accordion';
-import { DataContext } from '../provider/DataProvider';
 import useConfig from '@/app/hooks/useConfig';
 import RootSectionRenderer from '@/app/components/renderer/RootSectionRenderer';
 import { useBundle } from '@/app/hooks/useBundle';
 import EmptySectionRenderer from '@/app/components/renderer/EmptySectionRenderer';
+import { useData } from '@/app/hooks/useData';
 
 export default function IPSViewer() {
-  const { activeIndex, setActiveIndex } = useContext(DataContext);
+  const { activeIndex, setActiveIndex } = useData();
   const { resourceMap } = useBundle();
   const { config } = useConfig();
 

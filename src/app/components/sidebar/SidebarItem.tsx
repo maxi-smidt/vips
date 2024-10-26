@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { Button } from 'primereact/button';
 import { useData } from '@/app/hooks/useData';
-import { DataContext } from '@/app/provider/DataProvider';
 
 interface SidebarItemProps {
   sectionKey: string;
@@ -19,8 +18,7 @@ export default function SidebarItem({
   numResources,
   index,
 }: SidebarItemProps) {
-  const { expanded } = useData();
-  const { setActiveIndex } = useContext(DataContext);
+  const { expanded, setActiveIndex } = useData();
 
   const passTrough = expanded
     ? {
