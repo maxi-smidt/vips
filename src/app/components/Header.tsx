@@ -10,7 +10,7 @@ export default function Header() {
     <header className="bg-stone-100 shadow-md z-10">
       <div className="p-2 flex items-center justify-between">
         <a
-          href={`/${process.env.MODE === 'development' ? '' : 'vips'}`}
+          href={process.env.MODE === 'development' ? '/' : '/vips/'}
           className="flex items-center no-underline"
         >
           <Image
