@@ -97,7 +97,7 @@ export default function StartPage() {
             Benutzeroberfläche zu bieten.
           </p>
           <Image
-            src={`${process.env.IMAGE_PATH}/images/IPS_composition.png`}
+            src={`${process.env.IMAGE_PATH}/images/IPS_composition.jpg`}
             width={700}
             height={440}
             alt="IPS Composition"
