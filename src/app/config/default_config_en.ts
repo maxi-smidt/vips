@@ -51,6 +51,7 @@ export const DefaultConfigEN: Config = {
   },
   Author: {
     icon: '/icons/tbd.svg',
+    color: RelevanceCategory.DOCUMENT_INFORMATION,
     sectionDisplay: 'Author',
     code: 'author',
     section: {
@@ -121,6 +122,7 @@ export const DefaultConfigEN: Config = {
   },
   Attester: {
     icon: '/icons/tbd.svg',
+    color: RelevanceCategory.DOCUMENT_INFORMATION,
     sectionDisplay: 'Attester',
     code: 'attester',
     section: {
@@ -191,6 +193,7 @@ export const DefaultConfigEN: Config = {
   },
   Custodian: {
     icon: '/icons/tbd.svg',
+    color: RelevanceCategory.DOCUMENT_INFORMATION,
     sectionDisplay: 'Custodian',
     code: 'custodian',
     section: {
