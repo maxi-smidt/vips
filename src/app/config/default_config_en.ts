@@ -638,7 +638,7 @@ export const DefaultConfigEN: Config = {
                 },
                 {
                   display: 'Applies to',
-                  path: 'Observation.referenceRange.appliesTO',
+                  path: 'Observation.referenceRange.appliesTo',
                   renderer: RendererType.CODEABLE_CONCEPT,
                 },
                 {
@@ -653,20 +653,175 @@ export const DefaultConfigEN: Config = {
       ],
     },
   },
-  /*sectionVitalSigns: {
-    icon: '/icons/vitalSigns.svg',
+  sectionVitalSigns: {
+    icon: '/icons/vital_signs.svg',
     sectionDisplay: 'Vital Signs',
     code: '8716-3',
     section: {
-      title: 'Vital Sign',
-      renderers: [
+      display: 'Vital Sign',
+      components: [
         {
-          title: 'General Information',
-          renderers: [
+          display: 'General Information',
+          components: [
             {
-              display: 'TBD',
-              path: 'TBD',
-              renderer: RendererType.TBD, // Immunization status (completed, entered-in-error, etc.)
+              display: 'Status',
+              path: 'Observation.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Category',
+              path: 'Observation.category:VSCat',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Code',
+              path: 'Observation.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Time',
+              path: 'Observation.effective.effectiveDateTime',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Period',
+              path: 'Observation.effective.effectivePeriod',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Performer',
+              path: 'Observation.performer',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Value Quantity',
+              path: 'Observation.value.valueQuantity',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Value String',
+              path: 'Observation.value.valueString',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Value Code',
+              path: 'Observation.value.valueCodeableConcept',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Value Time',
+              path: 'Observation.value.valueQuantity',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Body Site',
+              path: 'Observation.bodySite',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Note',
+              path: 'Observation.note',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Interpretation',
+              path: 'Observation.interpretation',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Method',
+              path: 'Observation.method',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Reference Range',
+              components: [
+                {
+                  display: 'Low Range',
+                  path: 'Observation.referenceRange.low',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'High Range',
+                  path: 'Observation.referenceRange.high',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Reference range qualifier',
+                  path: 'Observation.referenceRange.type',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Applies to',
+                  path: 'Observation.referenceRange.appliesTo',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Applicable age range',
+                  path: 'Observation.referenceRange.age',
+                  renderer: RendererType.DEFAULT,
+                },
+              ],
+            },
+            {
+              display: 'Components',
+              components: [
+                {
+                  display: 'Quantity',
+                  path: 'Observation.component.valueQuantity',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'CodeableConcept',
+                  path: 'Observation.component.valueCodeableConcept',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'String',
+                  path: 'Observation.component.valueString',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Boolean',
+                  path: 'Observation.component.valueBoolean',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Integer',
+                  path: 'Observation.component.valueInteger',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Range',
+                  path: 'Observation.component.valueRange',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Ratio',
+                  path: 'Observation.component.valueRatio',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'SampledData',
+                  path: 'Observation.component.valueSampledData',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Time',
+                  path: 'Observation.component.valueTime',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'DateTime',
+                  path: 'Observation.component.valueDateTime',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Period',
+                  path: 'Observation.component.valuePeriod',
+                  renderer: RendererType.DEFAULT,
+                },
+              ],
             },
           ],
         },
@@ -678,15 +833,115 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Past illness',
     code: '11348-0',
     section: {
-      title: 'Past illness',
-      renderers: [
+      display: 'Past illness',
+      components: [
         {
-          title: 'General Information',
-          renderers: [
+          display: 'General Information',
+          components: [
             {
-              display: 'TBD',
-              path: 'TBD',
-              renderer: RendererType.TBD, // Immunization status (completed, entered-in-error, etc.)
+              display: 'Clinical Status',
+              path: 'Condition.clinicalStatus',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Patient',
+              path: 'Condition.subject.reference',
+              renderer: RendererType.LINK,
+            },
+            {
+              display: 'Verification Status',
+              path: 'Condition.verificationStatus',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'Condition.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Severity',
+              path: 'Condition.severity',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Code',
+              path: 'Condition.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Body Site',
+              path: 'Condition.bodySite',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Disease Onset Date',
+              path: 'Condition.onset.DateTime',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease Onset Age',
+              path: 'Condition.onset.age',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease Onset Period',
+              path: 'Condition.onset.period',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease Onset Range',
+              path: 'Condition.onset.range',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease abatement Date',
+              path: 'Condition.abatement.DateTime',
+              renderer: RendererType.DEFAULT, // TODO should be changed i gues
+            },
+            {
+              display: 'Disease abatement Age',
+              path: 'Condition.abatement.age',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease abatement Period',
+              path: 'Condition.abatement.period',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease abatement Range',
+              path: 'Condition.abatement.range',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Recorded Date',
+              path: 'Condition.recordedDate',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Stage',
+              components: [
+                {
+                  display: 'Stage Summary',
+                  path: 'Condition.stage.summary',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Stage Type',
+                  path: 'Condition.stage.type',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Formal record of assessment',
+                  path: 'Condition.stage.assessment.reference',
+                  renderer: RendererType.LINK,
+                },
+                {
+                  display: 'Evidence',
+                  path: 'Condition.evidence',
+                  renderer: RendererType.DEFAULT,
+                },
+              ],
             },
           ],
         },
@@ -698,15 +953,115 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Functional Status Assessment',
     code: '47420-5',
     section: {
-      title: 'Functional Status',
-      renderers: [
+      display: 'Functional Status',
+      components: [
         {
-          title: 'General Information',
-          renderers: [
+          display: 'General Information',
+          components: [
             {
-              display: 'TBD',
-              path: 'TBD',
-              renderer: RendererType.TBD, // Immunization status (completed, entered-in-error, etc.)
+              display: 'Clinical Status',
+              path: 'Condition.clinicalStatus',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Patient',
+              path: 'Condition.subject.reference',
+              renderer: RendererType.LINK,
+            },
+            {
+              display: 'Verification Status',
+              path: 'Condition.verificationStatus',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'Condition.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Severity',
+              path: 'Condition.severity',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Code',
+              path: 'Condition.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Body Site',
+              path: 'Condition.bodySite',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Disease Onset Date',
+              path: 'Condition.onset.DateTime',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease Onset Age',
+              path: 'Condition.onset.age',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease Onset Period',
+              path: 'Condition.onset.period',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease Onset Range',
+              path: 'Condition.onset.range',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease abatement Date',
+              path: 'Condition.abatement.DateTime',
+              renderer: RendererType.DEFAULT, // TODO should be changed i gues
+            },
+            {
+              display: 'Disease abatement Age',
+              path: 'Condition.abatement.age',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease abatement Period',
+              path: 'Condition.abatement.period',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Disease abatement Range',
+              path: 'Condition.abatement.range',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Recorded Date',
+              path: 'Condition.recordedDate',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Stage',
+              components: [
+                {
+                  display: 'Stage Summary',
+                  path: 'Condition.stage.summary',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Stage Type',
+                  path: 'Condition.stage.type',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Formal record of assessment',
+                  path: 'Condition.stage.assessment.reference',
+                  renderer: RendererType.LINK,
+                },
+                {
+                  display: 'Evidence',
+                  path: 'Condition.evidence',
+                  renderer: RendererType.DEFAULT,
+                },
+              ],
             },
           ],
         },
@@ -714,19 +1069,179 @@ export const DefaultConfigEN: Config = {
     },
   },
   sectionPlanOfCare: {
-    icon: '/icons/medicalDevices.svg',
+    icon: '/icons/plan_of_care.svg',
     sectionDisplay: 'Plan of care',
     code: '18776-5',
     section: {
-      title: 'Plan of care',
-      renderers: [
+      display: 'Plan of care',
+      components: [
         {
-          title: 'General Information',
-          renderers: [
+          display: 'General Information',
+          components: [
             {
-              display: 'TBD',
-              path: 'TBD',
-              renderer: RendererType.TBD, // Immunization status (completed, entered-in-error, etc.)
+              display: 'Care plan Status',
+              path: 'CarePlan.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Intent',
+              path: 'CarePlan.intent',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Care plan Category',
+              path: 'CarePlan.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Title',
+              path: 'CarePlan.title',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Description',
+              path: 'CarePlan.description',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Care plan Period',
+              path: 'CarePlan.period',
+              renderer: RendererType.DEFAULT, //Period renderer
+            },
+            {
+              display: 'Author',
+              path: 'CarePlan.author',
+              renderer: RendererType.DEFAULT, //reference
+            },
+            {
+              display: 'Addressed health issue',
+              path: 'CarePlan.address',
+              renderer: RendererType.DEFAULT, //reference
+            },
+            {
+              display: 'First Record',
+              path: 'CarePlan.created',
+              renderer: RendererType.DEFAULT, //DATE renderer
+            },
+            {
+              display: 'Care plan health issue',
+              path: 'CarePlan.created',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Note',
+              path: 'CarePlan.note',
+              renderer: RendererType.DEFAULT,
+            },
+          ],
+        },
+        {
+          display: 'Activity',
+          components: [
+            {
+              display: 'Care plan health issue',
+              path: 'CarePlan.activity.outcomeCodeableConcept',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Detail',
+              components: [
+                {
+                  display: 'Kind',
+                  path: 'CarePlan.activity.detail.kind',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Activity Code',
+                  path: 'CarePlan.activity.detail.code',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Reason Information',
+                  components: [
+                    {
+                      display: 'Reason Code',
+                      path: 'CarePlan.activity.detail.reasonCode',
+                      renderer: RendererType.CODEABLE_CONCEPT, // Why activity is necessary
+                    },
+                    {
+                      display: 'Reason Reference',
+                      path: 'CarePlan.activity.detail.reasonReference',
+                      renderer: RendererType.DEFAULT, // References to related resources (Condition, Observation, etc.)
+                    },
+                  ],
+                },
+                {
+                  display: 'Related Goals',
+                  path: 'CarePlan.activity.detail.goal',
+                  renderer: RendererType.DEFAULT, // Reference
+                },
+                {
+                  display: 'Status Reason',
+                  path: 'CarePlan.activity.detail.statusReason',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Do Not Perform',
+                  path: 'CarePlan.activity.detail.doNotPerform',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Schedule Information',
+                  components: [
+                    {
+                      display: 'Scheduled Timing',
+                      path: 'CarePlan.activity.detail.scheduledTiming',
+                      renderer: RendererType.DEFAULT, // time
+                    },
+                    {
+                      display: 'Scheduled Period',
+                      path: 'CarePlan.activity.detail.scheduledPeriod',
+                      renderer: RendererType.DEFAULT, // Period
+                    },
+                    {
+                      display: 'Scheduled String',
+                      path: 'CarePlan.activity.detail.scheduledString',
+                      renderer: RendererType.DEFAULT,
+                    },
+                  ],
+                },
+                {
+                  display: 'Location',
+                  path: 'CarePlan.activity.detail.location',
+                  renderer: RendererType.DEFAULT, // Location reference
+                },
+                {
+                  display: 'Performer',
+                  path: 'CarePlan.activity.detail.performer',
+                  renderer: RendererType.DEFAULT, // Reference
+                },
+                {
+                  display: 'Product Codeable Concept',
+                  path: 'CarePlan.activity.detail.productCodeableConcept',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Product Reference',
+                  path: 'CarePlan.activity.detail.productReference',
+                  renderer: RendererType.DEFAULT, // Reference
+                },
+                {
+                  display: 'Daily Amount',
+                  path: 'CarePlan.activity.detail.dailyAmount',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Quantity',
+                  path: 'CarePlan.activity.detail.quantity',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Description',
+                  path: 'CarePlan.activity.detail.description',
+                  renderer: RendererType.DEFAULT,
+                },
+              ],
             },
           ],
         },
@@ -738,15 +1253,195 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Social History',
     code: '29762-2',
     section: {
-      title: 'Social History',
-      renderers: [
+      display: 'Social History',
+      components: [
         {
-          title: 'General Information',
-          renderers: [
+          display: 'Tobacco Use',
+          components: [
             {
-              display: 'TBD',
-              path: 'TBD',
-              renderer: RendererType.TBD, // Immunization status (completed, entered-in-error, etc.)
+              display: 'Status',
+              path: 'Observation.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Category',
+              path: 'Observation.category',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Code',
+              path: 'Observation.code.coding',
+              renderer: RendererType.CODING,
+            },
+            {
+              display: 'Effective',
+              path: 'Observation.effective',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Performer',
+              path: 'Observation.performer',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Current Smoking status',
+              path: 'Observation.value[x]:valueCodeableConcept',
+              renderer: RendererType.CODING,
+            },
+            {
+              display: 'Components',
+              components: [
+                {
+                  display: 'Quantity',
+                  path: 'Observation.value.valueQuantity',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'CodeableConcept',
+                  path: 'Observation.value.valueCodeableConcept',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'String',
+                  path: 'Observation.value.valueString',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Boolean',
+                  path: 'Observation.value.valueBoolean',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Integer',
+                  path: 'Observation.value.valueInteger',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Range',
+                  path: 'Observation.value.valueRange',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Ratio',
+                  path: 'Observation.value.valueRatio',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'SampledData',
+                  path: 'Observation.value.valueSampledData',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Time',
+                  path: 'Observation.value.valueTime',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'DateTime',
+                  path: 'Observation.value.valueDateTime',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Period',
+                  path: 'Observation.value.valuePeriod',
+                  renderer: RendererType.DEFAULT,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          display: 'Alcohol Use',
+          components: [
+            {
+              display: 'Status',
+              path: 'Observation.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Category',
+              path: 'Observation.category',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Code',
+              path: 'Observation.code.coding',
+              renderer: RendererType.CODING,
+            },
+            {
+              display: 'Effective',
+              path: 'Observation.effective',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Performer',
+              path: 'Observation.performer',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Current Smoking status',
+              path: 'Observation.value[x]:valueCodeableConcept',
+              renderer: RendererType.CODING,
+            },
+            {
+              display: 'Components',
+              components: [
+                {
+                  display: 'Quantity',
+                  path: 'Observation.value.valueQuantity',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'CodeableConcept',
+                  path: 'Observation.value.valueCodeableConcept',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'String',
+                  path: 'Observation.value.valueString',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Boolean',
+                  path: 'Observation.value.valueBoolean',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Integer',
+                  path: 'Observation.value.valueInteger',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Range',
+                  path: 'Observation.value.valueRange',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Ratio',
+                  path: 'Observation.value.valueRatio',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'SampledData',
+                  path: 'Observation.value.valueSampledData',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Time',
+                  path: 'Observation.value.valueTime',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'DateTime',
+                  path: 'Observation.value.valueDateTime',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Period',
+                  path: 'Observation.value.valuePeriod',
+                  renderer: RendererType.DEFAULT,
+                },
+              ],
             },
           ],
         },
@@ -758,15 +1453,235 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Pregnancy history',
     code: '10162-6',
     section: {
-      title: 'History of pregnancies',
-      renderers: [
+      display: 'History of pregnancies',
+      components: [
         {
-          title: 'General Information',
-          renderers: [
+          display: 'Pregnancy Status',
+          components: [
             {
-              display: 'TBD',
-              path: 'TBD',
-              renderer: RendererType.TBD, // Immunization status (completed, entered-in-error, etc.)
+              display: 'Status',
+              path: 'Observation.status',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'Observation.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Code',
+              path: 'Observation.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Effective',
+              path: 'Observation.effective',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Performer',
+              path: 'Observation.performer',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Components',
+              components: [
+                {
+                  display: 'Quantity',
+                  path: 'Observation.value.valueQuantity',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'CodeableConcept',
+                  path: 'Observation.value.valueCodeableConcept',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'String',
+                  path: 'Observation.value.valueString',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Boolean',
+                  path: 'Observation.value.valueBoolean',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Integer',
+                  path: 'Observation.value.valueInteger',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Range',
+                  path: 'Observation.value.valueRange',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Ratio',
+                  path: 'Observation.value.valueRatio',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'SampledData',
+                  path: 'Observation.value.valueSampledData',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Time',
+                  path: 'Observation.value.valueTime',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'DateTime',
+                  path: 'Observation.value.valueDateTime',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Period',
+                  path: 'Observation.value.valuePeriod',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Period',
+                  path: 'Observation.value[x]:valueCodeableConcept',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+              ],
+            },
+            {
+              display: 'Interpretation',
+              path: 'Observation.interpretation',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Note',
+              path: 'Observation.note',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Method',
+              path: 'Observation.method',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Expected Delivery Date',
+              path: 'Observation.hasMember',
+              renderer: RendererType.DEFAULT, //reference
+            },
+          ],
+        },
+        {
+          display: 'Pregnancy Outcome ',
+          components: [
+            {
+              display: 'Status',
+              path: 'Observation.status',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'Observation.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Code',
+              path: 'Observation.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Effective',
+              path: 'Observation.effective',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Performer',
+              path: 'Observation.performer',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Components',
+              components: [
+                {
+                  display: 'Quantity',
+                  path: 'Observation.value.valueQuantity',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'CodeableConcept',
+                  path: 'Observation.value.valueCodeableConcept',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'String',
+                  path: 'Observation.value.valueString',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Boolean',
+                  path: 'Observation.value.valueBoolean',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Integer',
+                  path: 'Observation.value.valueInteger',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Range',
+                  path: 'Observation.value.valueRange',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Ratio',
+                  path: 'Observation.value.valueRatio',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'SampledData',
+                  path: 'Observation.value.valueSampledData',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Time',
+                  path: 'Observation.value.valueTime',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'DateTime',
+                  path: 'Observation.value.valueDateTime',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Period',
+                  path: 'Observation.value.valuePeriod',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Period',
+                  path: 'Observation.value[x]:valueCodeableConcept',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+              ],
+            },
+            {
+              display: 'Interpretation',
+              path: 'Observation.interpretation',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Note',
+              path: 'Observation.note',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Method',
+              path: 'Observation.method',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Expected Delivery Date',
+              path: 'Observation.hasMember',
+              renderer: RendererType.DEFAULT, //reference
             },
           ],
         },
@@ -778,19 +1693,34 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Advance directives',
     code: '42348-3',
     section: {
-      title: 'Advance directive',
-      renderers: [
+      display: 'Advance directive',
+      components: [
         {
-          title: 'General Information',
-          renderers: [
+          display: 'General Information',
+          components: [
             {
-              display: 'TBD',
-              path: 'TBD',
-              renderer: RendererType.TBD, // Immunization status (completed, entered-in-error, etc.)
+              display: 'Status',
+              path: 'Consent.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Scope',
+              path: 'Consent.scope',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'Consent.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Performer',
+              path: 'Consent.performer',
+              renderer: RendererType.DEFAULT,
             },
           ],
         },
       ],
     },
-  },*/
+  },
 };
