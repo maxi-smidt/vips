@@ -43,7 +43,7 @@ export default function SidebarItem({
 
   return (
     <Button
-      className={`w-full`}
+      className={`w-full text-white`}
       style={{ backgroundColor: `${color}` }}
       label={expanded ? `${sectionDisplay}` : undefined}
       severity="secondary"
@@ -60,6 +60,7 @@ export default function SidebarItem({
           width={20}
           height={20}
           alt={sectionKey}
+          className="filter invert"
         />
       )}
     />

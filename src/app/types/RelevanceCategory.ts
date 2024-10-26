@@ -1,6 +1,6 @@
 export enum RelevanceCategory {
-  DOCUMENT_INFORMATION = '#74c8ff',
-  REQUIRED = '#ffb1b1',
-  RECOMMENDED = '#ffd37a',
-  OPTIONAL = '#86efac',
+  DOCUMENT_INFORMATION = '#0ea5e9',
+  REQUIRED = '#ef4444',
+  RECOMMENDED = '#fb923c',
+  OPTIONAL = '#a3e635',
 }
