@@ -11,7 +11,7 @@ import React, {
 interface DataContextType {
   expanded: boolean;
   setExpanded: Dispatch<SetStateAction<boolean>>;
-  activeIndex: number;
+  activeIndex: number | number[];
   setActiveIndex: Dispatch<SetStateAction<number | number[]>>;
 }
 
