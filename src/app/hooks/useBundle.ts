@@ -6,7 +6,6 @@ import { Reference } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/reference';
 import { BundleUtils, ResourceUtils } from '@smile-cdr/fhirts';
 import { BundleEntry } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundleEntry';
 import { BundleContext } from '@/app/provider/BundleProvider';
-import { CompositionAttester } from '@smile-cdr/fhirts/src/FHIR-R4/classes/compositionAttester';
 import { ResourceMap } from '@/app/types/ResourceMap';
 
 export const useBundle = () => {
