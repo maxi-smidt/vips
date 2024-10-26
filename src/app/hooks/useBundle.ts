@@ -6,6 +6,7 @@ import { Reference } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/reference';
 import { BundleUtils, ResourceUtils } from '@smile-cdr/fhirts';
 import { BundleEntry } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundleEntry';
 import { BundleContext } from '@/app/provider/BundleProvider';
+import { CompositionAttester } from '@smile-cdr/fhirts/src/FHIR-R4/classes/compositionAttester';
 
 export const useBundle = () => {
   const { bundle, setBundle } = useContext(BundleContext);
@@ -55,6 +56,28 @@ export const useBundle = () => {
       sectionResourceDict['patient'] = [
         getBundleEntryByReference(composition.subject!.reference!)!,
       ];
+      sectionResourceDict['author'] = [];
+      sectionResourceDict['attester'] = [];
+      sectionResourceDict['custodian'] = [];
+      if (composition.author) {
+        composition.author.forEach((resource: Reference) => {
+          sectionResourceDict['author'].push(
+            getBundleEntryByReference(<string>resource.reference)!,
+          );
+        });
+      }
+      if (composition.attester) {
+        composition.attester.forEach((attester: CompositionAttester) => {
+          sectionResourceDict['attester'].push(
+            getBundleEntryByReference(<string>attester.party?.reference)!,
+          );
+        });
+      }
+      if (composition.custodian) {
+        sectionResourceDict['custodian'] = [
+          getBundleEntryByReference(<string>composition.custodian.reference)!,
+        ];
+      }
     }
     return sectionResourceDict;
   }, [bundle]);
