@@ -43,7 +43,7 @@ export default function SidebarItem({
 
   return (
     <Button
-      className="w-full text-white"
+      className="w-full text-white hover:scale-[1.03] transition-all duration-200"
       style={{ backgroundColor: `${color}` }}
       label={expanded ? `${sectionDisplay}` : undefined}
       severity="secondary"
