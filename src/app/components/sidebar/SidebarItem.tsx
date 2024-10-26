@@ -2,12 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from 'primereact/button';
 import { useData } from '@/app/hooks/useData';
+import { RelevanceCategory } from '@/app/types/RelevanceCategory';
 
 interface SidebarItemProps {
   sectionKey: string;
   iconPath: string;
   sectionDisplay: string;
   numResources: number;
+  color: RelevanceCategory;
   index: number;
 }
 
@@ -16,6 +18,7 @@ export default function SidebarItem({
   sectionKey,
   iconPath,
   numResources,
+  color,
   index,
 }: SidebarItemProps) {
   const { expanded, setActiveIndex } = useData();
@@ -40,7 +43,8 @@ export default function SidebarItem({
 
   return (
     <Button
-      className="w-full"
+      className={`w-full`}
+      style={{ backgroundColor: `${color}` }}
       label={expanded ? `${sectionDisplay}` : undefined}
       severity="secondary"
       outlined

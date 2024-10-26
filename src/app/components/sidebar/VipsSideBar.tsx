@@ -17,6 +17,7 @@ export default function VipsSideBar() {
       sectionDisplay={config[sectionKey].sectionDisplay}
       iconPath={`${config[sectionKey].icon}`}
       numResources={resourceMap[config[sectionKey].code]?.length ?? 0}
+      color={config[sectionKey].color}
       index={index}
     />
   ));

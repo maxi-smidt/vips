@@ -1,4 +1,5 @@
 import { RendererType } from '@/app/types/RendererType';
+import { RelevanceCategory } from '@/app/types/RelevanceCategory';
 
 export interface Config {
   [resource: string]: ConfigResource;
@@ -8,6 +9,7 @@ export interface ConfigResource {
   icon: string;
   sectionDisplay: string;
   code: string;
+  color: RelevanceCategory;
   section: ConfigSection;
 }
 

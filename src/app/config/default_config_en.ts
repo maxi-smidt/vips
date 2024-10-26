@@ -1,9 +1,11 @@
 import { Config } from '../types/Config';
 import { RendererType } from '@/app/types/RendererType';
+import { RelevanceCategory } from '@/app/types/RelevanceCategory';
 
 export const DefaultConfigEN: Config = {
   Patient: {
     icon: '/icons/user.svg',
+    color: RelevanceCategory.DOCUMENT_INFORMATION,
     sectionDisplay: 'Patient',
     code: 'patient',
     section: {
@@ -229,6 +231,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionMedications: {
     icon: '/icons/medications.svg',
+    color: RelevanceCategory.REQUIRED,
     sectionDisplay: 'Medication Summary',
     code: '10160-0',
     section: {
@@ -258,6 +261,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionAllergies: {
     icon: '/icons/allergies.svg',
+    color: RelevanceCategory.REQUIRED,
     sectionDisplay: 'Allergies and Intolerances',
     code: '48765-2',
     section: {
@@ -287,6 +291,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionProblems: {
     icon: '/icons/problems.svg',
+    color: RelevanceCategory.REQUIRED,
     sectionDisplay: 'Problems',
     code: '11450-4',
     section: {
@@ -407,6 +412,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionProceduresHx: {
     icon: '/icons/procedures.svg',
+    color: RelevanceCategory.RECOMMENDED,
     sectionDisplay: 'Procedure History',
     code: '47519-4',
     section: {
@@ -486,6 +492,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionImmunizations: {
     icon: '/icons/immunizations.svg',
+    color: RelevanceCategory.RECOMMENDED,
     sectionDisplay: 'Immunization History',
     code: '11369-6',
     section: {
@@ -646,6 +653,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionMedicalDevices: {
     icon: '/icons/medical_devices.svg',
+    color: RelevanceCategory.RECOMMENDED,
     sectionDisplay: 'History of Medical Devices',
     code: '46264-8',
     section: {
@@ -691,6 +699,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionResults: {
     icon: '/icons/results.svg',
+    color: RelevanceCategory.RECOMMENDED,
     sectionDisplay: 'Diagnostic tests and laboratory data',
     code: '30954-2',
     section: {
@@ -835,6 +844,7 @@ export const DefaultConfigEN: Config = {
   },
   /*sectionVitalSigns: {
     icon: '/icons/vitalSigns.svg',
+    color: RelevanceCategory.OPTIONAL,
     sectionDisplay: 'Vital Signs',
     code: '8716-3',
     section: {
@@ -855,6 +865,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionPastIllnessHx: {
     icon: '/icons/pastIllness.svg',
+    color: RelevanceCategory.OPTIONAL,
     sectionDisplay: 'Past illness',
     code: '11348-0',
     section: {
@@ -875,6 +886,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionFunctionalStatus: {
     icon: '/icons/functionalStatus.svg',
+    color: RelevanceCategory.OPTIONAL,
     sectionDisplay: 'Functional Status Assessment',
     code: '47420-5',
     section: {
@@ -895,6 +907,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionPlanOfCare: {
     icon: '/icons/medicalDevices.svg',
+    color: RelevanceCategory.OPTIONAL,
     sectionDisplay: 'Plan of care',
     code: '18776-5',
     section: {
@@ -915,6 +928,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionSocialHistory: {
     icon: '/icons/socialHistory.svg',
+    color: RelevanceCategory.OPTIONAL,
     sectionDisplay: 'Social History',
     code: '29762-2',
     section: {
@@ -935,6 +949,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionPregnancyHx: {
     icon: '/icons/pregnancyHistory.svg',
+    color: RelevanceCategory.OPTIONAL,
     sectionDisplay: 'Pregnancy history',
     code: '10162-6',
     section: {
@@ -955,6 +970,7 @@ export const DefaultConfigEN: Config = {
   },
   sectionAdvanceDirectives: {
     icon: '/icons/advanceDirectives.svg',
+    color: RelevanceCategory.OPTIONAL,
     sectionDisplay: 'Advance directives',
     code: '42348-3',
     section: {
