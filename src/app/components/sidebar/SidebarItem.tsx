@@ -43,7 +43,7 @@ export default function SidebarItem({
 
   return (
     <Button
-      className={`w-full text-white`}
+      className="w-full text-white"
       style={{ backgroundColor: `${color}` }}
       label={expanded ? `${sectionDisplay}` : undefined}
       severity="secondary"
@@ -53,7 +53,7 @@ export default function SidebarItem({
       tooltipOptions={{ showDelay: 200 }}
       pt={passTrough}
       badge={`${numResources}`}
-      badgeClassName="p-badge-secondary"
+      badgeClassName="p-badge-secondary text-black bg-white"
       icon={(_) => (
         <Image
           src={`${process.env.IMAGE_PATH}${iconPath}`}
