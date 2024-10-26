@@ -151,9 +151,9 @@ export default function EmptyPage() {
                 }
 
                 return (
-                  <code className="bg-gray-200 text-black font-mono p-1 rounded">
-                    {children}
-                  </code>
+                <code className="bg-gray-200 text-black font-mono px-1 py-0.9 rounded">                    
+                  {children}
+                </code>
                 );
               },
             }}
