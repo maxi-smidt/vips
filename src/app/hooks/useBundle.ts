@@ -6,6 +6,8 @@ import { Reference } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/reference';
 import { BundleUtils, ResourceUtils } from '@smile-cdr/fhirts';
 import { BundleEntry } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundleEntry';
 import { BundleContext } from '@/app/provider/BundleProvider';
+import { CompositionAttester } from '@smile-cdr/fhirts/src/FHIR-R4/classes/compositionAttester';
+import { ResourceMap } from '@/app/types/ResourceMap';
 
 export const useBundle = () => {
   const { bundle, setBundle } = useContext(BundleContext);
@@ -14,16 +16,16 @@ export const useBundle = () => {
     return bundle?.entry?.find((x) => x['fullUrl'] === reference)?.resource;
   };
 
+  const getBundleEntryByReference = (
+    reference: string,
+  ): BundleEntry | undefined => {
+    return bundle?.entry?.find((x) => x['fullUrl'] === reference);
+  };
+
   const resourceMap = useMemo(() => {
     const bundleUtils = new BundleUtils();
     const resourceUtils = new ResourceUtils();
-    const sectionResourceDict: { [key: string]: BundleEntry[] } = {};
-
-    const getBundleEntryByReference = (
-      reference: string,
-    ): BundleEntry | undefined => {
-      return bundle?.entry?.find((x) => x['fullUrl'] === reference);
-    };
+    const sectionResourceDict: ResourceMap = {};
 
     if (bundle?.entry) {
       const composition: Composition = bundleUtils.getResources(
@@ -52,10 +54,30 @@ export const useBundle = () => {
           }
         });
       });
-      sectionResourceDict['patient'] = [
-        getBundleEntryByReference(composition.subject!.reference!)!,
-      ];
+      addSpecialSection(sectionResourceDict, composition, 'patient', [
+        'subject',
+        'reference',
+      ]);
+      addSpecialSection(
+        sectionResourceDict,
+        composition,
+        'author',
+        ['reference'],
+        ['author'],
+      );
+      addSpecialSection(
+        sectionResourceDict,
+        composition,
+        'attester',
+        ['party', 'reference'],
+        ['attester'],
+      );
+      addSpecialSection(sectionResourceDict, composition, 'custodian', [
+        'custodian',
+        'reference',
+      ]);
     }
+
     return sectionResourceDict;
   }, [bundle]);
 
@@ -65,4 +87,46 @@ export const useBundle = () => {
     resourceMap,
     getResourceByReference,
   };
+
+  /**
+   * @param resourceMap the resource map
+   * @param composition the composition of the bundle
+   * @param section the name of the section e.g. patient
+   * @param pathToReference the path to the reference
+   * @param pathToObjects the path to the array that stores the references (not used if only one reference expected)
+   */
+  function addSpecialSection(
+    resourceMap: ResourceMap,
+    composition: Composition,
+    section: string,
+    pathToReference: string[],
+    pathToObjects?: string[],
+  ) {
+    const values: BundleEntry[] = [];
+    const references = pathToObjects
+      ? (getValueByPath(composition, pathToObjects) as unknown[])
+      : [getValueByPath(composition, pathToReference) as string];
+
+    references?.forEach((reference) => {
+      const ref = (
+        pathToObjects ? getValueByPath(reference, pathToReference) : reference
+      ) as string;
+      const bundleEntry = getBundleEntryByReference(ref);
+      if (bundleEntry) values.push(bundleEntry);
+    });
+
+    resourceMap[section] = [...values];
+  }
+
+  function getValueByPath(rootObject: unknown, path: string[]): unknown {
+    let subject: unknown = rootObject;
+    for (const p of path) {
+      if (subject && typeof subject === 'object' && p in subject) {
+        subject = subject[p as keyof typeof subject];
+      } else {
+        return undefined;
+      }
+    }
+    return subject;
+  }
 };

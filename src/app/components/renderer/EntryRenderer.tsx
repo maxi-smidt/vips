@@ -8,9 +8,9 @@ import AddressRenderer from '@/app/components/renderer/fhir/AddressRenderer';
 import CodingRenderer from '@/app/components/renderer/fhir/CodingRenderer';
 import ContactPointRenderer from '@/app/components/renderer/fhir/ContactPointRenderer';
 import { useBundle } from '@/app/hooks/useBundle';
-import { ResourceUtils } from '@smile-cdr/fhirts';
 import LinkRenderer from '@/app/components/renderer/fhir/LinkRenderer';
 import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
+import { ResourceUtils } from '@/app/utils/ResourceUtils';
 
 const resourceUtils = new ResourceUtils();
 
