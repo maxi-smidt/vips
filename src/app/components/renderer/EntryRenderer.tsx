@@ -11,6 +11,7 @@ import { useBundle } from '@/app/hooks/useBundle';
 import LinkRenderer from '@/app/components/renderer/fhir/LinkRenderer';
 import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
 import { ResourceUtils } from '@/app/utils/ResourceUtils';
+import AnnotationRenderer from '@/app/components/renderer/fhir/AnnotationRenderer';
 
 const resourceUtils = new ResourceUtils();
 
@@ -27,6 +28,8 @@ export default function EntryRenderer({
   const values = isReference()
     ? getReference()
     : getNoneReference(configEntry.path);
+
+  console.log(configEntry, values);
 
   const getRenderer = (value: unknown) => {
     switch (configEntry.renderer) {
@@ -48,6 +51,10 @@ export default function EntryRenderer({
         return <ContactPointRenderer value={value} configEntry={configEntry} />;
       case RendererType.LINK:
         return <LinkRenderer value={value} configEntry={configEntry} />;
+      case RendererType.ANNOTATION:
+        return <AnnotationRenderer value={value} configEntry={configEntry} />;
+      default:
+        throw new Error(`Unknown renderer type: ${configEntry.renderer}`);
     }
   };
 

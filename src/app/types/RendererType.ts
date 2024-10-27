@@ -1,4 +1,5 @@
 export enum RendererType {
+  ANNOTATION = 'AnnotationRenderer',
   DEFAULT = 'DefaultRenderer',
   IDENTIFIER = 'IdentifierRenderer',
   HUMAN_NAME = 'HumanNameRenderer',
