@@ -37,7 +37,13 @@ export default function SidebarItem({
       element.scrollIntoView();
       const offset = 70;
       window.scrollBy(0, -offset);
-      setActiveIndex(index);
+      setActiveIndex((prevState) => {
+        if (Array.isArray(prevState)) {
+          return [...prevState, index];
+        } else {
+          return [prevState, index];
+        }
+      });
     }
   };
 
