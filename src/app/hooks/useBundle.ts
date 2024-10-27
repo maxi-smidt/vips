@@ -18,7 +18,9 @@ export const useBundle = () => {
   const getBundleEntryByReference = (
     reference: string,
   ): BundleEntry | undefined => {
-    return bundle?.entry?.find((x) => x['fullUrl'] === reference);
+    return bundle?.entry?.find(
+      (x) => x['fullUrl'] !== undefined && x['fullUrl'].endsWith(reference),
+    );
   };
 
   const resourceMap = useMemo(() => {
@@ -76,7 +78,6 @@ export const useBundle = () => {
         'reference',
       ]);
     }
-
     return sectionResourceDict;
   }, [bundle]);
 
