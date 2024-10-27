@@ -1,7 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { InputText } from 'primereact/inputtext';
+import { InputTextarea } from 'primereact/inputtextarea';
+import { Button } from 'primereact/button';
 import Image from 'next/image';
+import { useToast } from '@/app/hooks/useToast';
 
 export default function StartPage() {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState<string>('');
+  const [loading, setLoading] = useState(false);
+  const { showError, showSuccess } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const payload = {
+        title: `[FEEDBACK] ${title}`,
+        body: [description, '---', 'Feedback submitted by VIPS Viewer'].join(
+          '\n',
+        ),
+        labels: ['feedback'],
+      };
+
+      const response = await fetch(
+        'https://api.github.com/repos/maxi-smidt/vips/issues',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `token ${process.env.ISSUE_TOKEN}`,
+          },
+          body: JSON.stringify(payload),
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error('Error creating issue');
+      }
+
+      showSuccess('Feedback erfolgreich gesendet!');
+      setTitle('');
+      setDescription('');
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+      showError(errorMessage);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <div className="p-8 max-w-5xl mx-auto bg-gray-50 rounded-lg shadow-lg">
@@ -80,6 +129,7 @@ export default function StartPage() {
             alt="IPS Composition"
           />
         </section>
+
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             Sicherheit
@@ -90,6 +140,7 @@ export default function StartPage() {
             Internet kommen.
           </p>
         </section>
+
         <section>
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             Über uns
@@ -107,6 +158,7 @@ export default function StartPage() {
             der HL7 Austria und ELGA GmbH.
           </p>
         </section>
+
         <section className="text-center">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             Feedback oder Fragen?
@@ -115,15 +167,35 @@ export default function StartPage() {
             Wir freuen uns über Ihr Feedback! Bei Fragen oder Anregungen, zögern
             Sie nicht, uns zu kontaktieren.
           </p>
-          <button
-            className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            onClick={() =>
-              (window.location.href =
-                'mailto:S2410595002@fhooe.at?subject=Feedback&body=Hallo, ich habe eine Anfrage.')
-            }
-          >
-            Schreiben Sie uns!
-          </button>
+
+          <form onSubmit={handleSubmit} className="mb-4">
+            <div className="mb-4">
+              <InputText
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Titel"
+                required
+                className="w-full"
+              />
+            </div>
+            <div className="mb-4">
+              <InputTextarea
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Beschreibung"
+                required
+                rows={4}
+                className="w-full"
+              />
+            </div>
+            <Button
+              type="submit"
+              label={loading ? 'Sending...' : 'Feedback senden'}
+              className="p-button p-button-primary"
+              loading={loading}
+              disabled={loading}
+            />
+          </form>
         </section>
       </div>
     </>

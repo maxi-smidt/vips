@@ -7,6 +7,7 @@ const nextConfig = {
   },
   env: {
     IMAGE_PATH: process.env.MODE === 'development' ? '' : '/vips',
+    ISSUE_TOKEN: process.env.ISSUE_TOKEN,
   },
 };
 
