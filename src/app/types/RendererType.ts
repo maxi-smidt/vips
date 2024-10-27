@@ -7,4 +7,5 @@ export enum RendererType {
   CODING = 'CodingRenderer',
   CONTACT_POINT = 'ContactPointRenderer',
   LINK = 'LinkRenderer',
+  PERIOD = 'PeriodRenderer',
 }

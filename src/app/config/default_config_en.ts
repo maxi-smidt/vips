@@ -706,39 +706,79 @@ export const DefaultConfigEN: Config = {
               renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
+              display: 'Encounter',
+              path: 'Observation.encounter:',
+              renderer: RendererType.LINK,
+            },
+            {
               display: 'Time',
-              path: 'Observation.effective.effectiveDateTime',
+              path: 'Observation.effectiveDateTime',
               renderer: RendererType.DEFAULT,
             },
             {
               display: 'Period',
-              path: 'Observation.effective.effectivePeriod',
-              renderer: RendererType.DEFAULT,
+              path: 'Observation.effectivePeriod',
+              renderer: RendererType.PERIOD,
             },
             {
               display: 'Performer',
-              path: 'Observation.performer',
+              path: 'Observation.performer:',
+              renderer: RendererType.LINK,
+            },
+            {
+              display: 'Quantity',
+              path: 'Observation.valueQuantity',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Value Quantity',
-              path: 'Observation.value.valueQuantity',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Value String',
-              path: 'Observation.value.valueString',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Value Code',
-              path: 'Observation.value.valueCodeableConcept',
+              display: 'CodeableConcept',
+              path: 'Observation.valueCodeableConcept',
               renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
-              display: 'Value Time',
-              path: 'Observation.value.valueQuantity',
+              display: 'String',
+              path: 'Observation.valueString',
               renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Boolean',
+              path: 'Observation.valueBoolean',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Integer',
+              path: 'Observation.valueInteger',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Range',
+              path: 'Observation.valueRange',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Ratio',
+              path: 'Observation.valueRatio',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'SampledData',
+              path: 'Observation.valueSampledData',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Time',
+              path: 'Observation.valueTime',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'DateTime',
+              path: 'Observation.valueDateTime',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Period',
+              path: 'Observation.valuePeriod',
+              renderer: RendererType.PERIOD,
             },
             {
               display: 'Body Site',
@@ -829,11 +869,6 @@ export const DefaultConfigEN: Config = {
                   renderer: RendererType.DEFAULT,
                 },
                 {
-                  display: 'SampledData',
-                  path: 'Observation.component.valueSampledData',
-                  renderer: RendererType.DEFAULT,
-                },
-                {
                   display: 'Time',
                   path: 'Observation.component.valueTime',
                   renderer: RendererType.DEFAULT,
@@ -846,7 +881,7 @@ export const DefaultConfigEN: Config = {
                 {
                   display: 'Period',
                   path: 'Observation.component.valuePeriod',
-                  renderer: RendererType.DEFAULT,
+                  renderer: RendererType.PERIOD,
                 },
               ],
             },
