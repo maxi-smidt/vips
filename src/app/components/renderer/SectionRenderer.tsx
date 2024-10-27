@@ -1,4 +1,4 @@
-import { ConfigSection } from '@/app/types/Config';
+import { ConfigSection, isConfigEntry } from '@/app/types/Config';
 import React from 'react';
 import ComponentRenderer from '@/app/components/renderer/ComponentRenderer';
 import { v4 as uuidv4 } from 'uuid';

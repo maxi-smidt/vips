@@ -9,8 +9,13 @@ export default function IdentifierRenderer({
   const identifier = value as Identifier;
 
   return (
-    <p>
-      <strong>{configEntry.display}:</strong> {identifier.value}
-    </p>
+    <div className="ml-6 mb-2 mt-2 space-y-1">
+      <div className="flex items-center">
+        <div style={{ width: '150px', fontWeight: 'bold' }}>
+          {configEntry.display}:
+        </div>
+        <div className="ml-4 flex-1">{identifier.value}</div>
+      </div>
+    </div>
   );
 }

@@ -9,15 +9,21 @@ export default function ContactPointRenderer({
   const contactPoint = value as ContactPoint;
 
   return (
-    <div>
-      <h4>{configEntry.display}:</h4>{' '}
-      {contactPoint.system && (
-        <span>
-          <strong>{contactPoint.system}:</strong>{' '}
-        </span>
-      )}
-      {contactPoint.value && <span>{contactPoint.value}</span>}
-      {contactPoint.use && <span> ({contactPoint.use})</span>}
+    <div className="ml-6 mb-2 mt-2 space-y-1">
+      <div className="flex">
+        <div className="font-semibold" style={{ width: '150px' }}>
+          {configEntry.display}:
+        </div>
+        <div className="ml-4 flex-1">
+          {contactPoint.system && (
+            <span>
+              <strong>{contactPoint.system}:</strong>{' '}
+            </span>
+          )}
+          {contactPoint.value && <span>{contactPoint.value}</span>}
+          {contactPoint.use && <span> ({contactPoint.use})</span>}
+        </div>
+      </div>
     </div>
   );
 }
