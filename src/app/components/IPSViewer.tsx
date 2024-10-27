@@ -21,26 +21,23 @@ export default function IPSViewer() {
 
   return (
     <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
-      {Object.keys(config).map((key) => {
-        const bundleEntries = resourceMap[config[key].code];
-        if (!bundleEntries || bundleEntries.length === 0) {
-          return null;
-        }
-
-        return (
-          <AccordionTab
-            key={config[key].sectionDisplay}
-            header={config[key].sectionDisplay}
-            className={`${key}`}
-            pt={{ content: { className: 'p-0' } }}
-          >
+      {Object.keys(config).map((key) => (
+        <AccordionTab
+          key={config[key].sectionDisplay}
+          header={config[key].sectionDisplay}
+          className={`${key}`}
+          pt={{ content: { className: 'p-0' } }}
+        >
+          {resourceMap[config[key].code]?.length > 0 ? (
             <RootSectionRenderer
               section={config[key].section}
-              bundleEntries={bundleEntries}
+              bundleEntries={resourceMap[config[key].code]}
             />
-          </AccordionTab>
-        );
-      })}
+          ) : (
+            <EmptySectionRenderer />
+          )}
+        </AccordionTab>
+      ))}
     </Accordion>
   );
 }
