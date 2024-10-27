@@ -1,6 +1,8 @@
 import { Config } from '../types/Config';
 import { RendererType } from '@/app/types/RendererType';
 
+// TODO: Medication, Allergies, Alert, Patient History
+
 export const DefaultConfigEN: Config = {
   Patient: {
     icon: '/icons/user.svg',
@@ -1723,4 +1725,6 @@ export const DefaultConfigEN: Config = {
       ],
     },
   },
+  sectionPatientHistroy: {},
+  sectionAlerts: {},
 };
