@@ -14,9 +14,20 @@ import useConfig from '@/app/hooks/useConfig';
 import PdfRenderer from '@/app/components/pdfExport/PdfRenderer';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useData } from '@/app/hooks/useData';
+import useConfig from '@/app/hooks/useConfig';
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 export default function Header() {
+  const { setActiveIndex } = useData();
+  const { config } = useConfig();
   const handleDownload = async () => {
+    setActiveIndex(Object.keys(config).map((_, index) => index));
+    await sleep(1000);
+
     const A4_HEIGHT = 841.89;
     const A4_WIDTH = 595.28;
     const WIDTH_MARGIN = 10;
