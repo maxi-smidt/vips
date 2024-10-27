@@ -11,32 +11,10 @@ export default function StartPage() {
 
         <section className="mb-8">
           <p className="text-lg text-gray-700 leading-relaxed">
-            Der <strong>IPS Viewer</strong> ist ein Open-Source-Projekt, das von
-            engagierten Studierenden der
-            <a
-              href="https://www.fh-ooe.at/hagenberg"
-              className="text-blue-500 hover:underline"
-            >
-              {' '}
-              FH Hagenberg
-            </a>{' '}
-            und
-            <a
-              href="https://www.jku.at"
-              className="text-blue-500 hover:underline"
-            >
-              {' '}
-              JKU Linz
-            </a>{' '}
-            entwickelt wurde. Es entstand im Rahmen des{' '}
-            <a
-              href="https://fhir.hl7.at/r4-ELGA-AustrianPatientSummary-main/contest.html"
-              className="text-blue-500 hover:underline"
-            >
-              ELGA Contest
-            </a>{' '}
-            und zielt darauf ab, die Nutzung von FHIR-basierten Patientendaten
-            einfacher und intuitiver zu gestalten.
+            Das Ziel des VIPS® IPS Viewers ist es, FHIR Resourcen des IPS
+            grafisch ansprechend darzustellen und zusätzliche Funktionalitäten
+            zur Verfügung zu stellen, welche die Benutzung der Applikation
+            erleichtern sollen.
           </p>
         </section>
 
@@ -58,7 +36,7 @@ export default function StartPage() {
                   <strong>PDF-Export</strong>
                 </td>
                 <td className="py-3 px-4 text-gray-700">
-                  Erstellen Sie eine PDF-Version Ihrer Patientendaten mit einem
+                  Erstellen Sie eine PDF-Version der Patientenkurzakte mit einem
                   Klick.
                 </td>
               </tr>
@@ -91,10 +69,9 @@ export default function StartPage() {
             Unterstützte Sektionen
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Der IPS Viewer unterstützt verschiedene Sektionen und visualisiert
-            Daten gemäß der offiziellen Spezifikation. Die Farben in der Sidebar
-            sind entsprechend angepasst, um eine klare und strukturierte
-            Benutzeroberfläche zu bieten.
+            Der IPS Viewer unterstützt die im IPS Implementation Guide
+            spezifizierten Sektionen, wobei auch die Farben in der Sidebar
+            entsprechend angepasst sind.
           </p>
           <Image
             src={`${process.env.IMAGE_PATH}/images/IPS_composition.jpg`}
@@ -108,9 +85,25 @@ export default function StartPage() {
             Sicherheit
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Ihre Daten sind sicher: Der IPS Viewer speichert keine Daten
-            dauerhaft. Alle Daten werden nur temporär verarbeitet und verlassen
-            Ihr Gerät nicht.
+            Der IPS Viewer bearbeitet die ihm zu Verfügung gestellten Daten nur
+            temporär und speichert diese nicht.
+          </p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            Über uns
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            Der <strong>IPS Viewer</strong> ist ein Open-Source-Projekt, das von
+            Studierenden der FH Hagenberg und JKU Linz entwickelt wird. Die
+            Umsetzung erfolgte im Rahmen des{' '}
+            <a
+              href="https://fhir.hl7.at/r4-ELGA-AustrianPatientSummary-main/contest.html"
+              className="text-blue-500 hover:underline"
+            >
+              IPS Visualization Contest
+            </a>{' '}
+            der HL7 Austria und ELGA GmbH.
           </p>
         </section>
         <section className="text-center">
@@ -121,8 +114,14 @@ export default function StartPage() {
             Wir freuen uns über Ihr Feedback! Bei Fragen oder Anregungen, zögern
             Sie nicht, uns zu kontaktieren.
           </p>
-          <button className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-            Schreib uns!
+          <button
+            className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            onClick={() =>
+              (window.location.href =
+                'mailto:S2410595002@fhooe.at?subject=Feedback&body=Hallo, ich habe eine Anfrage.')
+            }
+          >
+            Schreiben Sie uns!
           </button>
         </section>
       </div>
