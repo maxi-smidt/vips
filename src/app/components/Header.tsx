@@ -9,7 +9,10 @@ export default function Header() {
   return (
     <header className="bg-stone-100 shadow-md z-10">
       <div className="p-2 flex items-center justify-between">
-        <div className="flex items-center">
+        <a
+          href={process.env.MODE === 'development' ? '/' : '/vips/'}
+          className="flex items-center no-underline"
+        >
           <Image
             src={`${process.env.IMAGE_PATH}/logo.png`}
             alt="VIPS Logo"
@@ -20,7 +23,7 @@ export default function Header() {
           <span className="ml-4 text-2xl font-semibold text-gray-800">
             VIPS
           </span>
-        </div>
+        </a>
         <div className="flex items-center mr-3 gap-3">
           <div>
             <div className="relative">
