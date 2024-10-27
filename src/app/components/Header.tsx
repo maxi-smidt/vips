@@ -1,6 +1,5 @@
 'use client';
 
-import React, { useState } from 'react';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { InputIcon } from 'primereact/inputicon';
@@ -17,66 +16,101 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
-  const [showPdfHeader, setShowPdfHeader] = useState(false);
-  const handleDownload = async (mainContentId: string, headerId: string) => {
-    // Show header only for PDF generation
-    setShowPdfHeader(true);
+  const handleDownload = async () => {
     const A4_HEIGHT = 841.89;
     const A4_WIDTH = 595.28;
-
     const WIDTH_MARGIN = 10;
     const HEIGHT_MARGIN = 10;
     const PAGE_HEIGHT = A4_HEIGHT - 2 * HEIGHT_MARGIN;
+    const HEADER_HEIGHT = 50;
+    const FOOTER_HEIGHT = 30;
 
-    /** create pdf instance */
-    const pdf = new jsPDF('p', 'pt', 'a4'); // orientation, unit, format
+    const pdf = new jsPDF({
+      orientation: 'p',
+      unit: 'pt',
+      format: 'a4',
+      compress: true,
+    });
 
-    /** convert html to canvas */
-    const body = document.getElementById(mainContentId);
-    const canvas = await html2canvas(body as HTMLElement);
+    // Define the header text
+    const headerText = 'This is the IPS PDF Version.';
+    const headerFontSize = 18; // Adjust as needed
 
-    /** calculate the imgWidth, imgHeight to print on PDF
-     *  so it can scale in equal proportions*/
-    const canvasWidth = canvas.width;
-    const canvasHeight = canvas.height;
+    // Get elements by class and convert to an array
+    const elements = Array.from(
+      document.getElementsByClassName('contentClass'),
+    );
 
-    const imgWidth = A4_WIDTH - 2 * WIDTH_MARGIN;
-    const imgHeight = (imgWidth / canvasWidth) * canvasHeight;
+    // Convert each element to a canvas and store in array
+    const canvases = await Promise.all(
+      elements.map((element) => html2canvas(element as HTMLElement)),
+    );
 
-    /** print pageImg on to pdf */
-    const pageImg = canvas.toDataURL('image/png', 1.0);
+    let position = HEIGHT_MARGIN + HEADER_HEIGHT; // Position below header
+    let currentPage = 1;
 
-    let position = HEIGHT_MARGIN;
-    if (imgHeight > PAGE_HEIGHT) {
-      // need multi page pdf
-      let heightUnprinted = imgHeight;
-      while (heightUnprinted > 0) {
-        pdf.addImage(
-          pageImg,
-          'PNG',
-          WIDTH_MARGIN,
-          position,
-          imgWidth,
-          imgHeight,
+    // Add header for the first page
+    pdf.setFontSize(headerFontSize);
+    const headerTextWidth = pdf.getTextWidth(headerText);
+    pdf.text(
+      headerText,
+      (A4_WIDTH - headerTextWidth) / 2,
+      HEIGHT_MARGIN + 30, // Adjust as needed for vertical position
+    );
+
+    canvases.forEach((canvas) => {
+      const canvasWidth = canvas.width;
+      const canvasHeight = canvas.height;
+
+      const imgWidth = A4_WIDTH - 2 * WIDTH_MARGIN;
+      const imgHeight = (imgWidth / canvasWidth) * canvasHeight;
+
+      const pageImg = canvas.toDataURL('image/png', 1.0);
+
+      // Check if adding the image exceeds the page height
+      if (position + imgHeight > PAGE_HEIGHT + HEIGHT_MARGIN) {
+        pdf.addPage();
+        position = HEIGHT_MARGIN + HEADER_HEIGHT;
+
+        // Add the header to the new page
+        pdf.setFontSize(headerFontSize);
+        pdf.text(
+          headerText,
+          (A4_WIDTH - headerTextWidth) / 2,
+          HEIGHT_MARGIN + 30, // Adjust as needed for vertical position
         );
-
-        // draw the margin top and margin bottom if needed
-        pdf.setFillColor(255, 255, 255);
-        pdf.rect(0, 0, A4_WIDTH, HEIGHT_MARGIN, 'F'); // margin top
-        pdf.rect(0, A4_HEIGHT - HEIGHT_MARGIN, A4_WIDTH, HEIGHT_MARGIN, 'F'); // margin bottom
-
-        heightUnprinted -= PAGE_HEIGHT;
-        position -= PAGE_HEIGHT; // next vertical placement
-
-        // add another page if there's more contents to print
-        if (heightUnprinted > 0) pdf.addPage();
+        currentPage++; // Increment page count for footer
       }
-    } else {
-      // print single page pdf
+
+      pdf.addImage(pageImg, 'PNG', WIDTH_MARGIN, position, imgWidth, imgHeight);
+      position += imgHeight + HEIGHT_MARGIN;
+
+      // Add footer to each page
+      const footerText = `Page ${currentPage}`;
+      const footerFontSize = 10; // Reduced font size for footer
+      pdf.setFontSize(footerFontSize);
+      const textWidth = pdf.getTextWidth(footerText);
+      pdf.text(
+        footerText,
+        (A4_WIDTH - textWidth) / 2,
+        pdf.internal.pageSize.getHeight() - FOOTER_HEIGHT + 12, // Center the footer
+      );
+    });
+
+    // Finalize the last page's footer
+    if (position <= PAGE_HEIGHT + HEIGHT_MARGIN) {
+      const footerText = `Page ${currentPage}`;
+      const footerFontSize = 10; // Reduced font size for footer
+      pdf.setFontSize(footerFontSize);
+      const textWidth = pdf.getTextWidth(footerText);
+      pdf.text(
+        footerText,
+        (A4_WIDTH - textWidth) / 2,
+        pdf.internal.pageSize.getHeight() - FOOTER_HEIGHT + 12, // Center the footer
+      );
     }
 
-    /** save the pdf */
-    pdf.save(`myPDF.pdf`);
+    pdf.save('myPDF.pdf');
   };
   const pathname = usePathname();
   const [actionbutton, setActionButton] = useState<React.JSX.Element | null>(
@@ -94,25 +128,6 @@ export default function Header() {
 
   return (
     <header className="bg-stone-100 shadow-md z-10">
-      {showPdfHeader && (
-        <div
-          id="headerId"
-          className={`${
-            showPdfHeader ? 'block' : 'hidden'
-          } bg-gray-100 p-4 border-b border-gray-300 flex items-center space-x-4`}
-        >
-          <Image
-            src={`${process.env.IMAGE_PATH}/logo.png`}
-            alt="Logo"
-            width={50}
-            height={50}
-            className="rounded-md"
-          />
-          <h1 className="text-lg font-semibold text-gray-800">
-            This is the PDF Header
-          </h1>
-        </div>
-      )}
       <div className="p-2 flex items-center justify-between">
         <a
           href={process.env.MODE === 'development' ? '/' : '/vips/'}
@@ -153,7 +168,7 @@ export default function Header() {
             severity="secondary"
             text
             onClick={() => {
-              handleDownload('mainContentId', 'headerId');
+              handleDownload();
             }}
           >
             <Image

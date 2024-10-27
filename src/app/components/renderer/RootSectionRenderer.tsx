@@ -21,7 +21,7 @@ export default function RootSectionRenderer({
   return (
     <div className="flex flex-col gap-2">
       {bundleEntries.map((bundleEntry, index) => (
-        <div key={uuidv4()} id={bundleEntry.fullUrl}>
+        <div key={uuidv4()} id={bundleEntry.fullUrl} className="contentClass">
           <SectionRenderer
             configSection={{ ...section, display: getTitle(index) }}
             depth={0}
