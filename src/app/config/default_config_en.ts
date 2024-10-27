@@ -484,7 +484,7 @@ export const DefaultConfigEN: Config = {
                 {
                   display: 'Note',
                   path: 'Procedure.note',
-                  renderer: RendererType.DEFAULT,
+                  renderer: RendererType.ANNOTATION,
                 },
               ],
             },
@@ -572,7 +572,7 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Note',
               path: 'Immunization.note',
-              renderer: RendererType.DEFAULT,
+              renderer: RendererType.ANNOTATION,
             },
             {
               display: 'Reason',
@@ -693,7 +693,7 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Note',
               path: 'DeviceUseStatement.note',
-              renderer: RendererType.DEFAULT, // Additional notes about the device use
+              renderer: RendererType.ANNOTATION, // Additional notes about the device use
             },
           ],
         },
@@ -798,7 +798,7 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Note',
               path: 'Observation.note',
-              renderer: RendererType.DEFAULT,
+              renderer: RendererType.ANNOTATION,
             },
             {
               display: 'Body site',
