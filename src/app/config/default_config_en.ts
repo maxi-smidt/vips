@@ -102,6 +102,31 @@ export const DefaultConfigEN: Config = {
               path: 'AllergyIntolerance.category',
               renderer: RendererType.DEFAULT,
             },
+            {
+              display: 'Category',
+              path: 'AllergyIntolerance.category',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Criticality',
+              path: 'AllergyIntolerance.criticality',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Code',
+              path: 'AllergyIntolerance.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'AllergyIntolerance.category',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Category',
+              path: 'AllergyIntolerance.category',
+              renderer: RendererType.DEFAULT,
+            },
           ],
         },
       ],
@@ -1287,7 +1312,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Current Smoking status',
-              path: 'Observation.value[x]:valueCodeableConcept',
+              path: 'Observation.valueCodeableConcept',
               renderer: RendererType.CODING,
             },
             {
@@ -1295,57 +1320,57 @@ export const DefaultConfigEN: Config = {
               components: [
                 {
                   display: 'Quantity',
-                  path: 'Observation.value.valueQuantity',
+                  path: 'Observation.valueQuantity',
                   renderer: RendererType.DEFAULT,
                 },
                 {
                   display: 'CodeableConcept',
-                  path: 'Observation.value.valueCodeableConcept',
+                  path: 'Observation.valueCodeableConcept',
                   renderer: RendererType.CODEABLE_CONCEPT,
                 },
                 {
                   display: 'String',
-                  path: 'Observation.value.valueString',
+                  path: 'Observation.valueString',
                   renderer: RendererType.DEFAULT,
                 },
                 {
                   display: 'Boolean',
-                  path: 'Observation.value.valueBoolean',
+                  path: 'ObservationvalueBoolean',
                   renderer: RendererType.DEFAULT,
                 },
                 {
                   display: 'Integer',
-                  path: 'Observation.value.valueInteger',
+                  path: 'Observation.valueInteger',
                   renderer: RendererType.DEFAULT,
                 },
                 {
                   display: 'Range',
-                  path: 'Observation.value.valueRange',
+                  path: 'Observation.valueRange',
                   renderer: RendererType.DEFAULT,
                 },
                 {
                   display: 'Ratio',
-                  path: 'Observation.value.valueRatio',
+                  path: 'Observation.valueRatio',
                   renderer: RendererType.DEFAULT,
                 },
                 {
                   display: 'SampledData',
-                  path: 'Observation.value.valueSampledData',
+                  path: 'ObservationvalueSampledData',
                   renderer: RendererType.DEFAULT,
                 },
                 {
                   display: 'Time',
-                  path: 'Observation.value.valueTime',
+                  path: 'Observation.valueTime',
                   renderer: RendererType.DEFAULT,
                 },
                 {
                   display: 'DateTime',
-                  path: 'Observation.value.valueDateTime',
+                  path: 'Observation.valueDateTime',
                   renderer: RendererType.DEFAULT,
                 },
                 {
                   display: 'Period',
-                  path: 'Observation.value.valuePeriod',
+                  path: 'Observation.valuePeriod',
                   renderer: RendererType.DEFAULT,
                 },
               ],
@@ -1725,6 +1750,65 @@ export const DefaultConfigEN: Config = {
       ],
     },
   },
-  sectionPatientHistroy: {},
-  sectionAlerts: {},
+
+  // Note: Not in APS
+  // sectionPatientHistory: {
+  //   icon: '/icons/patient_story.svg',
+  //   sectionDisplay: 'Patient History',
+  //   code: '81338-6',
+  //   section: {
+  //     display: 'Patient History',
+  //     components: [],
+  //   },
+  // },
+  // sectionAlerts: {
+  //   icon: '/icons/alerts.svg',
+  //   sectionDisplay: 'Alerts',
+  //   code: '104605-1',
+  //   section: {
+  //     display: 'Alerts',
+  //     components: [
+  //       {
+  //         display: 'Flag priority',
+  //         path: 'Flag.priority',
+  //         renderer: RendererType.DEFAULT,
+  //       },
+  //       {
+  //         display: 'Status',
+  //         path: 'Flag.status',
+  //         renderer: RendererType.DEFAULT,
+  //       },
+  //       {
+  //         display: 'Category',
+  //         path: 'Flag.category',
+  //         renderer: RendererType.CODEABLE_CONCEPT,
+  //       },
+  //       {
+  //         display: 'Code',
+  //         path: 'Flag.code',
+  //         renderer: RendererType.CODEABLE_CONCEPT,
+  //       },
+  //       {
+  //         display: 'Subject',
+  //         path: 'Flag.subject:',
+  //         renderer: RendererType.LINK,
+  //       },
+  //       {
+  //         display: 'Period',
+  //         path: 'Flag.period',
+  //         renderer: RendererType.LINK,
+  //       },
+  //       {
+  //         display: 'Encounter',
+  //         path: 'Flag.encounter:',
+  //         renderer: RendererType.LINK,
+  //       },
+  //       {
+  //         display: 'Author',
+  //         path: 'Flag.author:',
+  //         renderer: RendererType.LINK,
+  //       },
+  //     ],
+  //   },
+  // },
 };
