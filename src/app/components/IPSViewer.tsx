@@ -20,7 +20,12 @@ export default function IPSViewer() {
   };
 
   return (
-    <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
+    <Accordion
+      multiple
+      activeIndex={activeIndex}
+      onTabChange={onTabChange}
+      id="mainContentId"
+    >
       {Object.keys(config).map((key) => (
         <AccordionTab
           key={config[key].sectionDisplay}

@@ -10,7 +10,6 @@ interface SectionRendererProps {
   configSection: ConfigSection;
   depth: number;
   resource: Resource;
-  pdf?: boolean;
 }
 
 const isEmptyDiv = (component: React.JSX.Element) => {
@@ -23,7 +22,6 @@ export default function SectionRenderer({
   configSection,
   depth,
   resource,
-  pdf,
 }: SectionRendererProps) {
   const sections = configSection.components.map((component) => {
     return (
