@@ -4,14 +4,14 @@ import Image from 'next/image';
 export default function StartPage() {
   return (
     <>
-      <div className="p-8 max-w-3xl mx-auto bg-gray-50 rounded-lg shadow-lg">
+      <div className="p-8 max-w-5xl mx-auto bg-gray-50 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-left mb-6">
           Willkommen beim IPS Viewer
         </h1>
 
         <section className="mb-8">
           <p className="text-lg text-gray-700 leading-relaxed">
-            Das Ziel des VIPS® IPS Viewers ist es, FHIR Resourcen des IPS
+            Das Ziel des VIPS IPS Viewers ist es, FHIR Resourcen des IPS
             grafisch ansprechend darzustellen und zusätzliche Funktionalitäten
             zur Verfügung zu stellen, welche die Benutzung der Applikation
             erleichtern sollen.
@@ -74,19 +74,20 @@ export default function StartPage() {
             entsprechend angepasst sind.
           </p>
           <Image
-            src={`${process.env.IMAGE_PATH}/images/IPS_composition.jpg`}
+            src={`${process.env.IMAGE_PATH}/images/IPS_composition.png`}
             width={700}
             height={440}
             alt="IPS Composition"
-          ></Image>
+          />
         </section>
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             Sicherheit
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Der IPS Viewer bearbeitet die ihm zu Verfügung gestellten Daten nur
-            temporär und speichert diese nicht.
+            Der IPS Viewer lädt die ausgewählten Daten nur lokal im Browser. Das
+            bedeutet, dass die Daten den Rechner nicht verlassen und nicht ins
+            Internet kommen.
           </p>
         </section>
         <section>
