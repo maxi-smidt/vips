@@ -73,6 +73,10 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
+      - name: Set Environment Variables
+        run: |
+          echo "ISSUE_TOKEN=${{ secrets.ISSUE_TOKEN }}" >> $GITHUB_ENV
+
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
