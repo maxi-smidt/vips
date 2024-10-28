@@ -189,6 +189,7 @@ export default function OrderCustomizer() {
         />
         <Button
           className="w-full"
+          outlined
           label="Delete Custom Configuration "
           severity="danger"
           onClick={clearCustomConfig}
