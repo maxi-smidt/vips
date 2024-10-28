@@ -10,10 +10,7 @@ export default function Header() {
   return (
     <header className="bg-stone-100 shadow-md z-10">
       <div className="p-2 flex items-center justify-between">
-        <Link
-          href={process.env.MODE === 'development' ? '/' : '/vips/'}
-          className="flex items-center no-underline"
-        >
+        <Link href="/" className="flex items-center no-underline">
           <Image
             src={`${process.env.IMAGE_PATH}/logo.png`}
             alt="VIPS Logo"
