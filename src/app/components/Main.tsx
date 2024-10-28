@@ -19,7 +19,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
       <aside className="flex overflow-y-scroll">
         <VipsSideBar />
       </aside>
-      <main className="flex-1 overflow-y-auto">{children}</main>
+      <main className="flex-1 overflow-y-scroll">{children}</main>
     </div>
   );
 }
