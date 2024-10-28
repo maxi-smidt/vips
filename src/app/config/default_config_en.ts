@@ -740,7 +740,7 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Status',
               path: 'DiagnosticReport.status',
-              renderer: RendererType.DEFAULT,
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'Category',
@@ -969,7 +969,7 @@ export const DefaultConfigEN: Config = {
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'DateTime',
+              display: 'Value',
               path: 'Observation.valueDateTime',
               renderer: RendererType.DEFAULT,
             },
@@ -1313,25 +1313,30 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Stage Summary',
               path: 'Condition.stage.summary',
-              renderer: RendererType.DEFAULT,
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'Stage Type',
               path: 'Condition.stage.type',
-              renderer: RendererType.DEFAULT,
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'Formal record of assessment',
               path: 'Condition.stage.assessment.reference:',
               renderer: RendererType.LINK,
             },
-            {
-              display: 'Evidence',
-              path: 'Condition.evidence',
-              renderer: RendererType.DEFAULT,
-            },
           ],
         },
+        {
+          display: 'Evidence',
+          components: [
+            {
+              display: 'Detail',
+              path: 'Condition.evidence.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            }
+          ]
+        }
       ],
     },
   },
@@ -1349,12 +1354,12 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Care plan Status',
               path: 'CarePlan.status',
-              renderer: RendererType.DEFAULT,
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'Intent',
               path: 'CarePlan.intent',
-              renderer: RendererType.DEFAULT,
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'Category',
@@ -1388,118 +1393,103 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Addressed health issue',
-              path: 'CarePlan.address:',
-              renderer: RendererType.LINK,
+              path: 'CarePlan.addresses:condition.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'First Record',
               path: 'CarePlan.created',
               renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Note',
-              path: 'CarePlan.note',
-              renderer: RendererType.DEFAULT,
-            },
+            }
           ],
         },
         {
-          display: 'Activity',
+          display: 'Outcome',
+          path: 'CarePlan.activity.outcomeCodeableConcept',
+          renderer: RendererType.CODEABLE_CONCEPT,
+        },
+        {
+          display: 'Activity details',
           components: [
             {
-              display: 'Outcome',
-              path: 'CarePlan.activity.outcomeCodeableConcept',
+              display: 'Kind',
+              path: 'CarePlan.activity.detail.kind',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Activity Code',
+              path: 'CarePlan.activity.detail.code',
               renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
-              display: 'Progress',
-              path: 'CarePlan.activity.outcomeCodeableConcept',
+              display: 'Reason Code',
+              path: 'CarePlan.activity.detail.reasonCode',
               renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
-              display: 'Detail',
-              components: [
-                {
-                  display: 'Kind',
-                  path: 'CarePlan.activity.detail.kind',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Activity Code',
-                  path: 'CarePlan.activity.detail.code',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Reason Code',
-                  path: 'CarePlan.activity.detail.reasonCode',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Reason Reference',
-                  path: 'CarePlan.activity.detail.reasonReference:',
-                  renderer: RendererType.LINK,
-                },
-                {
-                  display: 'Status Reason',
-                  path: 'CarePlan.activity.detail.statusReason',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Do Not Perform',
-                  path: 'CarePlan.activity.detail.doNotPerform',
-                  renderer: RendererType.DEFAULT,
-                },
-                {
-                  display: 'Schedule Information',
-                  components: [
-                    {
-                      display: 'Scheduled Timing',
-                      path: 'CarePlan.activity.detail.scheduled.scheduledTiming',
-                      renderer: RendererType.DEFAULT,
-                    },
-                    {
-                      display: 'Scheduled Period',
-                      path: 'CarePlan.activity.detail.scheduled.scheduledPeriod',
-                      renderer: RendererType.PERIOD,
-                    },
-                    {
-                      display: 'Scheduled String',
-                      path: 'CarePlan.activity.detail.scheduled.scheduledString',
-                      renderer: RendererType.DEFAULT,
-                    },
-                  ],
-                },
-                {
-                  display: 'Location',
-                  path: 'CarePlan.activity.detail.location:',
-                  renderer: RendererType.LINK,
-                },
-                {
-                  display: 'Performer',
-                  path: 'CarePlan.activity.detail.performer:',
-                  renderer: RendererType.LINK,
-                },
-                {
-                  display: 'Product Codeable Concept',
-                  path: 'CarePlan.activity.detail.product.productCodeableConcept',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Daily Amount',
-                  path: 'CarePlan.activity.detail.dailyAmount',
-                  renderer: RendererType.QUANTITY,
-                },
-                {
-                  display: 'Quantity',
-                  path: 'CarePlan.activity.detail.quantity',
-                  renderer: RendererType.QUANTITY,
-                },
-                {
-                  display: 'Description',
-                  path: 'CarePlan.activity.detail.description',
-                  renderer: RendererType.DEFAULT,
-                },
-              ],
+              display: 'Reason Reference',
+              path: 'CarePlan.activity.detail.reasonReference:',
+              renderer: RendererType.LINK,
+            },
+            {
+              display: 'Goals of activity',
+              path: 'CarePlan.activity.detail.goal',
+              renderer: RendererType.LINK,
+            },
+            {
+              display: 'Status Reason',
+              path: 'CarePlan.activity.detail.statusReason',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Do Not Perform',
+              path: 'CarePlan.activity.detail.doNotPerform',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Scheduled Timing',
+              path: 'CarePlan.activity.detail.scheduled.scheduledTiming',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Scheduled Period',
+              path: 'CarePlan.activity.detail.scheduled.scheduledPeriod',
+              renderer: RendererType.PERIOD,
+            },
+            {
+              display: 'Scheduled String',
+              path: 'CarePlan.activity.detail.scheduled.scheduledString',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Location',
+              path: 'CarePlan.activity.detail.location:',
+              renderer: RendererType.LINK,
+            },
+            {
+              display: 'Performer',
+              path: 'CarePlan.activity.detail.performer:',
+              renderer: RendererType.LINK,
+            },
+            {
+              display: 'Product Codeable Concept',
+              path: 'CarePlan.activity.detail.product.productCodeableConcept',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Daily Amount',
+              path: 'CarePlan.activity.detail.dailyAmount',
+              renderer: RendererType.QUANTITY,
+            },
+            {
+              display: 'Quantity',
+              path: 'CarePlan.activity.detail.quantity',
+              renderer: RendererType.QUANTITY,
+            },
+            {
+              display: 'Description',
+              path: 'CarePlan.activity.detail.description',
+              renderer: RendererType.DEFAULT,
             },
           ],
         },
@@ -1758,12 +1748,73 @@ export const DefaultConfigEN: Config = {
               display: 'Category',
               path: 'Consent.category',
               renderer: RendererType.CODEABLE_CONCEPT,
-            },
+            },/*
             {
               display: 'Performer',
-              path: 'Consent.performer',
+              path: 'Consent.performer:performer.name',
               renderer: RendererType.DEFAULT,
             },
+            {
+              display: 'Organization',
+              path: 'Consent.organization:organization.name',
+              renderer: RendererType.DEFAULT,
+            },*/
+            {
+              display: 'Created',
+              path: 'Consent.created',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Policy Rule',
+              path: 'Consent.policyRule',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Provision',
+              components: [
+                {
+                  display: 'Type',
+                  path: 'Consent.provision.type',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Period',
+                  path: 'Consent.provision.period',
+                  renderer: RendererType.PERIOD,
+                },
+                {
+                  display: 'Action',
+                  path: 'Consent.provision.action',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Security Label',
+                  path: 'Consent.provision.securityLabel',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Purpose',
+                  path: 'Consent.provision.purpose',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Class',
+                  path: 'Consent.provision.class',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Code',
+                  path: 'Consent.provision.code',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Data Period',
+                  path: 'Consent.provision.dataPeriod',
+                  renderer: RendererType.PERIOD
+                }
+              ],
+            }
+          
           ],
         },
       ],
