@@ -167,59 +167,104 @@ export default function Header() {
       );
     };
 
+    const addSubheading = (pdf: jsPDF, text: string) => {
+      const SUBHEADER_FONT_SIZE = 14;
+      const subheadingPaddingY = 6;
+      const subheadingPaddingX = 10;
+      const backgroundColor = '#d3e9fc'; // Light blue for background
+      const rectWidth = A4_WIDTH - 2 * WIDTH_MARGIN; // Fixed rectangle width, 1 cm padding on each side
+      const textXPosition = WIDTH_MARGIN + subheadingPaddingX; // Text left-aligned within rectangle
+      const textYPosition = position + SUBHEADER_FONT_SIZE + subheadingPaddingY; // Adjusted Y-position
+
+      // Move to a new page if there's not enough space for the subheading
+      if (
+        position + SUBHEADER_FONT_SIZE + 2 * subheadingPaddingY >
+        PAGE_HEIGHT
+      ) {
+        pdf.addPage();
+        currentPage++;
+        position = HEIGHT_MARGIN + HEADER_HEIGHT;
+
+        // Add header and footer for new page
+        addHeader(false);
+        addFooter(pdf, currentPage);
+      }
+
+      // Draw the rounded background rectangle
+      pdf.setFillColor(backgroundColor);
+      pdf.roundedRect(
+        WIDTH_MARGIN + 2, // X position of rectangle
+        position, // Y position of rectangle
+        rectWidth, // Fixed width spanning the PDF with margins
+        SUBHEADER_FONT_SIZE + 2 * subheadingPaddingY, // Height with padding
+        5, // X-axis corner radius
+        5, // Y-axis corner radius
+        'F',
+      );
+
+      // Add subheading text left-aligned within the rounded rectangle
+      pdf.setFontSize(SUBHEADER_FONT_SIZE);
+      pdf.setTextColor(0, 0, 0);
+      pdf.text(text, textXPosition, textYPosition);
+
+      // Update position after adding the subheading and background
+      position += SUBHEADER_FONT_SIZE + 2 * subheadingPaddingY;
+    };
+
     // First Page Header
     await addHeader(true);
+    for (const key of Object.keys(config)) {
+      const elements = Array.from(
+        document.getElementsByClassName(`contentClass${config[key].code}`),
+      );
+      addSubheading(pdf, config[key].sectionDisplay);
+      for (const element of elements) {
+        try {
+          const dataUrl = await toJpeg(element as HTMLElement, {
+            quality: 0.9,
+            backgroundColor: '#FFFFFF',
+          });
+          const img = new NativeImage();
+          img.src = dataUrl;
 
-    const elements = Array.from(
-      document.getElementsByClassName('contentClass'),
-    );
-    for (const element of elements) {
-      try {
-        const dataUrl = await toJpeg(element as HTMLElement, {
-          quality: 0.9,
-          backgroundColor: '#FFFFFF',
-        });
-        const img = new NativeImage();
-        img.src = dataUrl;
+          await new Promise((resolve) => {
+            img.onload = () => {
+              const imgWidth = A4_WIDTH - 2 * WIDTH_MARGIN;
+              const imgHeight = (imgWidth / img.width) * img.height;
 
-        await new Promise((resolve) => {
-          img.onload = () => {
-            const imgWidth = A4_WIDTH - 2 * WIDTH_MARGIN;
-            const imgHeight = (imgWidth / img.width) * img.height;
+              if (position + imgHeight > PAGE_HEIGHT + HEIGHT_MARGIN) {
+                pdf.addPage();
+                currentPage++;
+                position = HEIGHT_MARGIN + HEADER_HEIGHT;
 
-            if (position + imgHeight > PAGE_HEIGHT + HEIGHT_MARGIN) {
-              pdf.addPage();
-              currentPage++;
-              position = HEIGHT_MARGIN + HEADER_HEIGHT;
+                // Add header for new page (not first page)
+                addHeader(false);
+              }
 
-              // Add header for new page (not first page)
-              addHeader(false);
-            }
+              pdf.addImage(
+                dataUrl,
+                'JPEG',
+                WIDTH_MARGIN,
+                position,
+                imgWidth,
+                imgHeight,
+                undefined,
+                'FAST',
+              );
 
-            pdf.addImage(
-              dataUrl,
-              'JPEG',
-              WIDTH_MARGIN,
-              position,
-              imgWidth,
-              imgHeight,
-              undefined,
-              'FAST',
-            );
+              position += imgHeight + HEIGHT_MARGIN;
 
-            position += imgHeight + HEIGHT_MARGIN;
+              // Add footer on each page
+              addFooter(pdf, currentPage);
 
-            // Add footer on each page
-            addFooter(pdf, currentPage);
-
-            resolve(null);
-          };
-        });
-      } catch (error) {
-        console.error('Error capturing element:', error);
+              resolve(null);
+            };
+          });
+        } catch (error) {
+          console.error('Error capturing element:', error);
+        }
       }
     }
-
     // Final Footer Text for the Last Page
     addFooter(pdf, currentPage);
 
