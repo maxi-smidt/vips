@@ -1,16 +1,32 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { InputIcon } from 'primereact/inputicon';
 import { InputText } from 'primereact/inputtext';
 import { IconField } from 'primereact/iconfield';
 import { Button } from 'primereact/button';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const pathname = usePathname();
+  const [actionbutton, setActionButton] = useState<React.JSX.Element | null>(
+    null,
+  );
+
+  useEffect(() => {
+    if (pathname === '/customize') {
+      setActionButton(createButton('/', 'IPS Viewer', 'ips_viewer'));
+    } else {
+      setActionButton(createButton('/customize', 'Customize', 'customize'));
+    }
+  }, [pathname]);
+
   return (
     <header className="bg-stone-100 shadow-md z-10">
       <div className="p-2 flex items-center justify-between">
-        <Link href="/" className="flex items-center no-underline">
+        <a href="/" className="flex items-center no-underline">
           <Image
             src={`${process.env.IMAGE_PATH}/logo.png`}
             alt="VIPS Logo"
@@ -21,29 +37,10 @@ export default function Header() {
           <span className="ml-4 text-2xl font-semibold text-gray-800">
             VIPS
           </span>
-        </Link>
+        </a>
 
         <div className="flex items-center mr-3 gap-3">
-          <Link href="/customize">
-            <Button
-              label="Customize"
-              outlined
-              severity="secondary"
-              pt={{
-                label: {
-                  className: 'text-left pl-2',
-                },
-              }}
-              icon={
-                <Image
-                  src={`${process.env.IMAGE_PATH}/icons/customize.svg`}
-                  width={20}
-                  height={20}
-                  alt="Customize"
-                />
-              }
-            />
-          </Link>
+          {actionbutton}
           <div>
             <div className="relative">
               <IconField iconPosition="left">
@@ -72,4 +69,30 @@ export default function Header() {
       </div>
     </header>
   );
+
+  function createButton(href: string, label: string, iconSrc: string) {
+    return (
+      <Link href={href}>
+        <Button
+          className="text-prime-grey"
+          label={label}
+          outlined
+          severity="secondary"
+          pt={{
+            label: {
+              className: 'text-left pl-2',
+            },
+          }}
+          icon={
+            <Image
+              src={`${process.env.IMAGE_PATH}/icons/${iconSrc}.svg`}
+              width={20}
+              height={20}
+              alt={label}
+            />
+          }
+        />
+      </Link>
+    );
+  }
 }
