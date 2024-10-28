@@ -14,22 +14,49 @@ export const initializeBoard = (
     [SectionType.INACTIVE]: [],
   };
   const customSections: string[] = Object.keys(customConfig);
+  const defaultSections: string[] = Object.keys(defaultConfig);
+
   const sections: SectionCardType[] = [];
-  Object.keys(defaultConfig).forEach((defaultSection) => {
-    const status =
-      customSections.indexOf(defaultSection) >= 0
-        ? SectionType.ACTIVE
-        : SectionType.INACTIVE;
-    const section: ConfigResource = defaultConfig[defaultSection];
-    const task = {
-      id: defaultSection,
-      title: section.sectionDisplay,
-      color: section.color,
-    };
-    initialBoardSections[status].push(task);
-    sections.push(task);
+
+  customSections.forEach((sectionKey) => {
+    addSectionToCategory(
+      defaultConfig[sectionKey],
+      sectionKey,
+      initialBoardSections,
+      sections,
+      SectionType.ACTIVE,
+    );
   });
+
+  defaultSections
+    .filter((sectionKey) => customSections.indexOf(sectionKey) === -1)
+    .forEach((sectionKey) => {
+      addSectionToCategory(
+        defaultConfig[sectionKey],
+        sectionKey,
+        initialBoardSections,
+        sections,
+        SectionType.INACTIVE,
+      );
+    });
+
   return { sections, initialBoardSections };
+};
+
+const addSectionToCategory = (
+  section: ConfigResource,
+  sectionKey: string,
+  boardSections: BoardSections,
+  sections: SectionCardType[],
+  type: SectionType,
+) => {
+  const task = {
+    id: sectionKey,
+    title: section.sectionDisplay,
+    color: section.color,
+  };
+  boardSections[type].push(task);
+  sections.push(task);
 };
 
 export const findBoardSectionContainer = (
