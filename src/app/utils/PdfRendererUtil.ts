@@ -106,7 +106,7 @@ export default async function createPDF({
 
   const addFooter = (pdf: jsPDF, currentPage: number): void => {
     const dateTime = new Date();
-    const footerText = `PDF Generated on ${dateTime.toLocaleDateString()} at ${dateTime.toLocaleTimeString()}`;
+    const footerText = `PDF generated on ${dateTime.toLocaleDateString()} at ${dateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
     const pageNumber = `Page ${currentPage}`;
     const pageWidth = pdf.internal.pageSize.getWidth();
     const pageHeight = pdf.internal.pageSize.getHeight();
