@@ -38,7 +38,28 @@
         "reference" : "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
       }],
       "title" : "International Patient Summary - Preventive Medical Checkup",
-      "section" : [{
+      "section" : [
+        {
+          "title" : "History of Pregnancy",
+          "code" : {
+            "coding" : [{
+              "system" : "http://loinc.org",
+              "code" : "10162-6",
+              "display" : "History of pregnancies Narrative"
+            }]
+          },
+          "text" : {
+            "status" : "empty",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
+          },
+          "entry" : [{
+            "reference" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklm"
+          },
+          {
+            "reference" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklmopqrst"
+          }]
+        },
+        {
         "title" : "Problem List",
         "code" : {
           "coding" : [{
@@ -2289,6 +2310,55 @@
         "postalCode" : "1090",
         "country" : "AUT"
       }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklm",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "APS-pregnancy-status",
+      "meta" : {
+        "profile" : ["https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-ips-observationpregnancystatus.html"]
+      },
+      "status" : "final",
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "82810-3",
+          "display" : "Pregnancy status"
+        }]
+      },
+      "effectiveDateTime" : "2024-02-08T07:34:06+01:00",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "LA15173-0",
+          "display" : "Pregnant"
+        }]
+      },
+      "hasMember" : [{
+        "reference" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklmopqrst"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklmopqrst",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "APS-pregnancy-edd-example",
+      "meta" : {
+        "profile" : ["https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-ips-observationpregnancyedd.html"]
+      },
+      "status" : "final",
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11778-8",
+          "display" : "Delivery date Estimated"
+        }]
+      },
+
+      "effectiveDateTime" : "2023-02-08T07:34:06+01:00"
     }
   },
   {

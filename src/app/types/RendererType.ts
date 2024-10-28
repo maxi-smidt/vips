@@ -9,6 +9,7 @@ import ContactPointRenderer from '@/app/components/renderer/fhir/ContactPointRen
 import LinkRenderer from '@/app/components/renderer/fhir/LinkRenderer';
 import PeriodRenderer from '../components/renderer/fhir/PeriodRenderer';
 import QuantityRenderer from '../components/renderer/fhir/QuantityRenderer';
+import JsonRenderer from '../components/renderer/fhir/JsonRenderer';
 
 export enum RendererType {
   ANNOTATION = 'AnnotationRenderer',
@@ -22,6 +23,7 @@ export enum RendererType {
   LINK = 'LinkRenderer',
   PERIOD = 'PeriodRenderer',
   QUANTITY = 'QuantityRenderer',
+  JSON = 'JsonRenderer'
 }
 
 export const rendererMap = {
@@ -36,4 +38,5 @@ export const rendererMap = {
   [RendererType.LINK]: LinkRenderer,
   [RendererType.PERIOD]: PeriodRenderer,
   [RendererType.QUANTITY]: QuantityRenderer,
+  [RendererType.JSON]: JsonRenderer,
 };

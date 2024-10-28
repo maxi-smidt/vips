@@ -705,22 +705,22 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Recorded On',
               path: 'DeviceUseStatement.recordedOn',
-              renderer: RendererType.DEFAULT, // Date the device use statement was recorded
+              renderer: RendererType.DEFAULT,
             },
             {
               display: 'Reason',
               path: 'DeviceUseStatement.reasonCode',
-              renderer: RendererType.CODEABLE_CONCEPT, // Reason for using the device
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'Body Site',
               path: 'DeviceUseStatement.bodySite',
-              renderer: RendererType.CODEABLE_CONCEPT, // Where the device was used on the body
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'Note',
               path: 'DeviceUseStatement.note',
-              renderer: RendererType.ANNOTATION, // Additional notes about the device use
+              renderer: RendererType.ANNOTATION,
             },
           ],
         },
@@ -754,8 +754,13 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Clinically relevant time/time-period for report',
-              path: 'DiagnosticReport.effective',
+              path: 'DiagnosticReport.effectiveDateTime',
               renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Clinically relevant time/time-period for report',
+              path: 'DiagnosticReport.effectivePeriod',
+              renderer: RendererType.PERIOD,
             },
             {
               display: 'Issued Date',
@@ -771,7 +776,7 @@ export const DefaultConfigEN: Config = {
               display: 'Conclusion Code',
               path: 'DiagnosticReport.conclusionCode',
               renderer: RendererType.CODEABLE_CONCEPT,
-            }, //TBD media
+            },
             {
               display: 'Status',
               path: 'Observation.status',
@@ -917,60 +922,60 @@ export const DefaultConfigEN: Config = {
               display: 'Performer',
               path: 'Observation.performer:',
               renderer: RendererType.LINK,
-            },/*
+            },
             {
               display: 'Quantity',
               path: 'Observation.valueQuantity',
               renderer: RendererType.QUANTITY,
-            },*/
+            },
             {
               display: 'CodeableConcept',
-              path: 'Observation.value.valueCodeableConcept',
+              path: 'Observation.valueCodeableConcept',
               renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'String',
-              path: 'Observation.value.valueString',
+              path: 'Observation.valueString',
               renderer: RendererType.DEFAULT,
             },
             {
               display: 'Boolean',
-              path: 'Observation.value.valueBoolean',
+              path: 'Observation.valueBoolean',
               renderer: RendererType.DEFAULT,
             },
             {
               display: 'Integer',
-              path: 'Observation.value.valueInteger',
+              path: 'Observation.valueInteger',
               renderer: RendererType.DEFAULT,
             },
             {
               display: 'Range',
-              path: 'Observation.value.valueRange',
+              path: 'Observation.valueRange',
               renderer: RendererType.DEFAULT,
             },
             {
               display: 'Ratio',
-              path: 'Observation.value.valueRatio',
+              path: 'Observation.valueRatio',
               renderer: RendererType.DEFAULT,
             },
             {
               display: 'SampledData',
-              path: 'Observation.value.valueSampledData',
+              path: 'Observation.valueSampledData',
               renderer: RendererType.DEFAULT,
             },
             {
               display: 'Time',
-              path: 'Observation.value.valueTime',
+              path: 'Observation.valueTime',
               renderer: RendererType.DEFAULT,
             },
             {
               display: 'DateTime',
-              path: 'Observation.value.valueDateTime',
+              path: 'Observation.valueDateTime',
               renderer: RendererType.DEFAULT,
             },
             {
               display: 'Period',
-              path: 'Observation.value.valuePeriod',
+              path: 'Observation.valuePeriod',
               renderer: RendererType.PERIOD,
             },
             {
@@ -1032,48 +1037,48 @@ export const DefaultConfigEN: Config = {
                   renderer: RendererType.QUANTITY,
                 },
                 {
-                  display: 'CodeableConcept',
+                  display: 'Type of component Observation',
                   path: 'Observation.component.code',
-                  renderer: RendererType.CODING,
+                  renderer: RendererType.CODEABLE_CONCEPT,
                 },
                 {
-                  display: 'String',
-                  path: 'Observation.component.value.valueString',
+                  display: 'Value',
+                  path: 'Observation.component.valueString',
                   renderer: RendererType.DEFAULT,
                 },
                 {
-                  display: 'Boolean',
-                  path: 'Observation.component.value.valueBoolean',
+                  display: 'Value',
+                  path: 'Observation.component.valueBoolean',
                   renderer: RendererType.DEFAULT,
                 },
                 {
-                  display: 'Integer',
-                  path: 'Observation.component.value.valueInteger',
+                  display: 'Value',
+                  path: 'Observation.component.valueInteger',
                   renderer: RendererType.DEFAULT,
                 },
                 {
-                  display: 'Range',
-                  path: 'Observation.component.value.valueRange',
+                  display: 'Value',
+                  path: 'Observation.component.valueRange',
                   renderer: RendererType.DEFAULT,
                 },
                 {
-                  display: 'Ratio',
-                  path: 'Observation.component.value.valueRatio',
+                  display: 'Value',
+                  path: 'Observation.component.valueRatio',
                   renderer: RendererType.DEFAULT,
                 },
                 {
-                  display: 'Time',
-                  path: 'Observation.component.value.valueTime',
+                  display: 'Value',
+                  path: 'Observation.component.valueTime',
                   renderer: RendererType.DEFAULT,
                 },
                 {
-                  display: 'DateTime',
-                  path: 'Observation.component.value.valueDateTime',
+                  display: 'Value',
+                  path: 'Observation.component.valueDateTime',
                   renderer: RendererType.DEFAULT,
                 },
                 {
-                  display: 'Period',
-                  path: 'Observation.component.value.valuePeriod',
+                  display: 'Value',
+                  path: 'Observation.component.valuePeriod',
                   renderer: RendererType.PERIOD,
                 },
               ],
@@ -1374,17 +1379,17 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Author',
               path: 'CarePlan.author:',
-              renderer: RendererType.LINK, //reference
+              renderer: RendererType.LINK,
             },
             {
               display: 'Contributor',
               path: 'CarePlan.contributor:',
-              renderer: RendererType.LINK, //reference
+              renderer: RendererType.LINK,
             },
             {
               display: 'Addressed health issue',
               path: 'CarePlan.address:',
-              renderer: RendererType.LINK, //reference
+              renderer: RendererType.LINK,
             },
             {
               display: 'First Record',
@@ -1404,12 +1409,12 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Outcome',
               path: 'CarePlan.activity.outcomeCodeableConcept',
-              renderer: RendererType.DEFAULT,
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'Progress',
               path: 'CarePlan.activity.outcomeCodeableConcept',
-              renderer: RendererType.DEFAULT,
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'Detail',
@@ -1432,7 +1437,7 @@ export const DefaultConfigEN: Config = {
                 {
                   display: 'Reason Reference',
                   path: 'CarePlan.activity.detail.reasonReference:',
-                  renderer: RendererType.LINK, // References to related resources (Condition, Observation, etc.)
+                  renderer: RendererType.LINK,
                 },
                 {
                   display: 'Status Reason',
@@ -1450,12 +1455,12 @@ export const DefaultConfigEN: Config = {
                     {
                       display: 'Scheduled Timing',
                       path: 'CarePlan.activity.detail.scheduled.scheduledTiming',
-                      renderer: RendererType.DEFAULT, // time
+                      renderer: RendererType.DEFAULT,
                     },
                     {
                       display: 'Scheduled Period',
                       path: 'CarePlan.activity.detail.scheduled.scheduledPeriod',
-                      renderer: RendererType.PERIOD, // Period
+                      renderer: RendererType.PERIOD,
                     },
                     {
                       display: 'Scheduled String',
@@ -1467,12 +1472,12 @@ export const DefaultConfigEN: Config = {
                 {
                   display: 'Location',
                   path: 'CarePlan.activity.detail.location:',
-                  renderer: RendererType.LINK, // Location reference
+                  renderer: RendererType.LINK,
                 },
                 {
                   display: 'Performer',
                   path: 'CarePlan.activity.detail.performer:',
-                  renderer: RendererType.LINK, // Reference
+                  renderer: RendererType.LINK,
                 },
                 {
                   display: 'Product Codeable Concept',
@@ -1480,14 +1485,9 @@ export const DefaultConfigEN: Config = {
                   renderer: RendererType.CODEABLE_CONCEPT,
                 },
                 {
-                  display: 'Product Reference',
-                  path: 'CarePlan.activity.detail.product.productReference:',
-                  renderer: RendererType.LINK, // Reference
-                },
-                {
                   display: 'Daily Amount',
                   path: 'CarePlan.activity.detail.dailyAmount',
-                  renderer: RendererType.DEFAULT,
+                  renderer: RendererType.QUANTITY,
                 },
                 {
                   display: 'Quantity',
@@ -1515,7 +1515,7 @@ export const DefaultConfigEN: Config = {
       display: 'Social History',
       components: [
         {
-          display: 'Tobacco Use',
+          display: 'Tobacco or Alcohol use',
           components: [
             {
               display: 'Status',
@@ -1553,137 +1553,52 @@ export const DefaultConfigEN: Config = {
               renderer: RendererType.QUANTITY,
             },
             {
-              display: 'CodeableConcept',
+              display: 'Type of Observation',
               path: 'Observation.valueCodeableConcept',
               renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
-              display: 'String',
+              display: 'Value',
               path: 'Observation.valueString',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Boolean',
+              display: 'Value',
               path: 'Observation.valueBoolean',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Integer',
+              display: 'Value',
               path: 'Observation.valueInteger',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Range',
+              display: 'Value',
               path: 'Observation.valueRange',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Ratio',
+              display: 'Ratio Numerator',
               path: 'Observation.valueRatio.numerator',
               renderer: RendererType.QUANTITY,
             },
             {
-              display: 'Ratio',
+              display: 'Ratio Denominator',
               path: 'Observation.valueRatio.denominator',
               renderer: RendererType.QUANTITY,
             },
             {
-              display: 'Time',
+              display: 'Value',
               path: 'Observation.valueTime',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'DateTime',
+              display: 'Value',
               path: 'Observation.valueDateTime',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Period',
-              path: 'Observation.valuePeriod',
-              renderer: RendererType.PERIOD,
-            },
-          ],
-        },
-        {
-          display: 'Alcohol Use',
-          components: [
-            {
-              display: 'Status',
-              path: 'Observation.status',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Category',
-              path: 'Observation.category',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Code',
-              path: 'Observation.code',
-              renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'Encounter',
-              path: 'Observation.encounter:',
-              renderer: RendererType.LINK,
-            },
-            {
-              display: 'Effective',
-              path: 'Observation.effective',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Performer',
-              path: 'Observation.performer:',
-              renderer: RendererType.LINK,
-            },
-            {
-              display: 'Quantity',
-              path: 'Observation.valueQuantity',
-              renderer: RendererType.QUANTITY,
-            },
-            {
-              display: 'CodeableConcept',
-              path: 'Observation.valueCodeableConcept',
-              renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'String',
-              path: 'Observation.valueString',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Boolean',
-              path: 'Observation.valueBoolean',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Integer',
-              path: 'Observation.valueInteger',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Range',
-              path: 'Observation.valueRange',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Ratio',
-              path: 'Observation.valueRatio',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Time',
-              path: 'Observation.valueTime',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'DateTime',
-              path: 'Observation.valueDateTime',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Period',
+              display: 'Value',
               path: 'Observation.valuePeriod',
               renderer: RendererType.PERIOD,
             },
@@ -1701,12 +1616,12 @@ export const DefaultConfigEN: Config = {
       display: 'History of pregnancies',
       components: [
         {
-          display: 'Pregnancy Status',
+          display: 'Pregnancy Status or Outcome',
           components: [
             {
               display: 'Status',
               path: 'Observation.status',
-              renderer: RendererType.CODEABLE_CONCEPT,
+              renderer: RendererType.DEFAULT,
             },
             {
               display: 'Category',
@@ -1724,9 +1639,14 @@ export const DefaultConfigEN: Config = {
               renderer: RendererType.LINK,
             },
             {
-              display: 'Effective',
-              path: 'Observation.effective.value',
+              display: 'Effective Date',
+              path: 'Observation.effectiveDateTime',
               renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Effective Period',
+              path: 'Observation.effectivePeriod',
+              renderer: RendererType.PERIOD,
             },
             {
               display: 'Performer',
@@ -1739,47 +1659,52 @@ export const DefaultConfigEN: Config = {
               renderer: RendererType.QUANTITY,
             },
             {
-              display: 'CodeableConcept',
+              display: 'Type of Observation',
               path: 'Observation.valueCodeableConcept',
               renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
-              display: 'String',
+              display: 'Value',
               path: 'Observation.valueString',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Boolean',
+              display: 'Value',
               path: 'Observation.valueBoolean',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Integer',
+              display: 'Value',
               path: 'Observation.valueInteger',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Range',
+              display: 'Value',
               path: 'Observation.valueRange',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Ratio',
-              path: 'Observation.valueRatio',
-              renderer: RendererType.DEFAULT,
+              display: 'Ratio Numerator',
+              path: 'Observation.valueRatio.numerator',
+              renderer: RendererType.QUANTITY,
             },
             {
-              display: 'Time',
+              display: 'Ratio Denominator',
+              path: 'Observation.valueRatio.denominator',
+              renderer: RendererType.QUANTITY,
+            },
+            {
+              display: 'Value',
               path: 'Observation.valueTime',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'DateTime',
+              display: 'Value',
               path: 'Observation.valueDateTime',
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Period',
+              display: 'Value',
               path: 'Observation.valuePeriod',
               renderer: RendererType.PERIOD,
             },
@@ -1796,117 +1721,12 @@ export const DefaultConfigEN: Config = {
             {
               display: 'Method',
               path: 'Observation.method',
-              renderer: RendererType.DEFAULT,
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
               display: 'Expected Delivery Date',
-              path: 'Observation.hasMember:',
-              renderer: RendererType.LINK, //reference
-            },
-          ],
-        },
-        {
-          display: 'Pregnancy Outcome ',
-          components: [
-            {
-              display: 'Status',
-              path: 'Observation.status',
-              renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'Category',
-              path: 'Observation.category',
-              renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'Code',
-              path: 'Observation.code',
-              renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'Encounter',
-              path: 'Observation.encounter:',
-              renderer: RendererType.LINK,
-            },
-            {
-              display: 'Effective',
-              path: 'Observation.effective.value',
+              path: 'Observation.hasMember.reference:Observation.valueDateTime',
               renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Performer',
-              path: 'Observation.performer:',
-              renderer: RendererType.LINK,
-            },
-            {
-              display: 'Quantity',
-              path: 'Observation.valueQuantity',
-              renderer: RendererType.QUANTITY,
-            },
-            {
-              display: 'CodeableConcept',
-              path: 'Observation.valueCodeableConcept',
-              renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'String',
-              path: 'Observation.valueString',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Boolean',
-              path: 'Observation.valueBoolean',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Integer',
-              path: 'Observation.valueInteger',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Range',
-              path: 'Observation.valueRange',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Ratio',
-              path: 'Observation.valueRatio',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Time',
-              path: 'Observation.valueTime',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'DateTime',
-              path: 'Observation.valueDateTime',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Period',
-              path: 'Observation.valuePeriod',
-              renderer: RendererType.PERIOD,
-            },
-            {
-              display: 'Interpretation',
-              path: 'Observation.interpretation',
-              renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'Note',
-              path: 'Observation.note',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Method',
-              path: 'Observation.method',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Expected Delivery Date',
-              path: 'Observation.hasMember:',
-              renderer: RendererType.LINK, //reference
             },
           ],
         },

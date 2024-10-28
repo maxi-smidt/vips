@@ -2,7 +2,12 @@
 export class ResourceUtils {
   getValuesAtResourcePath(resource: any, elementPath: string): any[] {
     const pathSections = elementPath.split('.');
-    if (resource.resourceType !== pathSections[0]) return [];
+    if (resource && (resource.resourceType !== pathSections[0])) return [];
+    return this.getValuesAtResourcePathInner(resource, elementPath);
+  }
+  
+  getValuesAtResourcePathInner(resource: any, elementPath: string): any[] {
+    const pathSections = elementPath.split('.');
     let resourcePathValue;
     for (let index = 1; index < pathSections.length; index++) {
       const subPaths = pathSections[index];
@@ -29,7 +34,7 @@ export class ResourceUtils {
               resultSet.push(subPathValue);
             } else {
               resultSet.push(
-                ...this.getValuesAtResourcePath(
+                ...this.getValuesAtResourcePathInner(
                   subPathValue,
                   pathSections.slice(index).join('.'),
                 ),
@@ -38,7 +43,7 @@ export class ResourceUtils {
           }
           return resultSet;
         } else if (typeof resourcePathValue === 'object') {
-          return this.getValuesAtResourcePath(
+          return this.getValuesAtResourcePathInner(
             resourcePathValue,
             pathSections.slice(index).join('.'),
           );
