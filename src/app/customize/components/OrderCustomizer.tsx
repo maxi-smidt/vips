@@ -47,9 +47,13 @@ export default function OrderCustomizer() {
   const [boardSections, setBoardSections] =
     useState<BoardSections>(initialBoardSections);
 
-  useEffect(() => {
+  const initBoard = () => {
     const { initialBoardSections } = initializeBoard(defaultConfig, config);
     setBoardSections(initialBoardSections);
+  };
+
+  useEffect(() => {
+    initBoard();
   }, [config, defaultConfig]);
 
   const [activeTaskId, setActiveTaskId] = useState<null | string>(null);
@@ -185,7 +189,10 @@ export default function OrderCustomizer() {
           outlined
           label="Load Default Configuration"
           severity="secondary"
-          onClick={() => loadDefaultConfig()}
+          onClick={() => {
+            loadDefaultConfig();
+            initBoard();
+          }}
         />
         <Button
           className="w-full"
