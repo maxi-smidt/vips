@@ -11,7 +11,11 @@ export default function useConfig() {
   const { config, defaultConfig, setConfig } = useContext(ConfigContext);
 
   useEffect(() => {
-    loadCustomConfig(false);
+    if (shouldUseCustom()) {
+      loadCustomConfig(false);
+    } else {
+      loadDefaultConfig();
+    }
   }, []);
 
   const loadCustomConfig = (showMessage: boolean = true) => {
@@ -29,6 +33,11 @@ export default function useConfig() {
         if (showMessage) showError('No custom configuration found');
       }
     }
+    localStorage.setItem('useCustom', 'true');
+  };
+
+  const shouldUseCustom = () => {
+    return localStorage.getItem('useCustom') === 'true';
   };
 
   const saveCustomConfig = (config: Config) => {
@@ -45,6 +54,7 @@ export default function useConfig() {
   };
 
   const loadDefaultConfig = () => {
+    localStorage.setItem('useCustom', 'false');
     setConfig(DefaultConfigEN);
   };
 
