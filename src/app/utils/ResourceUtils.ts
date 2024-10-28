@@ -2,7 +2,7 @@
 export class ResourceUtils {
   getValuesAtResourcePath(resource: any, elementPath: string): any[] {
     const pathSections = elementPath.split('.');
-    if (resource.resourceType !== pathSections[0]) return [];
+    if (resource && (resource.resourceType !== pathSections[0])) return [];
     let resourcePathValue;
     for (let index = 1; index < pathSections.length; index++) {
       const subPaths = pathSections[index];

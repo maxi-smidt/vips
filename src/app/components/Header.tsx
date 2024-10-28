@@ -20,6 +20,10 @@ import useConfig from '@/app/hooks/useConfig';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import createPDF from '@/app/utils/PdfRendererUtil';
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export default function Header() {
   const { setActiveIndex } = useData();
   const { config } = useConfig();
@@ -28,11 +32,12 @@ export default function Header() {
   const handleDownload = async () => {
     setLoading(true);
     setActiveIndex(Object.keys(config).map((_, index) => index));
+    await sleep(1000);
 
     const names = Array.from(
       document.getElementsByClassName('name'),
     ) as HTMLElement[];
-    const patientName = names[0]?.textContent || '';
+    const patientName = names[0]?.textContent?.substring(6) || '';
     const patientSVNRElement = document.getElementById(
       'SVNR',
     ) as HTMLElement | null;

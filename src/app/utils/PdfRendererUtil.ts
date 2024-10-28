@@ -1,8 +1,9 @@
 // PdfRendererUtil.ts
 
-import { jsPDF } from 'jspdf';
 import { toJpeg } from 'html-to-image';
 import { Config } from '@/app/types/Config';
+// eslint-disable-next-line node/no-extraneous-import
+import jsPDF from 'jspdf';
 
 interface createPdfProps {
   config: Config;
@@ -65,7 +66,7 @@ export default async function createPDF({
     });
   };
 
-  let position = HEIGHT_MARGIN + HEADER_HEIGHT;
+  let y_pos = HEIGHT_MARGIN + HEADER_HEIGHT;
   let currentPage = 1;
 
   const addHeader = async (isFirstPage: boolean): Promise<void> => {
@@ -76,8 +77,8 @@ export default async function createPDF({
     pdf.setFontSize(headerFontSize);
 
     if (isFirstPage) {
-      const bannerHeight = 28; // Increased height for better appearance
-      const bannerColor = '#519ddb'; // Blue color
+      const bannerHeight = 28;
+      const bannerColor = '#519ddb';
 
       pdf.setFillColor(bannerColor);
       pdf.rect(0, HEIGHT_MARGIN, PAGE_WIDTH, bannerHeight, 'F');
@@ -129,25 +130,29 @@ export default async function createPDF({
 
   const addSubheading = (pdf: jsPDF, text: string): void => {
     const SUBHEADER_FONT_SIZE = 14;
-    const subheadingPaddingY = 6;
-    const subheadingPaddingX = 10;
-    const backgroundColor = '#d3e9fc'; // Light blue for background
-    const rectWidth = A4_WIDTH - 2 * WIDTH_MARGIN;
-    const textXPosition = WIDTH_MARGIN + subheadingPaddingX;
-    const textYPosition = position + SUBHEADER_FONT_SIZE + subheadingPaddingY;
+    const subheadingPaddingY = 5;
 
-    if (position + SUBHEADER_FONT_SIZE + 2 * subheadingPaddingY > PAGE_HEIGHT) {
+    if (
+      y_pos + SUBHEADER_FONT_SIZE + 50 * subheadingPaddingY >
+      PAGE_HEIGHT + HEIGHT_MARGIN
+    ) {
       pdf.addPage();
       currentPage++;
-      position = HEIGHT_MARGIN + HEADER_HEIGHT;
+      y_pos = HEIGHT_MARGIN + HEADER_HEIGHT;
       addHeader(false);
       addFooter(pdf, currentPage);
     }
 
+    const subheadingPaddingX = 10;
+    const backgroundColor = '#d3e9fc';
+    const rectWidth = A4_WIDTH - 2 * WIDTH_MARGIN - 11.5;
+    const textXPosition = WIDTH_MARGIN + subheadingPaddingX;
+    const textYPosition = y_pos + SUBHEADER_FONT_SIZE + subheadingPaddingY;
+
     pdf.setFillColor(backgroundColor);
     pdf.roundedRect(
-      WIDTH_MARGIN + 2,
-      position,
+      WIDTH_MARGIN + 4.5,
+      textYPosition - 16,
       rectWidth,
       SUBHEADER_FONT_SIZE + 2 * subheadingPaddingY,
       5,
@@ -159,7 +164,7 @@ export default async function createPDF({
     pdf.setTextColor(0, 0, 0);
     pdf.text(text, textXPosition, textYPosition);
 
-    position += SUBHEADER_FONT_SIZE + 2 * subheadingPaddingY;
+    y_pos += SUBHEADER_FONT_SIZE + 2 * subheadingPaddingY;
   };
 
   await addHeader(true);
@@ -179,13 +184,14 @@ export default async function createPDF({
 
         await new Promise((resolve) => {
           img.onload = () => {
+            y_pos += HEIGHT_MARGIN / 2;
             const imgWidth = A4_WIDTH - 2 * WIDTH_MARGIN;
             const imgHeight = (imgWidth / img.width) * img.height;
 
-            if (position + imgHeight > PAGE_HEIGHT + HEIGHT_MARGIN) {
+            if (y_pos + imgHeight > PAGE_HEIGHT + HEIGHT_MARGIN) {
               pdf.addPage();
               currentPage++;
-              position = HEIGHT_MARGIN + HEADER_HEIGHT;
+              y_pos = HEIGHT_MARGIN + HEADER_HEIGHT;
               addHeader(false);
             }
 
@@ -193,14 +199,14 @@ export default async function createPDF({
               dataUrl,
               'JPEG',
               WIDTH_MARGIN,
-              position,
+              y_pos,
               imgWidth,
               imgHeight,
               undefined,
               'FAST',
             );
 
-            position += imgHeight + HEIGHT_MARGIN;
+            y_pos += imgHeight + HEIGHT_MARGIN;
             addFooter(pdf, currentPage);
 
             resolve(null);
