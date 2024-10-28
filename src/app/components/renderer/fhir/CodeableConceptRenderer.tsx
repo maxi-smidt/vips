@@ -1,7 +1,8 @@
 import React from 'react';
 import { CodeableConcept } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/codeableConcept';
 import { RenderProps } from '@/app/components/renderer/RenderProps';
-import { getLink, isValidSystemURL } from '@/app/utils/LinkUtils';
+import { getLink, isDefinedSystem } from '@/app/utils/LinkUtils';
+import Image from 'next/image';
 
 export default function CodeableConceptRenderer({
   value,
@@ -16,7 +17,7 @@ export default function CodeableConceptRenderer({
       </div>
       {codeableConcept.coding?.map((coding, index) => {
         const link = getLink(coding.system, coding.code);
-        const isValidLink = isValidSystemURL(coding.system);
+        const isValidLink = isDefinedSystem(coding.system);
 
         return (
           <div key={index} className="flex">
@@ -24,16 +25,27 @@ export default function CodeableConceptRenderer({
               Code:
             </div>
             <div className="ml-4 flex-1">
-              {coding.display &&
-                (isValidLink ? (
-                  <a href={link} target="_blank" rel="noopener noreferrer">
-                    {coding.display}
-                  </a>
-                ) : (
-                  <span>
-                    {coding.display} ({coding.code})
-                  </span>
-                ))}
+              {coding.display && (
+                <>
+                  <span>{coding.display}</span>
+                  {isDefinedSystem(coding.system) && (
+                    <a
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Details"
+                      style={{ marginLeft: '5px', verticalAlign: 'middle' }}
+                    >
+                      <Image
+                        src={`${process.env.IMAGE_PATH}/icons/info_circle.svg`}
+                        width={20}
+                        height={20}
+                        alt="Details"
+                      />
+                    </a>
+                  )}
+                </>
+              )}
             </div>
           </div>
         );
