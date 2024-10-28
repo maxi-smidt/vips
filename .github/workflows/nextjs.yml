@@ -36,21 +36,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Check if ISSUE_TOKEN is available
-        run: |
-          if [ -z "${ISSUE_TOKEN}" ]; then
-            echo "ISSUE_TOKEN is not available"
-            exit 1
-          else
-            echo "ISSUE_TOKEN is available"
-          fi
-        env:
-          ISSUE_TOKEN: ${{ secrets.ISSUE_TOKEN }}
-
       - name: Detect package manager
         id: detect-package-manager
         env:
-          ISSUE_TOKEN: ${{ secrets.ISSUE_TOKEN }}
+          NEXT_PUBLIC_ISSUE_TOKEN: ${{ secrets.NEXT_PUBLIC_ISSUE_TOKEN }}
         run: |
           if [ -f "${{ github.workspace }}/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
