@@ -38,6 +38,8 @@ jobs:
 
       - name: Detect package manager
         id: detect-package-manager
+        env:
+          ISSUE_TOKEN: ${{ secrets.ISSUE_TOKEN }}
         run: |
           if [ -f "${{ github.workspace }}/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
@@ -76,10 +78,6 @@ jobs:
 
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-
-      - name: Set Environment Variables
-        run: |
-          echo "ISSUE_TOKEN=${{ secrets.ISSUE_TOKEN }}" >> $GITHUB_ENV
 
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
