@@ -89,8 +89,7 @@ export default async function createPDF({
         HEIGHT_MARGIN + FIRST_PAGE_HEADER_FONT_SIZE,
       );
     } else {
-      const headerTextWidth = pdf.getTextWidth(headerText);
-      pdf.text(headerText, (A4_WIDTH - headerTextWidth) / 2, HEIGHT_MARGIN);
+      pdf.text(headerText, WIDTH_MARGIN, HEIGHT_MARGIN);
 
       pdf.setLineWidth(0.5);
       pdf.line(
