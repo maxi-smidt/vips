@@ -470,8 +470,8 @@ export const DefaultConfigEN: Config = {
                 },
                 {
                   display: 'Code',
-                  path: 'Procedure.code.coding',
-                  renderer: RendererType.CODING,
+                  path: 'Procedure.code',
+                  renderer: RendererType.CODEABLE_CONCEPT,
                 },
                 {
                   display: 'Performed Date/Period',
@@ -1880,12 +1880,12 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'DateTime',
-              path: 'Observation.value.valueDateTime',
+              path: 'Observation.valueDateTime',
               renderer: RendererType.DEFAULT,
             },
             {
               display: 'Period',
-              path: 'Observation.value.valuePeriod',
+              path: 'Observation.valuePeriod',
               renderer: RendererType.PERIOD,
             },
             {
