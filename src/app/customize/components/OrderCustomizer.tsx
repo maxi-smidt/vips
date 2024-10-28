@@ -166,11 +166,12 @@ export default function OrderCustomizer() {
           outlined
           label="Save Custom Configuration"
           severity="success"
-          onClick={() =>
+          onClick={() => {
             saveCustomConfig(
               createCustomConfigFromBoard(boardSections, defaultConfig),
-            )
-          }
+            );
+            loadCustomConfig();
+          }}
         />
         <Button
           className="w-full"
