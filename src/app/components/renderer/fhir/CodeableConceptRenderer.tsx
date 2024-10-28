@@ -1,7 +1,7 @@
 import React from 'react';
 import { CodeableConcept } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/codeableConcept';
 import { RenderProps } from '@/app/components/renderer/RenderProps';
-import { getLink, isDefinedSystem } from '@/app/utils/LinkUtils';
+import { getLink } from '@/app/utils/LinkUtils';
 import Image from 'next/image';
 
 export default function CodeableConceptRenderer({
@@ -16,8 +16,7 @@ export default function CodeableConceptRenderer({
         {configEntry.display}:
       </div>
       {codeableConcept.coding?.map((coding, index) => {
-        const link = getLink(coding.system, coding.code);
-        const isValidLink = isDefinedSystem(coding.system);
+        const link = getLink(coding.system as string, coding.code as string);
 
         return (
           <div key={index} className="flex">
@@ -28,7 +27,7 @@ export default function CodeableConceptRenderer({
               {coding.display && (
                 <>
                   <span>{coding.display}</span>
-                  {isDefinedSystem(coding.system) && (
+                  {link && (
                     <a
                       href={link}
                       target="_blank"
