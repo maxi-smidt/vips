@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { InputIcon } from 'primereact/inputicon';
 import { InputText } from 'primereact/inputtext';
@@ -16,6 +17,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useData } from '@/app/hooks/useData';
 import useConfig from '@/app/hooks/useConfig';
+import { ProgressSpinner } from 'primereact/progressspinner';
+import { toJpeg } from 'html-to-image';
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -24,17 +27,28 @@ function sleep(ms: number): Promise<void> {
 export default function Header() {
   const { setActiveIndex } = useData();
   const { config } = useConfig();
+  const [loading, setLoading] = useState(false);
+
   const handleDownload = async () => {
+    setLoading(true);
     setActiveIndex(Object.keys(config).map((_, index) => index));
     await sleep(1000);
 
     const A4_HEIGHT = 841.89;
     const A4_WIDTH = 595.28;
-    const WIDTH_MARGIN = 10;
-    const HEIGHT_MARGIN = 10;
+    const WIDTH_MARGIN = 40;
+    const HEIGHT_MARGIN = 20;
+    const PAGE_WIDTH = A4_HEIGHT - 2 * WIDTH_MARGIN;
     const PAGE_HEIGHT = A4_HEIGHT - 2 * HEIGHT_MARGIN;
     const HEADER_HEIGHT = 50;
+    const FIRST_PAGE_HEADER_FONT_SIZE = 18;
+    const HEADER_FOOTER_FONT_SIZE = 10;
     const FOOTER_HEIGHT = 30;
+    const LOGO_WIDTH = 50;
+    const LOGO_HEIGHT = 50;
+    const LOGO_MARGIN_TOP = 10;
+    const LOGO_MARGIN_RIGHT = 10;
+    const NativeImage = window.Image;
 
     const pdf = new jsPDF({
       orientation: 'p',
@@ -43,85 +57,174 @@ export default function Header() {
       compress: true,
     });
 
-    // Define the header text
-    const headerText = 'This is the IPS PDF Version.';
-    const headerFontSize = 18; // Adjust as needed
+    const logoUrl = `${process.env.IMAGE_PATH}/logo.png`;
 
-    // Get elements by class and convert to an array
+    const names = Array.from(
+      document.getElementsByClassName('name'),
+    ) as HTMLElement[];
+    const patientName = names[0]?.textContent || '';
+    const patientSVNRElement = document.getElementById(
+      'SVNR',
+    ) as HTMLElement | null;
+    const patientSVNR = patientSVNRElement?.textContent || '';
+
+    const firstPageHeaderText = `IPS Document - Patient: ${patientName}`;
+    const otherPageHeaderText = `Patient: ${patientName} SVNR: ${patientSVNR}`;
+
+    const addLogoToPage = async () => {
+      const response = await fetch(logoUrl);
+      const blob = await response.blob();
+      const reader = new FileReader();
+
+      return new Promise<void>((resolve) => {
+        reader.onloadend = () => {
+          const logoDataUrl = reader.result as string;
+          pdf.addImage(
+            logoDataUrl,
+            'PNG',
+            A4_WIDTH - LOGO_WIDTH - LOGO_MARGIN_RIGHT,
+            LOGO_MARGIN_TOP,
+            LOGO_WIDTH,
+            LOGO_HEIGHT,
+          );
+          resolve();
+        };
+        reader.readAsDataURL(blob);
+      });
+    };
+
+    let position = HEIGHT_MARGIN + HEADER_HEIGHT;
+    let currentPage = 1;
+
+    const addHeader = async (isFirstPage: boolean) => {
+      const headerText = isFirstPage
+        ? firstPageHeaderText
+        : otherPageHeaderText;
+      const headerFontSize = isFirstPage
+        ? FIRST_PAGE_HEADER_FONT_SIZE
+        : HEADER_FOOTER_FONT_SIZE;
+      pdf.setFontSize(headerFontSize);
+
+      if (isFirstPage) {
+        // Adjusted banner settings
+        const bannerHeight = 28; // Increased height for better appearance
+        const bannerColor = '#519ddb'; // Blue color
+
+        // Draw the banner under the header text
+        pdf.setFillColor(bannerColor);
+        pdf.rect(0, HEIGHT_MARGIN, PAGE_WIDTH, bannerHeight, 'F');
+
+        // Center the header text above the banner
+        pdf.text(
+          headerText,
+          WIDTH_MARGIN,
+          HEIGHT_MARGIN + FIRST_PAGE_HEADER_FONT_SIZE,
+        ); // Adjusted Y-position for better spacing
+      } else {
+        // Header for other pages
+        const headerTextWidth = pdf.getTextWidth(headerText);
+        pdf.text(headerText, (A4_WIDTH - headerTextWidth) / 2, HEIGHT_MARGIN);
+
+        // Line below the header on other pages
+        pdf.setLineWidth(0.5);
+        pdf.line(
+          WIDTH_MARGIN,
+          HEIGHT_MARGIN + HEADER_FOOTER_FONT_SIZE,
+          A4_WIDTH - WIDTH_MARGIN,
+          HEIGHT_MARGIN + HEADER_FOOTER_FONT_SIZE,
+        );
+      }
+
+      await addLogoToPage();
+    };
+
+    const addFooter = (pdf: jsPDF, currentPage: number) => {
+      const dateTime = new Date();
+      const footerText = `PDF Generated on ${dateTime.toLocaleDateString()} at ${dateTime.toLocaleTimeString()}`;
+      const pageNumber = `Page ${currentPage}`;
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+
+      pdf.setFontSize(HEADER_FOOTER_FONT_SIZE);
+
+      // Draw a horizontal line above the footer
+      pdf.setLineWidth(0.5);
+      pdf.line(
+        WIDTH_MARGIN,
+        pageHeight - HEIGHT_MARGIN - HEADER_FOOTER_FONT_SIZE - 5,
+        pageWidth - WIDTH_MARGIN,
+        pageHeight - HEIGHT_MARGIN - HEADER_FOOTER_FONT_SIZE - 5,
+      );
+
+      // footerText on the left
+      pdf.text(footerText, WIDTH_MARGIN, pageHeight - FOOTER_HEIGHT + 12);
+
+      // pageNumber on the right
+      pdf.text(
+        pageNumber,
+        pageWidth - WIDTH_MARGIN - pdf.getTextWidth(pageNumber),
+        pageHeight - FOOTER_HEIGHT + 12,
+      );
+    };
+
+    // First Page Header
+    await addHeader(true);
+
     const elements = Array.from(
       document.getElementsByClassName('contentClass'),
     );
+    for (const element of elements) {
+      try {
+        const dataUrl = await toJpeg(element as HTMLElement, {
+          quality: 0.9,
+          backgroundColor: '#FFFFFF',
+        });
+        const img = new NativeImage();
+        img.src = dataUrl;
 
-    // Convert each element to a canvas and store in array
-    const canvases = await Promise.all(
-      elements.map((element) => html2canvas(element as HTMLElement)),
-    );
+        await new Promise((resolve) => {
+          img.onload = () => {
+            const imgWidth = A4_WIDTH - 2 * WIDTH_MARGIN;
+            const imgHeight = (imgWidth / img.width) * img.height;
 
-    let position = HEIGHT_MARGIN + HEADER_HEIGHT; // Position below header
-    let currentPage = 1;
+            if (position + imgHeight > PAGE_HEIGHT + HEIGHT_MARGIN) {
+              pdf.addPage();
+              currentPage++;
+              position = HEIGHT_MARGIN + HEADER_HEIGHT;
 
-    // Add header for the first page
-    pdf.setFontSize(headerFontSize);
-    const headerTextWidth = pdf.getTextWidth(headerText);
-    pdf.text(
-      headerText,
-      (A4_WIDTH - headerTextWidth) / 2,
-      HEIGHT_MARGIN + 30, // Adjust as needed for vertical position
-    );
+              // Add header for new page (not first page)
+              addHeader(false);
+            }
 
-    canvases.forEach((canvas) => {
-      const canvasWidth = canvas.width;
-      const canvasHeight = canvas.height;
+            pdf.addImage(
+              dataUrl,
+              'JPEG',
+              WIDTH_MARGIN,
+              position,
+              imgWidth,
+              imgHeight,
+              undefined,
+              'FAST',
+            );
 
-      const imgWidth = A4_WIDTH - 2 * WIDTH_MARGIN;
-      const imgHeight = (imgWidth / canvasWidth) * canvasHeight;
+            position += imgHeight + HEIGHT_MARGIN;
 
-      const pageImg = canvas.toDataURL('image/png', 1.0);
+            // Add footer on each page
+            addFooter(pdf, currentPage);
 
-      // Check if adding the image exceeds the page height
-      if (position + imgHeight > PAGE_HEIGHT + HEIGHT_MARGIN) {
-        pdf.addPage();
-        position = HEIGHT_MARGIN + HEADER_HEIGHT;
-
-        // Add the header to the new page
-        pdf.setFontSize(headerFontSize);
-        pdf.text(
-          headerText,
-          (A4_WIDTH - headerTextWidth) / 2,
-          HEIGHT_MARGIN + 30, // Adjust as needed for vertical position
-        );
-        currentPage++; // Increment page count for footer
+            resolve(null);
+          };
+        });
+      } catch (error) {
+        console.error('Error capturing element:', error);
       }
-
-      pdf.addImage(pageImg, 'PNG', WIDTH_MARGIN, position, imgWidth, imgHeight);
-      position += imgHeight + HEIGHT_MARGIN;
-
-      // Add footer to each page
-      const footerText = `Page ${currentPage}`;
-      const footerFontSize = 10; // Reduced font size for footer
-      pdf.setFontSize(footerFontSize);
-      const textWidth = pdf.getTextWidth(footerText);
-      pdf.text(
-        footerText,
-        (A4_WIDTH - textWidth) / 2,
-        pdf.internal.pageSize.getHeight() - FOOTER_HEIGHT + 12, // Center the footer
-      );
-    });
-
-    // Finalize the last page's footer
-    if (position <= PAGE_HEIGHT + HEIGHT_MARGIN) {
-      const footerText = `Page ${currentPage}`;
-      const footerFontSize = 10; // Reduced font size for footer
-      pdf.setFontSize(footerFontSize);
-      const textWidth = pdf.getTextWidth(footerText);
-      pdf.text(
-        footerText,
-        (A4_WIDTH - textWidth) / 2,
-        pdf.internal.pageSize.getHeight() - FOOTER_HEIGHT + 12, // Center the footer
-      );
     }
 
+    // Final Footer Text for the Last Page
+    addFooter(pdf, currentPage);
+
     pdf.save('myPDF.pdf');
+    setLoading(false);
   };
   const pathname = usePathname();
   const [actionbutton, setActionButton] = useState<React.JSX.Element | null>(
@@ -182,12 +285,22 @@ export default function Header() {
               handleDownload();
             }}
           >
-            <Image
-              src={`${process.env.IMAGE_PATH}/icons/file_pdf.svg`}
-              alt="Pdf export"
-              width={20}
-              height={20}
-            />
+            {loading && (
+              <ProgressSpinner
+                style={{ width: '30px', height: '30px' }}
+                strokeWidth="8"
+                fill="var(--surface-ground)"
+                animationDuration=".5s"
+              />
+            )}
+            {!loading && (
+              <Image
+                src={`${process.env.IMAGE_PATH}/icons/file_pdf.svg`}
+                alt="Pdf export"
+                width={30}
+                height={30}
+              />
+            )}
           </Button>
         </div>
       </div>
