@@ -8,6 +8,7 @@ import { PrimeReactProvider } from 'primereact/api';
 
 import './globals.css';
 import BundleProvider from '@/app/provider/BundleProvider';
+import ConfigProvider from '@/app/provider/ConfigProvider';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
@@ -29,8 +30,10 @@ export default function RootLayout({
             <ToastProvider>
               <DataProvider>
                 <BundleProvider>
-                  <Header />
-                  <Main>{children}</Main>
+                  <ConfigProvider>
+                    <Header />
+                    <Main>{children}</Main>
+                  </ConfigProvider>
                 </BundleProvider>
               </DataProvider>
             </ToastProvider>
