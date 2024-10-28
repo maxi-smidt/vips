@@ -30,7 +30,7 @@ export default function StartPage() {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `token ${process.env.ISSUE_TOKEN}`,
+            Authorization: `token ${process.env.NEXT_PUBLIC_ISSUE_TOKEN}`,
           },
           body: JSON.stringify(payload),
         },
