@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["feature/136"]
     paths-ignore:
       - README.md
       - docs/**
@@ -35,6 +35,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Check if ISSUE_TOKEN is available
+        run: |
+          if [ -z "${ISSUE_TOKEN}" ]; then
+            echo "ISSUE_TOKEN is not available"
+            exit 1
+          else
+            echo "ISSUE_TOKEN is available"
+          fi
+        env:
+          ISSUE_TOKEN: ${{ secrets.ISSUE_TOKEN }}
 
       - name: Detect package manager
         id: detect-package-manager
