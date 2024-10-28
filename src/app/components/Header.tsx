@@ -4,24 +4,46 @@ import { InputIcon } from 'primereact/inputicon';
 import { InputText } from 'primereact/inputtext';
 import { IconField } from 'primereact/iconfield';
 import { Button } from 'primereact/button';
+import Link from 'next/link';
 
 export default function Header() {
   return (
     <header className="bg-stone-100 shadow-md z-10">
-      <div className="p-4 flex items-center justify-between">
-        <div className="flex items-center">
+      <div className="p-2 flex items-center justify-between">
+        <Link href="/" className="flex items-center no-underline">
           <Image
             src={`${process.env.IMAGE_PATH}/logo.png`}
             alt="VIPS Logo"
-            className="h-12 w-12"
-            width={266}
-            height={293}
+            className="pl-2 h-16 w-16 object-contain"
+            width={440}
+            height={440}
           />
           <span className="ml-4 text-2xl font-semibold text-gray-800">
             VIPS
           </span>
-        </div>
+        </Link>
+
         <div className="flex items-center mr-3 gap-3">
+          <Link href="/customize">
+            <Button
+              label="Customize"
+              outlined
+              severity="secondary"
+              pt={{
+                label: {
+                  className: 'text-left pl-2',
+                },
+              }}
+              icon={
+                <Image
+                  src={`${process.env.IMAGE_PATH}/icons/customize.svg`}
+                  width={20}
+                  height={20}
+                  alt="Customize"
+                />
+              }
+            />
+          </Link>
           <div>
             <div className="relative">
               <IconField iconPosition="left">

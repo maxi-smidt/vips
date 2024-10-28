@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Accordion,
   AccordionTab,
@@ -7,15 +7,18 @@ import {
 import useConfig from '@/app/hooks/useConfig';
 import RootSectionRenderer from '@/app/components/renderer/RootSectionRenderer';
 import { useBundle } from '@/app/hooks/useBundle';
+import EmptySectionRenderer from '@/app/components/renderer/EmptySectionRenderer';
+import { useData } from '@/app/hooks/useData';
 
 export default function IPSViewer() {
-  const [activeIndex, setActiveIndex] = useState<number | number[]>(0);
-  const { extractResources } = useBundle();
+  const { activeIndex, setActiveIndex } = useData();
+  const { resourceMap } = useBundle();
   const { config } = useConfig();
+
   const onTabChange = (e: AccordionTabChangeEvent) => {
     setActiveIndex(e.index);
   };
-  const allResourcesDict = extractResources();
+
   return (
     <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
       {Object.keys(config).map((key) => (
@@ -25,11 +28,13 @@ export default function IPSViewer() {
           className={`${key}`}
           pt={{ content: { className: 'p-0' } }}
         >
-          {allResourcesDict[config[key].code] && (
+          {resourceMap[config[key].code]?.length > 0 ? (
             <RootSectionRenderer
               section={config[key].section}
-              bundleEntries={allResourcesDict[config[key].code]}
+              bundleEntries={resourceMap[config[key].code]}
             />
+          ) : (
+            <EmptySectionRenderer />
           )}
         </AccordionTab>
       ))}

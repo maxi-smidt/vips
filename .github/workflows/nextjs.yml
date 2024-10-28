@@ -8,6 +8,10 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
+    paths-ignore:
+      - README.md
+      - docs/**
+      - data/**
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,6 +35,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Environment Variable
+        run: echo "NEXT_PUBLIC_ISSUE_TOKEN=${{ secrets.NEXT_PUBLIC_ISSUE_TOKEN }}" >> $GITHUB_ENV
 
       - name: Detect package manager
         id: detect-package-manager

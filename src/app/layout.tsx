@@ -8,6 +8,7 @@ import { PrimeReactProvider } from 'primereact/api';
 
 import './globals.css';
 import BundleProvider from '@/app/provider/BundleProvider';
+import ConfigProvider from '@/app/provider/ConfigProvider';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
@@ -23,20 +24,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <PrimeReactProvider>
-        <ToastProvider>
-          <DataProvider>
-            <BundleProvider>
-              <body className={`${inter.className} m-0`}>
-                <div className="flex flex-col h-screen">
-                  <Header />
-                  <Main>{children}</Main>
-                </div>
-              </body>
-            </BundleProvider>
-          </DataProvider>
-        </ToastProvider>
-      </PrimeReactProvider>
+      <body className={`${inter.className} m-0`}>
+        <div className="flex flex-col h-screen">
+          <PrimeReactProvider>
+            <ToastProvider>
+              <DataProvider>
+                <BundleProvider>
+                  <ConfigProvider>
+                    <Header />
+                    <Main>{children}</Main>
+                  </ConfigProvider>
+                </BundleProvider>
+              </DataProvider>
+            </ToastProvider>
+          </PrimeReactProvider>
+        </div>
+      </body>
     </html>
   );
 }
