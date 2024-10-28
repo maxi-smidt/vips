@@ -294,6 +294,7 @@
       },
       {
         "title" : "Social History",
+        "status" :"final",
         "code" : {
           "coding" : [{
             "system" : "http://loinc.org",
@@ -304,6 +305,35 @@
         "text" : {
           "status" : "empty",
           "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
+        },
+        "effectiveDateTime" : "2024-02-08T14:01:30+00:00",
+        "performer" : [
+          {
+            "reference":"urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
+          }
+        ],
+        "valueRatio" : {
+          "numerator" : {
+            "value" : 1,
+            "unit" : "packs",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "packs"
+          },
+          "denominator" : {
+            "value" : 1,
+            "unit" : "day",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "d"
+          }
+        },
+        "valueCodeableConcept" :{
+          "coding" : [
+            {
+              "system" : "http://loinc.org",
+              "code" : "LA15920-4",
+              "display" : "Former Smoker"
+            }
+          ]
         },
         "entry" : [{
           "reference" : "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"

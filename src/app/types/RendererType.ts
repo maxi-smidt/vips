@@ -7,6 +7,8 @@ import CodeableConceptRenderer from '@/app/components/renderer/fhir/CodeableConc
 import CodingRenderer from '@/app/components/renderer/fhir/CodingRenderer';
 import ContactPointRenderer from '@/app/components/renderer/fhir/ContactPointRenderer';
 import LinkRenderer from '@/app/components/renderer/fhir/LinkRenderer';
+import PeriodRenderer from '../components/renderer/fhir/PeriodRenderer';
+import QuantityRenderer from '../components/renderer/fhir/QuantityRenderer';
 
 export enum RendererType {
   ANNOTATION = 'AnnotationRenderer',
@@ -19,6 +21,7 @@ export enum RendererType {
   CONTACT_POINT = 'ContactPointRenderer',
   LINK = 'LinkRenderer',
   PERIOD = 'PeriodRenderer',
+  QUANTITY = 'QuantityRenderer',
 }
 
 export const rendererMap = {
@@ -31,4 +34,6 @@ export const rendererMap = {
   [RendererType.CODING]: CodingRenderer,
   [RendererType.CONTACT_POINT]: ContactPointRenderer,
   [RendererType.LINK]: LinkRenderer,
+  [RendererType.PERIOD]: PeriodRenderer,
+  [RendererType.QUANTITY]: QuantityRenderer,
 };
