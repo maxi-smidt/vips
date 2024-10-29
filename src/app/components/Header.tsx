@@ -33,9 +33,7 @@ export default function Header() {
   // to change the action button depending on the route
   useEffect(() => {
     if (pathname === '/customize') {
-      setActionButton(
-        createButton(process.env.HOME_URL!, 'IPS Viewer', 'pi pi-file-check'),
-      );
+      setActionButton(createButton('/', 'IPS Viewer', 'pi pi-file-check'));
     } else {
       setActionButton(
         createButton('/customize', 'Customize', 'pi pi-objects-column'),
@@ -125,13 +123,7 @@ export default function Header() {
   function createButton(href: string, label: string, iconSrc: string) {
     return (
       <Link href={href}>
-        <Button
-          className="text-prime-grey"
-          label={label}
-          outlined
-          severity="secondary"
-          icon={iconSrc}
-        />
+        <Button label={label} outlined severity="secondary" icon={iconSrc} />
       </Link>
     );
   }

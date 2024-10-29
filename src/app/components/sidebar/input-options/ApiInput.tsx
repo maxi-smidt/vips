@@ -4,31 +4,35 @@ import React, { useState } from 'react';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { useBundle } from '@/app/hooks/useBundle';
+import { useToast } from '@/app/hooks/useToast';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
 // access .env api -> or better expose variable in next config
 // const API_URL = process.env.FHIR_API;
-// TODO: Where do we want to fetch data from the server? This should probably not happen
-//  every time the system or identifier changes, which would be on every sign that gets typed in
 
 export default function ApiInput() {
   const [identifier, setIdentifier] = useState<string>('');
   const [system, setSystem] = useState<string>('');
   const { setBundle } = useBundle();
+  const { showError } = useToast();
 
   const loadIpsFromApi = async () => {
     try {
+      const server = system.endsWith('/') ? system : `${system}/`;
       const response = await fetch(
-        `https://server.fire.ly/Bundle?composition.patient.identifier=${identifier}`,
+        `${server}Bundle?composition.patient.identifier=${identifier}`,
       );
 
       if (!response.ok) {
-        throw new Error('Failed to fetch data');
+        throw new Error();
       }
 
-      const data = await response.json();
-      setBundle(data);
+      const data: Bundle = await response.json();
+      if (data.entry && data.entry.length > 0) {
+        setBundle(data.entry[0].resource as Bundle);
+      }
     } catch (_) {
-      alert('The data could not be fetched or parsed');
+      showError('The data could not be fetched');
     }
   };
   return (
