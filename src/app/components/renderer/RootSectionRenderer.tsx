@@ -5,17 +5,17 @@ import { v4 as uuidv4 } from 'uuid';
 import { BundleEntry } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundleEntry';
 
 interface RootSectionRendererProps {
-  rootSection: ConfigResource;
+  configResource: ConfigResource;
   bundleEntries: BundleEntry[];
 }
 
 export default function RootSectionRenderer({
-  rootSection,
+  configResource,
   bundleEntries,
 }: RootSectionRendererProps) {
   const getTitle = (index: number) => {
     if (bundleEntries.length === 1) return undefined;
-    return `${rootSection.section.display} ${index + 1}`;
+    return `${configResource.section.display} ${index + 1}`;
   };
 
   return (
@@ -24,10 +24,13 @@ export default function RootSectionRenderer({
         <div
           key={uuidv4()}
           id={bundleEntry.fullUrl}
-          className={`contentClass${rootSection.code}`}
+          className={`contentClass${configResource.code}`}
         >
           <SectionRenderer
-            configSection={{ ...rootSection.section, display: getTitle(index) }}
+            configSection={{
+              ...configResource.section,
+              display: getTitle(index),
+            }}
             depth={0}
             resource={bundleEntry.resource!}
           />

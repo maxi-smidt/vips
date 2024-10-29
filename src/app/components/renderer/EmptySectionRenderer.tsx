@@ -2,14 +2,14 @@ import React from 'react';
 import { ConfigResource } from '@/app/types/Config';
 
 interface EmptySectionRendererProps {
-  rootSection: ConfigResource;
+  configResource: ConfigResource;
 }
 
 export default function EmptySectionRenderer({
-  rootSection,
+  configResource,
 }: EmptySectionRendererProps) {
   return (
-    <div className={`contentClass${rootSection.code}`}>
+    <div className={`contentClass${configResource.code}`}>
       <div className="p-2 flex justify-center">
         <p>No entries available for this section.</p>
       </div>

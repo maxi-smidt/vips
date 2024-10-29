@@ -35,11 +35,11 @@ export default function IPSViewer() {
         >
           {resourceMap[config[key].code]?.length > 0 ? (
             <RootSectionRenderer
-              rootSection={config[key]}
+              configResource={config[key]}
               bundleEntries={resourceMap[config[key].code]}
             />
           ) : (
-            <EmptySectionRenderer rootSection={config[key]} />
+            <EmptySectionRenderer configResource={config[key]} />
           )}
         </AccordionTab>
       ))}

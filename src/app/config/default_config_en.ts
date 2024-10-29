@@ -700,151 +700,151 @@ export const DefaultConfigEN: Config = {
       ],
     },
   },
-  // sectionResults: {
-  //   icon: '/icons/results.svg',
-  //   color: RelevanceCategory.RECOMMENDED,
-  //   sectionDisplay: 'Diagnostic tests and laboratory data',
-  //   code: '30954-2',
-  //   section: {
-  //     display: 'Diagnostic test or laboratory data',
-  //     components: [
-  //       // {
-  //       //   components: [
-  //       //     // {
-  //       //     //   display: 'Status',
-  //       //     //   path: 'DiagnosticReport.status',
-  //       //     //   renderer: RendererType.DEFAULT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Category',
-  //       //     //   path: 'DiagnosticReport.category',
-  //       //     //   renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Code',
-  //       //     //   path: 'DiagnosticReport.code',
-  //       //     //   renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Clinically relevant time/time-period for report',
-  //       //     //   path: 'DiagnosticReport.effective',
-  //       //     //   renderer: RendererType.DEFAULT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Issued Date',
-  //       //     //   path: 'DiagnosticReport.issued',
-  //       //     //   renderer: RendererType.DEFAULT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Conclusion',
-  //       //     //   path: 'DiagnosticReport.conclusion',
-  //       //     //   renderer: RendererType.DEFAULT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Conclusion Code',
-  //       //     //   path: 'DiagnosticReport.conclusionCode',
-  //       //     //   renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     // }, //TBD media
-  //       //     // {
-  //       //     //   display: 'Status',
-  //       //     //   path: 'Observation.status',
-  //       //     //   renderer: RendererType.DEFAULT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Category',
-  //       //     //   path: 'Observation.category',
-  //       //     //   renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Code',
-  //       //     //   path: 'Observation.code',
-  //       //     //   renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Clinically relevant time/time-period for observation',
-  //       //     //   path: 'Observation.effective',
-  //       //     //   renderer: RendererType.DEFAULT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Date/Time this version was made available',
-  //       //     //   path: 'Observation.issued',
-  //       //     //   renderer: RendererType.DEFAULT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Performer',
-  //       //     //   path: 'Observation.performer:Practitioner.name',
-  //       //     //   renderer: RendererType.HUMAN_NAME,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Performer',
-  //       //     //   path: 'Observation.performer:Organization.name',
-  //       //     //   renderer: RendererType.DEFAULT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Value',
-  //       //     //   path: 'Observation.value',
-  //       //     //   renderer: RendererType.DEFAULT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Data Absent Reason',
-  //       //     //   path: 'Observation.dataAbsentReason',
-  //       //     //   renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Interpretation',
-  //       //     //   path: 'Observation.interpretation',
-  //       //     //   renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Note',
-  //       //     //   path: 'Observation.note',
-  //       //     //   renderer: RendererType.ANNOTATION,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Body site',
-  //       //     //   path: 'Observation.bodySite',
-  //       //     //   renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Method',
-  //       //     //   path: 'Observation.method',
-  //       //     //   renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     // },
-  //       //     // {
-  //       //     //   display: 'Reference Range',
-  //       //     //   components: [
-  //       //     //     {
-  //       //     //       display: 'Low Range',
-  //       //     //       path: 'Observation.referenceRange.low',
-  //       //     //       renderer: RendererType.DEFAULT,
-  //       //     //     },
-  //       //     //     {
-  //       //     //       display: 'High Range',
-  //       //     //       path: 'Observation.referenceRange.high',
-  //       //     //       renderer: RendererType.DEFAULT,
-  //       //     //     },
-  //       //     //     {
-  //       //     //       display: 'Reference range qualifier',
-  //       //     //       path: 'Observation.referenceRange.type',
-  //       //     //       renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     //     },
-  //       //     //     {
-  //       //     //       display: 'Applies to',
-  //       //     //       path: 'Observation.referenceRange.appliesTO',
-  //       //     //       renderer: RendererType.CODEABLE_CONCEPT,
-  //       //     //     },
-  //       //     //     {
-  //       //     //       display: 'Applicable age range',
-  //       //     //       path: 'Observation.referenceRange.age',
-  //       //     //       renderer: RendererType.DEFAULT,
-  //       //     //     },
-  //       //     //   ],
-  //       //     // },
-  //       //   ],
-  //       // },
-  //     ],
-  //   },
-  // },
+  sectionResults: {
+    icon: '/icons/results.svg',
+    color: RelevanceCategory.RECOMMENDED,
+    sectionDisplay: 'Diagnostic tests and laboratory data',
+    code: '30954-2',
+    section: {
+      display: 'Diagnostic test or laboratory data',
+      components: [
+        {
+          components: [
+            {
+              display: 'Status',
+              path: 'DiagnosticReport.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Category',
+              path: 'DiagnosticReport.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Code',
+              path: 'DiagnosticReport.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Clinically relevant time/time-period for report',
+              path: 'DiagnosticReport.effective',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Issued Date',
+              path: 'DiagnosticReport.issued',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Conclusion',
+              path: 'DiagnosticReport.conclusion',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Conclusion Code',
+              path: 'DiagnosticReport.conclusionCode',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            }, //TBD media
+            {
+              display: 'Status',
+              path: 'Observation.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Category',
+              path: 'Observation.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Code',
+              path: 'Observation.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Clinically relevant time/time-period for observation',
+              path: 'Observation.effective',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Date/Time this version was made available',
+              path: 'Observation.issued',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Performer',
+              path: 'Observation.performer:Practitioner.name',
+              renderer: RendererType.HUMAN_NAME,
+            },
+            {
+              display: 'Performer',
+              path: 'Observation.performer:Organization.name',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Value',
+              path: 'Observation.value',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Data Absent Reason',
+              path: 'Observation.dataAbsentReason',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Interpretation',
+              path: 'Observation.interpretation',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Note',
+              path: 'Observation.note',
+              renderer: RendererType.ANNOTATION,
+            },
+            {
+              display: 'Body site',
+              path: 'Observation.bodySite',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Method',
+              path: 'Observation.method',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Reference Range',
+              components: [
+                {
+                  display: 'Low Range',
+                  path: 'Observation.referenceRange.low',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'High Range',
+                  path: 'Observation.referenceRange.high',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Reference range qualifier',
+                  path: 'Observation.referenceRange.type',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Applies to',
+                  path: 'Observation.referenceRange.appliesTO',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Applicable age range',
+                  path: 'Observation.referenceRange.age',
+                  renderer: RendererType.DEFAULT,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  },
   /*sectionVitalSigns: {
     icon: '/icons/vitalSigns.svg',
     color: RelevanceCategory.OPTIONAL,
