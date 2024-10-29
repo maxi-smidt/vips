@@ -20,7 +20,12 @@ export default function IPSViewer() {
   };
 
   return (
-    <Accordion multiple activeIndex={activeIndex} onTabChange={onTabChange}>
+    <Accordion
+      multiple
+      activeIndex={activeIndex}
+      onTabChange={onTabChange}
+      id="mainContentId"
+    >
       {Object.keys(config).map((key) => (
         <AccordionTab
           key={config[key].sectionDisplay}
@@ -30,11 +35,11 @@ export default function IPSViewer() {
         >
           {resourceMap[config[key].code]?.length > 0 ? (
             <RootSectionRenderer
-              section={config[key].section}
+              configResource={config[key]}
               bundleEntries={resourceMap[config[key].code]}
             />
           ) : (
-            <EmptySectionRenderer />
+            <EmptySectionRenderer configResource={config[key]} />
           )}
         </AccordionTab>
       ))}

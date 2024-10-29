@@ -6,28 +6,77 @@ import { InputIcon } from 'primereact/inputicon';
 import { InputText } from 'primereact/inputtext';
 import { IconField } from 'primereact/iconfield';
 import { Button } from 'primereact/button';
+import useConfig from '@/app/hooks/useConfig';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useData } from '@/app/hooks/useData';
+import createPDF from '@/app/utils/PdfRendererUtil';
+import { useBundle } from '@/app/hooks/useBundle';
+import { useToast } from '@/app/hooks/useToast';
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 export default function Header() {
+  const { setActiveIndex } = useData();
+  const { bundle } = useBundle();
+  const { showError } = useToast();
+  const { config } = useConfig();
+  const [isLoading, setIsLoading] = useState(false);
+
   const pathname = usePathname();
   const [actionbutton, setActionButton] = useState<React.JSX.Element | null>(
     null,
   );
 
+  // to change the action button depending on the route
   useEffect(() => {
     if (pathname === '/customize') {
-      setActionButton(createButton('/', 'IPS Viewer', 'ips_viewer'));
+      setActionButton(
+        createButton(process.env.HOME_URL!, 'IPS Viewer', 'pi pi-file-check'),
+      );
     } else {
-      setActionButton(createButton('/customize', 'Customize', 'customize'));
+      setActionButton(
+        createButton('/customize', 'Customize', 'pi pi-objects-column'),
+      );
     }
   }, [pathname]);
+
+  const handleDownload = async () => {
+    if (!bundle) {
+      showError('You need to load a bundle before you can download the pdf');
+      return;
+    }
+
+    setIsLoading(true);
+    setActiveIndex(Object.keys(config).map((_, index) => index)); // opens all accordions
+    await sleep(1000); // there is a sleep time needed to wait for all the accordions to open
+
+    const names = Array.from(
+      document.getElementsByClassName('name'),
+    ) as HTMLElement[];
+    const patientName = names[0]?.textContent?.substring(6) || '';
+    const patientSVNRElement = document.getElementById(
+      'SVNR',
+    ) as HTMLElement | null;
+    const patientSVNR = patientSVNRElement?.textContent || '';
+
+    await createPDF({
+      config,
+      patientName,
+      patientSVNR,
+      fileName: 'vips',
+      showError,
+    });
+    setIsLoading(false);
+  };
 
   return (
     <header className="bg-stone-100 shadow-md z-10">
       <div className="p-2 flex items-center justify-between">
         <a
-          href={process.env.MODE === 'development' ? '/' : '/vips/'}
+          href={process.env.HOME_URL}
           className="flex items-center no-underline"
         >
           <Image
@@ -60,14 +109,14 @@ export default function Header() {
             </div>
           </div>
 
-          <Button className="ml-auto" severity="secondary" text>
-            <Image
-              src={`${process.env.IMAGE_PATH}/icons/file_pdf.svg`}
-              alt="Pdf export"
-              width={20}
-              height={20}
-            />
-          </Button>
+          <Button
+            className="ml-auto"
+            severity="secondary"
+            outlined
+            icon={isLoading ? 'pi pi-spin pi-spinner' : 'pi pi-file-pdf'}
+            onClick={async () => await handleDownload()}
+            disabled={isLoading}
+          />
         </div>
       </div>
     </header>
@@ -81,19 +130,7 @@ export default function Header() {
           label={label}
           outlined
           severity="secondary"
-          pt={{
-            label: {
-              className: 'text-left pl-2',
-            },
-          }}
-          icon={
-            <Image
-              src={`${process.env.IMAGE_PATH}/icons/${iconSrc}.svg`}
-              width={20}
-              height={20}
-              alt={label}
-            />
-          }
+          icon={iconSrc}
         />
       </Link>
     );
