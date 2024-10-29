@@ -19,19 +19,15 @@ export default function ApiInput() {
     try {
       const response = await fetch(
         `https://server.fire.ly/Bundle?composition.patient.identifier=${identifier}`,
-        {
-          method: 'GET',
-        },
       );
-      console.log(response);
+
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
 
       const data = await response.json();
       setBundle(data);
-    } catch (error) {
-      console.error('Error loading data:', error);
+    } catch (_) {
       alert('The data could not be fetched or parsed');
     }
   };
