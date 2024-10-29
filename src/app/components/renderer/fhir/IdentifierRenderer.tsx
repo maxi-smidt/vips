@@ -9,7 +9,7 @@ export default function IdentifierRenderer({
   const identifier = value as Identifier;
 
   return (
-    <p>
+    <p id={identifier.system === 'urn:oid:1.2.40.0.10.1.4.3.1' ? 'SVNR' : ''}>
       <strong>{configEntry.display}:</strong> {identifier.value}
     </p>
   );

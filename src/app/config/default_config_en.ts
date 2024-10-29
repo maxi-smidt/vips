@@ -802,7 +802,6 @@ export const DefaultConfigEN: Config = {
               path: 'Observation.issued',
               renderer: RendererType.DEFAULT,
             },
-            /*
             {
               display: 'Performer',
               path: 'Observation.performer:Practitioner.name',
@@ -813,7 +812,6 @@ export const DefaultConfigEN: Config = {
               path: 'Observation.performer:Organization.name',
               renderer: RendererType.DEFAULT,
             },
-            */
             {
               display: 'Value',
               path: 'Observation.value',
@@ -1336,9 +1334,9 @@ export const DefaultConfigEN: Config = {
               display: 'Detail',
               path: 'Condition.evidence.code',
               renderer: RendererType.CODEABLE_CONCEPT,
-            }
-          ]
-        }
+            },
+          ],
+        },
       ],
     },
   },
@@ -1402,7 +1400,7 @@ export const DefaultConfigEN: Config = {
               display: 'First Record',
               path: 'CarePlan.created',
               renderer: RendererType.DEFAULT,
-            }
+            },
           ],
         },
         {
@@ -1435,7 +1433,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Goals of activity',
-              path: 'CarePlan.activity.detail.goal',
+              path: 'CarePlan.activity.detail.goal.reference',
               renderer: RendererType.LINK,
             },
             {
@@ -1715,13 +1713,11 @@ export const DefaultConfigEN: Config = {
               path: 'Observation.method',
               renderer: RendererType.CODEABLE_CONCEPT,
             },
-            /*
             {
               display: 'Expected Delivery Date',
               path: 'Observation.hasMember.reference:Observation.valueDateTime',
               renderer: RendererType.DEFAULT,
             },
-            */
           ],
         },
       ],
@@ -1752,7 +1748,7 @@ export const DefaultConfigEN: Config = {
               display: 'Category',
               path: 'Consent.category',
               renderer: RendererType.CODEABLE_CONCEPT,
-            },/*
+            } /*
             {
               display: 'Performer',
               path: 'Consent.performer:performer.name',
@@ -1762,7 +1758,7 @@ export const DefaultConfigEN: Config = {
               display: 'Organization',
               path: 'Consent.organization:organization.name',
               renderer: RendererType.DEFAULT,
-            },*/
+            },*/,
             {
               display: 'Created',
               path: 'Consent.created',
@@ -1814,11 +1810,10 @@ export const DefaultConfigEN: Config = {
                 {
                   display: 'Data Period',
                   path: 'Consent.provision.dataPeriod',
-                  renderer: RendererType.PERIOD
-                }
+                  renderer: RendererType.PERIOD,
+                },
               ],
-            }
-          
+            },
           ],
         },
       ],

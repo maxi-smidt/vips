@@ -5,7 +5,7 @@ import React from 'react';
 export default function HumanNameRenderer({ value, configEntry }: RenderProps) {
   const humanName = value as HumanName;
   return (
-    <p>
+    <p className="name">
       <strong>{configEntry.display}:</strong> {humanName.prefix?.join(' ')}{' '}
       {humanName.given?.join(' ')} {humanName.family}{' '}
       {humanName.suffix?.join(' ')}

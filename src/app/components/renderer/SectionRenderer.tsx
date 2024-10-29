@@ -3,24 +3,21 @@ import React from 'react';
 import ComponentRenderer from '@/app/components/renderer/ComponentRenderer';
 import { v4 as uuidv4 } from 'uuid';
 import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
-import { renderToString } from 'react-dom/server';
+import { isEmptyDiv } from '@/app/utils/HtmlUtils';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
 interface SectionRendererProps {
   configSection: ConfigSection;
   depth: number;
   resource: Resource;
+  bundle: Bundle | undefined;
 }
-
-const isEmptyDiv = (component: React.JSX.Element) => {
-  const rendered = renderToString(component);
-  const emptyDivRegex = /^<div(?: [^>]*)?>\s*<\/div>$/;
-  return emptyDivRegex.test(rendered);
-};
 
 export default function SectionRenderer({
   configSection,
   depth,
   resource,
+  bundle,
 }: SectionRendererProps) {
   const sections = configSection.components.map((component) => {
     return (
@@ -29,6 +26,7 @@ export default function SectionRenderer({
         configComponent={component}
         resource={resource}
         depth={depth + 1}
+        bundle={bundle}
       />
     );
   });
