@@ -8,8 +8,6 @@ import { useToast } from '@/app/hooks/useToast';
 
 // access .env api -> or better expose variable in next config
 // const API_URL = process.env.FHIR_API;
-// TODO: Where do we want to fetch data from the server? This should probably not happen
-//  every time the system or identifier changes, which would be on every sign that gets typed in
 
 export default function ApiInput() {
   const [identifier, setIdentifier] = useState<string>('');
@@ -28,8 +26,6 @@ export default function ApiInput() {
       }
 
       const data = await response.json();
-      console.log(data);
-      console.log(typeof data === 'string');
       setBundle(data);
     } catch (_) {
       showError('The data could not be fetched');
