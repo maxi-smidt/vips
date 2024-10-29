@@ -802,6 +802,7 @@ export const DefaultConfigEN: Config = {
               path: 'Observation.issued',
               renderer: RendererType.DEFAULT,
             },
+            /*
             {
               display: 'Performer',
               path: 'Observation.performer:Practitioner.name',
@@ -812,6 +813,7 @@ export const DefaultConfigEN: Config = {
               path: 'Observation.performer:Organization.name',
               renderer: RendererType.DEFAULT,
             },
+            */
             {
               display: 'Value',
               path: 'Observation.value',
@@ -1713,11 +1715,13 @@ export const DefaultConfigEN: Config = {
               path: 'Observation.method',
               renderer: RendererType.CODEABLE_CONCEPT,
             },
+            /*
             {
               display: 'Expected Delivery Date',
               path: 'Observation.hasMember.reference:Observation.valueDateTime',
               renderer: RendererType.DEFAULT,
             },
+            */
           ],
         },
       ],
