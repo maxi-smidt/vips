@@ -13,6 +13,7 @@ import { useData } from '@/app/hooks/useData';
 import createPDF from '@/app/utils/PdfRendererUtil';
 import { useBundle } from '@/app/hooks/useBundle';
 import { useToast } from '@/app/hooks/useToast';
+import { Patient } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/patient';
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -20,7 +21,7 @@ function sleep(ms: number): Promise<void> {
 
 export default function Header() {
   const { setActiveIndex } = useData();
-  const { bundle } = useBundle();
+  const { bundle, resourceMap } = useBundle();
   const { showError } = useToast();
   const { config } = useConfig();
   const [isLoading, setIsLoading] = useState(false);
@@ -51,14 +52,19 @@ export default function Header() {
     setActiveIndex(Object.keys(config).map((_, index) => index)); // opens all accordions
     await sleep(1000); // there is a sleep time needed to wait for all the accordions to open
 
-    const names = Array.from(
-      document.getElementsByClassName('name'),
-    ) as HTMLElement[];
-    const patientName = names[0]?.textContent?.substring(6) || '';
-    const patientSVNRElement = document.getElementById(
-      'SVNR',
-    ) as HTMLElement | null;
-    const patientSVNR = patientSVNRElement?.textContent || '';
+    const patientResource = resourceMap['patient']?.[0]?.resource as Patient;
+    const patientName =
+      patientResource?.name?.at(0)?.given?.at(0) +
+      ' ' +
+      patientResource?.name?.at(0)?.family;
+    const patientSVNR =
+      patientResource?.identifier?.find((id) =>
+        id.type?.coding?.some(
+          (coding) =>
+            coding.system === 'http://terminology.hl7.org/CodeSystem/v2-0203' &&
+            coding.code === 'SS',
+        ),
+      )?.value || '';
 
     await createPDF({
       config,
