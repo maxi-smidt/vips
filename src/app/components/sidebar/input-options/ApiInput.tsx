@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { useBundle } from '@/app/hooks/useBundle';
+import { useToast } from '@/app/hooks/useToast';
 
 // access .env api -> or better expose variable in next config
 // const API_URL = process.env.FHIR_API;
@@ -14,6 +15,7 @@ export default function ApiInput() {
   const [identifier, setIdentifier] = useState<string>('');
   const [system, setSystem] = useState<string>('');
   const { setBundle } = useBundle();
+  const { showError } = useToast();
 
   const loadIpsFromApi = async () => {
     try {
@@ -22,13 +24,15 @@ export default function ApiInput() {
       );
 
       if (!response.ok) {
-        throw new Error('Failed to fetch data');
+        throw new Error();
       }
 
       const data = await response.json();
+      console.log(data);
+      console.log(typeof data === 'string');
       setBundle(data);
     } catch (_) {
-      alert('The data could not be fetched or parsed');
+      showError('The data could not be fetched');
     }
   };
   return (
