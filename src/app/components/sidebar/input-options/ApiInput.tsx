@@ -30,6 +30,7 @@ export default function ApiInput() {
       const data: Bundle = await response.json();
       if (data.entry && data.entry.length > 0) {
         console.log(data.entry[0].resource);
+        console.log(JSON.stringify(data.entry[0].resource));
         setBundle(data.entry[0].resource as Bundle);
       }
     } catch (_) {
