@@ -29,7 +29,7 @@ export default function ApiInput() {
 
       const data: Bundle = await response.json();
       if (data.entry && data.entry.length > 0) {
-        setBundle(data.entry[0] as Bundle);
+        setBundle(data.entry[0].resource as Bundle);
       }
     } catch (_) {
       showError('The data could not be fetched');
