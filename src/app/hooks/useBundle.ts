@@ -27,19 +27,22 @@ export const useBundle = () => {
     const bundleUtils = new BundleUtils();
     const resourceUtils = new ResourceUtils();
     const sectionResourceDict: ResourceMap = {};
-
+    console.log('check 1');
     if (!bundle?.entry) {
       return sectionResourceDict;
     }
+    console.log('check 2');
 
     const compositions = bundleUtils.getResources(
       bundle!.entry!,
       'Composition',
     );
+    console.log('check 3');
 
     if (compositions.length === 0) {
       return sectionResourceDict;
     }
+    console.log('check 4');
 
     const composition = compositions[0].resource;
 
