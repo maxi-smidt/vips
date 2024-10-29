@@ -17,8 +17,9 @@ export default function ApiInput() {
 
   const loadIpsFromApi = async () => {
     try {
+      const server = system.endsWith('/') ? system : `${system}/`;
       const response = await fetch(
-        `https://server.fire.ly/Bundle?composition.patient.identifier=${identifier}`,
+        `${server}Bundle?composition.patient.identifier=${identifier}`,
       );
 
       if (!response.ok) {
@@ -26,6 +27,7 @@ export default function ApiInput() {
       }
 
       const data = await response.json();
+      console.log(data);
       setBundle(data);
     } catch (_) {
       showError('The data could not be fetched');
