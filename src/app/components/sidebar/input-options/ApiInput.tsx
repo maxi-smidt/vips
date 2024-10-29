@@ -5,6 +5,7 @@ import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { useBundle } from '@/app/hooks/useBundle';
 import { useToast } from '@/app/hooks/useToast';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
 // access .env api -> or better expose variable in next config
 // const API_URL = process.env.FHIR_API;
@@ -26,9 +27,10 @@ export default function ApiInput() {
         throw new Error();
       }
 
-      const data = await response.json();
-      console.log(data);
-      setBundle(data);
+      const data: Bundle = await response.json();
+      if (data.entry && data.entry.length > 0) {
+        setBundle(data.entry[0] as Bundle);
+      }
     } catch (_) {
       showError('The data could not be fetched');
     }
