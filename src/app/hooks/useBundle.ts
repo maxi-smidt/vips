@@ -18,8 +18,11 @@ export const useBundle = () => {
   const getBundleEntryByReference = (
     reference: string,
   ): BundleEntry | undefined => {
+    const delimiter = reference.startsWith('urn:uuid:') ? ':' : '/';
+    const partitionedReference = reference.split(delimiter);
+    const refEnd = partitionedReference[partitionedReference.length - 1];
     return bundle?.entry?.find(
-      (x) => x['fullUrl'] !== undefined && x['fullUrl'].endsWith(reference),
+      (x) => x['fullUrl'] !== undefined && x['fullUrl'].endsWith(refEnd),
     );
   };
 
@@ -30,7 +33,6 @@ export const useBundle = () => {
     if (!bundle?.entry) {
       return sectionResourceDict;
     }
-    console.log('bundle in map', bundle);
     const compositions = bundleUtils.getResources(
       bundle!.entry!,
       'Composition',
@@ -48,7 +50,6 @@ export const useBundle = () => {
     allSections.forEach((section: CompositionSection) => {
       const sectionCode = section?.code?.coding?.at(0)?.code; // Assuming the first coding is used
       const allResourceReferences = section.entry;
-
       if (sectionCode && !sectionResourceDict[sectionCode]) {
         sectionResourceDict[sectionCode] = [];
       }
@@ -109,8 +110,7 @@ export const useBundle = () => {
     const values: BundleEntry[] = [];
     const references = pathToObjects
       ? (getValueByPath(composition, pathToObjects) as unknown[])
-      : [getValueByPath(composition, pathToReference) as string];
-
+      : [getValueByPath(composition, pathToReference) || []].flat();
     references?.forEach((reference) => {
       const ref = (
         pathToObjects ? getValueByPath(reference, pathToReference) : reference

@@ -26,7 +26,6 @@ export default function FileInput() {
           const fhir = new Fhir();
           fileContent = fhir.xmlToJson(fileContent);
         }
-        console.log(JSON.parse(fileContent));
         setBundle(JSON.parse(fileContent));
       } else {
         showError('Could not read file');
