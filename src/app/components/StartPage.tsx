@@ -122,12 +122,14 @@ export default function StartPage() {
             spezifizierten Sektionen, wobei auch die Farben in der Sidebar
             entsprechend angepasst sind.
           </p>
-          <Image
-            src={`${process.env.IMAGE_PATH}/images/IPS_composition.png`}
-            width={700}
-            height={440}
-            alt="IPS Composition"
-          />
+          <div className="flex justify-center">
+            <Image
+              src={`${process.env.IMAGE_PATH}/images/IPS_composition.png`}
+              width={700}
+              height={440}
+              alt="IPS Composition"
+            />
+          </div>
         </section>
 
         <section className="mb-8">

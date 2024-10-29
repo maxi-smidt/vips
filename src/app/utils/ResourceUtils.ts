@@ -2,7 +2,7 @@
 export class ResourceUtils {
   getValuesAtResourcePath(resource: any, elementPath: string): any[] {
     const pathSections = elementPath.split('.');
-    if (resource && (resource.resourceType !== pathSections[0])) return [];
+    if (!resource || (resource.resourceType !== pathSections[0])) return [];
     return this.getValuesAtResourcePathInner(resource, elementPath);
   }
 
