@@ -1433,7 +1433,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Goals of activity',
-              path: 'CarePlan.activity.detail.goal',
+              path: 'CarePlan.activity.detail.goal.reference',
               renderer: RendererType.LINK,
             },
             {
