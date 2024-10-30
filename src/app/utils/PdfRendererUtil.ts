@@ -1,4 +1,4 @@
-import { toJpeg } from 'html-to-image';
+import { toPng } from 'html-to-image';
 import { Config } from '@/app/types/Config';
 import jsPDF from 'jspdf';
 
@@ -72,7 +72,7 @@ export default async function createPDF({
       );
       for (const element of elements) {
         try {
-          const dataUrl = await toJpeg(element as HTMLElement, {
+          const dataUrl = await toPng(element as HTMLElement, {
             quality: 0.9,
             backgroundColor: '#FFFFFF',
             pixelRatio: 2,
@@ -99,7 +99,7 @@ export default async function createPDF({
                 WIDTH_MARGIN,
                 y_pos,
                 imgWidth,
-                imgHeight,
+                0,
                 undefined,
                 'FAST',
               );
