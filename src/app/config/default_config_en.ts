@@ -644,11 +644,11 @@ export const DefaultConfigEN: Config = {
               path: 'Immunization.protocolApplied.doseNumberPositiveInt', // Can be a positiveInt or string; currently only the positiveInt case is being handled
               renderer: RendererType.DEFAULT, // Render based on the type (positiveInt or string)
             },
-            // {
-            //   display: 'Recommended Number of doses',
-            //   path: 'Immunization.protocolApplied.series',
-            //   renderer: RendererType.DEFAULT, // The series in which the vaccine was administered
-            // },
+            {
+              display: 'Recommended Number of doses',
+              path: 'Immunization.protocolApplied.series',
+              renderer: RendererType.DEFAULT, // The series in which the vaccine was administered
+            },
           ],
         },
       ],
