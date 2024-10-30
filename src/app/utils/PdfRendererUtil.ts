@@ -75,6 +75,7 @@ export default async function createPDF({
           const dataUrl = await toJpeg(element as HTMLElement, {
             quality: 0.9,
             backgroundColor: '#FFFFFF',
+            pixelRatio: 2,
           });
           const img = new NativeImage();
           img.src = dataUrl;
