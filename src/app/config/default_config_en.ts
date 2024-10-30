@@ -1748,7 +1748,7 @@ export const DefaultConfigEN: Config = {
               display: 'Category',
               path: 'Consent.category',
               renderer: RendererType.CODEABLE_CONCEPT,
-            } /*
+            },
             {
               display: 'Performer',
               path: 'Consent.performer:performer.name',
@@ -1758,7 +1758,7 @@ export const DefaultConfigEN: Config = {
               display: 'Organization',
               path: 'Consent.organization:organization.name',
               renderer: RendererType.DEFAULT,
-            },*/,
+            },
             {
               display: 'Created',
               path: 'Consent.created',

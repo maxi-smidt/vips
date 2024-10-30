@@ -51,9 +51,8 @@ export default function EntryRenderer({
       resource,
       referencePath,
     );
-
     if (values.length === 0) return [];
-    const reference: string = values[0].reference;
+    const reference: string = values[0];
     const referencedResource = getResourceByReference(reference);
     return resourceUtils.getValuesAtResourcePath(referencedResource, valuePath);
   }
