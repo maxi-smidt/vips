@@ -234,36 +234,6 @@ export const DefaultConfigEN: Config = {
       ],
     },
   },
-  sectionMedications: {
-    icon: '/icons/medications.svg',
-    color: RelevanceCategory.REQUIRED,
-    sectionDisplay: 'Medication Summary',
-    code: '10160-0',
-    section: {
-      display: 'Medication(Statement/Request)',
-      components: [
-        {
-          components: [
-            {
-              display: 'Medication Id',
-              path: 'Medication.id',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Statement Status',
-              path: 'MedicationStatement.status',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Request Status',
-              path: 'MedicationRequest.status',
-              renderer: RendererType.DEFAULT,
-            },
-          ],
-        },
-      ],
-    },
-  },
   sectionAllergies: {
     icon: '/icons/allergies.svg',
     color: RelevanceCategory.REQUIRED,
@@ -313,6 +283,352 @@ export const DefaultConfigEN: Config = {
               display: 'Category',
               path: 'AllergyIntolerance.category',
               renderer: RendererType.DEFAULT,
+            },
+          ],
+        },
+      ],
+    },
+  },
+  sectionMedicationSummary: {
+    icon: '/icons/Medications.svg',
+    color: RelevanceCategory.REQUIRED,
+    sectionDisplay: 'Medication Summary',
+    code: '10160-0',
+    section: {
+      display: 'Medication History',
+      components: [
+        {
+          display: 'General Information',
+          components: [
+            {
+              display: 'Status',
+              path: 'MedicationStatement.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Status reason',
+              path: 'MedicationStatement.statusReason',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'MedicationStatement.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Medication type',
+              path: 'MedicationStatement.medicationCodeableConcept',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Clinically relevant time/time-period',
+              path: 'MedicationStatement.effectiveDateTime',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Clinically relevant time/time-period',
+              path: 'MedicationStatement.effectivePeriod',
+              renderer: RendererType.PERIOD,
+            },
+            {
+              display: 'Reason Code',
+              path: 'MedicationStatement.ReasonCode',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Dosage',
+              components: [
+                {
+                  display: 'Sequence',
+                  path: 'MedicationStatement.dosage.sequence',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Dosage instructions',
+                  path: 'MedicationStatement.dosage.text',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Additional instructions',
+                  path: 'MedicationStatement.dosage.additionalInstruction',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Patient instructions',
+                  path: 'MedicationStatement.dosage.patientInstruction',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                } /*
+                {
+                  display: 'Timing',
+                  path: 'MedicationStatement.dosage.timing',
+                  renderer: RendererType.TIMING, // TODO: TIMING RENDERER
+                },*/,
+                {
+                  display: 'As needed',
+                  path: 'MedicationStatement.dosage.asNeededBoolean',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'As needed',
+                  path: 'MedicationStatement.dosage.asNeededCodeableConcept',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Body site',
+                  path: 'MedicationStatement.dosage.site',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Route',
+                  path: 'MedicationStatement.dosage.route',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Method',
+                  path: 'MedicationStatement.dosage.method',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Dose and Rate',
+                  components: [
+                    {
+                      display: 'Type',
+                      path: 'MedicationStatement.dosage.doseAndRate.type',
+                      renderer: RendererType.CODEABLE_CONCEPT,
+                    },
+                    {
+                      display: 'Dose',
+                      path: 'MedicationStatement.dosage.doseAndRate.doseRange',
+                      renderer: RendererType.DEFAULT,
+                    },
+                    {
+                      display: 'Dose',
+                      path: 'MedicationStatement.dosage.doseAndRate.doseQuantity',
+                      renderer: RendererType.QUANTITY,
+                    },
+                    {
+                      display: 'Rate',
+                      path: 'MedicationStatement.dosage.doseAndRate.doseRatio',
+                      renderer: RendererType.DEFAULT,
+                    },
+                    {
+                      display: 'Rate',
+                      path: 'MedicationStatement.dosage.doseAndRate.doseRange',
+                      renderer: RendererType.DEFAULT,
+                    },
+                    {
+                      display: 'Rate',
+                      path: 'MedicationStatement.dosage.doseAndRate.doseQuantity',
+                      renderer: RendererType.QUANTITY,
+                    },
+                  ],
+                },
+                {
+                  display: 'Upper limit on medication per unit of time',
+                  path: 'MedicationStatement.maxDosePerPeriod',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Upper limit on medication per administration',
+                  path: 'MedicationStatement.maxDosePerAdministration',
+                  renderer: RendererType.QUANTITY,
+                },
+                {
+                  display: 'Upper limit on medication per lifetime',
+                  path: 'MedicationStatement.maxDosePerLifetime',
+                  renderer: RendererType.QUANTITY,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          display: 'Medication Request',
+          components: [
+            {
+              display: 'Upper limit on medication per lifetime',
+              path: 'MedicationRequest.maxDosePerLifetime',
+              renderer: RendererType.QUANTITY,
+            },
+            {
+              display: 'Status',
+              path: 'MedicationRequest.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Status reason',
+              path: 'MedicationRequest.statusReason',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Intent',
+              path: 'MedicationRequest.code',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Category',
+              path: 'MedicationRequest.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Priority',
+              path: 'MedicationRequest.priority',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Do not perform',
+              path: 'MedicationRequest.doNotPerform',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Medication instruction',
+              path: 'MedicationRequest.medicationCodeableConcept',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Encounter',
+              path: 'MedicationRequest.encounter:',
+              renderer: RendererType.LINK,
+            },
+            {
+              display: 'Performer',
+              path: 'MedicationRequest.performer:',
+              renderer: RendererType.LINK,
+            },
+            {
+              display: 'Performer type',
+              path: 'MedicationRequest.performerType',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Reason code',
+              path: 'MedicationRequest.reasonCode',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Course of therapy type',
+              path: 'MedicationRequest.courseOfTherapyType',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Dosage',
+              components: [
+                {
+                  display: 'Sequence',
+                  path: 'MedicationRequest.dosage.sequence',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Dosage instructions',
+                  path: 'MedicationRequest.dosage.text',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Additional instructions',
+                  path: 'MedicationRequest.dosage.additionalInstruction',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Patient instructions',
+                  path: 'MedicationRequest.dosage.patientInstruction',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                } /*
+                {
+                  display: 'Timing',
+                  path: 'MedicationRequest.dosage.timing',
+                  renderer: RendererType.TIMING, // TODO: TIMING RENDERER
+                },*/,
+                {
+                  display: 'As needed',
+                  path: 'MedicationRequest.dosage.asNeededBoolean',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'As needed',
+                  path: 'MedicationRequest.dosage.asNeededCodeableConcept',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Body site',
+                  path: 'MedicationRequest.dosage.site',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Route',
+                  path: 'MedicationRequest.dosage.route',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Method',
+                  path: 'MedicationRequest.dosage.method',
+                  renderer: RendererType.CODEABLE_CONCEPT,
+                },
+                {
+                  display: 'Dose and Rate',
+                  components: [
+                    {
+                      display: 'Type',
+                      path: 'MedicationRequest.dosage.doseAndRate.type',
+                      renderer: RendererType.CODEABLE_CONCEPT,
+                    },
+                    {
+                      display: 'Dose',
+                      path: 'MedicationRequest.dosage.doseAndRate.doseRange',
+                      renderer: RendererType.DEFAULT,
+                    },
+                    {
+                      display: 'Dose',
+                      path: 'MedicationRequest.dosage.doseAndRate.doseQuantity',
+                      renderer: RendererType.QUANTITY,
+                    },
+                    {
+                      display: 'Rate',
+                      path: 'MedicationRequest.dosage.doseAndRate.doseRatio',
+                      renderer: RendererType.DEFAULT,
+                    },
+                    {
+                      display: 'Rate',
+                      path: 'MedicationRequest.dosage.doseAndRate.doseRange',
+                      renderer: RendererType.DEFAULT,
+                    },
+                    {
+                      display: 'Rate',
+                      path: 'MedicationRequest.dosage.doseAndRate.doseQuantity',
+                      renderer: RendererType.QUANTITY,
+                    },
+                  ],
+                },
+                {
+                  display: 'Upper limit on medication per unit of time',
+                  path: 'MedicationRequest.maxDosePerPeriod',
+                  renderer: RendererType.DEFAULT,
+                },
+                {
+                  display: 'Upper limit on medication per administration',
+                  path: 'MedicationRequest.maxDosePerAdministration',
+                  renderer: RendererType.QUANTITY,
+                },
+                {
+                  display: 'Upper limit on medication per lifetime',
+                  path: 'MedicationRequest.maxDosePerLifetime',
+                  renderer: RendererType.QUANTITY,
+                },
+              ],
+            },
+            {
+              display: ' restrictions on medication substitution',
+              path: 'MedicationRequest.dispenseRequest.substitution.allowedBoolean',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: ' restrictions on medication substitution',
+              path: 'MedicationRequest.dispenseRequest.substitution.alllowedCodeableConcept',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Substitution reason',
+              path: 'MedicationRequest.dispenseRequest.substitution.Reason',
+              renderer: RendererType.CODEABLE_CONCEPT,
             },
           ],
         },
