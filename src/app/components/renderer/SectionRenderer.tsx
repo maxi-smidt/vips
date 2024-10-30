@@ -3,19 +3,13 @@ import React from 'react';
 import ComponentRenderer from '@/app/components/renderer/ComponentRenderer';
 import { v4 as uuidv4 } from 'uuid';
 import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
-import { renderToString } from 'react-dom/server';
+import { isEmptyDiv } from '@/app/utils/HtmlUtils';
 
 interface SectionRendererProps {
   configSection: ConfigSection;
   depth: number;
   resource: Resource;
 }
-
-const isEmptyDiv = (component: React.JSX.Element) => {
-  const rendered = renderToString(component);
-  const emptyDivRegex = /^<div(?: [^>]*)?>\s*<\/div>$/;
-  return emptyDivRegex.test(rendered);
-};
 
 export default function SectionRenderer({
   configSection,

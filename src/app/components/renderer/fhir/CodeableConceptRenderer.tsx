@@ -13,25 +13,40 @@ export default function CodeableConceptRenderer({
       <div className="font-semibold" style={{ width: '150px' }}>
         {configEntry.display}:
       </div>
-      {codeableConcept.coding?.map((coding, index) => (
-        <div key={index} className="flex">
-          <div className="w-1/4 font-semibold" style={{ width: '150px' }}>
-            Code:
+      {codeableConcept.coding?.map((coding, index) => {
+        const link = getLink(coding.system as string, coding.code as string);
+
+        return (
+          <div key={index} className="flex">
+            <div className="w-1/4 font-semibold" style={{ width: '150px' }}>
+              Code:
+            </div>
+            <div className="ml-4 flex-1">
+              {coding.display && (
+                <>
+                  <span>{coding.display}</span>
+                  {link && (
+                    <a
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Details"
+                      style={{ marginLeft: '5px', verticalAlign: 'middle' }}
+                    >
+                      <Image
+                        src={`${process.env.IMAGE_PATH}/icons/info_circle.svg`}
+                        width={20}
+                        height={20}
+                        alt="Details"
+                      />
+                    </a>
+                  )}
+                </>
+              )}
+            </div>
           </div>
-          <div className="ml-4 flex-1">
-            {coding.code && coding.system && (
-              <a
-                href={`${coding.system}/${coding.code}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {coding.code}
-              </a>
-            )}
-            {coding.display && <span> &quot;{coding.display}&quot; </span>}
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
