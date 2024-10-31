@@ -10,7 +10,7 @@ import { useData } from '@/app/hooks/useData';
 
 export default function IPSViewer() {
   const { activeTabs } = useData();
-  const { resourceMap } = useBundle();
+  const { resourceMap, bundle } = useBundle();
   const { config } = useConfig();
 
   const renderRootSection = (key: string, tabIndex: number) => {
@@ -28,6 +28,7 @@ export default function IPSViewer() {
       <RootSectionRenderer
         configResource={config[key]}
         bundleEntries={resourceMap[config[key].code]}
+        bundle={bundle}
         tabIndex={tabIndex}
       />
     );
