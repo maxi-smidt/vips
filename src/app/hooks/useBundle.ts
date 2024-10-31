@@ -1,5 +1,4 @@
-import { useContext, useMemo } from 'react';
-import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
+import { useContext, useEffect, useMemo } from 'react';
 import { Composition } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/composition';
 import { CompositionSection } from '@smile-cdr/fhirts/src/FHIR-R4/classes/compositionSection';
 import { Reference } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/reference';
@@ -7,13 +6,19 @@ import { BundleUtils, ResourceUtils } from '@smile-cdr/fhirts';
 import { BundleEntry } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundleEntry';
 import { BundleContext } from '@/app/provider/BundleProvider';
 import { ResourceMap } from '@/app/types/ResourceMap';
+import { DataContext } from '@/app/provider/DataProvider';
 
 export const useBundle = () => {
   const { bundle, setBundle } = useContext(BundleContext);
+  const { setActiveTabs } = useContext(DataContext);
 
-  const getResourceByReference = (reference: string): Resource | undefined => {
-    return bundle?.entry?.find((x) => x['fullUrl'] === reference)?.resource;
-  };
+  useEffect(() => {
+    const element = document.getElementById('mainContentId');
+    if (element) {
+      element.scrollIntoView();
+      setActiveTabs([]);
+    }
+  }, [bundle]);
 
   const getBundleEntryByReference = (
     reference: string,
@@ -90,7 +95,6 @@ export const useBundle = () => {
     bundle,
     setBundle,
     resourceMap,
-    getResourceByReference,
   };
 
   /**

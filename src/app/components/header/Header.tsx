@@ -2,28 +2,28 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { InputIcon } from 'primereact/inputicon';
-import { InputText } from 'primereact/inputtext';
-import { IconField } from 'primereact/iconfield';
 import { Button } from 'primereact/button';
 import useConfig from '@/app/hooks/useConfig';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useData } from '@/app/hooks/useData';
 import createPDF from '@/app/utils/PdfRendererUtil';
 import { useBundle } from '@/app/hooks/useBundle';
 import { useToast } from '@/app/hooks/useToast';
+import { useData } from '@/app/hooks/useData';
+import { Patient } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/patient';
+import SearchBar from '@/app/components/header/SearchBar';
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 export default function Header() {
-  const { setActiveIndex } = useData();
-  const { bundle } = useBundle();
+  const { setActiveTabs } = useData();
+  const { bundle, resourceMap } = useBundle();
   const { showError } = useToast();
   const { config } = useConfig();
-  const [isLoading, setIsLoading] = useState(false);
+
+  const [pdfIsLoading, setPdfIsLoading] = useState(false);
 
   const pathname = usePathname();
   const [actionbutton, setActionButton] = useState<React.JSX.Element | null>(
@@ -47,18 +47,10 @@ export default function Header() {
       return;
     }
 
-    setIsLoading(true);
-    setActiveIndex(Object.keys(config).map((_, index) => index)); // opens all accordions
+    setPdfIsLoading(true);
+    setActiveTabs(Object.keys(config).map((_, index) => index)); // opens all accordions
+    const { patientName, patientSVNR } = getPatientData();
     await sleep(1000); // there is a sleep time needed to wait for all the accordions to open
-
-    const names = Array.from(
-      document.getElementsByClassName('name'),
-    ) as HTMLElement[];
-    const patientName = names[0]?.textContent?.substring(6) || '';
-    const patientSVNRElement = document.getElementById(
-      'SVNR',
-    ) as HTMLElement | null;
-    const patientSVNR = patientSVNRElement?.textContent || '';
 
     await createPDF({
       config,
@@ -67,7 +59,7 @@ export default function Header() {
       fileName: 'vips',
       showError,
     });
-    setIsLoading(false);
+    setPdfIsLoading(false);
   };
 
   return (
@@ -91,29 +83,14 @@ export default function Header() {
 
         <div className="flex items-center mr-3 gap-3">
           {actionbutton}
-          <div>
-            <div className="relative">
-              <IconField iconPosition="left">
-                <InputIcon>
-                  <Image
-                    src={`${process.env.IMAGE_PATH}/icons/search.svg`}
-                    alt="Search"
-                    width={20}
-                    height={20}
-                  />
-                </InputIcon>
-                <InputText placeholder="Search" />
-              </IconField>
-            </div>
-          </div>
-
+          <SearchBar />
           <Button
             className="ml-auto"
             severity="secondary"
             outlined
-            icon={isLoading ? 'pi pi-spin pi-spinner' : 'pi pi-file-pdf'}
+            icon={pdfIsLoading ? 'pi pi-spin pi-spinner' : 'pi pi-file-pdf'}
             onClick={async () => await handleDownload()}
-            disabled={isLoading}
+            disabled={pdfIsLoading}
           />
         </div>
       </div>
@@ -126,5 +103,23 @@ export default function Header() {
         <Button label={label} outlined severity="secondary" icon={iconSrc} />
       </Link>
     );
+  }
+
+  function getPatientData() {
+    const patientResource = resourceMap['patient']?.[0]?.resource as Patient;
+    const patientName =
+      patientResource?.name?.at(0)?.given?.at(0) +
+      ' ' +
+      patientResource?.name?.at(0)?.family;
+    const patientSVNR =
+      patientResource?.identifier?.find((id) =>
+        id.type?.coding?.some(
+          (coding) =>
+            coding.system === 'http://terminology.hl7.org/CodeSystem/v2-0203' &&
+            coding.code === 'SS',
+        ),
+      )?.value || '';
+
+    return { patientName, patientSVNR };
   }
 }

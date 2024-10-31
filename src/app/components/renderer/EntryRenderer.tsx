@@ -1,21 +1,22 @@
 import { ConfigEntry } from '@/app/types/Config';
 import { rendererMap } from '@/app/types/RendererType';
-import { useBundle } from '@/app/hooks/useBundle';
 import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
 import { ResourceUtils } from '@/app/utils/ResourceUtils';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
 const resourceUtils = new ResourceUtils();
 
 interface RendererProps {
   configEntry: ConfigEntry;
   resource: Resource;
+  bundle: Bundle | undefined;
 }
 
 export default function EntryRenderer({
   configEntry,
   resource,
+  bundle,
 }: RendererProps) {
-  const { getResourceByReference } = useBundle();
   const values = isReference()
     ? getReference()
     : getNoneReference(configEntry.path);
@@ -50,11 +51,13 @@ export default function EntryRenderer({
       resource,
       referencePath,
     );
-
     if (values.length === 0) return [];
-    const reference: string = values[0].reference;
-
+    const reference: string = values[0];
     const referencedResource = getResourceByReference(reference);
     return resourceUtils.getValuesAtResourcePath(referencedResource, valuePath);
+  }
+
+  function getResourceByReference(reference: string) {
+    return bundle?.entry?.find((x) => x['fullUrl'] === reference)?.resource;
   }
 }

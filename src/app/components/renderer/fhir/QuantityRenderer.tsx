@@ -1,61 +1,61 @@
-import { Address } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/address';
+import { Quantity } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/quantity';
 import { RenderProps } from '@/app/components/renderer/RenderProps';
 import React from 'react';
 
-export default function AddressRenderer({ value, configEntry }: RenderProps) {
-  const address = value as Address;
+export default function QuantityRenderer({ value, configEntry }: RenderProps) {
+  const quantity = value as Quantity;
 
   return (
     <>
       <h4 className="m-1">{configEntry.display}:</h4>
-      <div className="ml-4 mb-2 space-y-2" style={{ width: '400px' }}>
-        {address.line && (
+      <div className="ml-4 mb-2 space-y-2" style={{ width: '500px' }}>
+        {quantity.value && (
           <div className="flex items-center">
             <div className="font-semibold" style={{ width: '175px' }}>
-              Address Line:
+              Value:
             </div>
             <div className="flex-1 ml-4">
-              <span>{address.line.join(', ')}</span>
+              <span>{quantity.value}</span>
             </div>
           </div>
         )}
-        {address.city && (
+        {quantity.comparator && (
           <div className="flex items-center">
             <div className="font-semibold" style={{ width: '175px' }}>
-              City:
+              Comparator:
             </div>
             <div className="flex-1 ml-4">
-              <span>{address.city}</span>
+              <span>{quantity.comparator}</span>
             </div>
           </div>
         )}
-        {address.state && (
+        {quantity.unit && (
           <div className="flex items-center">
             <div className="font-semibold" style={{ width: '175px' }}>
-              State:
+              Unit:
             </div>
             <div className="flex-1 ml-4">
-              <span>{address.state}</span>
+              <span>{quantity.unit}</span>
             </div>
           </div>
         )}
-        {address.postalCode && (
+        {quantity.system && (
           <div className="flex items-center">
             <div className="font-semibold" style={{ width: '175px' }}>
-              Postal Code:
+              System:
             </div>
             <div className="flex-1 ml-4">
-              <span>{address.postalCode}</span>
+              <span>{quantity.system}</span>
             </div>
           </div>
         )}
-        {address.country && (
+        {quantity.code && (
           <div className="flex items-center">
             <div className="font-semibold" style={{ width: '175px' }}>
-              Country:
+              Code:
             </div>
             <div className="flex-1 ml-4">
-              <span>{address.country}</span>
+              <span>{quantity.code}</span>
             </div>
           </div>
         )}

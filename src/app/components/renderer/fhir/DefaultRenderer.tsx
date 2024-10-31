@@ -3,8 +3,15 @@ import React from 'react';
 
 export default function DefaultRenderer({ value, configEntry }: RenderProps) {
   return (
-    <p>
-      <strong>{configEntry.display}:</strong> {value as string}
-    </p>
+    <div className="my-2 space-y-1">
+      <div className="flex">
+        <div className="font-semibold" style={{ width: '175px' }}>
+          {configEntry.display}:
+        </div>
+        <div className="ml-4 flex-1">
+          <span>{value as string}</span>
+        </div>
+      </div>
+    </div>
   );
 }
