@@ -40,9 +40,9 @@ export default function CodeableConceptRenderer({
                       className="ml-1"
                     >
                       <Image
-                        src={`${process.env.IMAGE_PATH}/icons/info_circle.svg`}
-                        width={20}
-                        height={20}
+                        src={`${process.env.IMAGE_PATH}/icons/external_link.svg`}
+                        width={15}
+                        height={15}
                         alt={`Details for "${displayText}"`}
                       />
                     </a>
