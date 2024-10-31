@@ -2,8 +2,6 @@ import { Config } from '../types/Config';
 import { RendererType } from '@/app/types/RendererType';
 import { RelevanceCategory } from '@/app/types/RelevanceCategory';
 
-// TODO: Medication, Allergies, Alert, Patient History
-
 export const DefaultConfigEN: Config = {
   Patient: {
     icon: '/icons/user.svg',
@@ -487,12 +485,12 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Encounter',
-              path: 'MedicationRequest.encounter:',
+              path: 'MedicationRequest.encounter.reference',
               renderer: RendererType.LINK,
             },
             {
               display: 'Performer',
-              path: 'MedicationRequest.performer:',
+              path: 'MedicationRequest.performer.reference',
               renderer: RendererType.LINK,
             },
             {
@@ -650,11 +648,6 @@ export const DefaultConfigEN: Config = {
               display: 'Clinical Status',
               path: 'Condition.clinicalStatus',
               renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'Patient',
-              path: 'Condition.subject.reference',
-              renderer: RendererType.LINK,
             },
             {
               display: 'Verification Status',
@@ -973,7 +966,7 @@ export const DefaultConfigEN: Config = {
           display: 'Applied protocol',
           components: [
             {
-              display: 'Series',
+              display: 'Name of vaccine series',
               path: 'Immunization.protocolApplied.series',
               renderer: RendererType.DEFAULT,
             },
@@ -984,13 +977,23 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Dose Number within series',
-              path: 'Immunization.protocolApplied.doseNumber', // Can be a positiveInt or string
-              renderer: RendererType.DEFAULT, // Render based on the type (positiveInt or string)
+              path: 'Immunization.protocolApplied.doseNumberPositiveInt',
+              renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Recommended Number of doses',
-              path: 'Immunization.protocolApplied.series',
-              renderer: RendererType.DEFAULT, // The series in which the vaccine was administered
+              display: 'Dose Number within series',
+              path: 'Immunization.protocolApplied.doseNumberString',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Recommended Number of doses for immunity',
+              path: 'Immunization.protocolApplied.seriesDosesString',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Recommended Number of doses for immunity',
+              path: 'Immunization.protocolApplied.seriesDosesPositiveInt',
+              renderer: RendererType.DEFAULT,
             },
           ],
         },
@@ -1221,7 +1224,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Encounter',
-              path: 'Observation.encounter:',
+              path: 'Observation.encounter.reference',
               renderer: RendererType.LINK,
             },
             {
@@ -1236,7 +1239,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Performer',
-              path: 'Observation.performer:',
+              path: 'Observation.performer.reference',
               renderer: RendererType.LINK,
             },
             {
@@ -1515,7 +1518,7 @@ export const DefaultConfigEN: Config = {
                 },
                 {
                   display: 'Formal record of assessment',
-                  path: 'Condition.stage.assessment.reference:',
+                  path: 'Condition.stage.assessment.reference',
                   renderer: RendererType.LINK,
                 },
                 {
@@ -1638,7 +1641,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Formal record of assessment',
-              path: 'Condition.stage.assessment.reference:',
+              path: 'Condition.stage.assessment.reference',
               renderer: RendererType.LINK,
             },
           ],
@@ -1699,17 +1702,17 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Author',
-              path: 'CarePlan.author:',
+              path: 'CarePlan.author.reference',
               renderer: RendererType.LINK,
             },
             {
               display: 'Contributor',
-              path: 'CarePlan.contributor:',
+              path: 'CarePlan.contributor.reference',
               renderer: RendererType.LINK,
             },
             {
               display: 'Addressed health issue',
-              path: 'CarePlan.addresses:condition.code',
+              path: 'CarePlan.addresses:Condition.code',
               renderer: RendererType.CODEABLE_CONCEPT,
             },
             {
@@ -1744,7 +1747,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Reason Reference',
-              path: 'CarePlan.activity.detail.reasonReference:',
+              path: 'CarePlan.activity.detail.reasonReference.reference',
               renderer: RendererType.LINK,
             },
             {
@@ -1778,13 +1781,8 @@ export const DefaultConfigEN: Config = {
               renderer: RendererType.DEFAULT,
             },
             {
-              display: 'Location',
-              path: 'CarePlan.activity.detail.location:',
-              renderer: RendererType.LINK,
-            },
-            {
               display: 'Performer',
-              path: 'CarePlan.activity.detail.performer:',
+              path: 'CarePlan.activity.detail.performer.reference',
               renderer: RendererType.LINK,
             },
             {
@@ -1840,7 +1838,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Encounter',
-              path: 'Observation.encounter:',
+              path: 'Observation.encounter.reference',
               renderer: RendererType.LINK,
             },
             {
@@ -1850,7 +1848,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Performer',
-              path: 'Observation.performer:',
+              path: 'Observation.performer.reference',
               renderer: RendererType.LINK,
             },
             {
@@ -1941,7 +1939,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Encounter',
-              path: 'Observation.encounter:',
+              path: 'Observation.encounter.reference',
               renderer: RendererType.LINK,
             },
             {
@@ -1956,7 +1954,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Performer',
-              path: 'Observation.performer:',
+              path: 'Observation.performer.reference',
               renderer: RendererType.LINK,
             },
             {
