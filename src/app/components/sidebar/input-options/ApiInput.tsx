@@ -21,7 +21,7 @@ export default function ApiInput() {
     try {
       const server = fhirServer.endsWith('/') ? fhirServer : `${fhirServer}/`;
       const response = await fetch(
-        `${server}Bundle?IPSbyPatientIdentifier=${identifierSystem}|${identifierValue}`,
+        `${server}Bundle?IPSbyPatientIdentifier=${encodeURIComponent(identifierSystem)}${encodeURIComponent('|')}${encodeURIComponent(identifierValue)}`,
       );
 
       if (!response.ok) {
