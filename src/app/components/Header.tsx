@@ -9,10 +9,10 @@ import { Button } from 'primereact/button';
 import useConfig from '@/app/hooks/useConfig';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useData } from '@/app/hooks/useData';
 import createPDF from '@/app/utils/PdfRendererUtil';
 import { useBundle } from '@/app/hooks/useBundle';
 import { useToast } from '@/app/hooks/useToast';
+import { useData } from '@/app/hooks/useData';
 import { Patient } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/patient';
 
 function sleep(ms: number): Promise<void> {
@@ -20,7 +20,7 @@ function sleep(ms: number): Promise<void> {
 }
 
 export default function Header() {
-  const { setActiveIndex } = useData();
+  const { setActiveTabs } = useData();
   const { bundle, resourceMap } = useBundle();
   const { showError } = useToast();
   const { config } = useConfig();
@@ -49,7 +49,7 @@ export default function Header() {
     }
 
     setIsLoading(true);
-    setActiveIndex(Object.keys(config).map((_, index) => index)); // opens all accordions
+    setActiveTabs(Object.keys(config).map((_, index) => index)); // opens all accordions
     const { patientName, patientSVNR } = getPatientData();
     await sleep(1000); // there is a sleep time needed to wait for all the accordions to open
 

@@ -9,12 +9,14 @@ interface RootSectionRendererProps {
   configResource: ConfigResource;
   bundleEntries: BundleEntry[];
   bundle: Bundle | undefined;
+  tabIndex: number;
 }
 
 export default function RootSectionRenderer({
   configResource,
   bundleEntries,
   bundle,
+  tabIndex,
 }: RootSectionRendererProps) {
   const getTitle = (index: number) => {
     if (bundleEntries.length === 1) return undefined;
@@ -27,7 +29,7 @@ export default function RootSectionRenderer({
         <div
           key={uuidv4()}
           id={bundleEntry.fullUrl}
-          className={`contentClass${configResource.code}`}
+          className={`contentClass${configResource.code} tabIndex=${tabIndex}`}
         >
           <SectionRenderer
             configSection={{

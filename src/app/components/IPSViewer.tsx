@@ -1,26 +1,19 @@
 import React from 'react';
-import {
-  Accordion,
-  AccordionTab,
-  AccordionTabChangeEvent,
-} from 'primereact/accordion';
 import useConfig from '@/app/hooks/useConfig';
 import RootSectionRenderer from '@/app/components/renderer/RootSectionRenderer';
 import { useBundle } from '@/app/hooks/useBundle';
 import EmptySectionRenderer from '@/app/components/renderer/EmptySectionRenderer';
-import { useData } from '@/app/hooks/useData';
 import { isEmptyDiv } from '@/app/utils/HtmlUtils';
+import Accordion from '@/app/components/renderer/Accordion';
+import AccordionTab from '@/app/components/renderer/AccordionTab';
+import { useData } from '@/app/hooks/useData';
 
 export default function IPSViewer() {
-  const { activeIndex, setActiveIndex } = useData();
+  const { activeTabs } = useData();
   const { resourceMap, bundle } = useBundle();
   const { config } = useConfig();
 
-  const onTabChange = (e: AccordionTabChangeEvent) => {
-    setActiveIndex(e.index);
-  };
-
-  const renderRootSection = (key: string) => {
+  const renderRootSection = (key: string, tabIndex: number) => {
     const bundleEntries = resourceMap[config[key].code];
     if (!bundleEntries || bundleEntries.length === 0) {
       return (
@@ -36,6 +29,7 @@ export default function IPSViewer() {
         configResource={config[key]}
         bundleEntries={resourceMap[config[key].code]}
         bundle={bundle}
+        tabIndex={tabIndex}
       />
     );
 
@@ -50,20 +44,16 @@ export default function IPSViewer() {
   };
 
   return (
-    <Accordion
-      multiple
-      activeIndex={activeIndex}
-      onTabChange={onTabChange}
-      id="mainContentId"
-    >
-      {Object.keys(config).map((key) => (
+    <Accordion id="mainContentId" activeTabs={activeTabs}>
+      {Object.keys(config).map((key, index) => (
         <AccordionTab
           key={config[key].sectionDisplay}
           header={config[key].sectionDisplay}
+          isActive={activeTabs.includes(index)}
           className={`${key}`}
-          pt={{ content: { className: 'p-0' } }}
+          index={index}
         >
-          {renderRootSection(key)}
+          {renderRootSection(key, index)}
         </AccordionTab>
       ))}
     </Accordion>
