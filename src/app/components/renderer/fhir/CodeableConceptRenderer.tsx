@@ -28,15 +28,16 @@ export default function CodeableConceptRenderer({
 
             return (
               displayText && (
-                <div key={index} className="flex items-center mb-1">
-                  <span>{displayText}</span>
-                  {link && (
+                <div key={index} className="mb-2">
+                  {' '}
+                  <span>{displayText} </span>
+                  {link ? (
                     <a
                       href={link}
                       target="_blank"
                       rel="noopener noreferrer"
                       title={`See details for code "${coding.code}"`}
-                      style={{ marginLeft: '5px', verticalAlign: 'middle' }}
+                      className="ml-1"
                     >
                       <Image
                         src={`${process.env.IMAGE_PATH}/icons/info_circle.svg`}
@@ -45,6 +46,15 @@ export default function CodeableConceptRenderer({
                         alt={`Details for "${displayText}"`}
                       />
                     </a>
+                  ) : (
+                    <div className="ml-8 mt-1">
+                      <span>→ System: </span>
+                      <span>
+                        <a href={coding.system}>{coding.system}</a>
+                      </span>
+                      <br />
+                      <span>→ Code: {coding.code}</span>
+                    </div>
                   )}
                 </div>
               )

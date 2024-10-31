@@ -641,7 +641,7 @@ export const DefaultConfigEN: Config = {
             },
             {
               display: 'Dose Number within series',
-              path: 'Immunization.protocolApplied.doseNumberPositiveInt', // Can be a positiveInt or string; currently only the positiveInt case is being handled
+              path: 'Immunization.protocolApplied.doseNumber', // Can be a positiveInt or string
               renderer: RendererType.DEFAULT, // Render based on the type (positiveInt or string)
             },
             {
