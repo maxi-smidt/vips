@@ -9,8 +9,13 @@ export default function IdentifierRenderer({
   const identifier = value as Identifier;
 
   return (
-    <p id={identifier.system === 'urn:oid:1.2.40.0.10.1.4.3.1' ? 'SVNR' : ''}>
-      <strong>{configEntry.display}:</strong> {identifier.value}
-    </p>
+    <div className="my-2 space-y-2" style={{ width: '400px' }}>
+      <div className="flex items-center">
+        <div className="font-bold" style={{ width: '175px' }}>
+          <strong>{configEntry.display}:</strong>
+        </div>
+        <div className="ml-4 flex-1">{identifier.value}</div>
+      </div>
+    </div>
   );
 }

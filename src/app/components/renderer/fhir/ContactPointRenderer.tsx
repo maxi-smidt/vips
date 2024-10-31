@@ -9,9 +9,9 @@ export default function ContactPointRenderer({
   const contactPoint = value as ContactPoint;
 
   return (
-    <div className="ml-6 mb-2 mt-2 space-y-1">
+    <div className="my-2 space-y-1">
       <div className="flex">
-        <div className="font-semibold" style={{ width: '150px' }}>
+        <div className="font-semibold" style={{ width: '175px' }}>
           {configEntry.display}:
         </div>
         <div className="ml-4 flex-1">

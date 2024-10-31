@@ -6,9 +6,9 @@ export default function HumanNameRenderer({ value, configEntry }: RenderProps) {
   const humanName = value as HumanName;
 
   return (
-    <div className="ml-6 mb-2 mt-2 space-y-2" style={{ width: '400px' }}>
+    <div className="my-2 space-y-2" style={{ width: '400px' }}>
       <div className="flex items-center">
-        <div style={{ width: '150px', fontWeight: 'bold' }}>
+        <div style={{ width: '175px', fontWeight: 'bold' }}>
           {' '}
           {configEntry.display}:
         </div>

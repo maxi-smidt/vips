@@ -55,7 +55,7 @@ export const DefaultConfigEN: Config = {
     sectionDisplay: 'Medications',
     code: '10160-0',
     section: {
-      display: 'Medications',
+      display: 'Medication',
       components: [
         {
           display: 'General Information',
@@ -575,71 +575,67 @@ export const DefaultConfigEN: Config = {
       display: 'Procedure',
       components: [
         {
+          display: 'Procedure Details',
           components: [
             {
-              display: 'Procedure Details',
-              components: [
-                {
-                  display: 'Status',
-                  path: 'Procedure.status',
-                  renderer: RendererType.DEFAULT,
-                },
-                {
-                  display: 'Status Reason',
-                  path: 'Procedure.statusReason',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Category',
-                  path: 'Procedure.category',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Code',
-                  path: 'Procedure.code',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Performed Date/Period',
-                  path: 'Procedure.performed',
-                  renderer: RendererType.DEFAULT,
-                },
-                {
-                  display: 'Performer',
-                  path: 'Procedure.performer.actor:Practitioner.name',
-                  renderer: RendererType.HUMAN_NAME,
-                },
-                {
-                  display: 'Reason Code',
-                  path: 'Procedure.reasonCode',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Body Site',
-                  path: 'Procedure.bodySite',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Outcome',
-                  path: 'Procedure.outcome',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Complications',
-                  path: 'Procedure.complication',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Follow Up',
-                  path: 'Procedure.followUp',
-                  renderer: RendererType.CODEABLE_CONCEPT,
-                },
-                {
-                  display: 'Note',
-                  path: 'Procedure.note',
-                  renderer: RendererType.ANNOTATION,
-                },
-              ],
+              display: 'Status',
+              path: 'Procedure.status',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Status Reason',
+              path: 'Procedure.statusReason',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'Procedure.category',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Code',
+              path: 'Procedure.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Performed Date/Period',
+              path: 'Procedure.performed',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Performer',
+              path: 'Procedure.performer.actor:Practitioner.name',
+              renderer: RendererType.HUMAN_NAME,
+            },
+            {
+              display: 'Reason Code',
+              path: 'Procedure.reasonCode',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Body Site',
+              path: 'Procedure.bodySite',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Outcome',
+              path: 'Procedure.outcome',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Complications',
+              path: 'Procedure.complication',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Follow Up',
+              path: 'Procedure.followUp',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Note',
+              path: 'Procedure.note',
+              renderer: RendererType.ANNOTATION,
             },
           ],
         },

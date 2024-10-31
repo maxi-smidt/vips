@@ -8,11 +8,11 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
   return (
     <div>
       <h4>{configEntry.display}:</h4>
-      <div className="ml-6 mb-2 mt-2 space-y-2" style={{ width: '400px' }}>
+      <div className="ml-4 mb-2 space-y-2" style={{ width: '400px' }}>
         {' '}
         {address.line && (
           <div className="flex items-center">
-            <div className="font-semibold" style={{ width: '150px' }}>
+            <div className="font-semibold" style={{ width: '175px' }}>
               {' '}
               Address Line:
             </div>
@@ -21,7 +21,7 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
         )}
         {address.city && (
           <div className="flex items-center">
-            <div className="font-semibold" style={{ width: '150px' }}>
+            <div className="font-semibold" style={{ width: '175px' }}>
               City:
             </div>
             <div className="flex-1 ml-4">{address.city}</div>
@@ -29,7 +29,7 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
         )}
         {address.state && (
           <div className="flex items-center">
-            <div className="font-semibold" style={{ width: '150px' }}>
+            <div className="font-semibold" style={{ width: '175px' }}>
               State:
             </div>
             <div className="flex-1 ml-4">{address.state}</div>
@@ -37,7 +37,7 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
         )}
         {address.postalCode && (
           <div className="flex items-center">
-            <div className="font-semibold" style={{ width: '150px' }}>
+            <div className="font-semibold" style={{ width: '175px' }}>
               Postal Code:
             </div>
             <div className="flex-1 ml-4">{address.postalCode}</div>
@@ -45,7 +45,7 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
         )}
         {address.country && (
           <div className="flex items-center">
-            <div className="font-semibold" style={{ width: '150px' }}>
+            <div className="font-semibold" style={{ width: '175px' }}>
               Country:
             </div>
             <div className="flex-1 ml-4">{address.country}</div>
