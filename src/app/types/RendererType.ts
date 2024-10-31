@@ -10,6 +10,7 @@ import LinkRenderer from '@/app/components/renderer/fhir/LinkRenderer';
 import PeriodRenderer from '../components/renderer/fhir/PeriodRenderer';
 import QuantityRenderer from '../components/renderer/fhir/QuantityRenderer';
 import JsonRenderer from '../components/renderer/fhir/JsonRenderer';
+import TimingRenderer from '@/app/components/renderer/fhir/TimingRenderer';
 
 export enum RendererType {
   ANNOTATION = 'AnnotationRenderer',
@@ -23,7 +24,8 @@ export enum RendererType {
   LINK = 'LinkRenderer',
   PERIOD = 'PeriodRenderer',
   QUANTITY = 'QuantityRenderer',
-  JSON = 'JsonRenderer'
+  JSON = 'JsonRenderer',
+  TIMING = 'TimingRenderer',
 }
 
 export const rendererMap = {
@@ -39,4 +41,5 @@ export const rendererMap = {
   [RendererType.PERIOD]: PeriodRenderer,
   [RendererType.QUANTITY]: QuantityRenderer,
   [RendererType.JSON]: JsonRenderer,
+  [RendererType.TIMING]: TimingRenderer,
 };

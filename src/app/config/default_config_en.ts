@@ -292,10 +292,10 @@ export const DefaultConfigEN: Config = {
   sectionMedicationSummary: {
     icon: '/icons/Medications.svg',
     color: RelevanceCategory.REQUIRED,
-    sectionDisplay: 'Medication Summary',
+    sectionDisplay: 'Medications',
     code: '10160-0',
     section: {
-      display: 'Medication History',
+      display: 'Medications',
       components: [
         {
           display: 'General Information',
@@ -357,12 +357,12 @@ export const DefaultConfigEN: Config = {
                   display: 'Patient instructions',
                   path: 'MedicationStatement.dosage.patientInstruction',
                   renderer: RendererType.CODEABLE_CONCEPT,
-                } /*
+                },
                 {
                   display: 'Timing',
                   path: 'MedicationStatement.dosage.timing',
-                  renderer: RendererType.TIMING, // TODO: TIMING RENDERER
-                },*/,
+                  renderer: RendererType.TIMING,
+                },
                 {
                   display: 'As needed',
                   path: 'MedicationStatement.dosage.asNeededBoolean',
@@ -532,12 +532,12 @@ export const DefaultConfigEN: Config = {
                   display: 'Patient instructions',
                   path: 'MedicationRequest.dosage.patientInstruction',
                   renderer: RendererType.CODEABLE_CONCEPT,
-                } /*
+                },
                 {
                   display: 'Timing',
                   path: 'MedicationRequest.dosage.timing',
-                  renderer: RendererType.TIMING, // TODO: TIMING RENDERER
-                },*/,
+                  renderer: RendererType.TIMING,
+                },
                 {
                   display: 'As needed',
                   path: 'MedicationRequest.dosage.asNeededBoolean',
