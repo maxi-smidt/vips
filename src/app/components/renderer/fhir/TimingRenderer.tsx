@@ -1,12 +1,13 @@
 import React from 'react';
 import { Timing } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/timing';
+import { RenderProps } from '@/app/components/renderer/RenderProps';
 
-export default function TimingRenderer({ value, configEntry }) {
+export default function TimingRenderer({ value, configEntry }: RenderProps) {
   const timing = value as Timing;
 
   return (
     <div>
-      <h4>{configEntry.display}:</h4>
+      <h4 className="m-1">{configEntry.display}:</h4>
       <div className="ml-4 mb-2 space-y-2" style={{ width: '400px' }}>
         {timing.event && timing.event.length > 0 && (
           <div>

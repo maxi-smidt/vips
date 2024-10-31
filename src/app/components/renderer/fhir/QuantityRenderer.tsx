@@ -6,8 +6,8 @@ export default function QuantityRenderer({ value, configEntry }: RenderProps) {
   const quantity = value as Quantity;
 
   return (
-    <div>
-      <h4>{configEntry.display}:</h4>
+    <>
+      <h4 className="m-1">{configEntry.display}:</h4>
       <div className="ml-4 mb-2 space-y-2" style={{ width: '500px' }}>
         {quantity.value && (
           <div className="flex items-center">
@@ -60,6 +60,6 @@ export default function QuantityRenderer({ value, configEntry }: RenderProps) {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }

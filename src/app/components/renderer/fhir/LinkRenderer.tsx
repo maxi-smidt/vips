@@ -23,9 +23,10 @@ export default function LinkRenderer({ value, configEntry }: RenderProps) {
   };
 
   return (
-    <div className="ml-6 my-2">
+    <div className="my-2">
       <div className="flex items-center">
         <span>
+          Jump to{' '}
           <Link href={`#${reference}`} onClick={handleClick}>
             {configEntry.display}
           </Link>

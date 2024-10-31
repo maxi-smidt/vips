@@ -10,7 +10,7 @@ export default function IdentifierRenderer({
 
   return (
     <div>
-      <h4>{configEntry.display}:</h4>
+      <h4 className="m-1">{configEntry.display}:</h4>
       <div className="ml-4 mb-2 space-y-2" style={{ width: '600px' }}>
         {identifier.value && (
           <div className="flex items-center">
