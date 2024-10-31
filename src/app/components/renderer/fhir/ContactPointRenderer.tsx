@@ -15,11 +15,7 @@ export default function ContactPointRenderer({
           {configEntry.display}:
         </div>
         <div className="ml-4 flex-1">
-          {contactPoint.system && (
-            <span>
-              {contactPoint.system}:{' '}
-            </span>
-          )}
+          {contactPoint.system && <span>{contactPoint.system}: </span>}
           {contactPoint.value && <span>{contactPoint.value}</span>}
           {contactPoint.use && <span> ({contactPoint.use})</span>}
         </div>
