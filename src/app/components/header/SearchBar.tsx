@@ -54,6 +54,7 @@ export default function SearchBar() {
   );
 
   async function search(searchTerm: string) {
+    if (!searchTerm) return;
     const targets: Element[] = [];
     const elements = document.querySelectorAll(
       'p, h1, h2, h3, h4, h5, h6, span, strong',
