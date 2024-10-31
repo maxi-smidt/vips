@@ -209,10 +209,7 @@ async function addSubHeading(
   currentPage: number,
 ): Promise<number> {
   const subheadingPaddingY = 5;
-  if (
-    y_pos + SUBHEADER_FONT_SIZE + 50 * subheadingPaddingY >
-    PAGE_HEIGHT + HEIGHT_MARGIN
-  ) {
+  if (y_pos + A4_HEIGHT * 0.6 > PAGE_HEIGHT + HEIGHT_MARGIN) {
     pdf.addPage();
     currentPage++;
     y_pos = HEIGHT_MARGIN + HEADER_HEIGHT;
