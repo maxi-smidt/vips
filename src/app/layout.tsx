@@ -1,6 +1,6 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
-import Header from '@/app/components/Header';
+import Header from '@/app/components/header/Header';
 import Main from '@/app/components/Main';
 import DataProvider from '@/app/provider/DataProvider';
 import { ToastProvider } from '@/app/provider/ToastProvider';

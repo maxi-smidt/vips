@@ -24,7 +24,7 @@ export default function RootSectionRenderer({
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className={`flex flex-col gap-2 tabIndex=${tabIndex}`}>
       {bundleEntries.map((bundleEntry, index) => (
         <div
           key={uuidv4()}
