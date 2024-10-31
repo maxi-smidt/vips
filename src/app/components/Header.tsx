@@ -50,21 +50,8 @@ export default function Header() {
 
     setIsLoading(true);
     setActiveIndex(Object.keys(config).map((_, index) => index)); // opens all accordions
+    const { patientName, patientSVNR } = getPatientData();
     await sleep(1000); // there is a sleep time needed to wait for all the accordions to open
-
-    const patientResource = resourceMap['patient']?.[0]?.resource as Patient;
-    const patientName =
-      patientResource?.name?.at(0)?.given?.at(0) +
-      ' ' +
-      patientResource?.name?.at(0)?.family;
-    const patientSVNR =
-      patientResource?.identifier?.find((id) =>
-        id.type?.coding?.some(
-          (coding) =>
-            coding.system === 'http://terminology.hl7.org/CodeSystem/v2-0203' &&
-            coding.code === 'SS',
-        ),
-      )?.value || '';
 
     await createPDF({
       config,
@@ -132,5 +119,23 @@ export default function Header() {
         <Button label={label} outlined severity="secondary" icon={iconSrc} />
       </Link>
     );
+  }
+
+  function getPatientData() {
+    const patientResource = resourceMap['patient']?.[0]?.resource as Patient;
+    const patientName =
+      patientResource?.name?.at(0)?.given?.at(0) +
+      ' ' +
+      patientResource?.name?.at(0)?.family;
+    const patientSVNR =
+      patientResource?.identifier?.find((id) =>
+        id.type?.coding?.some(
+          (coding) =>
+            coding.system === 'http://terminology.hl7.org/CodeSystem/v2-0203' &&
+            coding.code === 'SS',
+        ),
+      )?.value || '';
+
+    return { patientName, patientSVNR };
   }
 }
