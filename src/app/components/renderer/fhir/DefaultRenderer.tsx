@@ -8,7 +8,9 @@ export default function DefaultRenderer({ value, configEntry }: RenderProps) {
         <div className="font-semibold" style={{ width: '175px' }}>
           {configEntry.display}:
         </div>
-        <div className="ml-4 flex-1">{value as string}</div>
+        <div className="ml-4 flex-1">
+          <span>{value as string}</span>
+        </div>
       </div>
     </div>
   );

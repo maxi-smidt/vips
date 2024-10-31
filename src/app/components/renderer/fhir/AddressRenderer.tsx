@@ -14,7 +14,9 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
             <div className="font-semibold" style={{ width: '175px' }}>
               Address Line:
             </div>
-            <div className="flex-1 ml-4">{address.line.join(', ')}</div>
+            <div className="flex-1 ml-4">
+              <span>{address.line.join(', ')}</span>
+            </div>
           </div>
         )}
         {address.city && (
@@ -22,7 +24,9 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
             <div className="font-semibold" style={{ width: '175px' }}>
               City:
             </div>
-            <div className="flex-1 ml-4">{address.city}</div>
+            <div className="flex-1 ml-4">
+              <span>{address.city}</span>
+            </div>
           </div>
         )}
         {address.state && (
@@ -30,7 +34,9 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
             <div className="font-semibold" style={{ width: '175px' }}>
               State:
             </div>
-            <div className="flex-1 ml-4">{address.state}</div>
+            <div className="flex-1 ml-4">
+              <span>{address.state}</span>
+            </div>
           </div>
         )}
         {address.postalCode && (
@@ -38,7 +44,9 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
             <div className="font-semibold" style={{ width: '175px' }}>
               Postal Code:
             </div>
-            <div className="flex-1 ml-4">{address.postalCode}</div>
+            <div className="flex-1 ml-4">
+              <span>{address.postalCode}</span>
+            </div>
           </div>
         )}
         {address.country && (
@@ -46,7 +54,9 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
             <div className="font-semibold" style={{ width: '175px' }}>
               Country:
             </div>
-            <div className="flex-1 ml-4">{address.country}</div>
+            <div className="flex-1 ml-4">
+              <span>{address.country}</span>
+            </div>
           </div>
         )}
       </div>

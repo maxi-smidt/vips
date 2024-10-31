@@ -12,8 +12,10 @@ export default function HumanNameRenderer({ value, configEntry }: RenderProps) {
           {configEntry.display}:
         </div>
         <div className="ml-4 flex-1">
-          {humanName.prefix?.join(' ')} {humanName.given?.join(' ')}{' '}
-          {humanName.family} {humanName.suffix?.join(' ')}
+          <span>
+            {humanName.prefix?.join(' ')} {humanName.given?.join(' ')}{' '}
+            {humanName.family} {humanName.suffix?.join(' ')}
+          </span>
         </div>
       </div>
     </div>

@@ -11,11 +11,11 @@ export default function TimingRenderer({ value, configEntry }) {
         {timing.event && timing.event.length > 0 && (
           <div>
             <strong>Event Times:</strong>
-            <ul>
-              {timing.event.map((event, index) => (
-                <li key={index}>{new Date(event).toLocaleString()}</li>
-              ))}
-            </ul>
+            <p>
+              {timing.event
+                .map((event) => new Date(event).toLocaleString())
+                .join(', ')}
+            </p>
           </div>
         )}
 
@@ -25,20 +25,26 @@ export default function TimingRenderer({ value, configEntry }) {
             {timing.repeat.count && (
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Count:</div>
-                <div className="flex-1 ml-4">{timing.repeat.count}</div>
+                <div className="flex-1 ml-4">
+                  <span>{timing.repeat.count}</span>
+                </div>
               </div>
             )}
             {timing.repeat.countMax && (
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Count Max:</div>
-                <div className="flex-1 ml-4">{timing.repeat.countMax}</div>
+                <div className="flex-1 ml-4">
+                  <span>{timing.repeat.countMax}</span>
+                </div>
               </div>
             )}
             {timing.repeat.duration && (
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Duration:</div>
                 <div className="flex-1 ml-4">
-                  {timing.repeat.duration} {timing.repeat.durationUnit}
+                  <span>
+                    {timing.repeat.duration} {timing.repeat.durationUnit}
+                  </span>
                 </div>
               </div>
             )}
@@ -46,27 +52,35 @@ export default function TimingRenderer({ value, configEntry }) {
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Duration Max:</div>
                 <div className="flex-1 ml-4">
-                  {timing.repeat.durationMax} {timing.repeat.durationUnit}
+                  <span>
+                    {timing.repeat.durationMax} {timing.repeat.durationUnit}
+                  </span>
                 </div>
               </div>
             )}
             {timing.repeat.frequency && (
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Frequency:</div>
-                <div className="flex-1 ml-4">{timing.repeat.frequency}</div>
+                <div className="flex-1 ml-4">
+                  <span>{timing.repeat.frequency}</span>
+                </div>
               </div>
             )}
             {timing.repeat.frequencyMax && (
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Frequency Max:</div>
-                <div className="flex-1 ml-4">{timing.repeat.frequencyMax}</div>
+                <div className="flex-1 ml-4">
+                  <span>{timing.repeat.frequencyMax}</span>
+                </div>
               </div>
             )}
             {timing.repeat.period && (
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Period:</div>
                 <div className="flex-1 ml-4">
-                  {timing.repeat.period} {timing.repeat.periodUnit}
+                  <span>
+                    {timing.repeat.period} {timing.repeat.periodUnit}
+                  </span>
                 </div>
               </div>
             )}
@@ -74,7 +88,9 @@ export default function TimingRenderer({ value, configEntry }) {
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Period Max:</div>
                 <div className="flex-1 ml-4">
-                  {timing.repeat.periodMax} {timing.repeat.periodUnit}
+                  <span>
+                    {timing.repeat.periodMax} {timing.repeat.periodUnit}
+                  </span>
                 </div>
               </div>
             )}
@@ -82,7 +98,7 @@ export default function TimingRenderer({ value, configEntry }) {
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Days of Week:</div>
                 <div className="flex-1 ml-4">
-                  {timing.repeat.dayOfWeek.join(', ')}
+                  <span>{timing.repeat.dayOfWeek.join(', ')}</span>
                 </div>
               </div>
             )}
@@ -90,7 +106,7 @@ export default function TimingRenderer({ value, configEntry }) {
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Times of Day:</div>
                 <div className="flex-1 ml-4">
-                  {timing.repeat.timeOfDay.join(', ')}
+                  <span>{timing.repeat.timeOfDay.join(', ')}</span>
                 </div>
               </div>
             )}
@@ -98,7 +114,7 @@ export default function TimingRenderer({ value, configEntry }) {
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>When:</div>
                 <div className="flex-1 ml-4">
-                  {timing.repeat.when.join(', ')}
+                  <span>{timing.repeat.when.join(', ')}</span>
                 </div>
               </div>
             )}
@@ -106,7 +122,7 @@ export default function TimingRenderer({ value, configEntry }) {
               <div className="flex items-center ml-4">
                 <div style={{ width: '175px' }}>Offset:</div>
                 <div className="flex-1 ml-4">
-                  {timing.repeat.offset} minutes
+                  <span>{timing.repeat.offset} minutes</span>
                 </div>
               </div>
             )}
@@ -126,8 +142,10 @@ export default function TimingRenderer({ value, configEntry }) {
           <div className="flex items-center ml-4">
             <div style={{ width: '175px' }}>Bounds Duration:</div>
             <div className="flex-1 ml-4">
-              {timing.repeat.boundsDuration.value}{' '}
-              {timing.repeat.boundsDuration.unit}
+              <span>
+                {timing.repeat.boundsDuration.value}{' '}
+                {timing.repeat.boundsDuration.unit}
+              </span>
             </div>
           </div>
         )}
@@ -136,10 +154,12 @@ export default function TimingRenderer({ value, configEntry }) {
           <div className="flex items-center ml-4">
             <div style={{ width: '175px' }}>Bounds Range:</div>
             <div className="flex-1 ml-4">
-              {timing.repeat.boundsRange.low?.value} -{' '}
-              {timing.repeat.boundsRange.high?.value}{' '}
-              {timing.repeat.boundsRange.low?.unit ||
-                timing.repeat.boundsRange.high?.unit}
+              <span>
+                {timing.repeat.boundsRange.low?.value} -{' '}
+                {timing.repeat.boundsRange.high?.value}{' '}
+                {timing.repeat.boundsRange.low?.unit ||
+                  timing.repeat.boundsRange.high?.unit}
+              </span>
             </div>
           </div>
         )}
@@ -148,13 +168,15 @@ export default function TimingRenderer({ value, configEntry }) {
           <div className="flex items-center ml-4">
             <div style={{ width: '175px' }}>Bounds Period:</div>
             <div className="flex-1 ml-4">
-              {timing.repeat.boundsPeriod.start
-                ? new Date(timing.repeat.boundsPeriod.start).toLocaleString()
-                : ''}{' '}
-              -
-              {timing.repeat.boundsPeriod.end
-                ? new Date(timing.repeat.boundsPeriod.end).toLocaleString()
-                : ''}
+              <span>
+                {timing.repeat.boundsPeriod.start
+                  ? new Date(timing.repeat.boundsPeriod.start).toLocaleString()
+                  : ''}{' '}
+                -
+                {timing.repeat.boundsPeriod.end
+                  ? new Date(timing.repeat.boundsPeriod.end).toLocaleString()
+                  : ''}
+              </span>
             </div>
           </div>
         )}

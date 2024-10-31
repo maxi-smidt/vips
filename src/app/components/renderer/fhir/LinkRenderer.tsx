@@ -25,9 +25,11 @@ export default function LinkRenderer({ value, configEntry }: RenderProps) {
   return (
     <div className="ml-6 my-2">
       <div className="flex items-center">
-        <Link href={`#${reference}`} onClick={handleClick}>
-          {configEntry.display}
-        </Link>
+        <span>
+          <Link href={`#${reference}`} onClick={handleClick}>
+            {configEntry.display}
+          </Link>
+        </span>
       </div>
     </div>
   );

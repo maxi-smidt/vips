@@ -14,7 +14,9 @@ export default function QuantityRenderer({ value, configEntry }: RenderProps) {
             <div className="font-semibold" style={{ width: '175px' }}>
               Value:
             </div>
-            <div className="flex-1 ml-4">{quantity.value}</div>
+            <div className="flex-1 ml-4">
+              <span>{quantity.value}</span>
+            </div>
           </div>
         )}
         {quantity.comparator && (
@@ -22,7 +24,9 @@ export default function QuantityRenderer({ value, configEntry }: RenderProps) {
             <div className="font-semibold" style={{ width: '175px' }}>
               Comparator:
             </div>
-            <div className="flex-1 ml-4">{quantity.comparator}</div>
+            <div className="flex-1 ml-4">
+              <span>{quantity.comparator}</span>
+            </div>
           </div>
         )}
         {quantity.unit && (
@@ -30,7 +34,9 @@ export default function QuantityRenderer({ value, configEntry }: RenderProps) {
             <div className="font-semibold" style={{ width: '175px' }}>
               Unit:
             </div>
-            <div className="flex-1 ml-4">{quantity.unit}</div>
+            <div className="flex-1 ml-4">
+              <span>{quantity.unit}</span>
+            </div>
           </div>
         )}
         {quantity.system && (
@@ -38,7 +44,9 @@ export default function QuantityRenderer({ value, configEntry }: RenderProps) {
             <div className="font-semibold" style={{ width: '175px' }}>
               System:
             </div>
-            <div className="flex-1 ml-4">{quantity.system}</div>
+            <div className="flex-1 ml-4">
+              <span>{quantity.system}</span>
+            </div>
           </div>
         )}
         {quantity.code && (
@@ -46,7 +54,9 @@ export default function QuantityRenderer({ value, configEntry }: RenderProps) {
             <div className="font-semibold" style={{ width: '175px' }}>
               Code:
             </div>
-            <div className="flex-1 ml-4">{quantity.code}</div>
+            <div className="flex-1 ml-4">
+              <span>{quantity.code}</span>
+            </div>
           </div>
         )}
       </div>

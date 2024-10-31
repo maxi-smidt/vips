@@ -12,11 +12,13 @@ export default function PeriodRenderer({ value, configEntry }: RenderProps) {
           {configEntry.display}:
         </div>
         <div className="ml-4 flex-1">
-          {period.start && (
-            <p>Start: {new Date(period.start).toLocaleString()}</p>
-          )}
-          {period.end && <p>End: {new Date(period.end).toLocaleString()}</p>}
-          {!period.start && !period.end && <p>No time range specified</p>}
+          <span>
+            {period.start && (
+              <p>Start: {new Date(period.start).toLocaleString()}</p>
+            )}
+            {period.end && <p>End: {new Date(period.end).toLocaleString()}</p>}
+            {!period.start && !period.end && <p>No time range specified</p>}
+          </span>
         </div>
       </div>
     </div>

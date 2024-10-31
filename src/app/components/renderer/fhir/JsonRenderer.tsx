@@ -4,7 +4,9 @@ import React from 'react';
 export default function JsonRenderer({ value, configEntry }: RenderProps) {
   return (
     <div>
-      {configEntry.display} {JSON.stringify(value)}
+      <span>
+        {configEntry.display} {JSON.stringify(value)}
+      </span>
     </div>
   );
 }
