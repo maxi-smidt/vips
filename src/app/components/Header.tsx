@@ -9,17 +9,17 @@ import { Button } from 'primereact/button';
 import useConfig from '@/app/hooks/useConfig';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useData } from '@/app/hooks/useData';
 import createPDF from '@/app/utils/PdfRendererUtil';
 import { useBundle } from '@/app/hooks/useBundle';
 import { useToast } from '@/app/hooks/useToast';
+import { useData } from '@/app/hooks/useData';
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 export default function Header() {
-  const { setActiveIndex } = useData();
+  const { setActiveTabs } = useData();
   const { bundle } = useBundle();
   const { showError } = useToast();
   const { config } = useConfig();
@@ -48,7 +48,7 @@ export default function Header() {
     }
 
     setIsLoading(true);
-    setActiveIndex(Object.keys(config).map((_, index) => index)); // opens all accordions
+    setActiveTabs(Object.keys(config).map((_, index) => index)); // opens all accordions
     await sleep(1000); // there is a sleep time needed to wait for all the accordions to open
 
     const names = Array.from(

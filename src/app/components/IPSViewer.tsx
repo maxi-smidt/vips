@@ -3,17 +3,17 @@ import useConfig from '@/app/hooks/useConfig';
 import RootSectionRenderer from '@/app/components/renderer/RootSectionRenderer';
 import { useBundle } from '@/app/hooks/useBundle';
 import EmptySectionRenderer from '@/app/components/renderer/EmptySectionRenderer';
-import { useData } from '@/app/hooks/useData';
 import { isEmptyDiv } from '@/app/utils/HtmlUtils';
 import Accordion from '@/app/components/renderer/Accordion';
 import AccordionTab from '@/app/components/renderer/AccordionTab';
+import { useData } from '@/app/hooks/useData';
 
 export default function IPSViewer() {
-  const { activeIndexes, setActiveIndexes } = useData();
+  const { activeTabs } = useData();
   const { resourceMap } = useBundle();
   const { config } = useConfig();
 
-  const renderRootSection = (key: string) => {
+  const renderRootSection = (key: string, tabIndex: number) => {
     const bundleEntries = resourceMap[config[key].code];
     if (!bundleEntries || bundleEntries.length === 0) {
       return (
@@ -28,6 +28,7 @@ export default function IPSViewer() {
       <RootSectionRenderer
         configResource={config[key]}
         bundleEntries={resourceMap[config[key].code]}
+        tabIndex={tabIndex}
       />
     );
 
@@ -42,19 +43,16 @@ export default function IPSViewer() {
   };
 
   return (
-    <Accordion
-      id="mainContentId"
-      activeTabs={activeIndexes}
-      setActiveTabs={setActiveIndexes}
-    >
+    <Accordion id="mainContentId" activeTabs={activeTabs}>
       {Object.keys(config).map((key, index) => (
         <AccordionTab
           key={config[key].sectionDisplay}
           header={config[key].sectionDisplay}
-          index={index}
+          isActive={activeTabs.includes(index)}
           className={`${key}`}
+          index={index}
         >
-          {renderRootSection(key)}
+          {renderRootSection(key, index)}
         </AccordionTab>
       ))}
     </Accordion>

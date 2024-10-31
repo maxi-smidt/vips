@@ -11,24 +11,24 @@ import React, {
 interface DataContextType {
   expanded: boolean;
   setExpanded: Dispatch<SetStateAction<boolean>>;
-  activeIndexes: number[];
-  setActiveIndexes: Dispatch<SetStateAction<number[]>>;
+  activeTabs: number[];
+  setActiveTabs: Dispatch<SetStateAction<number[]>>;
 }
 
 export const DataContext = createContext<DataContextType>({
   expanded: true,
   setExpanded: () => {},
-  activeIndexes: [],
-  setActiveIndexes: () => {},
+  activeTabs: [],
+  setActiveTabs: () => {},
 });
 
 export default function DataProvider({ children }: { children: ReactNode }) {
   const [expanded, setExpanded] = useState<boolean>(true);
-  const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
+  const [activeTabs, setActiveTabs] = useState<number[]>([]);
 
   return (
     <DataContext.Provider
-      value={{ expanded, setExpanded, activeIndexes, setActiveIndexes }}
+      value={{ expanded, setExpanded, activeTabs, setActiveTabs }}
     >
       {children}
     </DataContext.Provider>

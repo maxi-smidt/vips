@@ -7,11 +7,13 @@ import { BundleEntry } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundleEntry'
 interface RootSectionRendererProps {
   configResource: ConfigResource;
   bundleEntries: BundleEntry[];
+  tabIndex: number;
 }
 
 export default function RootSectionRenderer({
   configResource,
   bundleEntries,
+  tabIndex,
 }: RootSectionRendererProps) {
   const getTitle = (index: number) => {
     if (bundleEntries.length === 1) return undefined;
@@ -24,7 +26,7 @@ export default function RootSectionRenderer({
         <div
           key={uuidv4()}
           id={bundleEntry.fullUrl}
-          className={`contentClass${configResource.code}`}
+          className={`contentClass${configResource.code} tabIndex=${tabIndex}`}
         >
           <SectionRenderer
             configSection={{
