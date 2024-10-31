@@ -38,7 +38,80 @@
         "reference" : "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
       }],
       "title" : "International Patient Summary - Preventive Medical Checkup",
-      "section" : [{
+      "section" : [
+        {
+          "title" : "Advance Directives",
+          "code" : {
+            "coding" : [{
+              "system" : "http://loinc.org",
+              "code" : "42348-3",
+              "display" : "Advance directives"
+            }]
+          },
+          "text" : {
+            "status" : "empty",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
+          },
+          "entry" : [{
+            "reference" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklmabc123"
+          }]
+        },
+        {
+          "title" : "History of Pregnancy",
+          "code" : {
+            "coding" : [{
+              "system" : "http://loinc.org",
+              "code" : "10162-6",
+              "display" : "History of pregnancies Narrative"
+            }]
+          },
+          "text" : {
+            "status" : "empty",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
+          },
+          "entry" : [{
+            "reference" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklm"
+          },
+          {
+            "reference" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklmopqrst"
+          }]
+        },
+        {
+          "title" : "Plan of care",
+          "code" : {
+            "coding" : [{
+              "system" : "http://loinc.org",
+              "code" : "18776-5",
+              "display" : "Plan of care note"
+            }]
+          },
+          "text" : {
+            "status" : "empty",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
+          },
+          "entry" : [
+          {
+            "reference" : "urn:uuid:1234abcd-5678-efgh-ijkl-mnopqrstuvwx"
+          }]
+        },
+        {
+          "title" : "Functional Status",
+          "code" : {
+            "coding" : [{
+              "system" : "http://loinc.org",
+              "code" : "47420-5",
+              "display" : "Functional status assessment note"
+            }]
+          },
+          "text" : {
+            "status" : "empty",
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
+          },
+          "entry" : [{
+            "reference" : "urn:uuid:be35e603-6b99-4bb5-ad70-abc12345"
+          }]
+        },
+        {
         "title" : "Problem List",
         "code" : {
           "coding" : [{
@@ -294,6 +367,7 @@
       },
       {
         "title" : "Social History",
+        "status" :"final",
         "code" : {
           "coding" : [{
             "system" : "http://loinc.org",
@@ -304,6 +378,35 @@
         "text" : {
           "status" : "empty",
           "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
+        },
+        "effectiveDateTime" : "2024-02-08T14:01:30+00:00",
+        "performer" : [
+          {
+            "reference":"urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
+          }
+        ],
+        "valueRatio" : {
+          "numerator" : {
+            "value" : 1,
+            "unit" : "packs",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "packs"
+          },
+          "denominator" : {
+            "value" : 1,
+            "unit" : "day",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "d"
+          }
+        },
+        "valueCodeableConcept" :{
+          "coding" : [
+            {
+              "system" : "http://loinc.org",
+              "code" : "LA15920-4",
+              "display" : "Former Smoker"
+            }
+          ]
         },
         "entry" : [{
           "reference" : "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"
@@ -1490,6 +1593,86 @@
     }
   },
   {
+    "fullUrl" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklmabc123",
+    "resource" : {
+      "resourceType" : "Consent",
+      "id" : "APS-consent-example",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-consent"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AllergyIntolerance_APS-2-preventive-medical-checkup-allergy-1\"> </a><p><b>Generated Narrative: AllergyIntolerance </b><a name=\"APS-2-preventive-medical-checkup-allergy-1\"> </a><a name=\"hcAPS-2-preventive-medical-checkup-allergy-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">ResourceAllergyIntolerance &quot;APS-2-preventive-medical-checkup-allergy-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-ips-allergyintolerance.html\">AT IPS AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>code</b>: Penicillin <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#764146007)</span></p><p><b>patient</b>: See on this page: urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8</p></div>"
+      },
+      "status" : "active",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
+          "code" : "patient-privacy",
+          "display" : "Patient Privacy"
+        }]
+      }],
+      "performer" : [{
+        "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"
+      }],
+      "created" : "2024-02-08T10:31:58+02:00",
+      "organization" : [{
+        "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"
+      }],
+      "policyRule" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/consentpolicycodes",
+          "code" : "opt-in",
+          "display" : "Opt-In"
+        }]
+      }],
+      "provision" : {
+        "type" : "permit",
+        "period" : {
+          "start" : "2024-02-08T10:31:58+02:00"
+        },
+        "action" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/consentaction",
+            "code" : "access",
+            "display" : "Access"
+          }]
+        }],
+        "securityLabel" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v3-ConfidentialityClassification",
+            "code" : "N",
+            "display" : "normal"
+          }]
+        }],
+        "purpose" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+            "code" : "TREAT",
+            "display" : "treatment"
+          }]
+        }],
+        "class" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "code" : "CAREMGT",
+            "display" : "care management"
+          }]
+        }],
+        "code" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "code" : "ACCESS",
+            "display" : "Access"
+          }]
+        }],
+        "dataPeriod" : {
+          "start" : "2024-02-08T10:31:58+02:00"
+        }
+      }
+    }
+  },
+  {
     "fullUrl" : "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b",
     "resource" : {
       "resourceType" : "AllergyIntolerance",
@@ -2262,6 +2445,177 @@
     }
   },
   {
+    "fullUrl" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklm",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "APS-pregnancy-status",
+      "meta" : {
+        "profile" : ["https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-ips-observationpregnancystatus.html"]
+      },
+      "status" : "final",
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "82810-3",
+          "display" : "Pregnancy status"
+        }]
+      },
+      "effectiveDateTime" : "2024-02-08T07:34:06+01:00",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "LA15173-0",
+          "display" : "Pregnant"
+        }]
+      },
+      "hasMember" : [{
+        "reference" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklmopqrst"
+      }]
+    }
+  },
+  {
+    "fullUrl": "urn:uuid:1234abcd-5678-efgh-ijkl-mnopqrstuvwx",
+    "resource": {
+      "resourceType": "CarePlan",
+      "id": "example-careplan",
+      "meta": {
+        "profile": ["http://hl7.org/fhir/StructureDefinition/CarePlan"]
+      },
+      "status": "active",
+      "intent": "plan",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/plan-category",
+              "code": "assess-plan",
+              "display": "Assessment and Plan"
+            }
+          ]
+        }
+      ],
+      "title": "CarePlan for improving physical activity",
+      "description": "CarePlan for improving physical activity",
+      "period": {
+        "start": "2020-01-01",
+        "end": "2021-01-01"
+      },
+      "author": [
+        {
+          "reference": "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display": "Dr. Adam Careful"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "698358004",
+            "display": "Physical activity plan"
+          }
+        ]
+      },
+      "created": "2020-01-01",
+      "activity": [
+        {
+          "plannedActivityReference": {
+            "reference": "ServiceRequest/activity-1"
+          }
+        },
+        {
+          "detail": {
+            "goal": [
+              {
+                "reference": "urn:uuid:1234abcd-5678-efgh-ijkl-mnopqrstuvwx1234"
+              }
+            ],
+            "kind": "ServiceRequest",
+            "description": "Daily walking exercise",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "408580007",
+                  "display": "Walking exercise (procedure)"
+                }
+              ]
+            },
+            "quantity": {
+              "value": 1,
+              "unit": "time",
+              "code": "d",
+              "system": "http://unitsofmeasure.org"
+            },
+            "scheduledPeriod": {
+              "start": "2020-01-01",
+              "end": "2021-01-01"
+            }
+          }
+        }
+      ],
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">CarePlan for improving physical activity</div>"
+      }
+    }
+  },
+  {
+    "fullUrl": "urn:uuid:1234abcd-5678-efgh-ijkl-mnopqrstuvwx1234",
+    "resource": {
+      "resourceType": "Goal",
+      "id": "goal-1",
+      "meta": {
+        "profile": ["http://hl7.org/fhir/StructureDefinition/Goal"]
+      },
+      "status": "proposed",
+      "description": {
+        "text": "Daily walking exercise"
+      },
+      "subject": {
+        "reference": "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"
+      },
+      "target": [
+        {
+          "detail": {
+            "detail": {
+              "value": {
+                "value": 1,
+                "unit": "time",
+                "code": "d",
+                "system": "http://unitsofmeasure.org"
+              }
+            }
+          }
+        }
+      ],
+      "startDate": "2020-01-01",
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Daily walking exercise</div>"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:74c5e186-d765-4c93-a624-abcdefghjklmopqrst",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "APS-pregnancy-edd-example",
+      "meta" : {
+        "profile" : ["https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-ips-observationpregnancyedd.html"]
+      },
+      "status" : "final",
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11778-8",
+          "display" : "Delivery date Estimated"
+        }]
+      },
+
+      "effectiveDateTime" : "2023-02-08T07:34:06+01:00"
+    }
+  },
+  {
     "fullUrl" : "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142",
     "resource" : {
       "resourceType" : "Observation",
@@ -2525,6 +2879,82 @@
         "system" : "http://unitsofmeasure.org",
         "code" : "cm"
       }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:be35e603-6b99-4bb5-ad70-abc12345",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "APS-functional-status",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"]
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "75326-9",
+          "display" : "Problem"
+        }]
+      }],
+      "severity" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "255604002",
+          "display" : "Mild"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "386725007",
+          "display" : "Functional status"
+        }]
+      },
+      "onsetPeriod" : {
+        "start" : "2024-02-08T07:34:06+01:00"
+      },
+      "bodySite" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "442083009",
+          "display" : "Entire body as a whole"
+        }]
+      }],
+      "abatement" : {
+        "abatementDateTime" : "2024-02-08T07:34:06+01:00"
+      },
+      "stage" : [{
+        "summary" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "255604002",
+            "display" : "Mild"
+          }]
+        },
+        "type" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "255604002",
+            "display" : "Mild"
+          }]
+        }
+      }],
+      "evidence" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "386725007",
+            "display" : "Functional status"
+          }]
+        }
+      }]
     }
   },
   {

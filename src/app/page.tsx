@@ -9,7 +9,7 @@ export default function Home() {
   const { bundle } = useBundle();
 
   if (!bundle) {
-    return <StartPage />; // TODO change to animation for example
+    return <StartPage />;
   }
 
   return <IPSViewer />;

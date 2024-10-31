@@ -13,7 +13,7 @@ import { isEmptyDiv } from '@/app/utils/HtmlUtils';
 
 export default function IPSViewer() {
   const { activeIndex, setActiveIndex } = useData();
-  const { resourceMap } = useBundle();
+  const { resourceMap, bundle } = useBundle();
   const { config } = useConfig();
 
   const onTabChange = (e: AccordionTabChangeEvent) => {
@@ -35,6 +35,7 @@ export default function IPSViewer() {
       <RootSectionRenderer
         configResource={config[key]}
         bundleEntries={resourceMap[config[key].code]}
+        bundle={bundle}
       />
     );
 
