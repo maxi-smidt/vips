@@ -11,44 +11,63 @@ export default function CodeableConceptRenderer({
   const codeableConcept = value as CodeableConcept;
 
   return (
-    <div className="ml-6 mb-2 mt-2 space-y-1">
-      <div className="font-semibold" style={{ width: '150px' }}>
-        {configEntry.display}:
-      </div>
-      {codeableConcept.coding?.map((coding, index) => {
-        const link = getLink(coding.system as string, coding.code as string);
+    <div className="my-2">
+      <div className="flex">
+        <div className="font-semibold" style={{ width: '175px' }}>
+          {configEntry.display}:
+        </div>
+        <div className="ml-4 flex-1">
+          {codeableConcept.coding?.map((coding, index) => {
+            const link = getLink(
+              coding.system as string,
+              coding.code as string,
+            );
 
-        return (
-          <div key={index} className="flex">
-            <div className="w-1/4 font-semibold" style={{ width: '150px' }}>
-              Code:
-            </div>
-            <div className="ml-4 flex-1">
-              {coding.display && (
-                <>
-                  <span>{coding.display}</span>
-                  {link && (
+            const displayText =
+              coding.display || coding.code || codeableConcept.text;
+
+            return (
+              displayText && (
+                <div key={index} className="mb-2">
+                  {' '}
+                  <span>{displayText} </span>
+                  {link ? (
                     <a
                       href={link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title="Details"
-                      style={{ marginLeft: '5px', verticalAlign: 'middle' }}
+                      title={`See details for code "${coding.code}"`}
+                      className="ml-1"
                     >
                       <Image
-                        src={`${process.env.IMAGE_PATH}/icons/info_circle.svg`}
-                        width={20}
-                        height={20}
-                        alt="Details"
+                        src={`${process.env.IMAGE_PATH}/icons/external_link.svg`}
+                        width={15}
+                        height={15}
+                        alt={`Details for "${displayText}"`}
                       />
                     </a>
+                  ) : (
+                    <div className="ml-4 mt-1">
+                      <span>→ System: </span>
+                      <span>
+                        <a href={coding.system}>{coding.system}</a>
+                      </span>
+                      <br />
+                      <span>→ Code: {coding.code}</span>
+                    </div>
                   )}
-                </>
-              )}
+                </div>
+              )
+            );
+          })}
+
+          {!codeableConcept.coding?.length && codeableConcept.text && (
+            <div className="flex items-center mb-1">
+              <span>{codeableConcept.text}</span>
             </div>
-          </div>
-        );
-      })}
+          )}
+        </div>
+      </div>
     </div>
   );
 }

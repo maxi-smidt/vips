@@ -37,10 +37,12 @@ export default function SectionRenderer({
     return (
       <div
         key={configSection.display}
-        className={`p-2 bg-gray-${100 * depth} rounded-xl ${depth == 0 && 'flex flex-col gap-2'}`}
+        className={`p-2 bg-gray-${100 * depth} rounded-xl`}
       >
         {configSection.display && <h3>{configSection.display}</h3>}
-        {filteredSections}
+        <div className={`${depth === 0 ? 'flex flex-col gap-2' : 'ml-4'}`}>
+          {filteredSections}
+        </div>
       </div>
     );
   }
