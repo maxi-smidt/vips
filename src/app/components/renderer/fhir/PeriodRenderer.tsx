@@ -9,7 +9,7 @@ export default function PeriodRenderer({ value, configEntry }: RenderProps) {
     <div className="my-2 space-y-2" style={{ width: '400px' }}>
       <div className="flex items-center">
         <div className="font-bold" style={{ width: '175px' }}>
-          <strong>{configEntry.display}:</strong>
+          {configEntry.display}:
         </div>
         <div className="ml-4 flex-1">
           {period.start && (

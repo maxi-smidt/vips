@@ -9,12 +9,60 @@ export default function IdentifierRenderer({
   const identifier = value as Identifier;
 
   return (
-    <div className="my-2 space-y-2" style={{ width: '400px' }}>
-      <div className="flex items-center">
-        <div className="font-bold" style={{ width: '175px' }}>
-          <strong>{configEntry.display}:</strong>
-        </div>
-        <div className="ml-4 flex-1">{identifier.value}</div>
+    <div>
+      <h4>{configEntry.display}:</h4>
+      <div className="ml-4 mb-2 space-y-2" style={{ width: '600px' }}>
+        {identifier.value && (
+          <div className="flex items-center">
+            <div className="font-semibold" style={{ width: '175px' }}>
+              Value:
+            </div>
+            <div className="flex-1 ml-4">{identifier.value}</div>
+          </div>
+        )}
+        
+        {identifier.system && (
+          <div className="flex items-center">
+            <div className="font-semibold" style={{ width: '175px' }}>
+              System:
+            </div>
+            <div className="flex-1 ml-4">{identifier.system}</div>
+          </div>
+        )}
+
+        {identifier.type && identifier.type.coding && identifier.type.coding.length > 0 && (
+          <div className="space-y-2">
+            <div className="font-semibold" style={{ width: '175px' }}>
+              Type:
+            </div>
+            <div className="ml-4">
+              {identifier.type.coding[0].system && (
+                <div className="flex items-center">
+                  <div className="font-semibold" style={{ width: '175px' }}>
+                    System:
+                  </div>
+                  <div>{identifier.type.coding[0].system}</div>
+                </div>
+              )}
+              {identifier.type.coding[0].code && (
+                <div className="flex items-center">
+                  <div className="font-semibold" style={{ width: '175px' }}>
+                    Code:
+                  </div>
+                  <div>{identifier.type.coding[0].code}</div>
+                </div>
+              )}
+              {identifier.type.coding[0].display && (
+                <div className="flex items-center">
+                  <div className="font-semibold" style={{ width: '175px' }}>
+                    Display:
+                  </div>
+                  <div>{identifier.type.coding[0].display}</div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

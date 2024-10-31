@@ -17,7 +17,7 @@ export default function ContactPointRenderer({
         <div className="ml-4 flex-1">
           {contactPoint.system && (
             <span>
-              <strong>{contactPoint.system}:</strong>{' '}
+              {contactPoint.system}:{' '}
             </span>
           )}
           {contactPoint.value && <span>{contactPoint.value}</span>}
