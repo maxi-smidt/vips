@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main", "feature/175"]
+    branches: ["main", "feature/137"]
     paths-ignore:
       - README.md
       - docs/**
