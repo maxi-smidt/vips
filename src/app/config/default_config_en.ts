@@ -168,17 +168,17 @@ export const DefaultConfigEN: Config = {
                     },
                     {
                       display: 'Rate',
-                      path: 'MedicationStatement.dosage.doseAndRate.doseRatio',
+                      path: 'MedicationStatement.dosage.doseAndRate.rateRatio',
                       renderer: RendererType.DEFAULT,
                     },
                     {
                       display: 'Rate',
-                      path: 'MedicationStatement.dosage.doseAndRate.doseRange',
+                      path: 'MedicationStatement.dosage.doseAndRate.rateRange',
                       renderer: RendererType.DEFAULT,
                     },
                     {
                       display: 'Rate',
-                      path: 'MedicationStatement.dosage.doseAndRate.doseQuantity',
+                      path: 'MedicationStatement.dosage.doseAndRate.rateQuantity',
                       renderer: RendererType.QUANTITY,
                     },
                   ],

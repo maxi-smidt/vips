@@ -8,36 +8,48 @@ export default function QuantityRenderer({ value, configEntry }: RenderProps) {
   return (
     <div>
       <h4>{configEntry.display}:</h4>
-      {quantity.value !== undefined && (
-        <p>
-          <strong>Value:</strong> {quantity.value}
-        </p>
-      )}
-      {quantity.comparator && (
-        <p>
-          <strong>Comparator:</strong> {quantity.comparator}
-        </p>
-      )}
-      {quantity.unit && (
-        <p>
-          <strong>Unit:</strong> {quantity.unit}
-        </p>
-      )}
-      {quantity.system && (
-        <p>
-          <strong>System:</strong> {quantity.system}
-        </p>
-      )}
-      {quantity.code && (
-        <p>
-          <strong>Code:</strong> {quantity.code}
-        </p>
-      )}
-      {quantity.code && !quantity.system && (
-        <p className="text-red-500">
-          Warning: Unit code is present, but system is missing.
-        </p>
-      )}
+      <div className="ml-4 mb-2 space-y-2" style={{ width: '500px' }}>
+        {quantity.value && (
+          <div className="flex items-center">
+            <div className="font-semibold" style={{ width: '175px' }}>
+              Value:
+            </div>
+            <div className="flex-1 ml-4">{quantity.value}</div>
+          </div>
+        )}
+        {quantity.comparator && (
+          <div className="flex items-center">
+            <div className="font-semibold" style={{ width: '175px' }}>
+              Comparator:
+            </div>
+            <div className="flex-1 ml-4">{quantity.comparator}</div>
+          </div>
+        )}
+        {quantity.unit && (
+          <div className="flex items-center">
+            <div className="font-semibold" style={{ width: '175px' }}>
+              Unit:
+            </div>
+            <div className="flex-1 ml-4">{quantity.unit}</div>
+          </div>
+        )}
+        {quantity.system && (
+          <div className="flex items-center">
+            <div className="font-semibold" style={{ width: '175px' }}>
+              System:
+            </div>
+            <div className="flex-1 ml-4">{quantity.system}</div>
+          </div>
+        )}
+        {quantity.code && (
+          <div className="flex items-center">
+            <div className="font-semibold" style={{ width: '175px' }}>
+              Code:
+            </div>
+            <div className="flex-1 ml-4">{quantity.code}</div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

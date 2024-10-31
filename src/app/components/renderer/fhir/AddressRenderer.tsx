@@ -9,14 +9,12 @@ export default function AddressRenderer({ value, configEntry }: RenderProps) {
     <div>
       <h4>{configEntry.display}:</h4>
       <div className="ml-4 mb-2 space-y-2" style={{ width: '400px' }}>
-        {' '}
         {address.line && (
           <div className="flex items-center">
             <div className="font-semibold" style={{ width: '175px' }}>
-              {' '}
               Address Line:
             </div>
-            <div className="flex-1 ml-4">{address.line.join(', ')}</div>{' '}
+            <div className="flex-1 ml-4">{address.line.join(', ')}</div>
           </div>
         )}
         {address.city && (
