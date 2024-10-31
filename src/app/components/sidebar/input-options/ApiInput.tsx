@@ -11,16 +11,17 @@ import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 // const API_URL = process.env.FHIR_API;
 
 export default function ApiInput() {
-  const [identifier, setIdentifier] = useState<string>('');
-  const [system, setSystem] = useState<string>('');
+  const [identifierSystem, setIdentifierSystem] = useState<string>('');
+  const [identifierValue, setIdentifierValue] = useState<string>('');
+  const [fhirServer, setFhirServer] = useState<string>('');
   const { setBundle } = useBundle();
   const { showError } = useToast();
 
   const loadIpsFromApi = async () => {
     try {
-      const server = system.endsWith('/') ? system : `${system}/`;
+      const server = fhirServer.endsWith('/') ? fhirServer : `${fhirServer}/`;
       const response = await fetch(
-        `${server}Bundle?composition.patient.identifier=${identifier}`,
+        `${server}Bundle?IPSbyPatientIdentifier=${identifierSystem}|${identifierValue}`,
       );
 
       if (!response.ok) {
@@ -38,22 +39,27 @@ export default function ApiInput() {
   return (
     <>
       <InputText
-        value={system}
-        onChange={(e) => setSystem(e.target.value)}
+        value={fhirServer}
+        onChange={(e) => setFhirServer(e.target.value)}
         placeholder="Enter fhir server endpoint ..."
       />
 
       <InputText
-        value={identifier}
-        onChange={(e) => setIdentifier(e.target.value)}
-        placeholder="Enter SVNR ..."
+        value={identifierValue}
+        onChange={(e) => setIdentifierValue(e.target.value)}
+        placeholder="Enter Identifier Value ..."
+      />
+      <InputText
+        value={identifierSystem}
+        onChange={(e) => setIdentifierSystem(e.target.value)}
+        placeholder="Enter Identifier System ..."
       />
 
       <Button
         label="Load IPS"
         severity="secondary"
         onClick={loadIpsFromApi}
-        disabled={!identifier || !system}
+        disabled={!identifierValue || !fhirServer || !identifierSystem}
       />
     </>
   );
