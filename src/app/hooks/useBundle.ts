@@ -1,5 +1,4 @@
 import { useContext, useMemo } from 'react';
-import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
 import { Composition } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/composition';
 import { CompositionSection } from '@smile-cdr/fhirts/src/FHIR-R4/classes/compositionSection';
 import { Reference } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/reference';
@@ -10,10 +9,6 @@ import { ResourceMap } from '@/app/types/ResourceMap';
 
 export const useBundle = () => {
   const { bundle, setBundle } = useContext(BundleContext);
-
-  const getResourceByReference = (reference: string): Resource | undefined => {
-    return bundle?.entry?.find((x) => x['fullUrl'] === reference)?.resource;
-  };
 
   const getBundleEntryByReference = (
     reference: string,
@@ -90,7 +85,6 @@ export const useBundle = () => {
     bundle,
     setBundle,
     resourceMap,
-    getResourceByReference,
   };
 
   /**

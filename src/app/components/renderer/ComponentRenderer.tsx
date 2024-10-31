@@ -8,17 +8,20 @@ import React from 'react';
 import EntryRenderer from '@/app/components/renderer/EntryRenderer';
 import SectionRenderer from '@/app/components/renderer/SectionRenderer';
 import { Resource } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/resource';
+import { Bundle } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/bundle';
 
 interface ComponentRendererProps {
   depth: number;
   resource: Resource;
   configComponent: ConfigEntry | ConfigSection;
+  bundle: Bundle | undefined;
 }
 
 export default function ComponentRenderer({
   configComponent,
   depth,
   resource,
+  bundle,
 }: ComponentRendererProps) {
   if (isConfigEntry(configComponent)) {
     return (
@@ -26,6 +29,7 @@ export default function ComponentRenderer({
         key={configComponent.path}
         configEntry={configComponent}
         resource={resource}
+        bundle={bundle}
       />
     );
   } else if (isConfigSection(configComponent)) {
@@ -35,6 +39,7 @@ export default function ComponentRenderer({
         depth={depth}
         configSection={configComponent}
         resource={resource}
+        bundle={bundle}
       />
     );
   }

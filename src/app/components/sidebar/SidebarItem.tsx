@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from 'primereact/button';
-import { useData } from '@/app/hooks/useData';
 import { RelevanceCategory } from '@/app/types/RelevanceCategory';
+import { useData } from '@/app/hooks/useData';
 
 interface SidebarItemProps {
   sectionKey: string;
@@ -21,7 +21,7 @@ export default function SidebarItem({
   color,
   index,
 }: SidebarItemProps) {
-  const { expanded, setActiveIndex } = useData();
+  const { expanded, setActiveTabs } = useData();
 
   const passTrough = expanded
     ? {
@@ -37,13 +37,9 @@ export default function SidebarItem({
       element.scrollIntoView();
       const offset = 70;
       window.scrollBy(0, -offset);
-      setActiveIndex((prevState) => {
-        if (Array.isArray(prevState)) {
-          return [...prevState, index];
-        } else {
-          return [prevState, index];
-        }
-      });
+      setActiveTabs((prevState) =>
+        prevState.includes(index) ? prevState : [...prevState, index],
+      );
     }
   };
 
