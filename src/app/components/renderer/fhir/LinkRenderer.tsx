@@ -23,12 +23,15 @@ export default function LinkRenderer({ value, configEntry }: RenderProps) {
   };
 
   return (
-    <p>
-      <strong>
-        <Link href={`/#${reference}`} onClick={handleClick}>
-          {configEntry.display}
-        </Link>
-      </strong>
-    </p>
+    <div className="my-2">
+      <div className="flex items-center">
+        <span>
+          Jump to{' '}
+          <Link href={`#${reference}`} onClick={handleClick}>
+            {configEntry.display}
+          </Link>
+        </span>
+      </div>
+    </div>
   );
 }
