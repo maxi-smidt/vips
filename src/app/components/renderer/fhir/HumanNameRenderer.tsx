@@ -9,11 +9,9 @@ export default function HumanNameRenderer({ value, configEntry }: RenderProps) {
     <div className="my-2 space-y-2" style={{ width: '400px' }}>
       <div className="flex items-center">
         <div style={{ width: '175px', fontWeight: 'bold' }}>
-          {' '}
           {configEntry.display}:
         </div>
         <div className="ml-4 flex-1">
-          {' '}
           {humanName.prefix?.join(' ')} {humanName.given?.join(' ')}{' '}
           {humanName.family} {humanName.suffix?.join(' ')}
         </div>

@@ -1,24 +1,13 @@
-import { Timing } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/timing';
-import { RenderProps } from '@/app/components/renderer/RenderProps';
 import React from 'react';
+import { Timing } from '@smile-cdr/fhirts/dist/FHIR-R4/classes/timing';
 
-// CSS-in-JS style object
-const styles = {
-  indentedContent: {
-    marginLeft: '25px', // Adjust indentation as needed
-  },
-};
-
-export default function TimingRenderer({ value, configEntry }: RenderProps) {
+export default function TimingRenderer({ value, configEntry }) {
   const timing = value as Timing;
 
   return (
     <div>
       <h4>{configEntry.display}:</h4>
-
-      {/* Wrapper for indented content */}
-      <div style={styles.indentedContent}>
-        {/* Event times */}
+      <div className="ml-4 mb-2 space-y-2" style={{ width: '400px' }}>
         {timing.event && timing.event.length > 0 && (
           <div>
             <strong>Event Times:</strong>
@@ -30,94 +19,144 @@ export default function TimingRenderer({ value, configEntry }: RenderProps) {
           </div>
         )}
 
-        {/* Repeat details */}
         {timing.repeat && (
           <div>
             <strong>Repeat Details:</strong>
-            {timing.repeat.count && <p>Count: {timing.repeat.count}</p>}
+            {timing.repeat.count && (
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Count:</div>
+                <div className="flex-1 ml-4">{timing.repeat.count}</div>
+              </div>
+            )}
             {timing.repeat.countMax && (
-              <p>Count Max: {timing.repeat.countMax}</p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Count Max:</div>
+                <div className="flex-1 ml-4">{timing.repeat.countMax}</div>
+              </div>
             )}
             {timing.repeat.duration && (
-              <p>
-                Duration: {timing.repeat.duration} {timing.repeat.durationUnit}
-              </p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Duration:</div>
+                <div className="flex-1 ml-4">
+                  {timing.repeat.duration} {timing.repeat.durationUnit}
+                </div>
+              </div>
             )}
             {timing.repeat.durationMax && (
-              <p>
-                Duration Max: {timing.repeat.durationMax}{' '}
-                {timing.repeat.durationUnit}
-              </p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Duration Max:</div>
+                <div className="flex-1 ml-4">
+                  {timing.repeat.durationMax} {timing.repeat.durationUnit}
+                </div>
+              </div>
             )}
             {timing.repeat.frequency && (
-              <p>Frequency: {timing.repeat.frequency}</p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Frequency:</div>
+                <div className="flex-1 ml-4">{timing.repeat.frequency}</div>
+              </div>
             )}
             {timing.repeat.frequencyMax && (
-              <p>Frequency Max: {timing.repeat.frequencyMax}</p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Frequency Max:</div>
+                <div className="flex-1 ml-4">{timing.repeat.frequencyMax}</div>
+              </div>
             )}
             {timing.repeat.period && (
-              <p>
-                Period: {timing.repeat.period} {timing.repeat.periodUnit}
-              </p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Period:</div>
+                <div className="flex-1 ml-4">
+                  {timing.repeat.period} {timing.repeat.periodUnit}
+                </div>
+              </div>
             )}
             {timing.repeat.periodMax && (
-              <p>
-                Period Max: {timing.repeat.periodMax} {timing.repeat.periodUnit}
-              </p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Period Max:</div>
+                <div className="flex-1 ml-4">
+                  {timing.repeat.periodMax} {timing.repeat.periodUnit}
+                </div>
+              </div>
             )}
             {timing.repeat.dayOfWeek && timing.repeat.dayOfWeek.length > 0 && (
-              <p>Days of Week: {timing.repeat.dayOfWeek.join(', ')}</p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Days of Week:</div>
+                <div className="flex-1 ml-4">
+                  {timing.repeat.dayOfWeek.join(', ')}
+                </div>
+              </div>
             )}
             {timing.repeat.timeOfDay && timing.repeat.timeOfDay.length > 0 && (
-              <p>Times of Day: {timing.repeat.timeOfDay.join(', ')}</p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Times of Day:</div>
+                <div className="flex-1 ml-4">
+                  {timing.repeat.timeOfDay.join(', ')}
+                </div>
+              </div>
             )}
             {timing.repeat.when && timing.repeat.when.length > 0 && (
-              <p>When: {timing.repeat.when.join(', ')}</p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>When:</div>
+                <div className="flex-1 ml-4">
+                  {timing.repeat.when.join(', ')}
+                </div>
+              </div>
             )}
             {timing.repeat.offset && (
-              <p>Offset: {timing.repeat.offset} minutes</p>
+              <div className="flex items-center ml-4">
+                <div style={{ width: '175px' }}>Offset:</div>
+                <div className="flex-1 ml-4">
+                  {timing.repeat.offset} minutes
+                </div>
+              </div>
             )}
           </div>
         )}
 
-        {/* Codeable concept for timing abbreviation */}
         {timing.code && timing.code.coding && timing.code.coding.length > 0 && (
           <div>
-            <strong>Code:</strong>
+            Code:
             <p>
               {timing.code.coding.map((coding) => coding.display).join(', ')}
             </p>
           </div>
         )}
 
-        {/* Bounds details */}
         {timing.repeat?.boundsDuration && (
-          <p>
-            <strong>Bounds Duration:</strong>{' '}
-            {timing.repeat.boundsDuration.value}{' '}
-            {timing.repeat.boundsDuration.unit}
-          </p>
+          <div className="flex items-center ml-4">
+            <div style={{ width: '175px' }}>Bounds Duration:</div>
+            <div className="flex-1 ml-4">
+              {timing.repeat.boundsDuration.value}{' '}
+              {timing.repeat.boundsDuration.unit}
+            </div>
+          </div>
         )}
+
         {timing.repeat?.boundsRange && (
-          <p>
-            <strong>Bounds Range:</strong>{' '}
-            {timing.repeat.boundsRange.low?.value} -{' '}
-            {timing.repeat.boundsRange.high?.value}{' '}
-            {timing.repeat.boundsRange.low?.unit ||
-              timing.repeat.boundsRange.high?.unit}
-          </p>
+          <div className="flex items-center ml-4">
+            <div style={{ width: '175px' }}>Bounds Range:</div>
+            <div className="flex-1 ml-4">
+              {timing.repeat.boundsRange.low?.value} -{' '}
+              {timing.repeat.boundsRange.high?.value}{' '}
+              {timing.repeat.boundsRange.low?.unit ||
+                timing.repeat.boundsRange.high?.unit}
+            </div>
+          </div>
         )}
+
         {timing.repeat?.boundsPeriod && (
-          <p>
-            <strong>Bounds Period:</strong>{' '}
-            {timing.repeat.boundsPeriod.start
-              ? new Date(timing.repeat.boundsPeriod.start).toLocaleString()
-              : ''}{' '}
-            -{' '}
-            {timing.repeat.boundsPeriod.end
-              ? new Date(timing.repeat.boundsPeriod.end).toLocaleString()
-              : ''}
-          </p>
+          <div className="flex items-center ml-4">
+            <div style={{ width: '175px' }}>Bounds Period:</div>
+            <div className="flex-1 ml-4">
+              {timing.repeat.boundsPeriod.start
+                ? new Date(timing.repeat.boundsPeriod.start).toLocaleString()
+                : ''}{' '}
+              -
+              {timing.repeat.boundsPeriod.end
+                ? new Date(timing.repeat.boundsPeriod.end).toLocaleString()
+                : ''}
+            </div>
+          </div>
         )}
       </div>
     </div>
