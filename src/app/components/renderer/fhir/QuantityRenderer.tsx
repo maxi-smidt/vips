@@ -34,7 +34,9 @@ export default function QuantityRenderer({ value, configEntry }: RenderProps) {
         </p>
       )}
       {quantity.code && !quantity.system && (
-        <p style={{ color: 'red' }}>Warning: Unit code is present, but system is missing.</p>
+        <p className="text-red-500">
+          Warning: Unit code is present, but system is missing.
+        </p>
       )}
     </div>
   );
