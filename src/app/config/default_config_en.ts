@@ -49,246 +49,8 @@ export const DefaultConfigEN: Config = {
       ],
     },
   },
-  Author: {
-    icon: '/icons/author.svg',
-    color: RelevanceCategory.DOCUMENT_INFORMATION,
-    sectionDisplay: 'Author',
-    code: 'author',
-    section: {
-      display: 'Author',
-      components: [
-        {
-          display: 'Personal Information',
-          components: [
-            {
-              display: 'Name',
-              path: 'Patient.name',
-              renderer: RendererType.HUMAN_NAME,
-            },
-            {
-              display: 'Name',
-              path: 'Practitioner.name',
-              renderer: RendererType.HUMAN_NAME,
-            },
-            {
-              display: 'Name',
-              path: 'Organization.name',
-              renderer: RendererType.DEFAULT,
-            },
-          ],
-        },
-        {
-          display: 'Communication',
-          components: [
-            {
-              display: 'Telecom',
-              path: 'Patient.telecom',
-              renderer: RendererType.CONTACT_POINT,
-            },
-            {
-              display: 'Telecom',
-              path: 'Practitioner.telecom',
-              renderer: RendererType.CONTACT_POINT,
-            },
-            {
-              display: 'Telecom',
-              path: 'Organization.telecom',
-              renderer: RendererType.CONTACT_POINT,
-            },
-          ],
-        },
-        {
-          display: 'Address',
-          components: [
-            {
-              display: 'Address',
-              path: 'Patient.address',
-              renderer: RendererType.ADDRESS,
-            },
-            {
-              display: 'Address',
-              path: 'Practitioner.address',
-              renderer: RendererType.ADDRESS,
-            },
-            {
-              display: 'Address',
-              path: 'Organization.address',
-              renderer: RendererType.ADDRESS,
-            },
-          ],
-        },
-      ],
-    },
-  },
-  Attester: {
-    icon: '/icons/attester.svg',
-    color: RelevanceCategory.DOCUMENT_INFORMATION,
-    sectionDisplay: 'Attester',
-    code: 'attester',
-    section: {
-      display: 'Attester',
-      components: [
-        {
-          display: 'Personal Information',
-          components: [
-            {
-              display: 'Name',
-              path: 'Patient.name',
-              renderer: RendererType.HUMAN_NAME,
-            },
-            {
-              display: 'Name',
-              path: 'Practitioner.name',
-              renderer: RendererType.HUMAN_NAME,
-            },
-            {
-              display: 'Name',
-              path: 'Organization.name',
-              renderer: RendererType.DEFAULT,
-            },
-          ],
-        },
-        {
-          display: 'Communication',
-          components: [
-            {
-              display: 'Telecom',
-              path: 'Patient.telecom',
-              renderer: RendererType.CONTACT_POINT,
-            },
-            {
-              display: 'Telecom',
-              path: 'Practitioner.telecom',
-              renderer: RendererType.CONTACT_POINT,
-            },
-            {
-              display: 'Telecom',
-              path: 'Organization.telecom',
-              renderer: RendererType.CONTACT_POINT,
-            },
-          ],
-        },
-        {
-          display: 'Address',
-          components: [
-            {
-              display: 'Address',
-              path: 'Patient.address',
-              renderer: RendererType.ADDRESS,
-            },
-            {
-              display: 'Address',
-              path: 'Practitioner.address',
-              renderer: RendererType.ADDRESS,
-            },
-            {
-              display: 'Address',
-              path: 'Organization.address',
-              renderer: RendererType.ADDRESS,
-            },
-          ],
-        },
-      ],
-    },
-  },
-  Custodian: {
-    icon: '/icons/custodian.svg',
-    color: RelevanceCategory.DOCUMENT_INFORMATION,
-    sectionDisplay: 'Custodian',
-    code: 'custodian',
-    section: {
-      display: 'Custodian',
-      components: [
-        {
-          display: 'Personal Information',
-          components: [
-            {
-              display: 'Name',
-              path: 'Organization.name',
-              renderer: RendererType.DEFAULT,
-            },
-          ],
-        },
-        {
-          display: 'Communication',
-          components: [
-            {
-              display: 'Telecom',
-              path: 'Organization.telecom',
-              renderer: RendererType.CONTACT_POINT,
-            },
-          ],
-        },
-        {
-          display: 'Address',
-          components: [
-            {
-              display: 'Address',
-              path: 'Organization.address',
-              renderer: RendererType.ADDRESS,
-            },
-          ],
-        },
-      ],
-    },
-  },
-  sectionAllergies: {
-    icon: '/icons/allergies.svg',
-    color: RelevanceCategory.REQUIRED,
-    sectionDisplay: 'Allergies and Intolerances',
-    code: '48765-2',
-    section: {
-      display: 'Allergy or Intolerance',
-      components: [
-        {
-          components: [
-            {
-              display: 'Clinical Status',
-              path: 'AllergyIntolerance.clinicalStatus',
-              renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'Verification Status',
-              path: 'AllergyIntolerance.verificationStatus',
-              renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'Category',
-              path: 'AllergyIntolerance.category',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Category',
-              path: 'AllergyIntolerance.category',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Criticality',
-              path: 'AllergyIntolerance.criticality',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Code',
-              path: 'AllergyIntolerance.code',
-              renderer: RendererType.CODEABLE_CONCEPT,
-            },
-            {
-              display: 'Category',
-              path: 'AllergyIntolerance.category',
-              renderer: RendererType.DEFAULT,
-            },
-            {
-              display: 'Category',
-              path: 'AllergyIntolerance.category',
-              renderer: RendererType.DEFAULT,
-            },
-          ],
-        },
-      ],
-    },
-  },
-  sectionMedicationSummary: {
-    icon: '/icons/Medications.svg',
+  sectionMedications: {
+    icon: '/icons/medications.svg',
     color: RelevanceCategory.REQUIRED,
     sectionDisplay: 'Medications',
     code: '10160-0',
@@ -627,6 +389,61 @@ export const DefaultConfigEN: Config = {
               display: 'Substitution reason',
               path: 'MedicationRequest.dispenseRequest.substitution.Reason',
               renderer: RendererType.CODEABLE_CONCEPT,
+            },
+          ],
+        },
+      ],
+    },
+  },
+  sectionAllergies: {
+    icon: '/icons/allergies.svg',
+    color: RelevanceCategory.REQUIRED,
+    sectionDisplay: 'Allergies and Intolerances',
+    code: '48765-2',
+    section: {
+      display: 'Allergy or Intolerance',
+      components: [
+        {
+          components: [
+            {
+              display: 'Clinical Status',
+              path: 'AllergyIntolerance.clinicalStatus',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Verification Status',
+              path: 'AllergyIntolerance.verificationStatus',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'AllergyIntolerance.category',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Category',
+              path: 'AllergyIntolerance.category',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Criticality',
+              path: 'AllergyIntolerance.criticality',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Code',
+              path: 'AllergyIntolerance.code',
+              renderer: RendererType.CODEABLE_CONCEPT,
+            },
+            {
+              display: 'Category',
+              path: 'AllergyIntolerance.category',
+              renderer: RendererType.DEFAULT,
+            },
+            {
+              display: 'Category',
+              path: 'AllergyIntolerance.category',
+              renderer: RendererType.DEFAULT,
             },
           ],
         },
@@ -2127,6 +1944,189 @@ export const DefaultConfigEN: Config = {
                   renderer: RendererType.PERIOD,
                 },
               ],
+            },
+          ],
+        },
+      ],
+    },
+  },
+  Author: {
+    icon: '/icons/author.svg',
+    color: RelevanceCategory.DOCUMENT_INFORMATION,
+    sectionDisplay: 'Author',
+    code: 'author',
+    section: {
+      display: 'Author',
+      components: [
+        {
+          display: 'Personal Information',
+          components: [
+            {
+              display: 'Name',
+              path: 'Patient.name',
+              renderer: RendererType.HUMAN_NAME,
+            },
+            {
+              display: 'Name',
+              path: 'Practitioner.name',
+              renderer: RendererType.HUMAN_NAME,
+            },
+            {
+              display: 'Name',
+              path: 'Organization.name',
+              renderer: RendererType.DEFAULT,
+            },
+          ],
+        },
+        {
+          display: 'Communication',
+          components: [
+            {
+              display: 'Telecom',
+              path: 'Patient.telecom',
+              renderer: RendererType.CONTACT_POINT,
+            },
+            {
+              display: 'Telecom',
+              path: 'Practitioner.telecom',
+              renderer: RendererType.CONTACT_POINT,
+            },
+            {
+              display: 'Telecom',
+              path: 'Organization.telecom',
+              renderer: RendererType.CONTACT_POINT,
+            },
+          ],
+        },
+        {
+          display: 'Address',
+          components: [
+            {
+              display: 'Address',
+              path: 'Patient.address',
+              renderer: RendererType.ADDRESS,
+            },
+            {
+              display: 'Address',
+              path: 'Practitioner.address',
+              renderer: RendererType.ADDRESS,
+            },
+            {
+              display: 'Address',
+              path: 'Organization.address',
+              renderer: RendererType.ADDRESS,
+            },
+          ],
+        },
+      ],
+    },
+  },
+  Attester: {
+    icon: '/icons/attester.svg',
+    color: RelevanceCategory.DOCUMENT_INFORMATION,
+    sectionDisplay: 'Attester',
+    code: 'attester',
+    section: {
+      display: 'Attester',
+      components: [
+        {
+          display: 'Personal Information',
+          components: [
+            {
+              display: 'Name',
+              path: 'Patient.name',
+              renderer: RendererType.HUMAN_NAME,
+            },
+            {
+              display: 'Name',
+              path: 'Practitioner.name',
+              renderer: RendererType.HUMAN_NAME,
+            },
+            {
+              display: 'Name',
+              path: 'Organization.name',
+              renderer: RendererType.DEFAULT,
+            },
+          ],
+        },
+        {
+          display: 'Communication',
+          components: [
+            {
+              display: 'Telecom',
+              path: 'Patient.telecom',
+              renderer: RendererType.CONTACT_POINT,
+            },
+            {
+              display: 'Telecom',
+              path: 'Practitioner.telecom',
+              renderer: RendererType.CONTACT_POINT,
+            },
+            {
+              display: 'Telecom',
+              path: 'Organization.telecom',
+              renderer: RendererType.CONTACT_POINT,
+            },
+          ],
+        },
+        {
+          display: 'Address',
+          components: [
+            {
+              display: 'Address',
+              path: 'Patient.address',
+              renderer: RendererType.ADDRESS,
+            },
+            {
+              display: 'Address',
+              path: 'Practitioner.address',
+              renderer: RendererType.ADDRESS,
+            },
+            {
+              display: 'Address',
+              path: 'Organization.address',
+              renderer: RendererType.ADDRESS,
+            },
+          ],
+        },
+      ],
+    },
+  },
+  Custodian: {
+    icon: '/icons/custodian.svg',
+    color: RelevanceCategory.DOCUMENT_INFORMATION,
+    sectionDisplay: 'Custodian',
+    code: 'custodian',
+    section: {
+      display: 'Custodian',
+      components: [
+        {
+          display: 'Personal Information',
+          components: [
+            {
+              display: 'Name',
+              path: 'Organization.name',
+              renderer: RendererType.DEFAULT,
+            },
+          ],
+        },
+        {
+          display: 'Communication',
+          components: [
+            {
+              display: 'Telecom',
+              path: 'Organization.telecom',
+              renderer: RendererType.CONTACT_POINT,
+            },
+          ],
+        },
+        {
+          display: 'Address',
+          components: [
+            {
+              display: 'Address',
+              path: 'Organization.address',
+              renderer: RendererType.ADDRESS,
             },
           ],
         },
